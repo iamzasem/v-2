@@ -1,0 +1,1398 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      German Possessive Articles | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/konj2.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+                <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="a1-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>German Possessive Articles: A Comprehensive Guide</h1>
+            <p>
+                Possessive articles in German (called <em>Possessivartikel</em> or <em>Possessivpronomen</em> in their article form) are used to show ownership—like "my," "your," or "their" in English. They’re essential for talking about what belongs to whom, and they change based on the <strong>gender</strong> (masculine, feminine, neuter), <strong>number</strong> (singular, plural), and <strong>case</strong> (nominative, accusative, dative, genitive) of the noun they describe. This guide explains possessive articles in detail—how they work, their forms in nominative, accusative, and dative cases (the most common for beginners), and plenty of examples. 
+            </p>
+        </section>
+
+        <!-- What Are Possessive Articles? -->
+        <section id="what-are">
+            <h2>What Are Possessive Articles?</h2>
+            <div class="subsection">
+                <p>
+                    Possessive articles are words that indicate possession and act like articles (e.g., "the" or "a") before a noun. In German, they agree with the noun they modify, not just the person who owns it. For example:
+                </p>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li>English: "my book" (same "my" for all nouns).</li>
+                        <li>German: <em>mein Buch</em> (neuter), <em>meine Tasche</em> (feminine)—"my" changes.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Key Features</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><strong>Owner</strong>: Each pronoun (ich, du, er, etc.) has its own possessive form (mein, dein, sein, etc.).</li>
+                        <li><strong>Noun Agreement</strong>: The ending changes based on the noun’s gender, number, and case.</li>
+                        <li><strong>No Standalone Use</strong>: These are articles, not pronouns—they always come with a noun (unlike <em>meins</em>—a possessive pronoun, covered later).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Possessive Articles in Nominative Case -->
+        <section id="nominative">
+            <h2>Possessive Articles in Nominative Case</h2>
+            <div class="subsection">
+                <p>
+                    The <strong>nominative case</strong> is used for the subject—the person or thing doing the action. Here’s how possessive articles look in nominative:
+                </p>
+            </div>
+            <div class="subsection">
+                <h3>Full Chart (Nominative)</h3>
+                <div class="examples">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Owner</th>
+                                    <th>Masc. (der)</th>
+                                    <th>Fem. (die)</th>
+                                    <th>Neut. (das)</th>
+                                    <th>Plural (die)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ich (my)</td>
+                                    <td>mein</td>
+                                    <td>meine</td>
+                                    <td>mein</td>
+                                    <td>meine</td>
+                                </tr>
+                                <tr>
+                                    <td>du (your, inf.)</td>
+                                    <td>dein</td>
+                                    <td>deine</td>
+                                    <td>dein</td>
+                                    <td>deine</td>
+                                </tr>
+                                <tr>
+                                    <td>er (his)</td>
+                                    <td>sein</td>
+                                    <td>seine</td>
+                                    <td>sein</td>
+                                    <td>seine</td>
+                                </tr>
+                                <tr>
+                                    <td>sie (her)</td>
+                                    <td>ihr</td>
+                                    <td>ihre</td>
+                                    <td>ihr</td>
+                                    <td>ihre</td>
+                                </tr>
+                                <tr>
+                                    <td>es (its)</td>
+                                    <td>sein</td>
+                                    <td>seine</td>
+                                    <td>sein</td>
+                                    <td>seine</td>
+                                </tr>
+                                <tr>
+                                    <td>wir (our)</td>
+                                    <td>unser</td>
+                                    <td>unsere</td>
+                                    <td>unser</td>
+                                    <td>unsere</td>
+                                </tr>
+                                <tr>
+                                    <td>ihr (your, pl.)</td>
+                                    <td>euer</td>
+                                    <td>eure</td>
+                                    <td>euer</td>
+                                    <td>eure</td>
+                                </tr>
+                                <tr>
+                                    <td>sie (their)</td>
+                                    <td>ihr</td>
+                                    <td>ihre</td>
+                                    <td>ihr</td>
+                                    <td>ihre</td>
+                                </tr>
+                                <tr>
+                                    <td>Sie (your, form.)</td>
+                                    <td>Ihr</td>
+                                    <td>Ihre</td>
+                                    <td>Ihr</td>
+                                    <td>Ihre</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Rules</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><strong>Masculine/Neuter</strong>: Base form (mein, dein, sein, etc.).</li>
+                        <li><strong>Feminine/Plural</strong>: Add <em>-e</em> (meine, deine, seine, etc.).</li>
+                        <li><strong>Euer</strong>: Drops the internal <em>-e-</em> before adding <em>-e</em> (euer → eure).</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Examples (Nominative)</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Mein</em> Vater ist groß. (My father is tall.) – Masculine</li>
+                        <li><em>Meine</em> Mutter kocht. (My mother cooks.) – Feminine</li>
+                        <li><em>Mein</em> Haus ist neu. (My house is new.) – Neuter</li>
+                        <li><em>Meine</em> Freunde kommen. (My friends come.) – Plural</li>
+                        <li><em>Dein</em> Hund bellt. (Your dog barks.) – Masculine</li>
+                        <li><em>Deine</em> Schwester singt. (Your sister sings.) – Feminine</li>
+                        <li><em>Dein</em> Auto fährt. (Your car drives.) – Neuter</li>
+                        <li><em>Deine</em> Bücher liegen hier. (Your books are here.) – Plural</li>
+                        <li><em>Sein</em> Bruder spielt. (His brother plays.) – Masculine</li>
+                        <li><em>Ihre</em> Katze schläft. (Her cat sleeps.) – Feminine</li>
+                        <li><em>Unser</em> Garten blüht. (Our garden blooms.) – Masculine</li>
+                        <li><em>Eure</em> Lehrerin redet. (Your teacher talks.) – Feminine</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Possessive Articles in Accusative Case -->
+        <section id="accusative">
+            <h2>Possessive Articles in Accusative Case</h2>
+            <div class="subsection">
+                <p>
+                    The <strong>accusative case</strong> is for the direct object—the thing or person receiving the action. Possessive articles adjust their endings here too.
+                </p>
+            </div>
+            <div class="subsection">
+                <h3>Full Chart (Accusative)</h3>
+                <div class="examples">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Owner</th>
+                                    <th>Masc. (den)</th>
+                                    <th>Fem. (die)</th>
+                                    <th>Neut. (das)</th>
+                                    <th>Plural (die)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ich (my)</td>
+                                    <td>meinen</td>
+                                    <td>meine</td>
+                                    <td>mein</td>
+                                    <td>meine</td>
+                                </tr>
+                                <tr>
+                                    <td>du (your, inf.)</td>
+                                    <td>deinen</td>
+                                    <td>deine</td>
+                                    <td>dein</td>
+                                    <td>deine</td>
+                                </tr>
+                                <tr>
+                                    <td>er (his)</td>
+                                    <td>seinen</td>
+                                    <td>seine</td>
+                                    <td>sein</td>
+                                    <td>seine</td>
+                                </tr>
+                                <tr>
+                                    <td>sie (her)</td>
+                                    <td>ihren</td>
+                                    <td>ihre</td>
+                                    <td>ihr</td>
+                                    <td>ihre</td>
+                                </tr>
+                                <tr>
+                                    <td>es (its)</td>
+                                    <td>seinen</td>
+                                    <td>seine</td>
+                                    <td>sein</td>
+                                    <td>seine</td>
+                                </tr>
+                                <tr>
+                                    <td>wir (our)</td>
+                                    <td>unseren</td>
+                                    <td>unsere</td>
+                                    <td>unser</td>
+                                    <td>unsere</td>
+                                </tr>
+                                <tr>
+                                    <td>ihr (your, pl.)</td>
+                                    <td>euren</td>
+                                    <td>eure</td>
+                                    <td>euer</td>
+                                    <td>eure</td>
+                                </tr>
+                                <tr>
+                                    <td>sie (their)</td>
+                                    <td>ihren</td>
+                                    <td>ihre</td>
+                                    <td>ihr</td>
+                                    <td>ihre</td>
+                                </tr>
+                                <tr>
+                                    <td>Sie (your, form.)</td>
+                                    <td>Ihren</td>
+                                    <td>Ihre</td>
+                                    <td>Ihr</td>
+                                    <td>Ihre</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Rules</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><strong>Masculine</strong>: Add <em>-en</em> (mein → meinen).</li>
+                        <li><strong>Feminine/Plural</strong>: Same as nominative (meine, deine, etc.).</li>
+                        <li><strong>Neuter</strong>: Same as nominative (mein, dein, etc.).</li>
+                        <li><strong>Euer</strong>: Drops <em>-e-</em> before adding <em>-en</em> (euer → euren) or stays <em>eure</em>.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Examples (Accusative)</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li>Ich sehe <em>meinen</em> Vater. (I see my father.) – Masculine</li>
+                        <li>Ich liebe <em>meine</em> Mutter. (I love my mother.) – Feminine</li>
+                        <li>Ich habe <em>mein</em> Haus. (I have my house.) – Neuter</li>
+                        <li>Ich treffe <em>meine</em> Freunde. (I meet my friends.) – Plural</li>
+                        <li>Du kaufst <em>deinen</em> Hund. (You buy your dog.) – Masculine</li>
+                        <li>Du magst <em>deine</em> Schwester. (You like your sister.) – Feminine</li>
+                        <li>Du reparierst <em>dein</em> Auto. (You repair your car.) – Neuter</li>
+                        <li>Du liest <em>deine</em> Bücher. (You read your books.) – Plural</li>
+                        <li>Er besucht <em>seinen</em> Bruder. (He visits his brother.) – Masculine</li>
+                        <li>Sie füttert <em>ihre</em> Katze. (She feeds her cat.) – Feminine</li>
+                        <li>Wir brauchen <em>unseren</em> Garten. (We need our garden.) – Masculine</li>
+                        <li>Ihr hört <em>eure</em> Lehrerin. (You all hear your teacher.) – Feminine</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Possessive Articles in Dative Case -->
+        <section id="dative">
+            <h2>Possessive Articles in Dative Case</h2>
+            <div class="subsection">
+                <p>
+                    The <strong>dative case</strong> is used for the indirect object—the person or thing receiving the direct object or benefitting from the action. Possessive articles in dative also change their endings to match the noun’s gender and number.
+                </p>
+            </div>
+            <div class="subsection">
+                <h3>Full Chart (Dative)</h3>
+                <div class="examples">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Owner</th>
+                                    <th>Masc. (dem)</th>
+                                    <th>Fem. (der)</th>
+                                    <th>Neut. (dem)</th>
+                                    <th>Plural (den)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ich (my)</td>
+                                    <td>meinem</td>
+                                    <td>meiner</td>
+                                    <td>meinem</td>
+                                    <td>meinen</td>
+                                </tr>
+                                <tr>
+                                    <td>du (your, inf.)</td>
+                                    <td>deinem</td>
+                                    <td>deiner</td>
+                                    <td>deinem</td>
+                                    <td>deinen</td>
+                                </tr>
+                                <tr>
+                                    <td>er (his)</td>
+                                    <td>seinem</td>
+                                    <td>seiner</td>
+                                    <td>seinem</td>
+                                    <td>seinen</td>
+                                </tr>
+                                <tr>
+                                    <td>sie (her)</td>
+                                    <td>ihrem</td>
+                                    <td>ihrer</td>
+                                    <td>ihrem</td>
+                                    <td>ihren</td>
+                                </tr>
+                                <tr>
+                                    <td>es (its)</td>
+                                    <td>seinem</td>
+                                    <td>seiner</td>
+                                    <td>seinem</td>
+                                    <td>seinen</td>
+                                </tr>
+                                <tr>
+                                    <td>wir (our)</td>
+                                    <td>unserem</td>
+                                    <td>unserer</td>
+                                    <td>unserem</td>
+                                    <td>unseren</td>
+                                </tr>
+                                <tr>
+                                    <td>ihr (your, pl.)</td>
+                                    <td>eurem</td>
+                                    <td>eurer</td>
+                                    <td>eurem</td>
+                                    <td>euren</td>
+                                </tr>
+                                <tr>
+                                    <td>sie (their)</td>
+                                    <td>ihrem</td>
+                                    <td>ihrer</td>
+                                    <td>ihrem</td>
+                                    <td>ihren</td>
+                                </tr>
+                                <tr>
+                                    <td>Sie (your, form.)</td>
+                                    <td>Ihrem</td>
+                                    <td>Ihrer</td>
+                                    <td>Ihrem</td>
+                                    <td>Ihren</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Rules</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><strong>Masculine/Neuter</strong>: Add <em>-em</em> (mein → meinem).</li>
+                        <li><strong>Feminine</strong>: Add <em>-er</em> (meine → meiner).</li>
+                        <li><strong>Plural</strong>: Add <em>-en</em> (meine → meinen).</li>
+                        <li><strong>Euer</strong>: Drops the internal <em>-e-</em> before adding endings: <em>euer</em> → <em>eurem</em> (masc./neut.), <em>eurer</em> (fem.), <em>euren</em> (pl.).</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Examples (Dative)</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li>Ich gebe <em>meinem</em> Vater ein Geschenk. (I give my father a gift.) – Masculine</li>
+                        <li>Ich helfe <em>meiner</em> Mutter. (I help my mother.) – Feminine</li>
+                        <li>Ich zeige <em>meinem</em> Kind das Spiel. (I show my child the game.) – Neuter</li>
+                        <li>Ich schreibe <em>meinen</em> Freunden. (I write to my friends.) – Plural</li>
+                        <li>Du gibst <em>deinem</em> Bruder ein Buch. (You give your brother a book.) – Masculine</li>
+                        <li>Du hilfst <em>deiner</em> Schwester. (You help your sister.) – Feminine</li>
+                        <li>Du zeigst <em>deinem</em> Hund den Ball. (You show your dog the ball.) – Neuter</li>
+                        <li>Du schreibst <em>deinen</em> Lehrern. (You write to your teachers.) – Plural</li>
+                        <li>Er gibt <em>seinem</em> Freund einen Tipp. (He gives his friend a tip.) – Masculine</li>
+                        <li>Sie schenkt <em>ihrer</em> Katze ein Spielzeug. (She gives her cat a toy.) – Feminine</li>
+                        <li>Wir helfen <em>unserem</em> Nachbarn. (We help our neighbor.) – Masculine</li>
+                        <li>Ihr gebt <em>eurer</em> Lehrerin Blumen. (You all give your teacher flowers.) – Feminine</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- How Possessive Articles Work in Sentences -->
+        <section id="how-to-use">
+            <h2>How Possessive Articles Work in Sentences</h2>
+            <div class="subsection">
+                <h3>Word Order</h3>
+                <p>
+                    Possessive articles come <strong>before the noun</strong> they describe, followed by the noun in the correct case.
+                </p>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li>Nominative: <em>Mein</em> Hund bellt. (My dog barks.)</li>
+                        <li>Accusative: Ich sehe <em>meinen</em> Hund. (I see my dog.)</li>
+                        <li>Dative: Ich gebe <em>meinem</em> Hund einen Knochen. (I give my dog a bone.)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Combining with Verbs</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li>Use with accusative verbs (e.g., <em>sehen, haben, kaufen</em>): Ich kaufe <em>meinen</em> Mantel. (I buy my coat.)</li>
+                        <li>Use with dative verbs (e.g., <em>geben, helfen, zeigen</em>): Ich helfe <em>meiner</em> Schwester. (I help my sister.)</li>
+                        <li>Use as subjects with any verb: <em>Deine</em> Tasche liegt dort. (Your bag is over there.)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Adding Adjectives</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li>If an adjective follows, it takes an ending based on the case and article:</li>
+                        <li>Nominative: <em>Mein kleiner</em> Hund. (My little dog.)</li>
+                        <li>Accusative: Ich sehe <em>meinen kleinen</em> Hund. (I see my little dog.)</li>
+                        <li>Dative: Ich gebe <em>meinem kleinen</em> Hund einen Knochen. (I give my little dog a bone.)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Notes -->
+        <section id="special-notes">
+            <h2>Special Notes</h2>
+            <div class="subsection">
+                <h3><em>Euer</em> and <em>Unser</em></h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><strong>Euer (your, plural informal)</strong>: Drops the middle <em>-e-</em> before adding endings: <em>euer</em> → <em>eure</em> (fem./pl., nom./acc.), <em>euren</em> (masc. acc., pl. dat.), <em>eurem</em> (masc./neut. dat.), <em>eurer</em> (fem. dat.). Example: <em>Euer</em> Hund (nom.), <em>Euren</em> Hund (acc.), <em>Eurem</em> Hund (dat.).</li>
+                        <li><strong>Unser (our)</strong>: Keeps the <em>-er</em> but adjusts endings: <em>unser</em> (masc./neut., nom./acc.), <em>unsere</em> (fem./pl., nom./acc.), <em>unseren</em> (masc. acc., pl. dat.), <em>unserem</em> (masc./neut. dat.), <em>unserer</em> (fem. dat.). Example: <em>Unser</em> Haus (nom.), <em>Unseren</em> Garten (acc.), <em>Unserem</em> Kind (dat.).</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Same Forms</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>sein</em> (his/its) and <em>ihr</em> (her/their) look alike but depend on the owner: <em>Sein</em> Hund (his dog), <em>Ihr</em> Hund (her/their dog).</li>
+                        <li>Context or the verb’s subject clarifies it: <em>Er</em> liebt <em>seinen</em> Hund. (He loves his dog.) vs. <em>Sie</em> liebt <em>ihren</em> Hund. (She loves her dog.)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>No Noun? Use Possessive Pronouns</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li>Possessive articles need a noun. Without one, use standalone pronouns: <em>Mein</em> Buch → <em>Meins</em> (mine).</li>
+                        <li>This guide focuses on articles, not pronouns.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practice Exercises -->
+        <section id="practice">
+            <h2>Practice Exercises</h2>
+            <p>Try these exercises to get comfortable with possessive articles.</p>
+
+            <div class="subsection" id="exercise1">
+                <h3>Exercise 1: Fill in the Nominative Possessive Article</h3>
+                <p>Add the correct nominative form:</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>____ (my) Vater ist alt.  
+                            <select class="answer-select" data-correct="Mein">
+                                <option value="">Select</option>
+                                <option value="Meine">Meine</option>
+                                <option value="Meinen">Meinen</option>
+                                <option value="Mein">Mein</option>
+                                <option value="Meinem">Meinem</option>
+                            </select>
+                        </li>
+                        <li>____ (your, inf.) Schwester tanzt.  
+                            <select class="answer-select" data-correct="Deine">
+                                <option value="">Select</option>
+                                <option value="Dein">Dein</option>
+                                <option value="Deine">Deine</option>
+                                <option value="Deinen">Deinen</option>
+                                <option value="Deiner">Deiner</option>
+                            </select>
+                        </li>
+                        <li>____ (his) Hund läuft.  
+                            <select class="answer-select" data-correct="Sein">
+                                <option value="">Select</option>
+                                <option value="Seiner">Seiner</option>
+                                <option value="Seine">Seine</option>
+                                <option value="Seinen">Seinen</option>
+                                <option value="Sein">Sein</option>
+                            </select>
+                        </li>
+                        <li>____ (our) Freunde kommen.  
+                            <select class="answer-select" data-correct="Unsere">
+                                <option value="">Select</option>
+                                <option value="Unser">Unser</option>
+                                <option value="Unseren">Unseren</option>
+                                <option value="Unsere">Unsere</option>
+                                <option value="Unserem">Unserem</option>
+                            </select>
+                        </li>
+                        <li>____ (your, pl.) Lehrer redet.  
+                            <select class="answer-select" data-correct="Euer">
+                                <option value="">Select</option>
+                                <option value="Eure">Eure</option>
+                                <option value="Euren">Euren</option>
+                                <option value="Euer">Euer</option>
+                                <option value="Eurer">Eurer</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Mein</em> Vater ist alt.</li>
+                            <li><em>Deine</em> Schwester tanzt.</li>
+                            <li><em>Sein</em> Hund läuft.</li>
+                            <li><em>Unsere</em> Freunde kommen.</li>
+                            <li><em>Euer</em> Lehrer redet.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise2">
+                <h3>Exercise 2: Fill in the Accusative Possessive Article</h3>
+                <p>Add the correct accusative form:</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>Ich sehe ____ (my) Vater.  
+                            <select class="answer-select" data-correct="meinen">
+                                <option value="">Select</option>
+                                <option value="mein">mein</option>
+                                <option value="meine">meine</option>
+                                <option value="meinen">meinen</option>
+                                <option value="meinem">meinem</option>
+                            </select>
+                        </li>
+                        <li>Du kaufst ____ (your, inf.) Tasche.  
+                            <select class="answer-select" data-correct="deine">
+                                <option value="">Select</option>
+                                <option value="deinen">deinen</option>
+                                <option value="deine">deine</option>
+                                <option value="dein">dein</option>
+                                <option value="deiner">deiner</option>
+                            </select>
+                        </li>
+                        <li>Er liebt ____ (his) Bruder.  
+                            <select class="answer-select" data-correct="seinen">
+                                <option value="">Select</option>
+                                <option value="seiner">seiner</option>
+                                <option value="seine">seine</option>
+                                <option value="sein">sein</option>
+                                <option value="seinen">seinen</option>
+                            </select>
+                        </li>
+                        <li>Wir brauchen ____ (our) Auto.  
+                            <select class="answer-select" data-correct="unser">
+                                <option value="">Select</option>
+                                <option value="unseren">unseren</option>
+                                <option value="unsere">unsere</option>
+                                <option value="unser">unser</option>
+                                <option value="unserem">unserem</option>
+                            </select>
+                        </li>
+                        <li>Ihr trefft ____ (your, pl.) Freunde.  
+                            <select class="answer-select" data-correct="eure">
+                                <option value="">Select</option>
+                                <option value="euren">euren</option>
+                                <option value="eure">eure</option>
+                                <option value="euer">euer</option>
+                                <option value="eurer">eurer</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li>Ich sehe <em>meinen</em> Vater.</li>
+                            <li>Du kaufst <em>deine</em> Tasche.</li>
+                            <li>Er liebt <em>seinen</em> Bruder.</li>
+                            <li>Wir brauchen <em>unser</em> Auto.</li>
+                            <li>Ihr trefft <em>eure</em> Freunde.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise3">
+                <h3>Exercise 3: Translate to German (Nominative)</h3>
+                <p>Translate using nominative possessive articles:</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>My house is big.  
+                            <select class="answer-select" data-correct="Mein Haus ist groß.">
+                                <option value="">Select</option>
+                                <option value="Meine Haus ist groß.">Meine Haus ist groß.</option>
+                                <option value="Mein Haus ist groß.">Mein Haus ist groß.</option>
+                                <option value="Meinen Haus ist groß.">Meinen Haus ist groß.</option>
+                                <option value="Meinem Haus ist groß.">Meinem Haus ist groß.</option>
+                            </select>
+                        </li>
+                        <li>Your (inf.) dog barks.  
+                            <select class="answer-select" data-correct="Dein Hund bellt.">
+                                <option value="">Select</option>
+                                <option value="Deine Hund bellt.">Deine Hund bellt.</option>
+                                <option value="Deinen Hund bellt.">Deinen Hund bellt.</option>
+                                <option value="Dein Hund bellt.">Dein Hund bellt.</option>
+                                <option value="Deiner Hund bellt.">Deiner Hund bellt.</option>
+                            </select>
+                        </li>
+                        <li>Her cat sleeps.  
+                            <select class="answer-select" data-correct="Ihre Katze schläft.">
+                                <option value="">Select</option>
+                                <option value="Ihr Katze schläft.">Ihr Katze schläft.</option>
+                                <option value="Ihre Katze schläft.">Ihre Katze schläft.</option>
+                                <option value="Ihren Katze schläft.">Ihren Katze schläft.</option>
+                                <option value="Ihrem Katze schläft.">Ihrem Katze schläft.</option>
+                            </select>
+                        </li>
+                        <li>Our garden blooms.  
+                            <select class="answer-select" data-correct="Unser Garten blüht.">
+                                <option value="">Select</option>
+                                <option value="Unsere Garten blüht.">Unsere Garten blüht.</option>
+                                <option value="Unseren Garten blüht.">Unseren Garten blüht.</option>
+                                <option value="Unser Garten blüht.">Unser Garten blüht.</option>
+                                <option value="Unserem Garten blüht.">Unserem Garten blüht.</option>
+                            </select>
+                        </li>
+                        <li>Their books are here.  
+                            <select class="answer-select" data-correct="Ihre Bücher sind hier.">
+                                <option value="">Select</option>
+                                <option value="Ihr Bücher sind hier.">Ihr Bücher sind hier.</option>
+                                <option value="Ihren Bücher sind hier.">Ihren Bücher sind hier.</option>
+                                <option value="Ihre Bücher sind hier.">Ihre Bücher sind hier.</option>
+                                <option value="Ihrem Bücher sind hier.">Ihrem Bücher sind hier.</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Mein Haus ist groß.</em></li>
+                            <li><em>Dein Hund bellt.</em></li>
+                            <li><em>Ihre Katze schläft.</em></li>
+                            <li><em>Unser Garten blüht.</em></li>
+                            <li><em>Ihre Bücher sind hier.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise4">
+                <h3>Exercise 4: Translate to German (Accusative)</h3>
+                <p>Translate using accusative possessive articles:</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>I see my father.  
+                            <select class="answer-select" data-correct="Ich sehe meinen Vater.">
+                                <option value="">Select</option>
+                                <option value="Ich sehe mein Vater.">Ich sehe mein Vater.</option>
+                                <option value="Ich sehe meine Vater.">Ich sehe meine Vater.</option>
+                                <option value="Ich sehe meinen Vater.">Ich sehe meinen Vater.</option>
+                                <option value="Ich sehe meinem Vater.">Ich sehe meinem Vater.</option>
+                            </select>
+                        </li>
+                        <li>You (inf.) buy your book.  
+                            <select class="answer-select" data-correct="Du kaufst dein Buch.">
+                                <option value="">Select</option>
+                                <option value="Du kaufst deine Buch.">Du kaufst deine Buch.</option>
+                                <option value="Du kaufst deinen Buch.">Du kaufst deinen Buch.</option>
+                                <option value="Du kaufst dein Buch.">Du kaufst dein Buch.</option>
+                                <option value="Du kaufst deiner Buch.">Du kaufst deiner Buch.</option>
+                            </select>
+                        </li>
+                        <li>He visits his friend.  
+                            <select class="answer-select" data-correct="Er besucht seinen Freund.">
+                                <option value="">Select</option>
+                                <option value="Er besucht sein Freund.">Er besucht sein Freund.</option>
+                                <option value="Er besucht seine Freund.">Er besucht seine Freund.</option>
+                                <option value="Er besucht seinen Freund.">Er besucht seinen Freund.</option>
+                                <option value="Er besucht seinem Freund.">Er besucht seinem Freund.</option>
+                            </select>
+                        </li>
+                        <li>We need our money.  
+                            <select class="answer-select" data-correct="Wir brauchen unser Geld.">
+                                <option value="">Select</option>
+                                <option value="Wir brauchen unsere Geld.">Wir brauchen unsere Geld.</option>
+                                <option value="Wir brauchen unseren Geld.">Wir brauchen unseren Geld.</option>
+                                <option value="Wir brauchen unser Geld.">Wir brauchen unser Geld.</option>
+                                <option value="Wir brauchen unserem Geld.">Wir brauchen unserem Geld.</option>
+                            </select>
+                        </li>
+                        <li>They love their mother.  
+                            <select class="answer-select" data-correct="Sie lieben ihre Mutter.">
+                                <option value="">Select</option>
+                                <option value="Sie lieben ihr Mutter.">Sie lieben ihr Mutter.</option>
+                                <option value="Sie lieben ihren Mutter.">Sie lieben ihren Mutter.</option>
+                                <option value="Sie lieben ihre Mutter.">Sie lieben ihre Mutter.</option>
+                                <option value="Sie lieben ihrer Mutter.">Sie lieben ihrer Mutter.</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Ich sehe meinen Vater.</em></li>
+                            <li><em>Du kaufst dein Buch.</em></li>
+                            <li><em>Er besucht seinen Freund.</em></li>
+                            <li><em>Wir brauchen unser Geld.</em></li>
+                            <li><em>Sie lieben ihre Mutter.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise5">
+                <h3>Exercise 5: Mix Nominative and Accusative</h3>
+                <p>Fill in with possessive articles—3 nominative, 2 accusative:</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>____ (my) Bruder spielt Fußball. (Nom.)  
+                            <select class="answer-select" data-correct="Mein">
+                                <option value="">Select</option>
+                                <option value="Meine">Meine</option>
+                                <option value="Meinen">Meinen</option>
+                                <option value="Mein">Mein</option>
+                                <option value="Meinem">Meinem</option>
+                            </select>
+                        </li>
+                        <li>____ (your, inf.) Tasche ist schön. (Nom.)  
+                            <select class="answer-select" data-correct="Deine">
+                                <option value="">Select</option>
+                                <option value="Dein">Dein</option>
+                                <option value="Deine">Deine</option>
+                                <option value="Deinen">Deinen</option>
+                                <option value="Deiner">Deiner</option>
+                            </select>
+                        </li>
+                        <li>____ (our) Katzen schlafen. (Nom.)  
+                            <select class="answer-select" data-correct="Unsere">
+                                <option value="">Select</option>
+                                <option value="Unser">Unser</option>
+                                <option value="Unseren">Unseren</option>
+                                <option value="Unsere">Unsere</option>
+                                <option value="Unserem">Unserem</option>
+                            </select>
+                        </li>
+                        <li>Ich sehe ____ (my) Hund. (Acc.)  
+                            <select class="answer-select" data-correct="meinen">
+                                <option value="">Select</option>
+                                <option value="mein">mein</option>
+                                <option value="meine">meine</option>
+                                <option value="meinen">meinen</option>
+                                <option value="meinem">meinem</option>
+                            </select>
+                        </li>
+                        <li>Er kauft ____ (his) Bücher. (Acc.)  
+                            <select class="answer-select" data-correct="seine">
+                                <option value="">Select</option>
+                                <option value="sein">sein</option>
+                                <option value="seinen">seinen</option>
+                                <option value="seine">seine</option>
+                                <option value="seiner">seiner</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Mein</em> Bruder spielt Fußball.</li>
+                            <li><em>Deine</em> Tasche ist schön.</li>
+                            <li><em>Unsere</em> Katzen schlafen.</li>
+                            <li>Ich sehe <em>meinen</em> Hund.</li>
+                            <li>Er kauft <em>seine</em> Bücher.</li>
+                        </ol>
+                    </div>
+                    <button class="toggle-btn try-yourself">Try It Yourself</button>
+                    <div class="hidden">
+                        <p>Write your own 5 sentences using possessive articles—mix nominative and accusative!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips -->
+        <section id="tips">
+            <h2>Tips to Master Possessive Articles</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Memorize Base Forms</strong>: Learn <em>mein, dein, sein, ihr, unser, euer</em>—say them daily.</li>
+                    <li><strong>Practice Endings</strong>: Focus on masculine accusative (<em>-en</em>) and dative (<em>-em</em>)—they’re the biggest changes.</li>
+                    <li><strong>Match the Noun</strong>: Always check the noun’s gender and case—<em>mein Hund</em> (masc. nom.), <em>meinen Hund</em> (masc. acc.), <em>meinem Hund</em> (masc. dat.).</li>
+                    <li><strong>Use in Speech</strong>: Say <em>mein Name, deine Schule, meinem Freund</em> aloud to build habits.</li>
+                    <li><strong>Spot in Texts</strong>: Read simple German stories, underline possessive articles, and note their case.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Resources -->
+        <section id="resources">
+            <h2>Resources for Extra Practice</h2>
+            <div class="resource-links">
+                <div class="resource-card">
+                    <p><strong>Goethe Institute</strong><br>Grammar exercises.</p>
+                    <a href="https://www.goethe.de/en/spr/ueb.html" class="resource-btn">Visit Goethe Grammar</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>YouTube – Easy German</strong><br>Accusative in action.</p>
+                    <a href="https://www.youtube.com/@EasyGerman" class="resource-btn">Visit Easy German</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>Schubert Verlag</strong><br>Free accusative tasks.</p>
+                    <a href="https://www.schubert-verlag.de/aufgaben/uebungen_a1/a1_uebungen_index.htm" class="resource-btn">Visit Schubert Verlag</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Thoughts -->
+        <section id="final-thoughts">
+            <h2>You’re Ready!</h2>
+            <p>
+                This guide covers possessive articles fully—forms, rules, and examples for nominative, accusative, and dative cases. Practice the exercises, apply the tips, and you’ll get the hang of it. Next, you could explore genitive possessive articles or standalone possessive pronouns—your move!
+            </p>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="nouns.html" class="see-also-rect">German Nouns</a>
+                <a href="cases.html" class="see-also-rect">German Cases</a>
+                <a href="articles.html" class="see-also-rect">German Articles</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="articles.html" class="next-btn">Next: German Articles →</a>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark Mode Toggle
+        const modeToggle = document.getElementById('mode-toggle');
+        modeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Load dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Toggle Answers and Exercises
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const nextDiv = button.nextElementSibling;
+                if (button.classList.contains('show-answers') || button.classList.contains('try-yourself')) {
+                    nextDiv.classList.toggle('hidden');
+                } else if (button.classList.contains('check-answers')) {
+                    const selects = button.parentElement.querySelectorAll('.answer-select');
+                    selects.forEach(select => {
+                        const selectedValue = select.value;
+                        const correctValue = select.getAttribute('data-correct');
+                        if (selectedValue === correctValue) {
+                            select.style.backgroundColor = '#d4edda'; // Green for correct
+                        } else {
+                            select.style.backgroundColor = '#f8d7da'; // Red for incorrect
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

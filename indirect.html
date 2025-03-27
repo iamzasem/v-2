@@ -1,0 +1,1028 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      German Indirekte Fragesätze: W-Fragen and Ja/Nein-Fragen with Ob | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/indirect.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+               <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="a2-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>German Indirekte Fragesätze: W-Fragen and Ja/Nein-Fragen with <em>Ob</em> – The Deep Guide</h1>
+            <p>
+                <strong>Indirekte Fragesätze</strong> (indirect questions) are questions embedded within a larger sentence, often reporting what someone asked, wonders, or knows. Unlike direct questions (e.g., <em>Wo bist du?</em> – Where are you?), indirect questions use a different structure and word order, making them sound smoother and less abrupt. This guide focuses on two types: <strong>W-Fragen</strong> (with question words like <em>wer, was, wo</em>) and <strong>Ja/Nein-Fragen</strong> (yes/no questions with <em>ob</em>). We’ll explore how they work, why they matter, and how to use them naturally, with plenty of examples and exercises. Let’s get started!
+            </p>
+        </section>
+
+        <!-- What Are Indirekte Fragesätze -->
+        <section id="what-is">
+            <h2>What Are Indirekte Fragesätze?</h2>
+            <p>Indirect questions turn a direct question into a statement-like form, often introduced by verbs like <em>fragen</em> (to ask), <em>wissen</em> (to know), <em>sagen</em> (to say), or <em>wundern</em> (to wonder). They’re common in reported speech, polite inquiries, or when reflecting on something.</p>
+            <h3>Key Features</h3>
+            <ul class="example-list">
+                <li><strong>Subordinate Clause</strong>: The indirect question is a dependent clause, so the <strong>verb goes to the end</strong>.</li>
+                <li><strong>No Question Mark</strong>: Indirect questions are statements, not questions, so they end with a period (or comma if part of a larger sentence).</li>
+                <li><strong>Introductory Phrase</strong>: Usually starts with a main clause (e.g., <em>Ich weiß</em>, <em>Er fragt</em>).</li>
+            </ul>
+            <h3>Direct vs. Indirect</h3>
+            <ul class="example-list">
+                <li><strong>Direct</strong>: <em>Wo bist du?</em> (Where are you?) – Verb second, question mark.</li>
+                <li><strong>Indirect</strong>: <em>Ich weiß, wo du bist.</em> (I know where you are.) – Verb at end, period.</li>
+            </ul>
+        </section>
+
+        <!-- W-Fragen -->
+        <section id="w-fragen">
+            <h2>1. W-Fragen (Indirect Questions with Question Words)</h2>
+            <p>W-Fragen use question words (<em>wer, was, wo, wann, warum, wie, welcher</em>) to ask for specific information. In indirect form, the question word stays, but the structure shifts to a subordinate clause.</p>
+            <div class="subsection">
+                <h3>Structure</h3>
+                <p><strong>Main Clause</strong> (normal word order) + <strong>Question Word</strong> + <strong>Subject</strong> + <strong>Other Elements</strong> + <strong>Verb</strong> (at end).</p>
+                <div class="examples">
+                    <p><em>Er fragt, wo ich wohne.</em></p>
+                    <ul class="example-list">
+                        <li>Main: <em>Er fragt</em> (He asks).</li>
+                        <li>Indirect: <em>wo ich wohne</em> (where I live—verb <em>wohne</em> at end).</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Detailed Description</h3>
+                <ul class="example-list">
+                    <li><strong>Purpose</strong>: W-Fragen seek details—people (<em>wer</em>), things (<em>was</em>), places (<em>wo</em>), times (<em>wann</em>), reasons (<em>warum</em>), or manners (<em>wie</em>).</li>
+                    <li><strong>Word Order</strong>: The verb jumps to the end, unlike direct questions where it’s second.</li>
+                    <li><strong>Punctuation</strong>: A comma separates the main clause from the indirect question, and it ends with a period.</li>
+                    <li><strong>Tenses</strong>: Can use present, past, or subjunctive, depending on context (e.g., real vs. hypothetical).</li>
+                </ul>
+                <div class="examples">
+                    <h4>Examples Across Tenses</h4>
+                    <ul class="example-list">
+                        <li><strong>Present</strong>: <em>Ich weiß, wo du bist.</em> (I know where you are.)</li>
+                        <li><strong>Perfekt</strong>: <em>Sie fragt, was ich gemacht habe.</em> (She asks what I’ve done.)</li>
+                        <li><strong>Präteritum</strong>: <em>Er wusste, wann wir kamen.</em> (He knew when we came.)</li>
+                        <li><strong>Konjunktiv II</strong>: <em>Ich frage mich, wo er wäre.</em> (I wonder where he would be.)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ja/Nein-Fragen -->
+        <section id="ja-nein-fragen">
+            <h2>2. Ja/Nein-Fragen (Indirect Yes/No Questions with <em>Ob</em>)</h2>
+            <p>Ja/Nein-Fragen ask for a yes or no answer. In indirect form, they use <em>ob</em> (whether/if) instead of a question word, and the verb still goes to the end.</p>
+            <div class="subsection">
+                <h3>Structure</h3>
+                <p><strong>Main Clause</strong> (normal word order) + <strong>Ob</strong> + <strong>Subject</strong> + <strong>Other Elements</strong> + <strong>Verb</strong> (at end).</p>
+                <div class="examples">
+                    <p><em>Sie fragt, ob ich komme.</em></p>
+                    <ul class="example-list">
+                        <li>Main: <em>Sie fragt</em> (She asks).</li>
+                        <li>Indirect: <em>ob ich komme</em> (whether I’m coming—verb <em>komme</em> at end).</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Detailed Description</h3>
+                <ul class="example-list">
+                    <li><strong>Purpose</strong>: <em>Ob</em> introduces a binary choice—yes or no—without specifying what’s being asked (unlike W-Fragen).</li>
+                    <li><strong>Word Order</strong>: Like W-Fragen, the verb moves to the end, reflecting the subordinate nature of the clause.</li>
+                    <li><strong>Tone</strong>: <em>Ob</em> softens the question, making it less direct and more polite or reflective.</li>
+                    <li><strong>Negation</strong>: Add <em>nicht</em> before the verb for negative possibilities—<em>ob ich nicht komme</em> (whether I’m not coming).</li>
+                </ul>
+                <div class="examples">
+                    <h4>Examples Across Tenses</h4>
+                    <ul class="example-list">
+                        <li><strong>Present</strong>: <em>Er weiß, ob sie hier ist.</em> (He knows whether she’s here.)</li>
+                        <li><strong>Perfekt</strong>: <em>Ich frage, ob du das gemacht hast.</em> (I ask whether you’ve done that.)</li>
+                        <li><strong>Präteritum</strong>: <em>Sie wusste, ob er kam.</em> (She knew whether he came.)</li>
+                        <li><strong>Konjunktiv II</strong>: <em>Er fragt sich, ob sie kommen würde.</em> (He wonders whether she would come.)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Example Sentences -->
+        <section id="examples">
+            <h2>Tons of Example Sentences</h2>
+            <div class="subsection">
+                <h3>W-Fragen (Indirect)</h3>
+                <div class="examples">
+                    <h4>Daily Life</h4>
+                    <ol class="example-list">
+                        <li><em>Ich weiß, wo der Schlüssel liegt.</em> (I know where the key is.)</li>
+                        <li><em>Sie fragt, was wir essen wollen.</em> (She asks what we want to eat.)</li>
+                        <li><em>Er sagt, wann der Film anfängt.</em> (He says when the movie starts.)</li>
+                        <li><em>Wir wissen, wie man das macht.</em> (We know how to do that.)</li>
+                        <li><em>Ich frage mich, warum er so spät ist.</em> (I wonder why he’s so late.)</li>
+                    </ol>
+                    <h4>School/Work</h4>
+                    <ol class="example-list">
+                        <li><em>Der Lehrer fragt, wer die Hausaufgaben gemacht hat.</em> (The teacher asks who did the homework.)</li>
+                        <li><em>Ich weiß, wo die Bücher sind.</em> (I know where the books are.)</li>
+                        <li><em>Sie sagt, wann die Besprechung beginnt.</em> (She says when the meeting starts.)</li>
+                        <li><em>Er fragt, wie lange wir bleiben.</em> (He asks how long we’re staying.)</li>
+                        <li><em>Wir wissen, welcher Plan besser ist.</em> (We know which plan is better.)</li>
+                    </ol>
+                    <h4>Past/Subjunctive</h4>
+                    <ol class="example-list">
+                        <li><em>Ich wusste, wo du warst.</em> (I knew where you were.)</li>
+                        <li><em>Sie fragte, was ich gestern gemacht hatte.</em> (She asked what I had done yesterday.)</li>
+                        <li><em>Er wunderte sich, warum sie nicht kam.</em> (He wondered why she didn’t come.)</li>
+                        <li><em>Ich frage mich, wie es wäre.</em> (I wonder how it would be.)</li>
+                        <li><em>Wir wussten, wann er ankam.</em> (We knew when he arrived.)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Ja/Nein-Fragen (Indirect with <em>Ob</em>)</h3>
+                <div class="examples">
+                    <h4>Daily Life</h4>
+                    <ol class="example-list">
+                        <li><em>Ich weiß, ob er kommt.</em> (I know whether he’s coming.)</li>
+                        <li><em>Sie fragt, ob wir Zeit haben.</em> (She asks if we have time.)</li>
+                        <li><em>Er sagt, ob das Essen fertig ist.</em> (He says whether the food is ready.)</li>
+                        <li><em>Wir wissen, ob es regnet.</em> (We know if it’s raining.)</li>
+                        <li><em>Ich frage mich, ob sie mich mag.</em> (I wonder if she likes me.)</li>
+                    </ol>
+                    <h4>School/Work</h4>
+                    <ol class="example-list">
+                        <li><em>Der Chef fragt, ob die Arbeit fertig ist.</em> (The boss asks if the work is done.)</li>
+                        <li><em>Ich weiß, ob die Prüfung schwer war.</em> (I know whether the exam was hard.)</li>
+                        <li><em>Sie sagt, ob er morgen kommt.</em> (She says whether he’s coming tomorrow.)</li>
+                        <li><em>Er fragt, ob wir helfen können.</em> (He asks if we can help.)</li>
+                        <li><em>Wir wissen, ob der Plan funktioniert.</em> (We know whether the plan works.)</li>
+                    </ol>
+                    <h4>Past/Subjunctive</h4>
+                    <ol class="example-list">
+                        <li><em>Ich wusste, ob sie da war.</em> (I knew whether she was there.)</li>
+                        <li><em>Sie fragte, ob ich das gemacht hatte.</em> (She asked if I had done that.)</li>
+                        <li><em>Er wunderte sich, ob sie kommen würde.</em> (He wondered whether she would come.)</li>
+                        <li><em>Ich fragte mich, ob er es wusste.</em> (I wondered if he knew it.)</li>
+                        <li><em>Wir wussten, ob sie gewonnen hatten.</em> (We knew whether they had won.)</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deep Details and Nuances -->
+        <section id="nuances">
+            <h2>Deep Details and Nuances</h2>
+            <div class="subsection">
+                <h3>1. Word Order Explained</h3>
+                <ul class="example-list">
+                    <li><strong>Direct</strong>: Verb second (<em>Wo bist du?</em> – Where are you?).</li>
+                    <li><strong>Indirect</strong>: Verb at end (<em>Ich weiß, wo du bist.</em> – I know where you are.).</li>
+                    <li><strong>Why</strong>: The indirect question is a subordinate clause, so it follows subordinating conjunction rules (like <em>dass, wenn</em>).</li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>2. <em>Ob</em> vs. <em>Wenn</em></h3>
+                <ul class="example-list">
+                    <li><strong>Ob</strong>: Yes/no, neutral—<em>Ich weiß, ob er kommt.</em> (I know whether he’s coming—fact-based.)</li>
+                    <li><strong>Wenn</strong>: Conditional if—<em>Ich komme, wenn er kommt.</em> (I’ll come if he comes—condition.)</li>
+                    <li><strong>Nuance</strong>: <em>Ob</em> asks about truth; <em>wenn</em> sets a condition.</li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>3. Subjunctive Use</h3>
+                <ul class="example-list">
+                    <li><strong>Konjunktiv II</strong>: Hypothetical or polite—<em>Er fragt, wo sie wäre.</em> (He asks where she would be.)</li>
+                    <li><strong>Konjunktiv I</strong>: Reported speech (formal)—<em>Sie sagte, wo er sei.</em> (She said where he was.)</li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>4. Politeness Factor</h3>
+                <ul class="example-list">
+                    <li>Indirect questions soften directness:</li>
+                    <li><strong>Direct</strong>: <em>Kommst du?</em> (Are you coming?)</li>
+                    <li><strong>Indirect</strong>: <em>Er fragt, ob du kommst.</em> (He asks if you’re coming—less pushy.)</li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>5. Combining with Other Structures</h3>
+                <ul class="example-list">
+                    <li>With <em>dass</em>: <em>Ich weiß, dass er kommt, aber nicht, wann er kommt.</em> (I know that he’s coming, but not when.)</li>
+                    <li>With <em>weil</em>: <em>Sie fragt, warum er kommt, weil sie es wissen will.</em> (She asks why he’s coming because she wants to know.)</li>
+                </ul>
+            </div>
+        </section>
+
+     <!-- Exercises -->
+<section id="practice">
+    <h2>Creative Exercises with Multiple-Choice Options</h2>
+    <div class="subsection" id="exercise1">
+        <h3>Exercise 1: W-Fragen (Indirect)</h3>
+        <div class="examples">
+            <ol class="example-list">
+                <li>I know ___ you are.
+                    <select class="answer-select" data-correct="wo du bist">
+                        <option value="">Select</option>
+                        <option value="wo bist du">wo bist du</option>
+                        <option value="wo du bist nicht">wo du bist nicht</option>
+                        <option value="wo du bist">wo du bist</option>
+                    </select>
+                </li>
+                <li>She asks ___ we want to eat.
+                    <select class="answer-select" data-correct="was wir essen wollen">
+                        <option value="">Select</option>
+                        <option value="was wollen wir essen">was wollen wir essen</option>
+                        <option value="was wir essen wollen">was wir essen wollen</option>
+                        <option value="was wir wollen essen">was wir wollen essen</option>
+                    </select>
+                </li>
+                <li>He wonders ___ she is late.
+                    <select class="answer-select" data-correct="warum sie spät ist">
+                        <option value="">Select</option>
+                        <option value="warum spät sie ist">warum spät sie ist</option>
+                        <option value="warum sie spät ist">warum sie spät ist</option>
+                        <option value="warum ist sie spät">warum ist sie spät</option>
+                    </select>
+                </li>
+                <li>We know ___ the train arrives.
+                    <select class="answer-select" data-correct="wann der Zug ankommt">
+                        <option value="">Select</option>
+                        <option value="wann der Zug ankommt">wann der Zug ankommt</option>
+                        <option value="wann ankommt der Zug">wann ankommt der Zug</option>
+                        <option value="wann kommt der Zug">wann kommt der Zug</option>
+                    </select>
+                </li>
+                <li>I asked ___ he had done.
+                    <select class="answer-select" data-correct="was er gemacht hatte">
+                        <option value="">Select</option>
+                        <option value="was er hatte gemacht">was er hatte gemacht</option>
+                        <option value="was hatte er gemacht">was hatte er gemacht</option>
+                        <option value="was er gemacht hatte">was er gemacht hatte</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>wo du bist</em></li>
+                    <li><em>was wir essen wollen</em></li>
+                    <li><em>warum sie spät ist</em></li>
+                    <li><em>wann der Zug ankommt</em></li>
+                    <li><em>was er gemacht hatte</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="subsection" id="exercise2">
+        <h3>Exercise 2: Ja/Nein-Fragen with <em>Ob</em></h3>
+        <div class="examples">
+            <ol class="example-list">
+                <li>He knows ___ she’s coming.
+                    <select class="answer-select" data-correct="ob sie kommt">
+                        <option value="">Select</option>
+                        <option value="ob kommt sie">ob kommt sie</option>
+                        <option value="ob sie kommt">ob sie kommt</option>
+                        <option value="ob sie kommt nicht">ob sie kommt nicht</option>
+                    </select>
+                </li>
+                <li>I ask ___ you have time.
+                    <select class="answer-select" data-correct="ob du Zeit hast">
+                        <option value="">Select</option>
+                        <option value="ob du Zeit hast">ob du Zeit hast</option>
+                        <option value="ob Zeit du hast">ob Zeit du hast</option>
+                        <option value="ob hast du Zeit">ob hast du Zeit</option>
+                    </select>
+                </li>
+                <li>She wonders ___ he’s here.
+                    <select class="answer-select" data-correct="ob er hier ist">
+                        <option value="">Select</option>
+                        <option value="ob hier er ist">ob hier er ist</option>
+                        <option value="ob ist er hier">ob ist er hier</option>
+                        <option value="ob er hier ist">ob er hier ist</option>
+                    </select>
+                </li>
+                <li>We knew ___ they had won.
+                    <select class="answer-select" data-correct="ob sie gewonnen hatten">
+                        <option value="">Select</option>
+                        <option value="ob sie hatten gewonnen">ob sie hatten gewonnen</option>
+                        <option value="ob sie gewonnen hatten">ob sie gewonnen hatten</option>
+                        <option value="ob hatten sie gewonnen">ob hatten sie gewonnen</option>
+                    </select>
+                </li>
+                <li>He asks ___ I can help.
+                    <select class="answer-select" data-correct="ob ich helfen kann">
+                        <option value="">Select</option>
+                        <option value="ob ich kann helfen">ob ich kann helfen</option>
+                        <option value="ob kann ich helfen">ob kann ich helfen</option>
+                        <option value="ob ich helfen kann">ob ich helfen kann</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>ob sie kommt</em></li>
+                    <li><em>ob du Zeit hast</em></li>
+                    <li><em>ob er hier ist</em></li>
+                    <li><em>ob sie gewonnen hatten</em></li>
+                    <li><em>ob ich helfen kann</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="subsection" id="exercise3">
+        <h3>Exercise 3: W-Fragen vs. <em>Ob</em></h3>
+        <div class="examples">
+            <ol class="example-list">
+                <li>I know ___ he’s coming.
+                    <select class="answer-select" data-correct="ob er kommt">
+                        <option value="">Select</option>
+                        <option value="wann er kommt">wann er kommt</option>
+                        <option value="ob er kommt">ob er kommt</option>
+                        <option value="wo er kommt">wo er kommt</option>
+                    </select>
+                </li>
+                <li>She asks ___ you are.
+                    <select class="answer-select" data-correct="wo du bist">
+                        <option value="">Select</option>
+                        <option value="wie du bist">wie du bist</option>
+                        <option value="ob du bist">ob du bist</option>
+                        <option value="wo du bist">wo du bist</option>
+                    </select>
+                </li>
+                <li>He wonders ___ it’s raining.
+                    <select class="answer-select" data-correct="ob es regnet">
+                        <option value="">Select</option>
+                        <option value="ob es regnet">ob es regnet</option>
+                        <option value="wann es regnet">wann es regnet</option>
+                        <option value="warum es regnet">warum es regnet</option>
+                    </select>
+                </li>
+                <li>We know ___ the key is.
+                    <select class="answer-select" data-correct="wo der Schlüssel ist">
+                        <option value="">Select</option>
+                        <option value="wie der Schlüssel ist">wie der Schlüssel ist</option>
+                        <option value="wo der Schlüssel ist">wo der Schlüssel ist</option>
+                        <option value="ob der Schlüssel ist">ob der Schlüssel ist</option>
+                    </select>
+                </li>
+                <li>I asked ___ she could come.
+                    <select class="answer-select" data-correct="ob sie kommen könnte">
+                        <option value="">Select</option>
+                        <option value="wo sie kommen könnte">wo sie kommen könnte</option>
+                        <option value="wann sie kommen könnte">wann sie kommen könnte</option>
+                        <option value="ob sie kommen könnte">ob sie kommen könnte</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>ob er kommt</em></li>
+                    <li><em>wo du bist</em></li>
+                    <li><em>ob es regnet</em></li>
+                    <li><em>wo der Schlüssel ist</em></li>
+                    <li><em>ob sie kommen könnte</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="subsection" id="exercise4">
+        <h3>Exercise 4: Mixed Indirect Story</h3>
+        <p>Fill in with the correct indirect question.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Ich weiß ___ du bist.
+                    <select class="answer-select" data-correct="wo du bist">
+                        <option value="">Select</option>
+                        <option value="wo du bist nicht">wo du bist nicht</option>
+                        <option value="wo du bist">wo du bist</option>
+                        <option value="wo bist du">wo bist du</option>
+                    </select>
+                </li>
+                <li>Sie fragt ___ wir Zeit haben.
+                    <select class="answer-select" data-correct="ob wir Zeit haben">
+                        <option value="">Select</option>
+                        <option value="ob haben wir Zeit">ob haben wir Zeit</option>
+                        <option value="ob Zeit wir haben">ob Zeit wir haben</option>
+                        <option value="ob wir Zeit haben">ob wir Zeit haben</option>
+                    </select>
+                </li>
+                <li>Er sagt ___ der Bus kommt.
+                    <select class="answer-select" data-correct="wann der Bus kommt">
+                        <option value="">Select</option>
+                        <option value="wann der Bus kommt">wann der Bus kommt</option>
+                        <option value="wann kommt der Bus">wann kommt der Bus</option>
+                        <option value="wann der Bus kommt nicht">wann der Bus kommt nicht</option>
+                    </select>
+                </li>
+                <li>Wir wissen ___ es regnet.
+                    <select class="answer-select" data-correct="ob es regnet">
+                        <option value="">Select</option>
+                        <option value="ob es nicht regnet">ob es nicht regnet</option>
+                        <option value="ob es regnet">ob es regnet</option>
+                        <option value="ob regnet es">ob regnet es</option>
+                    </select>
+                </li>
+                <li>Ich frage mich ___ er das gemacht hat.
+                    <select class="answer-select" data-correct="ob er das gemacht hat">
+                        <option value="">Select</option>
+                        <option value="ob er das hat gemacht">ob er das hat gemacht</option>
+                        <option value="ob hat er das gemacht">ob hat er das gemacht</option>
+                        <option value="ob er das gemacht hat">ob er das gemacht hat</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>wo du bist</em></li>
+                    <li><em>ob wir Zeit haben</em></li>
+                    <li><em- wann der Bus kommt</em></li>
+                    <li><em>ob es regnet</em></li>
+                    <li><em>ob er das gemacht hat</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Tips -->
+        <section id="tips">
+            <h2>Deep Tips to Master Indirekte Fragesätze</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Verb Last</strong>: Always push the verb to the end—<em>wo du bist</em>, <em>ob er kommt</em>.</li>
+                    <li><strong>W vs. Ob</strong>: W-Fragen for specifics (<em>wo, was</em>), <em>ob</em> for yes/no—match the intent.</li>
+                    <li><strong>Describe Context</strong>: Is it a fact (<em>Ich weiß, wo…</em>) or a wonder (<em>Ich frage mich, ob…</em>)?</li>
+                    <li><strong>Daily Use</strong>: Say <em>Ich weiß, wo das ist</em> or <em>Ich frage, ob du kommst</em>—make it habit.</li>
+                    <li><strong>Compare</strong>: Direct (<em>Wann kommst du?</em>) vs. Indirect (<em>Er fragt, wann du kommst.</em>)—feel the shift.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Final Thoughts -->
+        <section id="final-thoughts">
+            <h2>You’re Ready!</h2>
+            <p>
+                This deep guide covers indirect W-Fragen and Ja/Nein-Fragen with <em>ob</em>—structures, descriptions, examples, and exercises. You’re ready to report questions like a native! Next, you could explore reported speech with Konjunktiv I or mix this with <em>werden</em>—your choice!
+            </p>
+        </section>
+
+        <!-- Resources -->
+        <section id="resources">
+            <h2>Resources for Extra Practice</h2>
+            <div class="see-also-links">
+                <a href="https://www.goethe.de/de/spr/ueb.html" class="see-also-rect">
+                    Goethe A1/A2 Wortliste<br>Indirect questions in context.<br><br>
+                    <button class="resource-btn">Visit Goethe Wortliste</button>
+                </a>
+                <a href="https://www.youtube.com/c/easygerman" class="see-also-rect">
+                    YouTube – EASY German<br>Hear indirect questions in talk.<br><br>
+                    <button class="resource-btn">Visit EASY German</button>
+                </a>
+                <a href="https://www.schubert-verlag.de/" class="see-also-rect">
+                    Schubert Verlag<br>Free indirect question exercises.<br><br>
+                    <button class="resource-btn">Visit Schubert Verlag</button>
+                </a>
+            </div>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="werden.html" class="see-also-rect">German Werden</a>
+                <a href="adjend.html" class="see-also-rect">Adjective Endings</a>
+                <a href="wenn.html" class="see-also-rect">German Wenn</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="konjunktiv.html" class="next-btn">Next: Konjunktiv I →</a>
+        </div>
+    </main>
+
+   <!-- JavaScript -->
+  <script>
+    // Dark Mode Toggle
+    const modeToggle = document.getElementById('mode-toggle');
+    modeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
+
+    // Load dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+    }
+
+    // Toggle Answers
+    document.querySelectorAll('.toggle-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const answersDiv = button.nextElementSibling;
+            if (button.classList.contains('show-answers')) {
+                answersDiv.classList.toggle('hidden');
+            } else if (button.classList.contains('check-answers')) {
+                const selects = button.parentElement.querySelectorAll('.answer-select');
+                selects.forEach(select => {
+                    const selectedValue = select.value;
+                    const correctValue = select.getAttribute('data-correct');
+                    if (selectedValue === correctValue) {
+                        select.style.backgroundColor = '#d4edda'; // Green for correct
+                    } else {
+                        select.style.backgroundColor = '#f8d7da'; // Red for incorrect
+                    }
+                });
+            }
+        });
+    });
+</script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

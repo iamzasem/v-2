@@ -1,0 +1,1030 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Comparative and Superlative Before Nouns in German | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/komp-super.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+               <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="b1-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>Comparative and Superlative Before Nouns in German</h1>
+            <p>
+                A guide to using comparative (-er) and superlative (-st/-est) adjectives before nouns, with correct endings for gender, number, and case, including examples, exercises, and resources.
+            </p>
+        </section>
+
+        <!-- Understanding -->
+        <section id="understanding">
+            <h2>What Are Comparative and Superlative Before Nouns?</h2>
+            <p>These forms compare (more/less) or indicate extremes (most/least) for nouns, requiring adjective endings that match the noun’s gender, number, and case.</p>
+            <div class="subsection">
+                <h3>Key Points</h3>
+                <ul class="example-list">
+                    <li><strong>Comparative</strong>: Add -er (e.g., schneller - faster).</li>
+                    <li><strong>Superlative</strong>: Add -st/-est (e.g., schnellst- - fastest).</li>
+                    <li><strong>Endings</strong>: Vary by article and case (e.g., -e, -es, -en).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Differences -->
+        <section id="differences">
+            <h2>Structure and Formation</h2>
+            <div class="subsection">
+                <h3>Formation</h3>
+                <p>Article + adjective (comparative/superlative) + noun, with endings adjusted for case.</p>
+            </div>
+        </section>
+
+        <!-- Uses -->
+        <section id="uses">
+            <h2>Uses of Comparative and Superlative</h2>
+            <div class="subsection">
+                <h3>Basic: Comparison</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Ein größerer Tisch</em> (A bigger table)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Intermediate: Extreme Quality</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Die kleinste Katze</em> (The smallest cat)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Advanced: Description</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Ein jüngerer Bruder</em> (A younger brother)</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Common Examples -->
+        <section id="examples">
+            <h2>List of 25 Common Examples</h2>
+            <div class="table-container">
+                <table>
+                    <tr><th>Sentence</th><th>Translation</th></tr>
+                    <tr><td><em>Ein höherer Baum</em></td><td>A taller tree</td></tr>
+                    <tr><td><em>Die schnellste Zeit</em></td><td>The fastest time</td></tr>
+                    <tr><td><em>Ein kleineres Haus</em></td><td>A smaller house</td></tr>
+                    <tr><td><em>Der älteste Freund</em></td><td>The oldest friend</td></tr>
+                    <tr><td><em>Eine schönere Blume</em></td><td>A prettier flower</td></tr>
+                    <tr><td><em>Das größte Auto</em></td><td>The biggest car</td></tr>
+                    <tr><td><em>Ein leiseres Lied</em></td><td>A quieter song</td></tr>
+                    <tr><td><em>Die jüngste Schwester</em></td><td>The youngest sister</td></tr>
+                    <tr><td><em>Ein schwererer Stein</em></td><td>A heavier stone</td></tr>
+                    <tr><td><em>Der kälteste Tag</em></td><td>The coldest day</td></tr>
+                    <tr><td><em>Eine breitere Straße</em></td><td>A wider street</td></tr>
+                    <tr><td><em>Das hellste Licht</em></td><td>The brightest light</td></tr>
+                    <tr><td><em>Ein neuerer Mantel</em></td><td>A newer coat</td></tr>
+                    <tr><td><em>Die stärkste Hand</em></td><td>The strongest hand</td></tr>
+                    <tr><td><em>Ein näherer Park</em></td><td>A closer park</td></tr>
+                    <tr><td><em>Der tiefste See</em></td><td>The deepest lake</td></tr>
+                    <tr><td><em>Eine weichere Decke</em></td><td>A softer blanket</td></tr>
+                    <tr><td><em>Das lauteste Geräusch</em></td><td>The loudest noise</td></tr>
+                    <tr><td><em>Ein älterer Mann</em></td><td>An older man</td></tr>
+                    <tr><td><em>Die langsamste Uhr</em></td><td>The slowest clock</td></tr>
+                    <tr><td><em>Ein billigeres Buch</em></td><td>A cheaper book</td></tr>
+                    <tr><td><em>Der höchste Berg</em></td><td>The highest mountain</td></tr>
+                    <tr><td><em>Eine kürzere Reise</em></td><td>A shorter trip</td></tr>
+                    <tr><td><em>Das beste Essen</em></td><td>The best food</td></tr>
+                    <tr><td><em>Ein klügerer Schüler</em></td><td>A smarter student</td></tr>
+                </table>
+            </div>
+        </section>
+
+      <!-- Exercises -->
+<section id="practice">
+    <h2>Exercises to Practice Comparative and Superlative</h2>
+    <div class="subsection" id="exercise1">
+        <h3>Exercise 1: Comparative Before Nouns</h3>
+        <p>Select the correct comparative form.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Ein ___ Hund (schnell)
+                    <select class="answer-select" data-correct="Ein schneller Hund">
+                        <option value="">Select</option>
+                        <option value="Ein schnellstes Hund">schnellstes</option>
+                        <option value="Ein schnellerer Hund">schnellerer</option>
+                        <option value="Ein schneller Hund">schneller</option>
+                        <option value="Ein schnell Hund">schnell</option>
+                        <option value="Ein schnellste Hund">schnellste</option>
+                    </select>
+                </li>
+                <li>Eine ___ Tasche (klein)
+                    <select class="answer-select" data-correct="Eine kleinere Tasche">
+                        <option value="">Select</option>
+                        <option value="Eine klein Tasche">klein</option>
+                        <option value="Eine kleineren Tasche">kleineren</option>
+                        <option value="Eine kleinere Tasche">kleinere</option>
+                        <option value="Eine kleineres Tasche">kleineres</option>
+                        <option value="Eine kleinste Tasche">kleinste</option>
+                    </select>
+                </li>
+                <li>Ein ___ Stuhl (hoch)
+                    <select class="answer-select" data-correct="Ein höherer Stuhl">
+                        <option value="">Select</option>
+                        <option value="Ein höheres Stuhl">höheres</option>
+                        <option value="Ein höherer Stuhl">höherer</option>
+                        <option value="Ein hoch Stuhl">hoch</option>
+                        <option value="Ein höchste Stuhl">höchste</option>
+                        <option value="Ein höher Stuhl">höher</option>
+                    </select>
+                </li>
+                <li>Das ___ Fenster (groß)
+                    <select class="answer-select" data-correct="Das größere Fenster">
+                        <option value="">Select</option>
+                        <option value="Das größeren Fenster">größeren</option>
+                        <option value="Das groß Fenster">groß</option>
+                        <option value="Das größeres Fenster">größeres</option>
+                        <option value="Das größte Fenster">größte</option>
+                        <option value="Das größere Fenster">größere</option>
+                    </select>
+                </li>
+                <li>Eine ___ Jacke (warm)
+                    <select class="answer-select" data-correct="Eine wärmere Jacke">
+                        <option value="">Select</option>
+                        <option value="Eine wärmeres Jacke">wärmeres</option>
+                        <option value="Eine wärmste Jacke">wärmste</option>
+                        <option value="Eine warm Jacke">warm</option>
+                        <option value="Eine wärmere Jacke">wärmere</option>
+                        <option value="Eine wärmeren Jacke">wärmeren</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Ein schneller Hund</em></li>
+                    <li><em>Eine kleinere Tasche</em></li>
+                    <li><em>Ein höherer Stuhl</em></li>
+                    <li><em>Das größere Fenster</em></li>
+                    <li><em>Eine wärmere Jacke</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise2">
+        <h3>Exercise 2: Superlative Before Nouns</h3>
+        <p>Choose the correct superlative form.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Der ___ Baum (hoch)
+                    <select class="answer-select" data-correct="Der höchste Baum">
+                        <option value="">Select</option>
+                        <option value="Der hoch Baum">hoch</option>
+                        <option value="Der höheres Baum">höheres</option>
+                        <option value="Der höchster Baum">höchster</option>
+                        <option value="Der höchste Baum">höchste</option>
+                        <option value="Der höher Baum">höher</option>
+                    </select>
+                </li>
+                <li>Die ___ Zeit (schnell)
+                    <select class="answer-select" data-correct="Die schnellste Zeit">
+                        <option value="">Select</option>
+                        <option value="Die schnelleres Zeit">schnelleres</option>
+                        <option value="Die schnellste Zeit">schnellste</option>
+                        <option value="Die schnellstes Zeit">schnellstes</option>
+                        <option value="Die schnell Zeit">schnell</option>
+                        <option value="Die schneller Zeit">schneller</option>
+                    </select>
+                </li>
+                <li>Das ___ Haus (klein)
+                    <select class="answer-select" data-correct="Das kleinste Haus">
+                        <option value="">Select</option>
+                        <option value="Das kleineres Haus">kleineres</option>
+                        <option value="Das klein Haus">klein</option>
+                        <option value="Das kleinstes Haus">kleinstes</option>
+                        <option value="Das kleinste Haus">kleinste</option>
+                        <option value="Das kleiner Haus">kleiner</option>
+                    </select>
+                </li>
+                <li>Eine ___ Blume (schön)
+                    <select class="answer-select" data-correct="Eine schönste Blume">
+                        <option value="">Select</option>
+                        <option value="Eine schönstes Blume">schönstes</option>
+                        <option value="Eine schön Blume">schön</option>
+                        <option value="Eine schönste Blume">schönste</option>
+                        <option value="Eine schöner Blume">schöner</option>
+                        <option value="Eine schöneres Blume">schöneres</option>
+                    </select>
+                </li>
+                <li>Der ___ Freund (alt)
+                    <select class="answer-select" data-correct="Der älteste Freund">
+                        <option value="">Select</option>
+                        <option value="Der älterer Freund">älterer</option>
+                        <option value="Der älteres Freund">älteres</option>
+                        <option value="Der alt Freund">alt</option>
+                        <option value="Der älter Freund">älter</option>
+                        <option value="Der älteste Freund">älteste</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Der höchste Baum</em></li>
+                    <li><em>Die schnellste Zeit</em></li>
+                    <li><em>Das kleinste Haus</em></li>
+                    <li><em>Eine schönste Blume</em></li>
+                    <li><em>Der älteste Freund</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise3">
+        <h3>Exercise 3: Mixed Comparative and Superlative</h3>
+        <p>Choose the correct form.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Ein ___ Tisch (groß)
+                    <select class="answer-select" data-correct="Ein größerer Tisch">
+                        <option value="">Select</option>
+                        <option value="Ein größte Tisch">größte</option>
+                        <option value="Ein größerer Tisch">größerer</option>
+                        <option value="Ein groß Tisch">groß</option>
+                        <option value="Ein größter Tisch">größter</option>
+                        <option value="Ein größeres Tisch">größeres</option>
+                    </select>
+                </li>
+                <li>Die ___ Katze (klein)
+                    <select class="answer-select" data-correct="Die kleinste Katze">
+                        <option value="">Select</option>
+                        <option value="Die kleiner Katze">kleiner</option>
+                        <option value="Die kleinstes Katze">kleinstes</option>
+                        <option value="Die klein Katze">klein</option>
+                        <option value="Die kleinste Katze">kleinste</option>
+                        <option value="Die kleineres Katze">kleineres</option>
+                    </select>
+                </li>
+                <li>Das ___ Lied (leise)
+                    <select class="answer-select" data-correct="Das leisere Lied">
+                        <option value="">Select</option>
+                        <option value="Das leise Lied">leise</option>
+                        <option value="Das leisestes Lied">leisestes</option>
+                        <option value="Das leisere Lied">leisere</option>
+                        <option value="Das leiseres Lied">leiseres</option>
+                        <option value="Das leiseste Lied">leiseste</option>
+                    </select>
+                </li>
+                <li>Eine ___ Schwester (jung)
+                    <select class="answer-select" data-correct="Eine jüngere Schwester">
+                        <option value="">Select</option>
+                        <option value="Eine jüngstes Schwester">jüngstes</option>
+                        <option value="Eine jung Schwester">jung</option>
+                        <option value="Eine jüngere Schwester">jüngere</option>
+                        <option value="Eine jüngste Schwester">jüngste</option>
+                        <option value="Eine jüngeres Schwester">jüngeres</option>
+                    </select>
+                </li>
+                <li>Der ___ Stein (schwer)
+                    <select class="answer-select" data-correct="Der schwerere Stein">
+                        <option value="">Select</option>
+                        <option value="Der schwerster Stein">schwerster</option>
+                        <option value="Der schwereres Stein">schwereres</option>
+                        <option value="Der schwer Stein">schwer</option>
+                        <option value="Der schwerste Stein">schwerste</option>
+                        <option value="Der schwerere Stein">schwerere</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Ein größerer Tisch</em></li>
+                    <li><em>Die kleinste Katze</em></li>
+                    <li><em>Das leisere Lied</em></li>
+                    <li><em>Eine jüngere Schwester</em></li>
+                    <li><em>Der schwerere Stein</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise4">
+        <h3>Exercise 4: Translate</h3>
+        <p>Choose the correct translation.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>A taller tree
+                    <select class="answer-select" data-correct="Ein höherer Baum">
+                        <option value="">Select</option>
+                        <option value="Ein hoher Baum">Ein hoher Baum</option>
+                        <option value="Ein höchstes Baum">Ein höchstes Baum</option>
+                        <option value="Ein höherer Baum">Ein höherer Baum</option>
+                        <option value="Ein höchster Baum">Ein höchster Baum</option>
+                        <option value="Ein höheres Baum">Ein höheres Baum</option>
+                    </select>
+                </li>
+                <li>The smallest house
+                    <select class="answer-select" data-correct="Das kleinste Haus">
+                        <option value="">Select</option>
+                        <option value="Das kleineres Haus">Das kleineres Haus</option>
+                        <option value="Das klein Haus">Das klein Haus</option>
+                        <option value="Das kleinste Haus">Das kleinste Haus</option>
+                        <option value="Das kleiner Haus">Das kleiner Haus</option>
+                        <option value="Das kleines Haus">Das kleines Haus</option>
+                    </select>
+                </li>
+                <li>A prettier flower
+                    <select class="answer-select" data-correct="Eine schönere Blume">
+                        <option value="">Select</option>
+                        <option value="Eine schöneres Blume">Eine schöneres Blume</option>
+                        <option value="Eine schönste Blume">Eine schönste Blume</option>
+                        <option value="Eine schön Blume">Eine schön Blume</option>
+                        <option value="Eine schönere Blume">Eine schönere Blume</option>
+                        <option value="Eine schönstes Blume">Eine schönstes Blume</option>
+                    </select>
+                </li>
+                <li>The fastest car
+                    <select class="answer-select" data-correct="Das schnellste Auto">
+                        <option value="">Select</option>
+                        <option value="Das schnelleres Auto">Das schnelleres Auto</option>
+                        <option value="Das schnell Auto">Das schnell Auto</option>
+                        <option value="Das schnellste Auto">Das schnellste Auto</option>
+                        <option value="Das schneller Auto">Das schneller Auto</option>
+                        <option value="Das schnelles Auto">Das schnelles Auto</option>
+                    </select>
+                </li>
+                <li>A younger brother
+                    <select class="answer-select" data-correct="Ein jüngerer Bruder">
+                        <option value="">Select</option>
+                        <option value="Ein jüngstes Bruder">Ein jüngstes Bruder</option>
+                        <option value="Ein jüngerer Bruder">Ein jüngerer Bruder</option>
+                        <option value="Ein junger Bruder">Ein junger Bruder</option>
+                        <option value="Ein jüngste Bruder">Ein jüngste Bruder</option>
+                        <option value="Ein jüngeres Bruder">Ein jüngeres Bruder</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Ein höherer Baum</em></li>
+                    <li><em>Das kleinste Haus</em></li>
+                    <li><em>Eine schönere Blume</em></li>
+                    <li><em>Das schnellste Auto</em></li>
+                    <li><em>Ein jüngerer Bruder</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise5">
+        <h3>Exercise 5: Correct the Mistake</h3>
+        <p>Choose the corrected sentence.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li><em>Ein groß Tisch</em>
+                    <select class="answer-select" data-correct="Ein größerer Tisch">
+                        <option value="">Select</option>
+                        <option value="Ein großes Tisch">Ein großes Tisch</option>
+                        <option value="Ein größte Tisch">Ein größte Tisch</option>
+                        <option value="Ein großer Tisch">Ein großer Tisch</option>
+                        <option value="Ein größerer Tisch">Ein größerer Tisch</option>
+                        <option value="Ein größeres Tisch">Ein größeres Tisch</option>
+                    </select>
+                </li>
+                <li><em>Die schnell Zeit</em>
+                    <select class="answer-select" data-correct="Die schnellste Zeit">
+                        <option value="">Select</option>
+                        <option value="Die schnelleres Zeit">Die schnelleres Zeit</option>
+                        <option value="Die schnellstes Zeit">Die schnellstes Zeit</option>
+                        <option value="Die schnelle Zeit">Die schnelle Zeit</option>
+                        <option value="Die schneller Zeit">Die schneller Zeit</option>
+                        <option value="Die schnellste Zeit">Die schnellste Zeit</option>
+                    </select>
+                </li>
+                <li><em>Das klein Haus</em>
+                    <select class="answer-select" data-correct="Das kleinste Haus">
+                        <option value="">Select</option>
+                        <option value="Das kleineres Haus">Das kleineres Haus</option>
+                        <option value="Das kleinste Haus">Das kleinste Haus</option>
+                        <option value="Das kleiner Haus">Das kleiner Haus</option>
+                        <option value="Das kleinstes Haus">Das kleinstes Haus</option>
+                        <option value="Das kleines Haus">Das kleines Haus</option>
+                    </select>
+                </li>
+                <li><em>Eine schön Blume</em>
+                    <select class="answer-select" data-correct="Eine schönere Blume">
+                        <option value="">Select</option>
+                        <option value="Eine schönstes Blume">Eine schönstes Blume</option>
+                        <option value="Eine schönere Blume">Eine schönere Blume</option>
+                        <option value="Eine schöne Blume">Eine schöne Blume</option>
+                        <option value="Eine schöneres Blume">Eine schöneres Blume</option>
+                        <option value="Eine schönste Blume">Eine schönste Blume</option>
+                    </select>
+                </li>
+                <li><em>Der alt Freund</em>
+                    <select class="answer-select" data-correct="Der älteste Freund">
+                        <option value="">Select</option>
+                        <option value="Der ältestes Freund">Der ältestes Freund</option>
+                        <option value="Der alte Freund">Der alte Freund</option>
+                        <option value="Der älteres Freund">Der älteres Freund</option>
+                        <option value="Der älteste Freund">Der älteste Freund</option>
+                        <option value="Der älter Freund">Der älter Freund</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Ein größerer Tisch</em></li>
+                    <li><em>Die schnellste Zeit</em></li>
+                    <li><em>Das kleinste Haus</em></li>
+                    <li><em>Eine schönere Blume</em></li>
+                    <li><em>Der älteste Freund</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Tips -->
+        <section id="tips">
+            <h2>Tips to Master Comparative and Superlative</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Learn Endings</strong>: Match endings to gender, case, and article (e.g., -er, -e).</li>
+                    <li><strong>Umlaut Check</strong>: Add umlauts where needed (e.g., alt → älter).</li>
+                    <li><strong>Article Matters</strong>: Use ein for indefinite, der for definite.</li>
+                    <li><strong>Practice Pairs</strong>: Compare kleiner vs. kleinste with nouns.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Resources -->
+        <section id="resources">
+            <h2>Resources for Extra Practice</h2>
+            <div class="resource-links">
+                <div class="resource-card">
+                    <p><strong>YouTube - Learn German with Anja</strong><br>Videos on comparative forms.</p>
+                    <a href="https://www.youtube.com/@LearnGermanwithAnja" class="resource-btn">Visit Learn German with Anja</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>Deutsch Lernen (Lingolia)</strong><br>Lessons on degrees of comparison.</p>
+                    <a href="https://deutsch.lingolia.com/en/grammar/adjectives/degrees-of-comparison" class="resource-btn">Visit Lingolia</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>YouTube - Easy German</strong><br>Real-life examples in context.</p>
+                    <a href="https://www.youtube.com/@EasyGerman" class="resource-btn">Visit Easy German</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="verben-praep.html" class="see-also-rect">Verbs with Prepositions</a>
+                <a href="pronomen-praep.html" class="see-also-rect">Pronouns with Prepositions</a>
+                <a href="konj2.html" class="see-also-rect">Konjunktiv II</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="pronomen-praep.html" class="next-btn">Next: Pronouns with Prepositions →</a>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark Mode Toggle
+        const modeToggle = document.getElementById('mode-toggle');
+        modeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Load dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Toggle Answers
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const answersDiv = button.nextElementSibling;
+                if (button.classList.contains('show-answers')) {
+                    answersDiv.classList.toggle('hidden');
+                } else if (button.classList.contains('check-answers')) {
+                    const selects = button.parentElement.querySelectorAll('.answer-select');
+                    selects.forEach(select => {
+                        const selectedValue = select.value;
+                        const correctValue = select.getAttribute('data-correct');
+                        if (selectedValue === correctValue) {
+                            select.style.backgroundColor = '#d4edda'; // Green for correct
+                        } else {
+                            select.style.backgroundColor = '#f8d7da'; // Red for incorrect
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

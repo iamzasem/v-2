@@ -1,0 +1,948 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Partizip als Adjektiv | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/konj2.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+               <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="b1-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>Partizip als Adjektiv (Participles as Adjectives)</h1>
+            <p>
+                A guide to using present (Partizip I) and past (Partizip II) participles as adjectives in German, with forms, examples, exercises, and resources.
+            </p>
+        </section>
+
+        <!-- Understanding -->
+        <section id="understanding">
+            <h2>Understanding Participles as Adjectives</h2>
+            <div class="subsection">
+                <h3>Definition</h3>
+                <p>Participles (Partizip I and II) describe nouns like adjectives, adding action or state details, e.g., laufend (running), geschrieben (written).</p>
+            </div>
+            <div class="subsection">
+                <h3>Formation</h3>
+                <p>- <strong>Partizip I</strong>: Verb stem + -end (e.g., laufen → laufend).<br>- <strong>Partizip II</strong>: Regular: ge- + stem + -t/et (e.g., machen → gemacht); Irregular: ge- + unique form (e.g., sehen → gesehen).</p>
+                <p><strong>Endings</strong>: Declined like adjectives (e.g., der laufende Hund).</p>
+            </div>
+            <div class="subsection">
+                <h3>Rules</h3>
+                <p>- Before noun.<br>- Matches gender, number, case.<br>- Partizip I: Active (bellender Hund).<br>- Partizip II: Passive/State (gebautes Haus).</p>
+            </div>
+            <div class="subsection">
+                <h3>Declension Table (e.g., laufend with der)</h3>
+                <table>
+                    <tr><th>Case</th><th>Masculine</th><th>Feminine</th><th>Neuter</th><th>Plural</th></tr>
+                    <tr><td>Nominative</td><td>der laufende</td><td>die laufende</td><td>das laufende</td><td>die laufenden</td></tr>
+                    <tr><td>Accusative</td><td>den laufenden</td><td>die laufende</td><td>das laufende</td><td>die laufenden</td></tr>
+                    <tr><td>Dative</td><td>dem laufenden</td><td>der laufenden</td><td>dem laufenden</td><td>den laufenden</td></tr>
+                    <tr><td>Genitive</td><td>des laufenden</td><td>der laufenden</td><td>des laufenden</td><td>der laufenden</td></tr>
+                </table>
+            </div>
+            <div class="subsection">
+                <h3>Uses</h3>
+                <p>1. Action: Ein singendes Mädchen.<br>2. State: Ein geöffnetes Fenster.<br>3. Characteristics: Ein lachender Mann.<br>4. Temporary: Ein schlafendes Baby.</p>
+            </div>
+        </section>
+
+        <!-- Examples -->
+        <section id="examples">
+            <h2>Examples: Participles as Adjectives (25 Total)</h2>
+            <div class="table-container">
+                <table>
+                    <tr><th>Sentence</th><th>Translation</th></tr>
+                    <!-- Partizip I -->
+                    <tr><td><em>Ein laufender Hund bellt laut im Park.</em></td><td>A running dog barks loudly in the park.</td></tr>
+                    <tr><td><em>Die singende Frau steht auf der Bühne.</em></td><td>The singing woman stands on the stage.</td></tr>
+                    <tr><td><em>Das spielende Kind lacht fröhlich draußen.</em></td><td>The playing child laughs happily outside.</td></tr>
+                    <tr><td><em>Die tanzenden Paare drehen sich schnell.</em></td><td>The dancing couples turn quickly.</td></tr>
+                    <tr><td><em>Ein schreibender Junge sitzt am Tisch.</em></td><td>A writing boy sits at the table.</td></tr>
+                    <tr><td><em>Eine lachende Freundin ruft mich an.</em></td><td>A laughing friend calls me.</td></tr>
+                    <tr><td><em>Das bellende Tier weckt mich morgens.</em></td><td>The barking animal wakes me in the morning.</td></tr>
+                    <tr><td><em>Die arbeitenden Männer bauen ein Haus.</em></td><td>The working men build a house.</td></tr>
+                    <tr><td><em>Ein schreiendes Baby liegt im Bett.</em></td><td>A screaming baby lies in bed.</td></tr>
+                    <tr><td><em>Die fliegenden Vögel sind hoch am Himmel.</em></td><td>The flying birds are high in the sky.</td></tr>
+                    <!-- Partizip II -->
+                    <tr><td><em>Ein geschriebenes Buch liegt auf dem Tisch.</em></td><td>A written book lies on the table.</td></tr>
+                    <tr><td><em>Die geöffnete Tür führt zum Garten.</em></td><td>The opened door leads to the garden.</td></tr>
+                    <tr><td><em>Das gebaute Haus steht am Fluss.</em></td><td>The built house stands by the river.</td></tr>
+                    <tr><td><em>Die gewaschenen Kleider hängen draußen.</em></td><td>The washed clothes hang outside.</td></tr>
+                    <tr><td><em>Ein gesehener Film macht mich glücklich.</em></td><td>A seen movie makes me happy.</td></tr>
+                    <tr><td><em>Eine verlorene Tasche liegt im Park.</em></td><td>A lost bag lies in the park.</td></tr>
+                    <tr><td><em>Das gekochte Essen riecht sehr gut.</em></td><td>The cooked food smells very good.</td></tr>
+                    <tr><td><em>Die gemalten Bilder hängen an der Wand.</em></td><td>The painted pictures hang on the wall.</td></tr>
+                    <tr><td><em>Ein gefundener Schlüssel hilft mir heute.</em></td><td>A found key helps me today.</td></tr>
+                    <tr><td><em>Die getrunkenen Gläser stehen leer da.</em></td><td>The drunk glasses stand empty.</td></tr>
+                    <!-- Mixed -->
+                    <tr><td><em>Ein wartender Mann liest eine Zeitung.</em></td><td>A waiting man reads a newspaper.</td></tr>
+                    <tr><td><em>Die geschlossene Tür bleibt heute zu.</em></td><td>The closed door stays shut today.</td></tr>
+                    <tr><td><em>Das rennende Pferd läuft über das Feld.</em></td><td>The running horse runs across the field.</td></tr>
+                    <tr><td><em>Eine gekaufte Jacke passt mir gut.</em></td><td>A bought jacket fits me well.</td></tr>
+                    <tr><td><em>Die schlafenden Kinder träumen schön.</em></td><td>The sleeping children dream nicely.</td></tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Exercises -->
+        <section id="practice">
+            <h2>Exercises to Practice</h2>
+            <div class="subsection" id="exercise1">
+                <h3>Exercise 1: Identify Partizip I or II</h3>
+                <p>Select the correct participle type.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Ein laufender Hund</em>  
+                            <select class="answer-select" data-correct="Partizip I">
+                                <option value="">Select</option>
+                                <option value="Partizip I">Partizip I</option>
+                                <option value="Partizip II">Partizip II</option>
+                            </select>
+                        </li>
+                        <li><em>Ein geschriebenes Buch</em>  
+                            <select class="answer-select" data-correct="Partizip II">
+                                <option value="">Select</option>
+                                <option value="Partizip I">Partizip I</option>
+                                <option value="Partizip II">Partizip II</option>
+                            </select>
+                        </li>
+                        <li><em>Die singenden Kinder</em>  
+                            <select class="answer-select" data-correct="Partizip I">
+                                <option value="">Select</option>
+                                <option value="Partizip I">Partizip I</option>
+                                <option value="Partizip II">Partizip II</option>
+                            </select>
+                        </li>
+                        <li><em>Das geöffnete Fenster</em>  
+                            <select class="answer-select" data-correct="Partizip II">
+                                <option value="">Select</option>
+                                <option value="Partizip I">Partizip I</option>
+                                <option value="Partizip II">Partizip II</option>
+                            </select>
+                        </li>
+                        <li><em>Ein arbeitender Mann</em>  
+                            <select class="answer-select" data-correct="Partizip I">
+                                <option value="">Select</option>
+                                <option value="Partizip I">Partizip I</option>
+                                <option value="Partizip II">Partizip II</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Partizip I</em></li>
+                            <li><em>Partizip II</em></li>
+                            <li><em>Partizip I</em></li>
+                            <li><em>Partizip II</em></li>
+                            <li><em>Partizip I</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise2">
+                <h3>Exercise 2: Form the Participle</h3>
+                <p>Choose the correct participle form.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>lachen</em> → ___ Mann (laughing man)  
+                            <select class="answer-select" data-correct="Ein lachender Mann">
+                                <option value="">Select</option>
+                                <option value="Ein lachender Mann">lachend</option>
+                                <option value="Ein gelachter Mann">gelacht</option>
+                            </select>
+                        </li>
+                        <li><em>bauen</em> → ___ Haus (built house)  
+                            <select class="answer-select" data-correct="Ein gebautes Haus">
+                                <option value="">Select</option>
+                                <option value="Ein bauendes Haus">bauend</option>
+                                <option value="Ein gebautes Haus">gebaut</option>
+                            </select>
+                        </li>
+                        <li><em>schreiben</em> → ___ Frau (writing woman)  
+                            <select class="answer-select" data-correct="Eine schreibende Frau">
+                                <option value="">Select</option>
+                                <option value="Eine schreibende Frau">schreibend</option>
+                                <option value="Eine geschriebene Frau">geschrieben</option>
+                            </select>
+                        </li>
+                        <li><em>sehen</em> → ___ Film (seen movie)  
+                            <select class="answer-select" data-correct="Ein gesehener Film">
+                                <option value="">Select</option>
+                                <option value="Ein sehender Film">sehend</option>
+                                <option value="Ein gesehener Film">gesehen</option>
+                            </select>
+                        </li>
+                        <li><em>spielen</em> → ___ Kinder (playing children)  
+                            <select class="answer-select" data-correct="Die spielenden Kinder">
+                                <option value="">Select</option>
+                                <option value="Die spielenden Kinder">spielend</option>
+                                <option value="Die gespielten Kinder">gespielt</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Ein lachender Mann</em></li>
+                            <li><em>Ein gebautes Haus</em></li>
+                            <li><em>Eine schreibende Frau</em></li>
+                            <li><em>Ein gesehener Film</em></li>
+                            <li><em>Die spielenden Kinder</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise3">
+                <h3>Exercise 3: Add the Correct Ending</h3>
+                <p>Choose the correct adjective ending.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Ein ___ Hund bellt.</em> (laufend, masculine nominative)  
+                            <select class="answer-select" data-correct="Ein laufender Hund bellt.">
+                                <option value="">Select</option>
+                                <option value="Ein laufender Hund bellt.">laufender</option>
+                                <option value="Ein laufende Hund bellt.">laufende</option>
+                                <option value="Ein laufendes Hund bellt.">laufendes</option>
+                            </select>
+                        </li>
+                        <li><em>Die ___ Tür ist zu.</em> (geschlossen, feminine nominative)  
+                            <select class="answer-select" data-correct="Die geschlossene Tür ist zu.">
+                                <option value="">Select</option>
+                                <option value="Die geschlossener Tür ist zu.">geschlossener</option>
+                                <option value="Die geschlossene Tür ist zu.">geschlossene</option>
+                                <option value="Die geschlossenes Tür ist zu.">geschlossenes</option>
+                            </select>
+                        </li>
+                        <li><em>Das ___ Kind schläft.</em> (spielend, neuter nominative)  
+                            <select class="answer-select" data-correct="Das spielende Kind schläft.">
+                                <option value="">Select</option>
+                                <option value="Das spielender Kind schläft.">spielender</option>
+                                <option value="Das spielende Kind schläft.">spielende</option>
+                                <option value="Das spielendes Kind schläft.">spielendes</option>
+                            </select>
+                        </li>
+                        <li><em>Ich sehe die ___ Frauen.</em> (tanzend, plural accusative)  
+                            <select class="answer-select" data-correct="Ich sehe die tanzenden Frauen.">
+                                <option value="">Select</option>
+                                <option value="Ich sehe die tanzenden Frauen.">tanzenden</option>
+                                <option value="Ich sehe die tanzende Frauen.">tanzende</option>
+                                <option value="Ich sehe die tanzendes Frauen.">tanzendes</option>
+                            </select>
+                        </li>
+                        <li><em>Mit dem ___ Mann spreche ich.</em> (arbeitend, masculine dative)  
+                            <select class="answer-select" data-correct="Mit dem arbeitenden Mann spreche ich.">
+                                <option value="">Select</option>
+                                <option value="Mit dem arbeitender Mann spreche ich.">arbeitender</option>
+                                <option value="Mit dem arbeitenden Mann spreche ich.">arbeitenden</option>
+                                <option value="Mit dem arbeitendes Mann spreche ich.">arbeitendes</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Ein laufender Hund bellt.</em></li>
+                            <li><em>Die geschlossene Tür ist zu.</em></li>
+                            <li><em>Das spielende Kind schläft.</em></li>
+                            <li><em>Ich sehe die tanzenden Frauen.</em></li>
+                            <li><em>Mit dem arbeitenden Mann spreche ich.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise4">
+                <h3>Exercise 4: Translate</h3>
+                <p>Choose the correct translation.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>A running dog is fast.  
+                            <select class="answer-select" data-correct="Ein laufender Hund ist schnell.">
+                                <option value="">Select</option>
+                                <option value="Ein laufender Hund ist schnell.">Ein laufender Hund ist schnell.</option>
+                                <option value="Ein gelaufener Hund ist schnell.">Ein gelaufener Hund ist schnell.</option>
+                            </select>
+                        </li>
+                        <li>The written letter is long.  
+                            <select class="answer-select" data-correct="Der geschriebene Brief ist lang.">
+                                <option value="">Select</option>
+                                <option value="Der schreibende Brief ist lang.">Der schreibende Brief ist lang.</option>
+                                <option value="Der geschriebene Brief ist lang.">Der geschriebene Brief ist lang.</option>
+                            </select>
+                        </li>
+                        <li>The singing birds are loud.  
+                            <select class="answer-select" data-correct="Die singenden Vögel sind laut.">
+                                <option value="">Select</option>
+                                <option value="Die singenden Vögel sind laut.">Die singenden Vögel sind laut.</option>
+                                <option value="Die gesungenen Vögel sind laut.">Die gesungenen Vögel sind laut.</option>
+                            </select>
+                        </li>
+                        <li>A built house is expensive.  
+                            <select class="answer-select" data-correct="Ein gebautes Haus ist teuer.">
+                                <option value="">Select</option>
+                                <option value="Ein bauendes Haus ist teuer.">Ein bauendes Haus ist teuer.</option>
+                                <option value="Ein gebautes Haus ist teuer.">Ein gebautes Haus ist teuer.</option>
+                            </select>
+                        </li>
+                        <li>The laughing girl is happy.  
+                            <select class="answer-select" data-correct="Das lachende Mädchen ist glücklich.">
+                                <option value="">Select</option>
+                                <option value="Das lachende Mädchen ist glücklich.">Das lachende Mädchen ist glücklich.</option>
+                                <option value="Das gelachte Mädchen ist glücklich.">Das gelachte Mädchen ist glücklich.</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Ein laufender Hund ist schnell.</em></li>
+                            <li><em>Der geschriebene Brief ist lang.</em></li>
+                            <li><em>Die singenden Vögel sind laut.</em></li>
+                            <li><em>Ein gebautes Haus ist teuer.</em></li>
+                            <li><em>Das lachende Mädchen ist glücklich.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise5">
+                <h3>Exercise 5: Mixed Examples</h3>
+                <p>Choose the correct form.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Ein ___ Kind weint.</em> (schreiend, neuter nominative)  
+                            <select class="answer-select" data-correct="Ein schreiendes Kind weint.">
+                                <option value="">Select</option>
+                                <option value="Ein schreiender Kind weint.">schreiender</option>
+                                <option value="Ein schreiende Kind weint.">schreiende</option>
+                                <option value="Ein schreiendes Kind weint.">schreiendes</option>
+                            </select>
+                        </li>
+                        <li><em>Die ___ Fenster sind neu.</em> (geöffnet, plural nominative)  
+                            <select class="answer-select" data-correct="Die geöffneten Fenster sind neu.">
+                                <option value="">Select</option>
+                                <option value="Die geöffneten Fenster sind neu.">geöffneten</option>
+                                <option value="Die geöffnete Fenster sind neu.">geöffnete</option>
+                                <option value="Die geöffnetes Fenster sind neu.">geöffnetes</option>
+                            </select>
+                        </li>
+                        <li><em>Ich mag den ___ Mann.</em> (lachend, masculine accusative)  
+                            <select class="answer-select" data-correct="Ich mag den lachenden Mann.">
+                                <option value="">Select</option>
+                                <option value="Ich mag den lachender Mann.">lachender</option>
+                                <option value="Ich mag den lachenden Mann.">lachenden</option>
+                                <option value="Ich mag den lachendes Mann.">lachendes</option>
+                            </select>
+                        </li>
+                        <li><em>Eine ___ Frau singt.</em> (tanzend, feminine nominative)  
+                            <select class="answer-select" data-correct="Eine tanzende Frau singt.">
+                                <option value="">Select</option>
+                                <option value="Eine tanzender Frau singt.">tanzender</option>
+                                <option value="Eine tanzende Frau singt.">tanzende</option>
+                                <option value="Eine tanzendes Frau singt.">tanzendes</option>
+                            </select>
+                        </li>
+                        <li><em>Das ___ Essen schmeckt gut.</em> (gekocht, neuter nominative)  
+                            <select class="answer-select" data-correct="Das gekochte Essen schmeckt gut.">
+                                <option value="">Select</option>
+                                <option value="Das gekochter Essen schmeckt gut.">gekochter</option>
+                                <option value="Das gekochte Essen schmeckt gut.">gekochte</option>
+                                <option value="Das gekochtes Essen schmeckt gut.">gekochtes</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Ein schreiendes Kind weint.</em></li>
+                            <li><em>Die geöffneten Fenster sind neu.</em></li>
+                            <li><em>Ich mag den lachenden Mann.</em></li>
+                            <li><em>Eine tanzende Frau singt.</em></li>
+                            <li><em>Das gekochte Essen schmeckt gut.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips -->
+        <section id="tips">
+            <h2>Tips to Master Participles as Adjectives</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Partizip I</strong>: Add -end for active actions (e.g., laufend).</li>
+                    <li><strong>Partizip II</strong>: Use ge- forms for states (e.g., gemacht).</li>
+                    <li><strong>Endings</strong>: Match article and case (e.g., der laufende, ein laufender).</li>
+                    <li><strong>Practice</strong>: Start with common verbs (laufen, schreiben, bauen).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Resources -->
+        <section id="resources">
+            <h2>Resources for Extra Practice</h2>
+            <div class="resource-links">
+                <div class="resource-card">
+                    <p><strong>YouTube - Learn German with Anja</strong><br>Videos on participles.</p>
+                    <a href="https://www.youtube.com/@LearnGermanwithAnja" class="resource-btn">Visit Learn German with Anja</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>Deutsch Lernen (Lingolia)</strong><br>Lessons on Partizip I and II.</p>
+                    <a href="https://deutsch.lingolia.com/en/grammar/verbs/participles/adjective" class="resource-btn">Visit Lingolia</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>YouTube - Easy German</strong><br>Contextual examples with subtitles.</p>
+                    <a href="https://www.youtube.com/@EasyGerman" class="resource-btn">Visit Easy German</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="jedesto.html" class="see-also-rect">Sätze mit "je ... desto ..."</a>
+                <a href="artikelp.html" class="see-also-rect">Artikelwörter als Pronomen</a>
+                <a href="relativp.html" class="see-also-rect">Relativpronomen "was" und "wo"</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="jedesto.html" class="next-btn">Next: Sätze mit "je ... desto ..." →</a>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark Mode Toggle
+        const modeToggle = document.getElementById('mode-toggle');
+        modeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Load dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Toggle Answers
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const answersDiv = button.nextElementSibling;
+                if (button.classList.contains('show-answers')) {
+                    answersDiv.classList.toggle('hidden');
+                } else if (button.classList.contains('check-answers')) {
+                    const selects = button.parentElement.querySelectorAll('.answer-select');
+                    selects.forEach(select => {
+                        const selectedValue = select.value;
+                        const correctValue = select.getAttribute('data-correct');
+                        if (selectedValue === correctValue) {
+                            select.style.backgroundColor = '#d4edda'; // Green for correct
+                        } else {
+                            select.style.backgroundColor = '#f8d7da'; // Red for incorrect
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1023 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Obwohl in German | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/obwohl.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+               <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="b1-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>Obwohl in German</h1>
+            <p>
+                A clear guide to the German subordinating conjunction "obwohl" (although/even though), explaining its meaning, usage, and grammar rules, with 25 examples, exercises, and resources for practice.
+            </p>
+        </section>
+
+        <!-- Understanding -->
+        <section id="understanding">
+            <h2>Understanding "Obwohl" in German</h2>
+            <p>"Obwohl" is a subordinating conjunction meaning "although" or "even though." It introduces a dependent clause to show contrast and moves the verb to the end, followed by a comma and the main clause.</p>
+            <div class="subsection">
+                <h3>Key Points</h3>
+                <ul class="example-list">
+                    <li><strong>Meaning</strong>: "Although" or "even though" - shows something unexpected.</li>
+                    <li><strong>Word Order</strong>: Verb goes to the end (e.g., "Obwohl es regnet").</li>
+                    <li><strong>Comma</strong>: Separates the "obwohl" clause from the main clause.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- How to Use -->
+        <section id="how-to-use">
+            <h2>How to Use "Obwohl"</h2>
+            <div class="subsection">
+                <h3>Showing Contrast</h3>
+                <p>Highlights an unexpected result.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Obwohl er müde ist, arbeitet er weiter.</em> (Although he’s tired, he keeps working.)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Everyday Scenarios</h3>
+                <p>Common in daily life situations.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Obwohl ich kein Geld habe, kaufe ich das Buch.</em> (Although I have no money, I buy the book.)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Feelings or Thoughts</h3>
+                <p>Expresses emotions or opinions with a twist.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Obwohl sie Angst hat, versucht sie es.</em> (Although she’s scared, she tries it.)</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Common Examples -->
+        <section id="examples">
+            <h2>List of 25 Common Examples with "Obwohl"</h2>
+            <div class="table-container">
+                <table>
+                    <tr><th>Sentence</th><th>Translation</th></tr>
+                    <tr><td><em>Obwohl es kalt ist, gehe ich joggen.</em></td><td>Although it’s cold, I go jogging.</td></tr>
+                    <tr><td><em>Obwohl er krank war, kam er zur Schule.</em></td><td>Although he was sick, he came to school.</td></tr>
+                    <tr><td><em>Obwohl sie wenig Zeit hat, hilft sie mir.</em></td><td>Although she has little time, she helps me.</td></tr>
+                    <tr><td><em>Obwohl das Essen teuer war, schmeckte es schlecht.</em></td><td>Although the food was expensive, it tasted bad.</td></tr>
+                    <tr><td><em>Obwohl ich müde bin, schaue ich einen Film.</em></td><td>Although I’m tired, I watch a movie.</td></tr>
+                    <tr><td><em>Obwohl es regnet, spielen die Kinder draußen.</em></td><td>Although it’s raining, the kids play outside.</td></tr>
+                    <tr><td><em>Obwohl er viel lernt, besteht er die Prüfung nicht.</em></td><td>Although he studies a lot, he doesn’t pass the exam.</td></tr>
+                    <tr><td><em>Obwohl sie jung ist, ist sie sehr klug.</em></td><td>Although she’s young, she’s very smart.</td></tr>
+                    <tr><td><em>Obwohl wir spät ankamen, war das Konzert toll.</em></td><td>Although we arrived late, the concert was great.</td></tr>
+                    <tr><td><em>Obwohl das Auto alt ist, fährt es gut.</em></td><td>Although the car is old, it drives well.</td></tr>
+                    <tr><td><em>Obwohl er kein Deutsch spricht, versteht er alles.</em></td><td>Although he doesn’t speak German, he understands everything.</td></tr>
+                    <tr><td><em>Obwohl sie Angst hatte, sprang sie ins Wasser.</em></td><td>Although she was scared, she jumped into the water.</td></tr>
+                    <tr><td><em>Obwohl ich Hunger habe, esse ich jetzt nicht.</em></td><td>Although I’m hungry, I’m not eating now.</td></tr>
+                    <tr><td><em>Obwohl das Wetter schlecht ist, machen wir einen Ausflug.</em></td><td>Although the weather is bad, we’re going on a trip.</td></tr>
+                    <tr><td><em>Obwohl er reich ist, lebt er einfach.</em></td><td>Although he’s rich, he lives simply.</td></tr>
+                    <tr><td><em>Obwohl sie traurig war, lächelte sie.</em></td><td>Although she was sad, she smiled.</td></tr>
+                    <tr><td><em>Obwohl wir viel üben, machen wir Fehler.</em></td><td>Although we practice a lot, we make mistakes.</td></tr>
+                    <tr><td><em>Obwohl das Spiel schwer war, haben wir gewonnen.</em></td><td>Although the game was hard, we won.</td></tr>
+                    <tr><td><em>Obwohl ich ihn nicht kenne, vertraue ich ihm.</em></td><td>Although I don’t know him, I trust him.</td></tr>
+                    <tr><td><em>Obwohl es dunkel ist, gehe ich spazieren.</em></td><td>Although it’s dark, I go for a walk.</td></tr>
+                    <tr><td><em>Obwohl sie keine Erfahrung hat, macht sie es gut.</em></td><td>Although she has no experience, she does it well.</td></tr>
+                    <tr><td><em>Obwohl der Film lang war, war er spannend.</em></td><td>Although the movie was long, it was exciting.</td></tr>
+                    <tr><td><em>Obwohl ich krank bin, gehe ich zur Arbeit.</em></td><td>Although I’m sick, I go to work.</td></tr>
+                    <tr><td><em>Obwohl er schnell fährt, kommt er nicht pünktlich.</em></td><td>Although he drives fast, he doesn’t arrive on time.</td></tr>
+                    <tr><td><em>Obwohl das Buch teuer ist, kaufe ich es.</em></td><td>Although the book is expensive, I buy it.</td></tr>
+                </table>
+            </div>
+        </section>
+
+       <!-- Exercises -->
+<section id="practice">
+    <h2>Exercises to Practice "Obwohl"</h2>
+    <div class="subsection" id="exercise1">
+        <h3>Exercise 1: Choose the Correct Word Order</h3>
+        <p>Select the sentence with the correct word order for "obwohl."</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>
+                    <select class="answer-select" data-correct="Obwohl es regnet, gehe ich spazieren.">
+                        <option value="">Select</option>
+                        <option value="Obwohl es regnet ich, gehe spazieren.">Obwohl es regnet ich, gehe spazieren.</option>
+                        <option value="Obwohl regnet es, ich gehe spazieren.">Obwohl regnet es, ich gehe spazieren.</option>
+                        <option value="Obwohl es regnet, gehe ich spazieren.">Obwohl es regnet, gehe ich spazieren.</option>
+                        <option value="Obwohl es regnet, ich gehe spazieren.">Obwohl es regnet, ich gehe spazieren.</option>
+                        <option value="Obwohl ich regnet, gehe es spazieren.">Obwohl ich regnet, gehe es spazieren.</option>
+                    </select>
+                </li>
+                <li>
+                    <select class="answer-select" data-correct="Obwohl er müde ist, arbeitet er weiter.">
+                        <option value="">Select</option>
+                        <option value="Obwohl er müde arbeitet, ist er weiter.">Obwohl er müde arbeitet, ist er weiter.</option>
+                        <option value="Obwohl er müde ist, arbeitet er weiter.">Obwohl er müde ist, arbeitet er weiter.</option>
+                        <option value="Obwohl er ist müde, arbeitet er weiter.">Obwohl er ist müde, arbeitet er weiter.</option>
+                        <option value="Obwohl müde er ist, arbeitet er weiter.">Obwohl müde er ist, arbeitet er weiter.</option>
+                        <option value="Obwohl er müde ist, er arbeitet weiter.">Obwohl er müde ist, er arbeitet weiter.</option>
+                    </select>
+                </li>
+                <li>
+                    <select class="answer-select" data-correct="Obwohl sie Angst hat, versucht sie es.">
+                        <option value="">Select</option>
+                        <option value="Obwohl sie Angst hat es, versucht sie.">Obwohl sie Angst hat es, versucht sie.</option>
+                        <option value="Obwohl Angst sie hat, versucht sie es.">Obwohl Angst sie hat, versucht sie es.</option>
+                        <option value="Obwohl sie hat Angst, versucht sie es.">Obwohl sie hat Angst, versucht sie es.</option>
+                        <option value="Obwohl sie Angst hat, versucht sie es.">Obwohl sie Angst hat, versucht sie es.</option>
+                        <option value="Obwohl sie Angst versucht, hat sie es.">Obwohl sie Angst versucht, hat sie es.</option>
+                    </select>
+                </li>
+                <li>
+                    <select class="answer-select" data-correct="Obwohl das Buch teuer ist, kaufe ich es.">
+                        <option value="">Select</option>
+                        <option value="Obwohl das Buch teuer ist, kaufe ich es.">Obwohl das Buch teuer ist, kaufe ich es.</option>
+                        <option value="Obwohl teuer das Buch ist, kaufe ich es.">Obwohl teuer das Buch ist, kaufe ich es.</option>
+                        <option value="Obwohl das Buch teuer kaufe, ist ich es.">Obwohl das Buch teuer kaufe, ist ich es.</option>
+                        <option value="Obwohl das Buch ist teuer, kaufe ich es.">Obwohl das Buch ist teuer, kaufe ich es.</option>
+                        <option value="Obwohl das Buch teuer ist ich, kaufe es.">Obwohl das Buch teuer ist ich, kaufe es.</option>
+                    </select>
+                </li>
+                <li>
+                    <select class="answer-select" data-correct="Obwohl wir spät ankamen, war das Konzert toll.">
+                        <option value="">Select</option>
+                        <option value="Obwohl wir spät war, ankamen das Konzert toll.">Obwohl wir spät war, ankamen das Konzert toll.</option>
+                        <option value="Obwohl wir ankamen spät, war das Konzert toll.">Obwohl wir ankamen spät, war das Konzert toll.</option>
+                        <option value="Obwohl spät wir ankamen, war das Konzert toll.">Obwohl spät wir ankamen, war das Konzert toll.</option>
+                        <option value="Obwohl wir spät ankamen, toll war das Konzert.">Obwohl wir spät ankamen, toll war das Konzert.</option>
+                        <option value="Obwohl wir spät ankamen, war das Konzert toll.">Obwohl wir spät ankamen, war das Konzert toll.</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Obwohl es regnet, gehe ich spazieren.</em></li>
+                    <li><em>Obwohl er müde ist, arbeitet er weiter.</em></li>
+                    <li><em>Obwohl sie Angst hat, versucht sie es.</em></li>
+                    <li><em>Obwohl das Buch teuer ist, kaufe ich es.</em></li>
+                    <li><em>Obwohl wir spät ankamen, war das Konzert toll.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise2">
+        <h3>Exercise 2: Fill in the Blank</h3>
+        <p>Choose the correct verb form for the "obwohl" clause.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Obwohl es ___ , gehe ich joggen.
+                    <select class="answer-select" data-correct="Obwohl es regnet, gehe ich joggen.">
+                        <option value="">Select</option>
+                        <option value="Obwohl es zu regnen, gehe ich joggen.">zu regnen</option>
+                        <option value="Obwohl es regnete, gehe ich joggen.">regnete</option>
+                        <option value="Obwohl es regnet, gehe ich joggen.">regnet</option>
+                        <option value="Obwohl es geregnet, gehe ich joggen.">geregnet</option>
+                        <option value="Obwohl es regnen, gehe ich joggen.">regnen</option>
+                    </select>
+                </li>
+                <li>Obwohl er viel ___ , versteht er es nicht.
+                    <select class="answer-select" data-correct="Obwohl er viel lernt, versteht er es nicht.">
+                        <option value="">Select</option>
+                        <option value="Obwohl er viel lernt, versteht er es nicht.">lernt</option>
+                        <option value="Obwohl er viel zu lernen, versteht er es nicht.">zu lernen</option>
+                        <option value="Obwohl er viel lernte, versteht er es nicht.">lernte</option>
+                        <option value="Obwohl er viel gelernt, versteht er es nicht.">gelernt</option>
+                        <option value="Obwohl er viel lernen, versteht er es nicht.">lernen</option>
+                    </select>
+                </li>
+                <li>Obwohl sie keine Zeit ___ , hilft sie mir.
+                    <select class="answer-select" data-correct="Obwohl sie keine Zeit hat, hilft sie mir.">
+                        <option value="">Select</option>
+                        <option value="Obwohl sie keine Zeit gehabt, hilft sie mir.">gehabt</option>
+                        <option value="Obwohl sie keine Zeit hat, hilft sie mir.">hat</option>
+                        <option value="Obwohl sie keine Zeit hatte, hilft sie mir.">hatte</option>
+                        <option value="Obwohl sie keine Zeit zu haben, hilft sie mir.">zu haben</option>
+                        <option value="Obwohl sie keine Zeit haben, hilft sie mir.">haben</option>
+                    </select>
+                </li>
+                <li>Obwohl das Auto alt ___ , fährt es gut.
+                    <select class="answer-select" data-correct="Obwohl das Auto alt ist, fährt es gut.">
+                        <option value="">Select</option>
+                        <option value="Obwohl das Auto alt war, fährt es gut.">war</option>
+                        <option value="Obwohl das Auto alt zu sein, fährt es gut.">zu sein</option>
+                        <option value="Obwohl das Auto alt gewesen, fährt es gut.">gewesen</option>
+                        <option value="Obwohl das Auto alt ist, fährt es gut.">ist</option>
+                        <option value="Obwohl das Auto alt sein, fährt es gut.">sein</option>
+                    </select>
+                </li>
+                <li>Obwohl ich krank ___ , gehe ich zur Schule.
+                    <select class="answer-select" data-correct="Obwohl ich krank bin, gehe ich zur Schule.">
+                        <option value="">Select</option>
+                        <option value="Obwohl ich krank zu sein, gehe ich zur Schule.">zu sein</option>
+                        <option value="Obwohl ich krank gewesen, gehe ich zur Schule.">gewesen</option>
+                        <option value="Obwohl ich krank bin, gehe ich zur Schule.">bin</option>
+                        <option value="Obwohl ich krank war, gehe ich zur Schule.">war</option>
+                        <option value="Obwohl ich krank sein, gehe ich zur Schule.">sein</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Obwohl es regnet, gehe ich joggen.</em></li>
+                    <li><em>Obwohl er viel lernt, versteht er es nicht.</em></li>
+                    <li><em>Obwohl sie keine Zeit hat, hilft sie mir.</em></li>
+                    <li><em>Obwohl das Auto alt ist, fährt es gut.</em></li>
+                    <li><em>Obwohl ich krank bin, gehe ich zur Schule.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise3">
+        <h3>Exercise 3: Translate into German</h3>
+        <p>Choose the correct translation using "obwohl."</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Although it’s cold, I’m going outside.
+                    <select class="answer-select" data-correct="Obwohl es kalt ist, gehe ich nach draußen.">
+                        <option value="">Select</option>
+                        <option value="Obwohl kalt es ist, gehe ich nach draußen.">Obwohl kalt es ist, gehe ich nach draußen.</option>
+                        <option value="Obwohl es kalt gehe, ist ich nach draußen.">Obwohl es kalt gehe, ist ich nach draußen.</option>
+                        <option value="Obwohl es kalt ist, gehe ich nach draußen.">Obwohl es kalt ist, gehe ich nach draußen.</option>
+                        <option value="Obwohl ich kalt ist, gehe es nach draußen.">Obwohl ich kalt ist, gehe es nach draußen.</option>
+                        <option value="Obwohl es ist kalt, gehe ich nach draußen.">Obwohl es ist kalt, gehe ich nach draußen.</option>
+                    </select>
+                </li>
+                <li>Although he’s tired, he keeps going.
+                    <select class="answer-select" data-correct="Obwohl er müde ist, macht er weiter.">
+                        <option value="">Select</option>
+                        <option value="Obwohl er müde macht, ist er weiter.">Obwohl er müde macht, ist er weiter.</option>
+                        <option value="Obwohl er müde ist, macht er weiter.">Obwohl er müde ist, macht er weiter.</option>
+                        <option value="Obwohl müde er ist, macht er weiter.">Obwohl müde er ist, macht er weiter.</option>
+                        <option value="Obwohl er ist müde, macht er weiter.">Obwohl er ist müde, macht er weiter.</option>
+                        <option value="Obwohl er müde weiter, macht er ist.">Obwohl er müde weiter, macht er ist.</option>
+                    </select>
+                </li>
+                <li>Although the movie was long, I liked it.
+                    <select class="answer-select" data-correct="Obwohl der Film lang war, gefiel er mir.">
+                        <option value="">Select</option>
+                        <option value="Obwohl der Film lang war, gefiel er mir.">Obwohl der Film lang war, gefiel er mir.</option>
+                        <option value="Obwohl der Film lang mir, gefiel er war.">Obwohl der Film lang mir, gefiel er war.</option>
+                        <option value="Obwohl lang der Film war, gefiel er mir.">Obwohl lang der Film war, gefiel er mir.</option>
+                        <option value="Obwohl der Film war lang, gefiel er mir.">Obwohl der Film war lang, gefiel er mir.</option>
+                        <option value="Obwohl der Film lang gefiel, war er mir.">Obwohl der Film lang gefiel, war er mir.</option>
+                    </select>
+                </li>
+                <li>Although she’s young, she’s smart.
+                    <select class="answer-select" data-correct="Obwohl sie jung ist, ist sie klug.">
+                        <option value="">Select</option>
+                        <option value="Obwohl sie jung klug, ist sie ist.">Obwohl sie jung klug, ist sie ist.</option>
+                        <option value="Obwohl jung sie ist, ist sie klug.">Obwohl jung sie ist, ist sie klug.</option>
+                        <option value="Obwohl sie ist jung, ist sie klug.">Obwohl sie ist jung, ist sie klug.</option>
+                        <option value="Obwohl sie jung ist sie, ist klug.">Obwohl sie jung ist sie, ist klug.</option>
+                        <option value="Obwohl sie jung ist, ist sie klug.">Obwohl sie jung ist, ist sie klug.</option>
+                    </select>
+                </li>
+                <li>Although I’m hungry, I’m not eating.
+                    <select class="answer-select" data-correct="Obwohl ich Hunger habe, esse ich nicht.">
+                        <option value="">Select</option>
+                        <option value="Obwohl ich Hunger nicht, esse ich habe.">Obwohl ich Hunger nicht, esse ich habe.</option>
+                        <option value="Obwohl ich habe Hunger, esse ich nicht.">Obwohl ich habe Hunger, esse ich nicht.</option>
+                        <option value="Obwohl ich Hunger habe, esse ich nicht.">Obwohl ich Hunger habe, esse ich nicht.</option>
+                        <option value="Obwohl Hunger ich habe, esse ich nicht.">Obwohl Hunger ich habe, esse ich nicht.</option>
+                        <option value="Obwohl ich Hunger esse, habe ich nicht.">Obwohl ich Hunger esse, habe ich nicht.</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Obwohl es kalt ist, gehe ich nach draußen.</em></li>
+                    <li><em>Obwohl er müde ist, macht er weiter.</em></li>
+                    <li><em>Obwohl der Film lang war, gefiel er mir.</em></li>
+                    <li><em>Obwohl sie jung ist, ist sie klug.</em></li>
+                    <li><em>Obwohl ich Hunger habe, esse ich nicht.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise4">
+        <h3>Exercise 4: Combine Sentences</h3>
+        <p>Choose the correct combination with "obwohl."</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>It’s raining. I’m going for a walk.
+                    <select class="answer-select" data-correct="Obwohl es regnet, gehe ich spazieren.">
+                        <option value="">Select</option>
+                        <option value="Obwohl es spazieren regnet, gehe ich.">Obwohl es spazieren regnet, gehe ich.</option>
+                        <option value="Obwohl regnet es, gehe ich spazieren.">Obwohl regnet es, gehe ich spazieren.</option>
+                        <option value="Obwohl es regnet gehe, ich spazieren.">Obwohl es regnet gehe, ich spazieren.</option>
+                        <option value="Obwohl es regnet, gehe ich spazieren.">Obwohl es regnet, gehe ich spazieren.</option>
+                        <option value="Obwohl ich regnet, gehe es spazieren.">Obwohl ich regnet, gehe es spazieren.</option>
+                    </select>
+                </li>
+                <li>He studies a lot. He doesn’t understand.
+                    <select class="answer-select" data-correct="Obwohl er viel lernt, versteht er nicht.">
+                        <option value="">Select</option>
+                        <option value="Obwohl viel er lernt, versteht er nicht.">Obwohl viel er lernt, versteht er nicht.</option>
+                        <option value="Obwohl er viel lernt, versteht er nicht.">Obwohl er viel lernt, versteht er nicht.</option>
+                        <option value="Obwohl er lernt viel, versteht er nicht.">Obwohl er lernt viel, versteht er nicht.</option>
+                        <option value="Obwohl er viel nicht, lernt er versteht.">Obwohl er viel nicht, lernt er versteht.</option>
+                        <option value="Obwohl er viel versteht, lernt er nicht.">Obwohl er viel versteht, lernt er nicht.</option>
+                    </select>
+                </li>
+                <li>The book is expensive. I buy it.
+                    <select class="answer-select" data-correct="Obwohl das Buch teuer ist, kaufe ich es.">
+                        <option value="">Select</option>
+                        <option value="Obwohl ich teuer ist, kaufe das Buch es.">Obwohl ich teuer ist, kaufe das Buch es.</option>
+                        <option value="Obwohl teuer das Buch ist, kaufe ich es.">Obwohl teuer das Buch ist, kaufe ich es.</option>
+                        <option value="Obwohl das Buch teuer ist, kaufe ich es.">Obwohl das Buch teuer ist, kaufe ich es.</option>
+                        <option value="Obwohl das Buch ist teuer, kaufe ich es.">Obwohl das Buch ist teuer, kaufe ich es.</option>
+                        <option value="Obwohl das Buch teuer kaufe, ist ich es.">Obwohl das Buch teuer kaufe, ist ich es.</option>
+                    </select>
+                </li>
+                <li>She’s scared. She tries it.
+                    <select class="answer-select" data-correct="Obwohl sie Angst hat, versucht sie es.">
+                        <option value="">Select</option>
+                        <option value="Obwohl sie Angst hat, versucht sie es.">Obwohl sie Angst hat, versucht sie es.</option>
+                        <option value="Obwohl sie es hat, versucht Angst sie.">Obwohl sie es hat, versucht Angst sie.</option>
+                        <option value="Obwohl Angst sie hat, versucht sie es.">Obwohl Angst sie hat, versucht sie es.</option>
+                        <option value="Obwohl sie hat Angst, versucht sie es.">Obwohl sie hat Angst, versucht sie es.</option>
+                        <option value="Obwohl sie Angst versucht, hat sie es.">Obwohl sie Angst versucht, hat sie es.</option>
+                    </select>
+                </li>
+                <li>We arrived late. The party was fun.
+                    <select class="answer-select" data-correct="Obwohl wir spät ankamen, war die Party toll.">
+                        <option value="">Select</option>
+                        <option value="Obwohl wir spät ankamen, war die Party toll.">Obwohl wir spät ankamen, war die Party toll.</option>
+                        <option value="Obwohl wir spät toll, war die Party ankamen.">Obwohl wir spät toll, war die Party ankamen.</option>
+                        <option value="Obwohl spät wir ankamen, war die Party toll.">Obwohl spät wir ankamen, war die Party toll.</option>
+                        <option value="Obwohl wir ankamen spät, war die Party toll.">Obwohl wir ankamen spät, war die Party toll.</option>
+                        <option value="Obwohl wir spät war, ankamen die Party toll.">Obwohl wir spät war, ankamen die Party toll.</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Obwohl es regnet, gehe ich spazieren.</em></li>
+                    <li><em>Obwohl er viel lernt, versteht er nicht.</em></li>
+                    <li><em>Obwohl das Buch teuer ist, kaufe ich es.</em></li>
+                    <li><em>Obwohl sie Angst hat, versucht sie es.</em></li>
+                    <li><em>Obwohl wir spät ankamen, war die Party toll.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise5">
+        <h3>Exercise 5: Create Your Own</h3>
+        <p>Choose the correct "obwohl" sentence based on the prompt.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>It’s cold, but you go outside.
+                    <select class="answer-select" data-correct="Obwohl es kalt ist, gehe ich nach draußen.">
+                        <option value="">Select</option>
+                        <option value="Obwohl ich kalt ist, gehe es nach draußen.">Obwohl ich kalt ist, gehe es nach draußen.</option>
+                        <option value="Obwohl es kalt gehe, ist ich nach draußen.">Obwohl es kalt gehe, ist ich nach draußen.</option>
+                        <option value="Obwohl es kalt ist, gehe ich nach draußen.">Obwohl es kalt ist, gehe ich nach draußen.</option>
+                        <option value="Obwohl kalt es ist, gehe ich nach draußen.">Obwohl kalt es ist, gehe ich nach draußen.</option>
+                        <option value="Obwohl es ist kalt, gehe ich nach draußen.">Obwohl es ist kalt, gehe ich nach draußen.</option>
+                    </select>
+                </li>
+                <li>He’s tired, but he works.
+                    <select class="answer-select" data-correct="Obwohl er müde ist, arbeitet er weiter.">
+                        <option value="">Select</option>
+                        <option value="Obwohl er müde ist, arbeitet er weiter.">Obwohl er müde ist, arbeitet er weiter.</option>
+                        <option value="Obwohl er weiter ist, arbeitet er müde.">Obwohl er weiter ist, arbeitet er müde.</option>
+                        <option value="Obwohl müde er ist, arbeitet er weiter.">Obwohl müde er ist, arbeitet er weiter.</option>
+                        <option value="Obwohl er ist müde, arbeitet er weiter.">Obwohl er ist müde, arbeitet er weiter.</option>
+                        <option value="Obwohl er müde arbeitet, ist er weiter.">Obwohl er müde arbeitet, ist er weiter.</option>
+                    </select>
+                </li>
+                <li>The test is hard, but you pass.
+                    <select class="answer-select" data-correct="Obwohl die Prüfung schwer ist, bestehe ich sie.">
+                        <option value="">Select</option>
+                        <option value="Obwohl ich schwer ist, bestehe die Prüfung sie.">Obwohl ich schwer ist, bestehe die Prüfung sie.</option>
+                        <option value="Obwohl die Prüfung schwer bestehe, ist ich sie.">Obwohl die Prüfung schwer bestehe, ist ich sie.</option>
+                        <option value="Obwohl schwer die Prüfung ist, bestehe ich sie.">Obwohl schwer die Prüfung ist, bestehe ich sie.</option>
+                        <option value="Obwohl die Prüfung schwer ist, bestehe ich sie.">Obwohl die Prüfung schwer ist, bestehe ich sie.</option>
+                        <option value="Obwohl die Prüfung ist schwer, bestehe ich sie.">Obwohl die Prüfung ist schwer, bestehe ich sie.</option>
+                    </select>
+                </li>
+                <li>She’s young, but she’s wise.
+                    <select class="answer-select" data-correct="Obwohl sie jung ist, ist sie weise.">
+                        <option value="">Select</option>
+                        <option value="Obwohl sie weise ist, ist sie jung.">Obwohl sie weise ist, ist sie jung.</option>
+                        <option value="Obwohl sie jung ist, ist sie weise.">Obwohl sie jung ist, ist sie weise.</option>
+                        <option value="Obwohl jung sie ist, ist sie weise.">Obwohl jung sie ist, ist sie weise.</option>
+                        <option value="Obwohl sie ist jung, ist sie weise.">Obwohl sie ist jung, ist sie weise.</option>
+                        <option value="Obwohl sie jung weise, ist sie ist.">Obwohl sie jung weise, ist sie ist.</option>
+                    </select>
+                </li>
+                <li>I’m sick, but I go to school.
+                    <select class="answer-select" data-correct="Obwohl ich krank bin, gehe ich zur Schule.">
+                        <option value="">Select</option>
+                        <option value="Obwohl ich zur Schule bin, gehe ich krank.">Obwohl ich zur Schule bin, gehe ich krank.</option>
+                        <option value="Obwohl krank ich bin, gehe ich zur Schule.">Obwohl krank ich bin, gehe ich zur Schule.</option>
+                        <option value="Obwohl ich bin krank, gehe ich zur Schule.">Obwohl ich bin krank, gehe ich zur Schule.</option>
+                        <option value="Obwohl ich krank gehe, bin ich zur Schule.">Obwohl ich krank gehe, bin ich zur Schule.</option>
+                        <option value="Obwohl ich krank bin, gehe ich zur Schule.">Obwohl ich krank bin, gehe ich zur Schule.</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Obwohl es kalt ist, gehe ich nach draußen.</em></li>
+                    <li><em>Obwohl er müde ist, arbeitet er weiter.</em></li>
+                    <li><em>Obwohl die Prüfung schwer ist, bestehe ich sie.</em></li>
+                    <li><em>Obwohl sie jung ist, ist sie weise.</em></li>
+                    <li><em>Obwohl ich krank bin, gehe ich zur Schule.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+        <!-- Tips -->
+        <section id="tips">
+            <h2>Tips for Using "Obwohl" Correctly</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Verb at the End</strong>: Place the verb at the end of the "obwohl" clause.</li>
+                    <li><strong>Contrast Focus</strong>: Use it to show opposites (e.g., tired but working).</li>
+                    <li><strong>Practice Speaking</strong>: Say sentences aloud to get the flow.</li>
+                    <li><strong>Vary Tenses</strong>: Try it with past or modal verbs for practice.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Resources -->
+        <section id="resources">
+            <h2>Resources for Extra Practice</h2>
+            <div class="resource-links">
+                <div class="resource-card">
+                    <p><strong>YouTube - Learn German with Anja</strong><br>Videos explaining conjunctions like "obwohl."</p>
+                    <a href="https://www.youtube.com/@LearnGermanwithAnja" class="resource-btn">Visit Learn German with Anja</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>Deutsch Lernen (Lingolia)</strong><br>Lessons and exercises on "obwohl."</p>
+                    <a href="https://deutsch.lingolia.com/en/grammar/conjunctions/obwohl" class="resource-btn">Visit Lingolia</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>YouTube - Easy German</strong><br>Conversations showing "obwohl" in use.</p>
+                    <a href="https://www.youtube.com/@EasyGerman" class="resource-btn">Visit Easy German</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="infinitivmitzu.html" class="see-also-rect">Infinitiv mit zu</a>
+                <a href="damitumzu.html" class="see-also-rect">German Damit and Um...zu</a>
+                <a href="konjunktivII.html" class="see-also-rect">Konjunktiv II</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="wfrageprep.html" class="next-btn">Next: W-Fragen mit Präpositionen →</a>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark Mode Toggle
+        const modeToggle = document.getElementById('mode-toggle');
+        modeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Load dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Toggle Answers
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const answersDiv = button.nextElementSibling;
+                if (button.classList.contains('show-answers')) {
+                    answersDiv.classList.toggle('hidden');
+                } else if (button.classList.contains('check-answers')) {
+                    const selects = button.parentElement.querySelectorAll('.answer-select');
+                    selects.forEach(select => {
+                        const selectedValue = select.value;
+                        const correctValue = select.getAttribute('data-correct');
+                        if (selectedValue === correctValue) {
+                            select.style.backgroundColor = '#d4edda'; // Green for correct
+                        } else {
+                            select.style.backgroundColor = '#f8d7da'; // Red for incorrect
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

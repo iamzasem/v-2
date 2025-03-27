@@ -1,0 +1,978 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      German Genitive Case with Names: The Deep Guide | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/genetivname.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+               <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="a2-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>German Genitive Case with Names: The Deep Guide</h1>
+            <p>
+                The <strong>Genitive Case</strong> in German shows possession, relationships, or origin, and when used with names, it’s a key way to say “of” or “belonging to” someone. Think <em>das Buch des Lehrers</em> (the teacher’s book) or <em>die Tasche Annas</em> (Anna’s bag). This guide dives into how the genitive works with proper names—both people and places—covering rules, exceptions, tons of examples, and exercises to master it. Let’s explore this elegant case!
+            </p>
+        </section>
+
+        <!-- What is the Genitive with Names -->
+        <section id="what-is">
+            <h2>What is the Genitive Case with Names?</h2>
+            <p>The genitive case with names indicates possession or association. Unlike English, which uses “’s” or “of,” German relies on endings (or not) and word order, often with the article adapting to the genitive form.</p>
+            <h3>Key Features</h3>
+            <ul class="example-list">
+                <li><strong>Possession</strong>: Shows who owns what—<em>Marias Auto</em> (Maria’s car).</li>
+                <li><strong>Word Order</strong>: Possessor comes after the possessed—<em>das Haus Peters</em> (Peter’s house).</li>
+                <li><strong>Endings</strong>: Names may take <em>-s</em> or <em>-es</em>, depending on sound and tradition.</li>
+                <li><strong>Articles</strong>: Genitive articles (<em>des, der</em>) often pair with names.</li>
+            </ul>
+            <h3>Basic Structure</h3>
+            <p><strong>Possessed Thing</strong> (nominative/accusative form) + <strong>Name in Genitive</strong>.</p>
+            <div class="examples">
+                <p><em>das Buch Marias</em> (Maria’s book)</p>
+                <ul class="example-list">
+                    <li>Possessed: <em>das Buch</em> (the book).</li>
+                    <li>Possessor: <em>Marias</em> (Maria’s—genitive form).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Rules for Names in Genitive -->
+        <section id="rules">
+            <h2>Rules for Names in Genitive</h2>
+            <div class="subsection">
+                <h3>1. Names Ending in Consonants</h3>
+                <p>Add <em>-s</em> or <em>-es</em> to masculine/neuter names; feminine names often just add <em>-s</em>.</p>
+                <div class="table-container">
+                    <table>
+                        <tr><th>Name</th><th>Genitive Form</th><th>Example</th></tr>
+                        <tr><td>Peter</td><td>Peters</td><td>das Haus Peters (Peter’s house)</td></tr>
+                        <tr><td>Thomas</td><td>Thomases</td><td>der Stift Thomases (Thomas’s pen)</td></tr>
+                        <tr><td>Maria</td><td>Marias</td><td>die Tasche Marias (Maria’s bag)</td></tr>
+                        <tr><td>Sophie</td><td>Sophies</td><td>das Kleid Sophies (Sophie’s dress)</td></tr>
+                    </table>
+                </div>
+                <p><strong>Note</strong>: <em>-es</em> is common with names ending in sibilants (s, z, x) for clarity—<em>Hanses</em> vs. <em>Hans’s</em>.</p>
+            </div>
+            <div class="subsection">
+                <h3>2. Names Ending in Vowels</h3>
+                <p>Typically just add <em>-s</em>, no extra <em>e</em>.</p>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Anna → Annas</em> – <em>das Buch Annas</em> (Anna’s book).</li>
+                        <li><em>Leo → Leos</em> – <em>der Ball Leos</em> (Leo’s ball).</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>3. With Articles (Formal)</h3>
+                <p>In formal writing, use genitive articles before the name.</p>
+                <div class="table-container">
+                    <table>
+                        <tr><th>Gender</th><th>Article</th><th>Example</th></tr>
+                        <tr><td>Masculine</td><td>des</td><td>das Auto des Peters (the car of Peter)</td></tr>
+                        <tr><td>Feminine</td><td>der</td><td>die Tasche der Anna (the bag of Anna)</td></tr>
+                        <tr><td>Neuter</td><td>des</td><td>das Buch des Leo (the book of Leo)</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>4. Place Names</h3>
+                <p>Geographical names often take <em>-s</em> or stay unchanged, depending on context.</p>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Berlin → Berlins</em> – <em>die Straßen Berlins</em> (Berlin’s streets).</li>
+                        <li><em>Deutschland</em> – <em>die Geschichte Deutschlands</em> (Germany’s history).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deep Details and Nuances -->
+        <section id="nuances">
+            <h2>Deep Details and Nuances</h2>
+            <div class="subsection">
+                <h3>1. <em>-s</em> vs. <em>-es</em></h3>
+                <ul class="example-list">
+                    <li><em>-s</em>: Standard for most names—<em>Peters, Annas</em>.</li>
+                    <li><em>-es</em>: Used with sibilants or for emphasis—<em>Hanses, Matthias</em>.</li>
+                    <li><strong>Tip</strong>: Say it aloud—if <em>-s</em> blends, use <em>-es</em>.</li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>2. No Ending Option</h3>
+                <p>In casual speech, names sometimes skip the ending with articles—<em>die Tasche der Anna</em> instead of <em>Annas Tasche</em>.</p>
+            </div>
+            <div class="subsection">
+                <h3>3. Prepositions</h3>
+                <p>Genitive prepositions (<em>wegen, während, statt</em>) can pair with names.</p>
+                <ul class="example-list">
+                    <li><em>wegen Peters</em> (because of Peter).</li>
+                    <li><em>während Sophies Urlaub</em> (during Sophie’s vacation).</li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>4. Double Genitive</h3>
+                <p>Rare, but possible—<em>das Auto des Freundes Peters</em> (the car of Peter’s friend).</p>
+            </div>
+        </section>
+
+        <!-- Example Sentences -->
+        <section id="examples">
+            <h2>Tons of Example Sentences</h2>
+            <div class="subsection">
+                <h3>People’s Names</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>das Buch Peters</em> (Peter’s book)</li>
+                        <li><em>die Tasche Annas</em> (Anna’s bag)</li>
+                        <li><em>der Stift Thomases</em> (Thomas’s pen)</li>
+                        <li><em>das Kleid Sophies</em> (Sophie’s dress)</li>
+                        <li><em>der Ball Leos</em> (Leo’s ball)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>With Articles (Formal)</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>das Haus des Peters</em> (the house of Peter)</li>
+                        <li><em>die Tasche der Maria</em> (the bag of Maria)</li>
+                        <li><em>das Auto des Hans</em> (the car of Hans)</li>
+                        <li><em>der Garten der Sophie</em> (the garden of Sophie)</li>
+                        <li><em>das Buch des Leo</em> (the book of Leo)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Place Names</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>die Straßen Berlins</em> (Berlin’s streets)</li>
+                        <li><em>die Geschichte Deutschlands</em> (Germany’s history)</li>
+                        <li><em>der Fluss Münchens</em> (Munich’s river)</li>
+                        <li><em>die Kultur Frankreichs</em> (France’s culture)</li>
+                        <li><em>das Klima Italiens</em> (Italy’s climate)</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+       <!-- Exercises -->
+<section id="practice">
+    <h2>Creative Exercises with Multiple-Choice Options</h2>
+    <div class="subsection" id="exercise1">
+        <h3>Exercise 1: Names in Genitive</h3>
+        <div class="examples">
+            <ol class="example-list">
+                <li>das Haus ___ (Peter)
+                    <select class="answer-select" data-correct="Peters">
+                        <option value="">Select</option>
+                        <option value="Peteres">Peteres</option>
+                        <option value="Peters">Peters</option>
+                        <option value="Peter">Peter</option>
+                    </select>
+                </li>
+                <li>die Tasche ___ (Anna)
+                    <select class="answer-select" data-correct="Annas">
+                        <option value="">Select</option>
+                        <option value="Anna">Anna</option>
+                        <option value="Annaes">Annaes</option>
+                        <option value="Annas">Annas</option>
+                    </select>
+                </li>
+                <li>der Stift ___ (Thomas)
+                    <select class="answer-select" data-correct="Thomases">
+                        <option value="">Select</option>
+                        <option value="Thomass">Thomass</option>
+                        <option value="Thomas">Thomas</option>
+                        <option value="Thomases">Thomases</option>
+                    </select>
+                </li>
+                <li>das Kleid ___ (Sophie)
+                    <select class="answer-select" data-correct="Sophies">
+                        <option value="">Select</option>
+                        <option value="Sophiees">Sophiees</option>
+                        <option value="Sophies">Sophies</option>
+                        <option value="Sophie">Sophie</option>
+                    </select>
+                </li>
+                <li>der Ball ___ (Leo)
+                    <select class="answer-select" data-correct="Leos">
+                        <option value="">Select</option>
+                        <option value="Leos">Leos</option>
+                        <option value="Leoes">Leoes</option>
+                        <option value="Leo">Leo</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Peters</em></li>
+                    <li><em>Annas</em></li>
+                    <li><em>Thomases</em></li>
+                    <li><em>Sophies</em></li>
+                    <li><em>Leos</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="subsection" id="exercise2">
+        <h3>Exercise 2: With Articles</h3>
+        <div class="examples">
+            <ol class="example-list">
+                <li>das Auto ___ Peter
+                    <select class="answer-select" data-correct="des Peters">
+                        <option value="">Select</option>
+                        <option value="dem Peter">dem Peter</option>
+                        <option value="des Peters">des Peters</option>
+                        <option value="der Peter">der Peter</option>
+                    </select>
+                </li>
+                <li>die Tasche ___ Maria
+                    <select class="answer-select" data-correct="der Maria">
+                        <option value="">Select</option>
+                        <option value="des Maria">des Maria</option>
+                        <option value="der Maria">der Maria</option>
+                        <option value="dem Maria">dem Maria</option>
+                    </select>
+                </li>
+                <li>das Buch ___ Hans
+                    <select class="answer-select" data-correct="des Hans">
+                        <option value="">Select</option>
+                        <option value="der Hans">der Hans</option>
+                        <option value="dem Hans">dem Hans</option>
+                        <option value="des Hans">des Hans</option>
+                    </select>
+                </li>
+                <li>der Garten ___ Sophie
+                    <select class="answer-select" data-correct="der Sophie">
+                        <option value="">Select</option>
+                        <option value="der Sophie">der Sophie</option>
+                        <option value="dem Sophie">dem Sophie</option>
+                        <option value="des Sophie">des Sophie</option>
+                    </select>
+                </li>
+                <li>das Spiel ___ Leo
+                    <select class="answer-select" data-correct="des Leo">
+                        <option value="">Select</option>
+                        <option value="dem Leo">dem Leo</option>
+                        <option value="der Leo">der Leo</option>
+                        <option value="des Leo">des Leo</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>des Peters</em></li>
+                    <li><em>der Maria</em></li>
+                    <li><em>des Hans</em></li>
+                    <li><em>der Sophie</em></li>
+                    <li><em>des Leo</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="subsection" id="exercise3">
+        <h3>Exercise 3: Place Names</h3>
+        <div class="examples">
+            <ol class="example-list">
+                <li>die Straßen ___ (Berlin)
+                    <select class="answer-select" data-correct="Berlins">
+                        <option value="">Select</option>
+                        <option value="Berlines">Berlines</option>
+                        <option value="Berlin">Berlin</option>
+                        <option value="Berlins">Berlins</option>
+                    </select>
+                </li>
+                <li>die Geschichte ___ (Deutschland)
+                    <select class="answer-select" data-correct="Deutschlands">
+                        <option value="">Select</option>
+                        <option value="Deutschland">Deutschland</option>
+                        <option value="Deutschlands">Deutschlands</option>
+                        <option value="Deutschlandes">Deutschlandes</option>
+                    </select>
+                </li>
+                <li>der Fluss ___ (München)
+                    <select class="answer-select" data-correct="Münchens">
+                        <option value="">Select</option>
+                        <option value="München">München</option>
+                        <option value="Münchenes">Münchenes</option>
+                        <option value="Münchens">Münchens</option>
+                    </select>
+                </li>
+                <li>die Kultur ___ (Frankreich)
+                    <select class="answer-select" data-correct="Frankreichs">
+                        <option value="">Select</option>
+                        <option value="Frankreichs">Frankreichs</option>
+                        <option value="Frankreiches">Frankreiches</option>
+                        <option value="Frankreich">Frankreich</option>
+                    </select>
+                </li>
+                <li>das Klima ___ (Italien)
+                    <select class="answer-select" data-correct="Italiens">
+                        <option value="">Select</option>
+                        <option value="Italienes">Italienes</option>
+                        <option value="Italien">Italien</option>
+                        <option value="Italiens">Italiens</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Berlins</em></li>
+                    <li><em>Deutschlands</em></li>
+                    <li><em>Münchens</em></li>
+                    <li><em>Frankreichs</em></li>
+                    <li><em>Italiens</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="subsection" id="exercise4">
+        <h3>Exercise 4: Mixed Genitive Story</h3>
+        <p>Fill in with the correct genitive form.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Das ist das Auto ___ (Peter).
+                    <select class="answer-select" data-correct="Peters">
+                        <option value="">Select</option>
+                        <option value="Peter">Peter</option>
+                        <option value="Peteres">Peteres</option>
+                        <option value="Peters">Peters</option>
+                    </select>
+                </li>
+                <li>Die Tasche ___ ist rot (Anna).
+                    <select class="answer-select" data-correct="Annas">
+                        <option value="">Select</option>
+                        <option value="Annaes">Annaes</option>
+                        <option value="Annas">Annas</option>
+                        <option value="Anna">Anna</option>
+                    </select>
+                </li>
+                <li>Das Buch ___ liegt dort (Leo).
+                    <select class="answer-select" data-correct="Leos">
+                        <option value="">Select</option>
+                        <option value="Leoes">Leoes</option>
+                        <option value="Leo">Leo</option>
+                        <option value="Leos">Leos</option>
+                    </select>
+                </li>
+                <li>Die Straßen ___ sind schön (Berlin).
+                    <select class="answer-select" data-correct="Berlins">
+                        <option value="">Select</option>
+                        <option value="Berlins">Berlins</option>
+                        <option value="Berlines">Berlines</option>
+                        <option value="Berlin">Berlin</option>
+                    </select>
+                </li>
+                <li>Das Kleid ___ ist neu (Sophie).
+                    <select class="answer-select" data-correct="Sophies">
+                        <option value="">Select</option>
+                        <option value="Sophie">Sophie</option>
+                        <option value="Sophies">Sophies</option>
+                        <option value="Sophiees">Sophiees</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Peters</em></li>
+                    <li><em>Annas</em></li>
+                    <li><em>Leos</em></li>
+                    <li><em>Berlins</em></li>
+                    <li><em>Sophies</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Tips -->
+        <section id="tips">
+            <h2>Deep Tips to Master the Genitive with Names</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Add <em>-s</em></strong>: Most names just need <em>-s</em>—<em>Peters, Annas</em>.</li>
+                    <li><strong>Sibilants</strong>: Use <em>-es</em> for clarity with s/z/x—<em>Hanses</em>.</li>
+                    <li><strong>Articles</strong>: Formal? Add <em>des/der</em>—<em>des Peters</em>.</li>
+                    <li><strong>Places</strong>: Treat cities like names—<em>Berlins</em>.</li>
+                    <li><strong>Practice</strong>: Say <em>das Buch Annas</em> daily—it sticks!</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Final Thoughts -->
+        <section id="final-thoughts">
+            <h2>You’re Ready!</h2>
+            <p>
+                This deep guide covers the genitive case with names—rules, nuances, examples, and exercises. You’re set to show possession like a pro! Next, try genitive prepositions or adjective endings—your call!
+            </p>
+        </section>
+
+        <!-- Resources -->
+        <section id="resources">
+            <h2>Resources for Extra Practice</h2>
+            <div class="see-also-links">
+                <a href="https://www.goethe.de/de/spr/ueb.html" class="see-also-rect">
+                    Goethe A1/A2 Wortliste<br>Genitive in context.<br><br>
+                    <button class="resource-btn">Visit Goethe Wortliste</button>
+                </a>
+                <a href="https://www.youtube.com/c/easygerman" class="see-also-rect">
+                    YouTube – EASY German<br>Hear genitive with names.<br><br>
+                    <button class="resource-btn">Visit EASY German</button>
+                </a>
+                <a href="https://www.schubert-verlag.de/" class="see-also-rect">
+                    Schubert Verlag<br>Free genitive exercises.<br><br>
+                    <button class="resource-btn">Visit Schubert Verlag</button>
+                </a>
+            </div>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="adjend.html" class="see-also-rect">Adjective Endings</a>
+                <a href="indirect.html" class="see-also-rect">Indirect Questions</a>
+                <a href="konjunktiv2.html" class="see-also-rect">Konjunktiv II</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="genetivprep.html" class="next-btn">Next: Genitive Prepositions →</a>
+        </div>
+    </main>
+
+   <!-- JavaScript -->
+  <script>
+    // Dark Mode Toggle
+    const modeToggle = document.getElementById('mode-toggle');
+    modeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
+
+    // Load dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+    }
+
+    // Toggle Answers
+    document.querySelectorAll('.toggle-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const answersDiv = button.nextElementSibling;
+            if (button.classList.contains('show-answers')) {
+                answersDiv.classList.toggle('hidden');
+            } else if (button.classList.contains('check-answers')) {
+                const selects = button.parentElement.querySelectorAll('.answer-select');
+                selects.forEach(select => {
+                    const selectedValue = select.value;
+                    const correctValue = select.getAttribute('data-correct');
+                    if (selectedValue === correctValue) {
+                        select.style.backgroundColor = '#d4edda'; // Green for correct
+                    } else {
+                        select.style.backgroundColor = '#f8d7da'; // Red for incorrect
+                    }
+                });
+            }
+        });
+    });
+</script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

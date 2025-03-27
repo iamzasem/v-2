@@ -1,0 +1,913 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      German A2: Using Doch After Yes/No Questions | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/dative.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+               <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="a2-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>German A2: Using <em>Doch</em> After Yes/No Questions</h1>
+            <p>
+              
+            </p>
+        </section>
+
+        <!-- What is Doch? -->
+        <section id="what-is-doch">
+            <h2>What is <em>Doch</em>?</h2>
+            <p><em>Doch</em> is a small but powerful word in German. It can mean “yes” or “but” depending on how you use it. After a yes/no question, <em>doch</em> says “Yes, actually, I do!”—it’s a way to disagree with a negative question or confirm something surprising. It’s like saying “Oh, but I do!” in English.</p>
+            <div class="subsection">
+                <h3>When to Use <em>Doch</em> After Yes/No Questions</h3>
+                <ul class="example-list">
+                    <li>Use <em>doch</em> when someone asks a negative yes/no question (with <em>nicht</em>), and you want to say “Yes, I do” or “Yes, it is.”</li>
+                    <li>It flips the “no” idea in the question to “yes.”</li>
+                    <li>It’s casual and common in everyday German.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section id="how-it-works">
+            <h2>How It Works</h2>
+            <div class="subsection">
+                <h3>Step 1: Spot the Negative Question</h3>
+                <p>A yes/no question with <em>nicht</em> expects a “no” answer. For example:</p>
+                <ul class="example-list">
+                    <li><em>Hast du nicht Hunger?</em> (Aren’t you hungry?)</li>
+                    <li><em>Gefällt dir der Film nicht?</em> (Don’t you like the movie?)</li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>Step 2: Answer with <em>Doch</em></h3>
+                <p>If you <strong>disagree</strong> with the negative idea (you ARE hungry, you DO like it), say <em>doch</em> plus a short explanation.</p>
+                <ul class="example-list">
+                    <li><em>Doch, ich habe Hunger.</em> (Yes, I am hungry.)</li>
+                    <li><em>Doch, der Film gefällt mir.</em> (Yes, I like the movie.)</li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>Step 3: Keep It Simple</h3>
+                <p>You can just say <em>doch</em> alone if the context is clear:</p>
+                <ul class="example-list">
+                    <li><em>Hast du nicht Hunger?</em> → <em>Doch!</em> (Yes, I do!)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Example Sentences -->
+        <section id="examples">
+            <h2>Tons of Example Sentences</h2>
+            <div class="subsection">
+                <h3>Everyday Situations</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Bist du nicht müde?</em> (Aren’t you tired?)<br><em>Doch, ich bin müde.</em> (Yes, I am tired.)</li>
+                        <li><em>Hast du keine Zeit?</em> (Don’t you have time?)<br><em>Doch, ich habe Zeit.</em> (Yes, I have time.)</li>
+                        <li><em>Regnet es nicht?</em> (Isn’t it raining?)<br><em>Doch, es regnet.</em> (Yes, it’s raining.)</li>
+                        <li><em>Magst du das Essen nicht?</em> (Don’t you like the food?)<br><em>Doch, ich mag das Essen.</em> (Yes, I like the food.)</li>
+                        <li><em>Kommst du nicht morgen?</em> (Aren’t you coming tomorrow?)<br><em>Doch, ich komme morgen.</em> (Yes, I’m coming tomorrow.)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>At School or Work</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Verstehst du das nicht?</em> (Don’t you understand this?)<br><em>Doch, ich verstehe das.</em> (Yes, I understand it.)</li>
+                        <li><em>Hast du den Stift nicht?</em> (Don’t you have the pen?)<br><em>Doch, ich habe den Stift.</em> (Yes, I have the pen.)</li>
+                        <li><em>Arbeitest du nicht heute?</em> (Aren’t you working today?)<br><em>Doch, ich arbeite heute.</em> (Yes, I’m working today.)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>With Friends</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Willst du nicht mitkommen?</em> (Don’t you want to come along?)<br><em>Doch, ich will mitkommen.</em> (Yes, I want to come along.)</li>
+                        <li><em>Spielst du nicht Fußball?</em> (Don’t you play soccer?)<br><em>Doch, ich spiele Fußball.</em> (Yes, I play soccer.)</li>
+                        <li><em>Trinkst du keinen Kaffee?</em> (Don’t you drink coffee?)<br><em>Doch, ich trinke Kaffee.</em> (Yes, I drink coffee.)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Short Answers</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Bist du nicht hier?</em> (Aren’t you here?)<br><em>Doch!</em> (Yes, I am!)</li>
+                        <li><em>Schmeckt es dir nicht?</em> (Doesn’t it taste good to you?)<br><em>Doch!</em> (Yes, it does!)</li>
+                        <li><em>Hast du das nicht gemacht?</em> (Didn’t you do that?)<br><em>Doch!</em> (Yes, I did!)</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Doch Feels Natural -->
+        <section id="natural">
+            <h2>Why <em>Doch</em> Feels Natural</h2>
+            <p>Without <em>doch</em>, you might say <em>Ja, ich habe Hunger</em>—it’s correct but sounds stiff. <em>Doch</em> adds a friendly, “Oh, but I do!” vibe—like you’re correcting the question’s assumption.</p>
+            <div class="examples">
+                <h3>Compare</h3>
+                <ul class="example-list">
+                    <li><em>Hast du nicht Hunger?</em>
+                        <ul>
+                            <li><em>Nein, ich habe keinen Hunger.</em> (No, I’m not hungry—agrees with the negative.)</li>
+                            <li><em>Doch, ich habe Hunger.</em> (Yes, I’m hungry—disagrees with the negative.)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Watch Out -->
+        <section id="watch-out">
+            <h2>Watch Out!</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Positive Questions</strong>: Don’t use <em>doch</em> with questions without <em>nicht</em>.
+                        <ul><li><em>Hast du Hunger?</em> → <em>Ja, ich habe Hunger.</em> (Not <em>Doch</em>—it’s wrong here.)</li></ul>
+                    </li>
+                    <li><strong>Short <em>Doch</em></strong>: Use it alone only if everyone knows what you mean.
+                        <ul><li><em>Hast du nicht geschlafen?</em> → <em>Doch!</em> (Yes, I did sleep—clear context.)</li></ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+       <!-- Exercises -->
+<section id="practice">
+    <h2>Creative Exercises with Multiple-Choice Options</h2>
+
+    <div class="subsection" id="exercise1">
+        <h3>Exercise 1: Pick the Right Answer with <em>Doch</em></h3>
+        <div class="examples">
+            <ol class="example-list">
+                <li><em>Bist du nicht müde?</em>
+                    <select class="answer-select" data-correct="Doch, ich bin müde.">
+                        <option value="">Select</option>
+                        <option value="Ja, ich bin nicht müde.">Ja, ich bin nicht müde.</option>
+                        <option value="Doch, ich bin müde.">Doch, ich bin müde.</option>
+                        <option value="Nein, ich bin müde.">Nein, ich bin müde.</option>
+                    </select>
+                </li>
+                <li><em>Hast du keine Zeit?</em>
+                    <select class="answer-select" data-correct="Doch, ich habe Zeit.">
+                        <option value="">Select</option>
+                        <option value="Doch, ich habe Zeit.">Doch, ich habe Zeit.</option>
+                        <option value="Ja, ich habe keine Zeit.">Ja, ich habe keine Zeit.</option>
+                        <option value="Nein, ich habe keine Zeit.">Nein, ich habe keine Zeit.</option>
+                    </select>
+                </li>
+                <li><em>Magst du den Film nicht?</em>
+                    <select class="answer-select" data-correct="Doch, ich mag den Film.">
+                        <option value="">Select</option>
+                        <option value="Nein, ich mag den Film.">Nein, ich mag den Film.</option>
+                        <option value="Ja, ich mag nicht den Film.">Ja, ich mag nicht den Film.</option>
+                        <option value="Doch, ich mag den Film.">Doch, ich mag den Film.</option>
+                    </select>
+                </li>
+                <li><em>Regnet es nicht?</em>
+                    <select class="answer-select" data-correct="Doch, es regnet.">
+                        <option value="">Select</option>
+                        <option value="Ja, es regnet nicht.">Ja, es regnet nicht.</option>
+                        <option value="Doch, es regnet.">Doch, es regnet.</option>
+                        <option value="Nein, es regnet nicht.">Nein, es regnet nicht.</option>
+                    </select>
+                </li>
+                <li><em>Willst du nicht mitkommen?</em>
+                    <select class="answer-select" data-correct="Doch, ich will mitkommen.">
+                        <option value="">Select</option>
+                        <option value="Nein, ich will mitkommen.">Nein, ich will mitkommen.</option>
+                        <option value="Doch, ich will mitkommen.">Doch, ich will mitkommen.</option>
+                        <option value="Ja, ich will nicht mitkommen.">Ja, ich will nicht mitkommen.</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Doch, ich bin müde.</em></li>
+                    <li><em>Doch, ich habe Zeit.</em></li>
+                    <li><em>Doch, ich mag den Film.</em></li>
+                    <li><em>Doch, es regnet.</em></li>
+                    <li><em>Doch, ich will mitkommen.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise2">
+        <h3>Exercise 2: Short <em>Doch</em> or Full Answer?</h3>
+        <div class="examples">
+            <ol class="example-list">
+                <li><em>Hast du nicht Hunger?</em>
+                    <select class="answer-select" data-correct="Doch!">
+                        <option value="">Select</option>
+                        <option value="Ja, ich habe nicht Hunger.">Ja, ich habe nicht Hunger.</option>
+                        <option value="Doch!">Doch!</option>
+                        <option value="Nein, ich habe Hunger.">Nein, ich habe Hunger.</option>
+                    </select>
+                </li>
+                <li><em>Verstehst du das nicht?</em>
+                    <select class="answer-select" data-correct="Doch, ich verstehe das.">
+                        <option value="">Select</option>
+                        <option value="Doch, ich verstehe das.">Doch, ich verstehe das.</option>
+                        <option value="Ja, ich verstehe das nicht.">Ja, ich verstehe das nicht.</option>
+                        <option value="Nein, ich verstehe das nicht.">Nein, ich verstehe das nicht.</option>
+                    </select>
+                </li>
+                <li><em>Gefällt dir das nicht?</em>
+                    <select class="answer-select" data-correct="Doch!">
+                        <option value="">Select</option>
+                        <option value="Ja, es gefällt mir nicht.">Ja, es gefällt mir nicht.</option>
+                        <option value="Nein, es gefällt mir.">Nein, es gefällt mir.</option>
+                        <option value="Doch!">Doch!</option>
+                    </select>
+                </li>
+                <li><em>Kommst du nicht morgen?</em>
+                    <select class="answer-select" data-correct="Doch, ich komme morgen.">
+                        <option value="">Select</option>
+                        <option value="Nein, ich komme morgen nicht.">Nein, ich komme morgen nicht.</option>
+                        <option value="Ja, ich komme nicht morgen.">Ja, ich komme nicht morgen.</option>
+                        <option value="Doch, ich komme morgen.">Doch, ich komme morgen.</option>
+                    </select>
+                </li>
+                <li><em>Trinkst du keinen Tee?</em>
+                    <select class="answer-select" data-correct="Doch!">
+                        <option value="">Select</option>
+                        <option value="Nein, ich trinke Tee.">Nein, ich trinke Tee.</option>
+                        <option value="Doch!">Doch!</option>
+                        <option value="Ja, ich trinke keinen Tee.">Ja, ich trinke keinen Tee.</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Doch!</em></li>
+                    <li><em>Doch, ich verstehe das.</em></li>
+                    <li><em>Doch!</em></li>
+                    <li><em>Doch, ich komme morgen.</em></li>
+                    <li><em>Doch!</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise3">
+        <h3>Exercise 3: <em>Doch</em> or Not?</h3>
+        <div class="examples">
+            <ol class="example-list">
+                <li><em>Bist du nicht hier?</em>
+                    <select class="answer-select" data-correct="Doch, ich bin hier.">
+                        <option value="">Select</option>
+                        <option value="Ja, ich bin hier.">Ja, ich bin hier.</option>
+                        <option value="Nein, ich bin nicht hier.">Nein, ich bin nicht hier.</option>
+                        <option value="Doch, ich bin hier.">Doch, ich bin hier.</option>
+                    </select>
+                </li>
+                <li><em>Hast du Hunger?</em> (Positive question)
+                    <select class="answer-select" data-correct="Ja, ich habe Hunger.">
+                        <option value="">Select</option>
+                        <option value="Ja, ich habe Hunger.">Ja, ich habe Hunger.</option>
+                        <option value="Doch, ich habe Hunger.">Doch, ich habe Hunger.</option>
+                        <option value="Nein, ich habe Hunger.">Nein, ich habe Hunger.</option>
+                    </select>
+                </li>
+                <li><em>Spielst du nicht Fußball?</em>
+                    <select class="answer-select" data-correct="Doch, ich spiele Fußball.">
+                        <option value="">Select</option>
+                        <option value="Doch, ich spiele Fußball.">Doch, ich spiele Fußball.</option>
+                        <option value="Nein, ich spiele Fußball.">Nein, ich spiele Fußball.</option>
+                        <option value="Ja, ich spiele nicht Fußball.">Ja, ich spiele nicht Fußball.</option>
+                    </select>
+                </li>
+                <li><em>Schmeckt es dir nicht?</em>
+                    <select class="answer-select" data-correct="Doch, es schmeckt mir.">
+                        <option value="">Select</option>
+                        <option value="Ja, es schmeckt mir nicht.">Ja, es schmeckt mir nicht.</option>
+                        <option value="Doch, es schmeckt mir.">Doch, es schmeckt mir.</option>
+                        <option value="Nein, es schmeckt mir nicht.">Nein, es schmeckt mir nicht.</option>
+                    </select>
+                </li>
+                <li><em>Willst du Kaffee?</em> (Positive question)
+                    <select class="answer-select" data-correct="Ja, ich will Kaffee.">
+                        <option value="">Select</option>
+                        <option value="Doch, ich will Kaffee.">Doch, ich will Kaffee.</option>
+                        <option value="Nein, ich will Kaffee.">Nein, ich will Kaffee.</option>
+                        <option value="Ja, ich will Kaffee.">Ja, ich will Kaffee.</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Doch, ich bin hier.</em></li>
+                    <li><em>Ja, ich habe Hunger.</em></li>
+                    <li><em>Doch, ich spiele Fußball.</em></li>
+                    <li><em>Doch, es schmeckt mir.</em></li>
+                    <li><em>Ja, ich will Kaffee.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise4">
+        <h3>Exercise 4: Mini-Dialogue</h3>
+        <p>Fill in with <em>doch</em> or another answer.</p>
+        <div class="examples">
+            <p>A: <em>Hast du nicht geschlafen?</em><br>B: ___ (1), ich habe geschlafen.<br>A: <em>Bist du nicht müde?</em><br>B: ___ (2)!<br>A: <em>Willst du keinen Kuchen?</em><br>B: ___ (3), ich will Kuchen.</p>
+            <ol class="example-list">
+                <li><select class="answer-select" data-correct="Doch">
+                    <option value="">Select</option>
+                    <option value="Ja">Ja</option>
+                    <option value="Doch">Doch</option>
+                    <option value="Nein">Nein</option>
+                </select></li>
+                <li><select class="answer-select" data-correct="Doch">
+                    <option value="">Select</option>
+                    <option value="Nein">Nein</option>
+                    <option value="Ja">Ja</option>
+                    <option value="Doch">Doch</option>
+                </select></li>
+                <li><select class="answer-select" data-correct="Doch">
+                    <option value="">Select</option>
+                    <option value="Ja">Ja</option>
+                    <option value="Doch">Doch</option>
+                    <option value="Nein">Nein</option>
+                </select></li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong><br>A: <em>Hast du nicht geschlafen?</em> B: <em>Doch</em>, ich habe geschlafen.<br>A: <em>Bist du nicht müde?</em> B: <em>Doch</em>!<br>A: <em>Willst du keinen Kuchen?</em> B: <em>Doch</em>, ich will Kuchen.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Tips -->
+        <section id="tips">
+            <h2>Tips for A2 Learners</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Listen for <em>Nicht</em></strong>: If the question has <em>nicht</em>, <em>doch</em> is your friend!</li>
+                    <li><strong>Practice Short <em>Doch</em></strong>: Say <em>Doch!</em> to friends—it’s quick and cool.</li>
+                    <li><strong>Daily Chat</strong>: Ask <em>Hast du nicht Hunger?</em>—answer <em>Doch, ich habe Hunger.</em></li>
+                    <li><strong>Flip the Negative</strong>: Think “No, wait, yes!”—that’s <em>doch</em>.</li>
+                    <li><strong>Sing It</strong>: <em>Doch, doch, doch!</em>—make it stick!</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Final Thoughts -->
+        <section id="final-thoughts">
+            <h2>You’re Ready!</h2>
+            <p>
+                This A2 guide makes <em>doch</em> after yes/no questions super simple with examples and exercises. You’re ready to sound natural in German conversations! Want more A2 fun? Try <em>doch</em> in other uses or tackle simple Perfekt next—your choice!
+            </p>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="dative.html" class="see-also-rect">German Dative</a>
+                <a href="welcherdieser.html" class="see-also-rect">Interrogativ- & Demonstrativartikel</a>
+                <a href="partizip2.html" class="see-also-rect">Perfekt & Partizip II</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="welcherdieser.html" class="next-btn">Next: Interrogativ- & Demonstrativartikel →</a>
+        </div>
+    </main>
+
+   <!-- JavaScript -->
+  <script>
+    // Dark Mode Toggle
+    const modeToggle = document.getElementById('mode-toggle');
+    modeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
+
+    // Load dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+    }
+
+    // Toggle Answers
+    document.querySelectorAll('.toggle-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const answersDiv = button.nextElementSibling;
+            if (button.classList.contains('show-answers')) {
+                answersDiv.classList.toggle('hidden');
+            } else if (button.classList.contains('check-answers')) {
+                const selects = button.parentElement.querySelectorAll('.answer-select');
+                selects.forEach(select => {
+                    const selectedValue = select.value;
+                    const correctValue = select.getAttribute('data-correct');
+                    if (selectedValue === correctValue) {
+                        select.style.backgroundColor = '#d4edda'; // Green for correct
+                    } else {
+                        select.style.backgroundColor = '#f8d7da'; // Red for incorrect
+                    }
+                });
+            }
+        });
+    });
+</script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

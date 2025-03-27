@@ -1,0 +1,794 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      German Articles | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/articles.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+               <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="other-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>German Articles Explained</h1>
+            <p>
+                Learning German can be an exciting journey, but one of the first hurdles beginners face is understanding <strong>German articles</strong>. These small words that come before nouns—like <em>der</em>, <em>die</em>, <em>das</em>, <em>ein</em>, and <em>eine</em>—are essential because they tell us about the noun’s <strong>gender</strong>, <strong>number</strong>, and <strong>case</strong>. Unlike English, where we simply use "the" or "a/an," German articles change depending on the context. Don’t worry—this guide will break it all down with clear explanations, handy tables, and example sentences. Plus, you’ll find practice questions at the end to help you learn more. Let’s get started!
+            </p>
+           
+        </section>
+
+        <!-- Key Points: Understanding German Articles -->
+        <section id="key-points">
+            <h2>Understanding German Articles</h2>
+            <div class="subsection">
+                <h3>What Are German Articles?</h3>
+                <p>
+                    Articles in German are words that precede nouns and provide crucial information about them. They indicate:
+                    <ul>
+                        <li><strong>Gender</strong>: Every German noun is either masculine, feminine, or neuter.</li>
+                        <li><strong>Number</strong>: Whether the noun is singular or plural.</li>
+                        <li><strong>Case</strong>: The noun’s role in the sentence (e.g., subject, object). German has four cases: <strong>nominative</strong>, <strong>accusative</strong>, <strong>dative</strong>, and <strong>genitive</strong>.</li>
+                    </ul>
+                    There are two types of articles:
+                    <ol>
+                        <li><strong>Definite Articles</strong>: Similar to "the" in English, used for specific nouns.</li>
+                        <li><strong>Indefinite Articles</strong>: Similar to "a" or "an" in English, used for non-specific nouns.</li>
+                    </ol>
+                </p>
+            </div>
+            <div class="subsection">
+                <h3>Definite Articles</h3>
+                <p>
+                    Definite articles refer to specific things, like "the dog" or "the house." In German, the definite article changes based on the noun’s gender, number, and case. Here’s a table to show you how:
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Case</th>
+                            <th>Masculine</th>
+                            <th>Feminine</th>
+                            <th>Neuter</th>
+                            <th>Plural</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Nominative</td>
+                            <td>der</td>
+                            <td>die</td>
+                            <td>das</td>
+                            <td>die</td>
+                        </tr>
+                        <tr>
+                            <td>Accusative</td>
+                            <td>den</td>
+                            <td>die</td>
+                            <td>das</td>
+                            <td>die</td>
+                        </tr>
+                        <tr>
+                            <td>Dative</td>
+                            <td>dem</td>
+                            <td>der</td>
+                            <td>dem</td>
+                            <td>den</td>
+                        </tr>
+                        <tr>
+                            <td>Genitive</td>
+                            <td>des</td>
+                            <td>der</td>
+                            <td>des</td>
+                            <td>der</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    <strong>What Do the Cases Mean?</strong>
+                    <ul>
+                        <li><strong>Nominative</strong>: Used for the subject of the sentence (who or what is doing something).</li>
+                        <li><strong>Accusative</strong>: Used for the direct object (who or what is being acted upon).</li>
+                        <li><strong>Dative</strong>: Used for the indirect object (to whom or for whom something is done).</li>
+                        <li><strong>Genitive</strong>: Used to show possession (like "of the" in English).</li>
+                    </ul>
+                </p>
+                <div class="examples">
+                    <p><strong>Example Sentences</strong></p>
+                    <ul class="example-list">
+                        <li><strong>Masculine: Hund (dog)</strong></li>
+                        <ul>
+                            <li>Nominative: <em>Der Hund</em> bellt. (The dog barks.)</li>
+                            <li>Accusative: Ich sehe <em>den Hund</em>. (I see the dog.)</li>
+                            <li>Dative: Ich gebe <em>dem Hund</em> einen Knochen. (I give the dog a bone.)</li>
+                            <li>Genitive: Das ist das Haus <em>des Hundes</em>. (That is the dog’s house.)</li>
+                        </ul>
+                        <li><strong>Feminine: Katze (cat)</strong></li>
+                        <ul>
+                            <li>Nominative: <em>Die Katze</em> schläft. (The cat sleeps.)</li>
+                            <li>Accusative: Ich sehe <em>die Katze</em>. (I see the cat.)</li>
+                            <li>Dative: Ich gebe <em>der Katze</em> Milch. (I give the cat milk.)</li>
+                            <li>Genitive: Die Farbe <em>der Katze</em> ist schwarz. (The cat’s color is black.)</li>
+                        </ul>
+                        <li><strong>Neuter: Kind (child)</strong></li>
+                        <ul>
+                            <li>Nominative: <em>Das Kind</em> spielt. (The child plays.)</li>
+                            <li>Accusative: Ich sehe <em>das Kind</em>. (I see the child.)</li>
+                            <li>Dative: Ich gebe <em>dem Kind</em> ein Spielzeug. (I give the child a toy.)</li>
+                            <li>Genitive: Der Name <em>des Kindes</em> ist Max. (The child’s name is Max.)</li>
+                        </ul>
+                        <li><strong>Plural: Hunde (dogs)</strong></li>
+                        <ul>
+                            <li>Nominative: <em>Die Hunde</em> bellen. (The dogs bark.)</li>
+                            <li>Accusative: Ich sehe <em>die Hunde</em>. (I see the dogs.)</li>
+                            <li>Dative: Ich gebe <em>den Hunden</em> Knochen. (I give the dogs bones.)</li>
+                            <li>Genitive: Die Farbe <em>der Hunde</em> ist braun. (The dogs’ color is brown.)</li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Indefinite Articles</h3>
+                <p>
+                    Indefinite articles are used for non-specific nouns, like "a dog" or "an apple." They also change based on gender and case, but they’re only used with singular nouns (plurals don’t have indefinite articles in German).
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Case</th>
+                            <th>Masculine</th>
+                            <th>Feminine</th>
+                            <th>Neuter</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Nominative</td>
+                            <td>ein</td>
+                            <td>eine</td>
+                            <td>ein</td>
+                        </tr>
+                        <tr>
+                            <td>Accusative</td>
+                            <td>einen</td>
+                            <td>eine</td>
+                            <td>ein</td>
+                        </tr>
+                        <tr>
+                            <td>Dative</td>
+                            <td>einem</td>
+                            <td>einer</td>
+                            <td>einem</td>
+                        </tr>
+                        <tr>
+                            <td>Genitive</td>
+                            <td>eines</td>
+                            <td>einer</td>
+                            <td>eines</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="examples">
+                    <p><strong>Example Sentences</strong></p>
+                    <ul class="example-list">
+                        <li><strong>Masculine: Hund (dog)</strong></li>
+                        <ul>
+                            <li>Nominative: <em>Ein Hund</em> bellt. (A dog barks.)</li>
+                            <li>Accusative: Ich sehe <em>einen Hund</em>. (I see a dog.)</li>
+                            <li>Dative: Ich gebe <em>einem Hund</em> einen Knochen. (I give a dog a bone.)</li>
+                            <li>Genitive: Das ist das Haus <em>eines Hundes</em>. (That is a dog’s house.)</li>
+                        </ul>
+                        <li><strong>Feminine: Katze (cat)</strong></li>
+                        <ul>
+                            <li>Nominative: <em>Eine Katze</em> schläft. (A cat sleeps.)</li>
+                            <li>Accusative: Ich sehe <em>eine Katze</em>. (I see a cat.)</li>
+                            <li>Dative: Ich gebe <em>einer Katze</em> Milch. (I give a cat milk.)</li>
+                            <li>Genitive: Die Farbe <em>einer Katze</em> ist schwarz. (A cat’s color is black.)</li>
+                        </ul>
+                        <li><strong>Neuter: Kind (child)</strong></li>
+                        <ul>
+                            <li>Nominative: <em>Ein Kind</em> spielt. (A child plays.)</li>
+                            <li>Accusative: Ich sehe <em>ein Kind</em>. (I see a child.)</li>
+                            <li>Dative: Ich gebe <em>einem Kind</em> ein Spielzeug. (I give a child a toy.)</li>
+                            <li>Genitive: Der Name <em>eines Kindes</em> ist Max. (A child’s name is Max.)</li>
+                        </ul>
+                    </ul>
+                    <p><strong>Note</strong>: For plural nouns, German doesn’t use indefinite articles. Instead, you might omit the article or use words like <em>einige</em> (some), but that’s a topic for later!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips for Learning German Articles -->
+        <section id="how-to">
+            <h2>Tips for Learning German Articles</h2>
+            <div class="subsection">
+                <p>
+                    Mastering German articles takes practice, but these tips can make it easier:
+                    <ol>
+                        <li><strong>Learn Nouns with Their Articles</strong>: Always memorize nouns with their definite article, e.g., <em>der Hund</em>, <em>die Katze</em>, <em>das Kind</em>. This helps you remember the gender.</li>
+                        <li><strong>Practice Simple Sentences</strong>: Use the nouns you know in sentences to get comfortable with how articles change.</li>
+                        <li><strong>Look for Patterns</strong>: Some noun endings hint at gender. For example, many nouns ending in <em>-e</em> are feminine (e.g., <em>die Lampe</em> – the lamp).</li>
+                        <li><strong>Be Patient</strong>: Mistakes are part of learning. Keep practicing, and it’ll get easier over time!</li>
+                    </ol>
+                </p>
+            </div>
+        </section>
+
+        <!-- Practice Questions -->
+        <section id="practice">
+            <h2>Practice Questions</h2>
+            <div class="subsection">
+                <h3>Exercise 1: Definite Articles</h3>
+                <ol>
+                    <li>____ Auto ist schnell. (The car is fast.)</li>
+                    <button class="toggle-btn">Show Answer</button>
+                    <div class="hidden"><p><strong>Answer:</strong> Das Auto</p></div>
+                    <li>Ich sehe ____ Frau. (I see the woman.)</li>
+                    <button class="toggle-btn">Show Answer</button>
+                    <div class="hidden"><p><strong>Answer:</strong> die Frau</p></div>
+                    <li>Ich gebe ____ Kind ein Buch. (I give the child a book.)</li>
+                    <button class="toggle-btn">Show Answer</button>
+                    <div class="hidden"><p><strong>Answer:</strong> dem Kind</p></div>
+                    <li>Das ist das Haus ____ Mannes. (That is the man’s house.)</li>
+                    <button class="toggle-btn">Show Answer</button>
+                    <div class="hidden"><p><strong>Answer:</strong> des Mannes</p></div>
+                </ol>
+            </div>
+            <div class="subsection">
+                <h3>Exercise 2: Indefinite Articles</h3>
+                <ol>
+                    <li>____ Hund bellt. (A dog barks.)</li>
+                    <button class="toggle-btn">Show Answer</button>
+                    <div class="hidden"><p><strong>Answer:</strong> Ein Hund</p></div>
+                    <li>Ich habe ____ Katze. (I have a cat.)</li>
+                    <button class="toggle-btn">Show Answer</button>
+                    <div class="hidden"><p><strong>Answer:</strong> eine Katze</p></div>
+                    <li>Ich gebe ____ Kind ein Spielzeug. (I give a child a toy.)</li>
+                    <button class="toggle-btn">Show Answer</button>
+                    <div class="hidden"><p><strong>Answer:</strong> einem Kind</p></div>
+                    <li>Die Farbe ____ Blume ist rot. (A flower’s color is red.)</li>
+                    <button class="toggle-btn">Show Answer</button>
+                    <div class="hidden"><p><strong>Answer:</strong> einer Blume</p></div>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Final Thoughts -->
+        <section id="tips">
+            <h2>Final Thoughts</h2>
+            <p>
+                German articles might seem tricky at first, but with this guide, you’ve got the tools to start mastering them. Use the tables as a quick reference, practice with the example sentences, and try the exercises to build your confidence. The key is consistency—keep learning new nouns with their articles, and soon, choosing the right one will feel natural. Happy learning!
+            </p>
+           
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="nouns.html" class="see-also-btn">German Nouns</a>
+                <a href="adjectives.html" class="see-also-btn">German Adjectives</a>
+                <a href="conjugation.html" class="see-also-btn">German Conjugation</a>
+                <a href="cases.html" class="see-also-btn">German Cases</a>
+                <a href="prepositions.html" class="see-also-btn">German Prepositions</a>
+                <a href="structure.html" class="see-also-btn">Sentence Structure</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="adjectives.html" class="next-btn">Next: German Adjectives →</a>
+        </div>
+    </main>
+
+    <script>
+        // Inline JavaScript for toggle functionality and dark/light mode
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle content
+            const buttons = document.querySelectorAll('.toggle-btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const hiddenContent = this.nextElementSibling;
+                    if (hiddenContent.classList.contains('hidden')) {
+                        hiddenContent.classList.remove('hidden');
+                        this.textContent = 'Hide Answer';
+                    } else {
+                        hiddenContent.classList.add('hidden');
+                        this.textContent = 'Show Answer';
+                    }
+                });
+            });
+
+            // Dark/Light mode toggle
+            const modeToggle = document.getElementById('mode-toggle');
+            const body = document.body;
+            modeToggle.addEventListener('click', function() {
+                body.classList.toggle('dark-mode');
+                const isDark = body.classList.contains('dark-mode');
+                modeToggle.querySelector('svg').innerHTML = isDark ? 
+                    '<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>' : 
+                    '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+            });
+        });
+    </script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

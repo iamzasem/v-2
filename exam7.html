@@ -1,0 +1,1144 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      German B1 Lesen Prüfung Model 7 | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+
+<link rel="stylesheet" href="/static/css/exam1.css">
+
+<body>
+    <div class="timer-container">
+        <div class="timer-toggle">
+            <div class="toggle-wrapper">
+                <span class="toggle-icon" data-state="open">👁️</span>
+                <span class="green-dot"></span>
+            </div>
+            <div class="separator"></div>
+            <span id="timer" class="timer">65:00</span>
+        </div>
+        <div class="timer-controls">
+            <button id="pauseBtn" class="timer-control">⏸️</button>
+            <button id="restartBtn" class="timer-control">🔄</button>
+        </div>
+    </div> <!-- Closing the timer-controls div -->
+    <main>
+        <div class="container">
+            <div class="header-section">
+                <div class="nav-buttons">
+                    <a href="german.html" class="nav-button">🏠</a>
+                    <a href="practice_Exam.html" class="nav-button">⬅️</a>
+                </div>
+                <header>
+                    <h1>Lesen Prüfung</h1>
+                </header>
+                <div class="exam-title">Deutsch B1 Lesen Prüfung Model 7</div>
+                <button id="startBtn" class="start-button">Begin Exam</button>
+                <div id="timeTaken" class="time-taken" style="display: none;"></div>
+            </div>
+
+            <div id="examContent">
+ <!-- Teil 1 -->
+<div class="section">
+    <h2><strong>Teil 1:</strong></h2>
+    <p><strong>Lesen Sie den Text und die Aufgaben 1 bis 6 dazu.</strong></p>
+    <p><strong>Wählen Sie: Sind die Aussagen richtig oder falsch?</strong></p>
+    <p><strong>Arbeitszeit: 12 Minuten</strong></p>
+    <div class="reading-text">
+        <h3>Ein Besuch in Moskau – Die Wissenschaftsausstellung 2025</h3>
+        <p>Anna Schmidt</p>
+        <p>23. März 2025</p>
+        <p>Hallo zusammen,</p>
+        <p>ich bin Anna, eine 17-jährige Schülerin aus Salzburg in Österreich, und ich lerne Deutsch als Muttersprache sowie Russisch in der Schule. Letzte Woche bin ich nach Moskau gereist, um an der großen Wissenschaftsausstellung „Zukunft Heute“ teilzunehmen. Die Reise begann am 18. März, als ich früh morgens mit dem Zug von Salzburg nach Wien gefahren bin. Von dort nahm ich einen Nachtzug nach Moskau – eine lange Fahrt von fast 24 Stunden! Ich bin am 19. März um 10 Uhr morgens am Bahnhof in Moskau angekommen und war sofort begeistert von der riesigen Stadt.</p>
+        <p>Die Ausstellung fand in einem modernen Gebäude statt, das „Zentrum für Wissenschaft und Technik“ heißt. Dort haben Schüler aus vielen Ländern ihre Projekte vorgestellt. Mein Projekt war ein Modell eines umweltfreundlichen Autos, das mit Solarenergie läuft. Am ersten Tag, dem 19. März, habe ich meinen Stand aufgebaut und mit anderen Teilnehmern gesprochen. Besonders interessant war ein Junge aus Deutschland, Max, der ein Roboterprojekt hatte. Wir haben uns auf Deutsch unterhalten, weil er aus München kommt, und wir haben uns schnell angefreundet.</p>
+        <p>Am 20. März war der große Ausstellungstag. Viele Besucher kamen, darunter Wissenschaftler, Lehrer und sogar ein paar Politiker. Ich habe mein Projekt erklärt und viele Fragen beantwortet – manchmal auf Deutsch, manchmal auf Englisch, weil mein Russisch noch nicht so gut ist. Das Wetter war kalt und grau, aber im Gebäude war es warm und gemütlich. Am Nachmittag gab es eine Pause, und ich habe mit Max einen Tee getrunken. Er hat mir erzählt, dass er nächstes Jahr in Österreich studieren möchte.</p>
+        <p>Am letzten Tag, dem 21. März, wurden die besten Projekte ausgezeichnet. Ich habe keinen Preis gewonnen, aber die Jury hat mein Auto gelobt, und ich habe eine Urkunde bekommen. Danach habe ich ein bisschen Zeit in Moskau verbracht. Ich bin mit der Metro gefahren – die Stationen sind wunderschön, wie kleine Museen! Ich habe auch Kreml und den Roten Platz besucht, aber es war sehr windig, und ich habe meine Jacke fest zugezogen. Am Abend bin ich zurück zum Bahnhof gegangen und habe den Nachtzug nach Hause genommen. Die Reise war anstrengend, aber ich habe viel gelernt und neue Freunde gefunden. Vielleicht fahre ich nächstes Jahr wieder nach Russland!</p>
+        <p>Viele Grüße,</p>
+        <p>Anna</p>
+    </div>
+
+    <!-- Randomized Questions -->
+    <div class="question" data-question="q1">
+        <p>1. Anna ist am 19. März morgens in Moskau angekommen.</p>
+        <div class="options">
+            <div class="option enabled" data-value="richtig">Richtig</div>
+            <div class="option enabled" data-value="falsch">Falsch</div>
+        </div>
+    </div>
+
+    <div class="question" data-question="q2">
+        <p>2. Anna hat an der Ausstellung einen Preis gewonnen.</p>
+        <div class="options">
+            <div class="option enabled" data-value="richtig">Richtig</div>
+            <div class="option enabled" data-value="falsch">Falsch</div>
+        </div>
+    </div>
+
+    <div class="question" data-question="q3">
+        <p>3. Anna hat ihr Projekt nur auf Russisch erklärt.</p>
+        <div class="options">
+            <div class="option enabled" data-value="richtig">Richtig</div>
+            <div class="option enabled" data-value="falsch">Falsch</div>
+        </div>
+    </div>
+
+    <div class="question" data-question="q4">
+        <p>4. Max kommt aus Deutschland und möchte in Österreich studieren.</p>
+        <div class="options">
+            <div class="option enabled" data-value="richtig">Richtig</div>
+            <div class="option enabled" data-value="falsch">Falsch</div>
+        </div>
+    </div>
+
+    <div class="question" data-question="q5">
+        <p>5. Das Wetter in Moskau war am 20. März warm und sonnig.</p>
+        <div class="options">
+            <div class="option enabled" data-value="richtig">Richtig</div>
+            <div class="option enabled" data-value="falsch">Falsch</div>
+        </div>
+    </div>
+
+    <div class="question" data-question="q6">
+        <p>6. Anna fand die Reise nach Moskau langweilig.</p>
+        <div class="options">
+            <div class="option enabled" data-value="richtig">Richtig</div>
+            <div class="option enabled" data-value="falsch">Falsch</div>
+        </div>
+    </div>
+</div>
+
+   <!-- Teil 2 -->
+<div class="section">
+    <h2><strong>Teil 2:</strong></h2>
+    <p><strong>Lesen Sie den Text aus der Presse und die Aufgaben 7 bis 9 dazu.</strong></p>
+    <p><strong>Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.</strong></p>
+    <p><strong>Arbeitszeit: 20 Minuten</strong></p>
+    <div class="reading-text">
+        <h3>Das Geheimnis der Bienen</h3>
+        <p>Anna ist 29 Jahre alt und lebt in Berlin. Seit drei Jahren arbeitet sie als Imkerin und kümmert sich um Bienen. Sie findet es faszinierend, wie Bienen zusammenarbeiten, um Honig zu produzieren. Jeden Morgen steht sie früh auf und kontrolliert ihre Bienenstöcke, aber manchmal ist sie besorgt. Die Bienen sterben oft wegen Pestiziden oder schlechtem Wetter, und das macht ihre Arbeit schwierig. Ihr Freund Paul sagt: „Anna, vielleicht solltest du weniger arbeiten und dir einen anderen Job suchen. Das wäre einfacher für dich.“ Anna überlegt eine Weile und beschließt, weiterzumachen, aber zusätzlich Kurse über nachhaltige Landwirtschaft zu besuchen. Jetzt weiß sie mehr über den Schutz der Bienen, verdient sogar ein bisschen Geld mit Honigverkauf und ist stolz auf ihre Entscheidung.</p>
+    </div>
+
+    <div class="question-header">Wähle die richtige Antwort:</div>
+
+    <!-- Randomized Questions -->
+    <div class="question" data-question="q7">
+        <p>7. Was macht Anna jetzt zusätzlich zu ihrer Arbeit?</p>
+        <div class="options">
+            <div class="option enabled" data-value="a" id="q7-a">a) Sie besucht Kurse über nachhaltige Landwirtschaft.</div>
+            <div class="option enabled" data-value="b" id="q7-b">b) Sie sucht einen neuen Job.</div>
+            <div class="option enabled" data-value="c" id="q7-c">c) Sie zieht aufs Land.</div>
+        </div>
+    </div>
+
+    <div class="question" data-question="q8">
+        <p>8. Warum ist Anna manchmal besorgt?</p>
+        <div class="options">
+            <div class="option enabled" data-value="a" id="q8-a">a) Weil sie früh aufstehen muss.</div>
+            <div class="option enabled" data-value="b" id="q8-b">b) Weil die Bienen oft sterben.</div>
+            <div class="option enabled" data-value="c" id="q8-c">c) Weil sie keinen Honig verkauft.</div>
+        </div>
+    </div>
+
+    <div class="question" data-question="q9">
+        <p>9. Was rät Paul Anna?</p>
+        <div class="options">
+            <div class="option enabled" data-value="a" id="q9-a">a) Sie soll einen anderen Job suchen.</div>
+            <div class="option enabled" data-value="b" id="q9-b">b) Sie soll mehr Bienen kaufen.</div>
+            <div class="option enabled" data-value="c" id="q9-c">c) Sie soll Kurse besuchen.</div>
+        </div>
+    </div>
+
+    <p><strong>Lesen Sie den Text aus der Presse und die Aufgaben 10 bis 12 dazu.</strong></p>
+    <p><strong>Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.</strong></p>
+    <div class="reading-text">
+        <h3>Die Welt unter Wasser</h3>
+        <p>Mark ist 19 Jahre alt und studiert Biologie in Kiel. Seit einem Jahr taucht er regelmäßig im Meer, um Korallenriffe zu erforschen. Er liebt die bunten Fische und die Ruhe unter Wasser, aber es gibt auch Probleme. Oft sieht er Plastikmüll, der die Tiere bedroht, und das macht ihn traurig. Seine Schwester Lisa sagt: „Mark, du solltest weniger tauchen und stattdessen an Land forschen. Das ist weniger gefährlich.“ Mark denkt darüber nach und beschließt, einmal pro Woche an Strandreinigungen teilzunehmen, anstatt nur zu tauchen. Jetzt fühlt er sich nützlich, lernt mehr über Umweltschutz und hat sogar neue Freunde gefunden, die mit ihm den Müll sammeln.</p>
+    </div>
+
+    <!-- Randomized Questions -->
+    <div class="question" data-question="q10">
+        <p>10. Was liebt Mark am Tauchen?</p>
+        <div class="options">
+            <div class="option enabled" data-value="a" id="q10-a">a) Den Plastikmüll im Meer.</div>
+            <div class="option enabled" data-value="b" id="q10-b">b) Die bunten Fische und die Ruhe.</div>
+            <div class="option enabled" data-value="c" id="q10-c">c) Die gefährlichen Tiere.</div>
+        </div>
+    </div>
+
+    <div class="question" data-question="q11">
+        <p>11. Was macht Mark jetzt einmal pro Woche?</p>
+        <div class="options">
+            <div class="option enabled" data-value="a" id="q11-a">a) Er forscht an Land.</div>
+            <div class="option enabled" data-value="b" id="q11-b">b) Er nimmt an Strandreinigungen teil.</div>
+            <div class="option enabled" data-value="c" id="q11-c">c) Er studiert Biologie.</div>
+        </div>
+    </div>
+
+    <div class="question" data-question="q12">
+        <p>12. Was sagt Lisa zu Mark?</p>
+        <div class="options">
+            <div class="option enabled" data-value="a" id="q12-a">a) Er soll an Strandreinigungen teilnehmen.</div>
+            <div class="option enabled" data-value="b" id="q12-b">b) Er soll weniger tauchen und an Land forschen.</div>
+            <div class="option enabled" data-value="c" id="q12-c">c) Er soll mehr Zeit unter Wasser verbringen.</div>
+        </div>
+    </div>
+</div>
+  <!-- Teil 3 -->
+<div class="section" id="teil3">
+    <h2><strong>Teil 3: Werbeanzeigen für Wohnmöglichkeiten aus einer Zeitschrift</strong></h2>
+    <div class="reading-text">
+        <p><strong>Arbeitszeit: 10 Minuten</strong></p>
+        <p>Lesen Sie die Situationen 13 bis 19 und die Anzeigen a bis j.</p>
+        <p>Welche Anzeige passt zu welcher Situation? Sie können jede Anzeige nur einmal verwenden. Für eine Situation gibt es KEINE passende Anzeige. In diesem Fall wählen Sie 0.</p>
+    </div>
+
+    <!-- Randomized Questions -->
+    <div class="question" data-question="q13">
+        <p>13. Lukas sucht eine günstige Unterkunft für einen kurzen Aufenthalt in Berlin mit Frühstück.</p>
+        <div class="options">
+            <select class="option-select enabled" data-value="">
+                <option value="" disabled selected>Wählen Sie eine Anzeige</option>
+                <option value="0">0</option>
+                <option value="a">a</option>
+                <option value="b">b</option>
+                <option value="c">c</option>
+                <option value="d">d</option>
+                <option value="e">e</option>
+                <option value="f">f</option>
+                <option value="g">g</option>
+                <option value="h">h</option>
+                <option value="i">i</option>
+                <option value="j">j</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="question" data-question="q14">
+        <p>14. Maria möchte ein ruhiges Zimmer mieten, um sich auf ihre Prüfungen vorzubereiten.</p>
+        <div class="options">
+            <select class="option-select enabled" data-value="">
+                <option value="" disabled selected>Wählen Sie eine Anzeige</option>
+                <option value="0">0</option>
+                <option value="a">a</option>
+                <option value="b">b</option>
+                <option value="c">c</option>
+                <option value="d">d</option>
+                <option value="e">e</option>
+                <option value="f">f</option>
+                <option value="g">g</option>
+                <option value="h">h</option>
+                <option value="i">i</option>
+                <option value="j">j</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="question" data-question="q15">
+        <p>15. Ahmed sucht eine WG mit internationalen Mitbewohnern und einer großen Küche.</p>
+        <div class="options">
+            <select class="option-select enabled" data-value="">
+                <option value="" disabled selected>Wählen Sie eine Anzeige</option>
+                <option value="0">0</option>
+                <option value="a">a</option>
+                <option value="b">b</option>
+                <option value="c">c</option>
+                <option value="d">d</option>
+                <option value="e">e</option>
+                <option value="f">f</option>
+                <option value="g">g</option>
+                <option value="h">h</option>
+                <option value="i">i</option>
+                <option value="j">j</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="question" data-question="q16">
+        <p>16. Sabine möchte eine moderne Wohnung mit Balkon und Platz für ihren Hund.</p>
+        <div class="options">
+            <select class="option-select enabled" data-value="">
+                <option value="" disabled selected>Wählen Sie eine Anzeige</option>
+                <option value="0">0</option>
+                <option value="a">a</option>
+                <option value="b">b</option>
+                <option value="c">c</option>
+                <option value="d">d</option>
+                <option value="e">e</option>
+                <option value="f">f</option>
+                <option value="g">g</option>
+                <option value="h">h</option>
+                <option value="i">i</option>
+                <option value="j">j</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="question" data-question="q17">
+        <p>17. Jonas sucht ein Hostel für eine Gruppe von Freunden mit Party-Atmosphäre.</p>
+        <div class="options">
+            <select class="option-select enabled" data-value="">
+                <option value="" disabled selected>Wählen Sie eine Anzeige</option>
+                <option value="0">0</option>
+                <option value="a">a</option>
+                <option value="b">b</option>
+                <option value="c">c</option>
+                <option value="d">d</option>
+                <option value="e">e</option>
+                <option value="f">f</option>
+                <option value="g">g</option>
+                <option value="h">h</option>
+                <option value="i">i</option>
+                <option value="j">j</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="question" data-question="q18">
+        <p>18. Elena möchte ein möbliertes Zimmer für einen Monat mit schneller Internetverbindung.</p>
+        <div class="options">
+            <select class="option-select enabled" data-value="">
+                <option value="" disabled selected>Wählen Sie eine Anzeige</option>
+                <option value="0">0</option>
+                <option value="a">a</option>
+                <option value="b">b</option>
+                <option value="c">c</option>
+                <option value="d">d</option>
+                <option value="e">e</option>
+                <option value="f">f</option>
+                <option value="g">g</option>
+                <option value="h">h</option>
+                <option value="i">i</option>
+                <option value="j">j</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="question" data-question="q19">
+        <p>19. Paul sucht eine Unterkunft mit Blick aufs Meer und täglichem Zimmerservice.</p>
+        <div class="options">
+            <select class="option-select enabled" data-value="">
+                <option value="" disabled selected>Wählen Sie eine Anzeige</option>
+                <option value="0">0</option>
+                <option value="a">a</option>
+                <option value="b">b</option>
+                <option value="c">c</option>
+                <option value="d">d</option>
+                <option value="e">e</option>
+                <option value="f">f</option>
+                <option value="g">g</option>
+                <option value="h">h</option>
+                <option value="i">i</option>
+                <option value="j">j</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="reading-text">
+        <h3>Anzeigen</h3>
+        <div class="anzeige-container">
+            <div class="anzeige-item">
+                <span class="anzeige-label">a)</span>
+                <div class="anzeige-card" data-anzeige="a">
+                    <h4>STADT-WG</h4>
+                    <p>Lebendige WG mit Leuten aus aller Welt und geräumiger Küche.</p>
+                    <p>Preis: 450 €/Monat</p>
+                    <p><strong>Web:</strong> www.stadtwg.de</p>
+                </div>
+            </div>
+            <div class="anzeige-item">
+                <span class="anzeige-label">b)</span>
+                <div class="anzeige-card" data-anzeige="b">
+                    <h4>HOSTEL FUN</h4>
+                    <p>Party-Hostel für Gruppen mit Bar und Musik bis Mitternacht.</p>
+                    <p>Preis: 25 €/Nacht</p>
+                    <p><strong>Web:</strong> www.hostelfun.de</p>
+                </div>
+            </div>
+            <div class="anzeige-item">
+                <span class="anzeige-label">c)</span>
+                <div class="anzeige-card" data-anzeige="c">
+                    <h4>RUHIGE OASE</h4>
+                    <p>Einzelzimmer in stiller Gegend, perfekt zum Lernen.</p>
+                    <p>Preis: 350 €/Monat</p>
+                    <p><strong>Web:</strong> www.ruheoase.de</p>
+                </div>
+            </div>
+            <div class="anzeige-item">
+                <span class="anzeige-label">d)</span>
+                <div class="anzeige-card" data-anzeige="d">
+                    <h4>MODERN LIVING</h4>
+                    <p>Neue Wohnung mit Balkon, Haustiere erlaubt.</p>
+                    <p>Preis: 800 €/Monat</p>
+                    <p><strong>Web:</strong> www.modernliving.de</p>
+                </div>
+            </div>
+            <div class="anzeige-item">
+                <span class="anzeige-label">e)</span>
+                <div class="anzeige-card" data-anzeige="e">
+                    <h4>BERLIN BUDGET</h4>
+                    <p>Günstiges Hostel mit Frühstück, zentral gelegen.</p>
+                    <p>Preis: 20 €/Nacht</p>
+                    <p><strong>Web:</strong> www.berlinbudget.de</p>
+                </div>
+            </div>
+            <div class="anzeige-item">
+                <span class="anzeige-label">f)</span>
+                <div class="anzeige-card" data-anzeige="f">
+                    <h4>SHORT STAY</h4>
+                    <p>Möbliertes Zimmer mit WLAN für Kurzaufenthalte.</p>
+                    <p>Preis: 300 €/Monat</p>
+                    <p><strong>Web:</strong> www.shortstay.de</p>
+                </div>
+            </div>
+            <div class="anzeige-item">
+                <span class="anzeige-label">g)</span>
+                <div class="anzeige-card" data-anzeige="g">
+                    <h4>FAMILIENHAUS</h4>
+                    <p>Geräumiges Haus mit Garten für Familien.</p>
+                    <p>Preis: 1200 €/Monat</p>
+                    <p><strong>Web:</strong> www.familienhaus.de</p>
+                </div>
+            </div>
+            <div class="anzeige-item">
+                <span class="anzeige-label">h)</span>
+                <div class="anzeige-card" data-anzeige="h">
+                    <h4>STUDIO CITY</h4>
+                    <p>Kleines Studio mit moderner Ausstattung in der Stadt.</p>
+                    <p>Preis: 600 €/Monat</p>
+                    <p><strong>Web:</strong> www.studiocity.de</p>
+                </div>
+            </div>
+            <div class="anzeige-item">
+                <span class="anzeige-label">i)</span>
+                <div class="anzeige-card" data-anzeige="i">
+                    <h4>COUNTRY RETREAT</h4>
+                    <p>Ferienhaus auf dem Land mit viel Natur.</p>
+                    <p>Preis: 50 €/Nacht</p>
+                    <p><strong>Web:</strong> www.countryretreat.de</p>
+                </div>
+            </div>
+            <div class="anzeige-item">
+                <span class="anzeige-label">j)</span>
+                <div class="anzeige-card" data-anzeige="j">
+                    <h4>URBAN LOFT</h4>
+                    <p>Stilvolles Loft mit Blick auf die Skyline.</p>
+                    <p>Preis: 900 €/Monat</p>
+                    <p><strong>Web:</strong> www.urbanloft.de</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Teil 4 -->
+<div class="section" id="teil4">
+    <h2><strong>Teil 4: Studium im Ausland – Ja oder Nein?</strong></h2>
+    <div class="reading-text">
+        <p>Im Jahr 2025 fragen sich viele, ob ein Studium im Ausland die bessere Wahl ist. Manche sagen, es bietet Chancen, neue Kulturen kennenzulernen und die Karriere zu fördern. Andere meinen, es sei teuer, kompliziert und nicht immer nötig. Wir haben verschiedene Meinungen dazu gesammelt.</p>
+        <p><strong>Arbeitszeit: 15 Minuten</strong></p>
+        <p>Lesen Sie die Texte 20 bis 26. Wählen Sie: Ist die Person für ein Studium im Ausland?</p>
+    </div>
+
+    <div class="question-table">
+        <div class="kommentare-section">
+            <!-- Randomized Questions -->
+            <div class="comment">
+                <div class="question-row question" data-question="q20">
+                    <div class="question-cell number"><strong>20</strong></div>
+                    <div class="question-cell name"><strong>Sara</strong></div>
+                    <div class="question-cell options">
+                        <button class="option enabled" data-value="Ja">Ja</button>
+                        <button class="option enabled" data-value="Nein">Nein</button>
+                    </div>
+                </div>
+                <p class="comment-text">
+                    Ich habe Freunde, die im Ausland studiert haben, und sie erzählen von tollen Erfahrungen mit neuen Leuten und Sprachen. Aber ich denke, hier in Deutschland ist das Bildungssystem auch gut, und ich spare Geld, wenn ich bleibe. Vielleicht ist es nicht so wichtig, wo man studiert, sondern was man daraus macht.<br>
+                    <em>Sara, 22 Jahre, Berlin</em>
+                </p>
+            </div>
+
+            <div class="comment">
+                <div class="question-row question" data-question="q21">
+                    <div class="question-cell number"><strong>21</strong></div>
+                    <div class="question-cell name"><strong>Lukas</strong></div>
+                    <div class="question-cell options">
+                        <button class="option enabled" data-value="Ja">Ja</button>
+                        <button class="option enabled" data-value="Nein">Nein</button>
+                    </div>
+                </div>
+                <p class="comment-text">
+                    Ein Studium im Ausland klingt spannend, vor allem wegen der internationalen Kontakte, die man knüpfen kann. Ich träume davon, in England zu studieren, aber die Kosten machen mir Sorgen. Hier habe ich meine Familie und Freunde, und das gibt mir Sicherheit. Ich bin mir nicht sicher, ob ich den Schritt wagen soll.<br>
+                    <em>Lukas, 19 Jahre, Hamburg</em>
+                </p>
+            </div>
+
+            <div class="comment">
+                <div class="question-row question" data-question="q22">
+                    <div class="question-cell number"><strong>22</strong></div>
+                    <div class="question-cell name"><strong>Mia</strong></div>
+                    <div class="question-cell options">
+                        <button class="option enabled" data-value="Ja">Ja</button>
+                        <button class="option enabled" data-value="Nein">Nein</button>
+                    </div>
+                </div>
+                <p class="comment-text">
+                    Ich habe ein Jahr in Kanada studiert, und es war die beste Zeit meines Lebens. Man lernt, selbstständig zu sein, und die Universitäten dort haben oft mehr Praxis. Trotzdem war es nicht leicht, so weit weg von zu Hause zu sein, aber ich würde es wieder tun, weil es mich verändert hat.<br>
+                    <em>Mia, 30 Jahre, Köln</em>
+                </p>
+            </div>
+
+            <div class="comment">
+                <div class="question-row question" data-question="q23">
+                    <div class="question-cell number"><strong>23</strong></div>
+                    <div class="question-cell name"><strong>Tom</strong></div>
+                    <div class="question-cell options">
+                        <button class="option enabled" data-value="Ja">Ja</button>
+                        <button class="option enabled" data-value="Nein">Nein</button>
+                    </div>
+                </div>
+                <p class="comment-text">
+                    Für mich ist das Studium hier völlig in Ordnung. Warum sollte ich ins Ausland gehen, wenn ich hier alles habe, was ich brauche? Es kostet viel Zeit und Geld, eine andere Sprache zu lernen und sich anzupassen. Ich kenne Leute, die es gemacht haben, und sie sagen, es war nicht immer einfach.<br>
+                    <em>Tom, 25 Jahre, München</em>
+                </p>
+            </div>
+
+            <div class="comment">
+                <div class="question-row question" data-question="q24">
+                    <div class="question-cell number"><strong>24</strong></div>
+                    <div class="question-cell name"><strong>Anna</strong></div>
+                    <div class="question-cell options">
+                        <button class="option enabled" data-value="Ja">Ja</button>
+                        <button class="option enabled" data-value="Nein">Nein</button>
+                    </div>
+                </div>
+                <p class="comment-text">
+                    Ein Studium im Ausland kann Türen öffnen, besonders wenn man später international arbeiten will. Ich finde es mutig, in ein anderes Land zu gehen und sich neuen Herausforderungen zu stellen. Hier ist es auch gut, aber ich denke, die Erfahrung im Ausland ist etwas Besonderes, das man nicht verpassen sollte.<br>
+                    <em>Anna, 28 Jahre, Leipzig</em>
+                </p>
+            </div>
+
+            <div class="comment">
+                <div class="question-row question" data-question="q25">
+                    <div class="question-cell number"><strong>25</strong></div>
+                    <div class="question-cell name"><strong>Paul</strong></div>
+                    <div class="question-cell options">
+                        <button class="option enabled" data-value="Ja">Ja</button>
+                        <button class="option enabled" data-value="Nein">Nein</button>
+                    </div>
+                </div>
+                <p class="comment-text">
+                    Ich habe mich gegen das Ausland entschieden, weil ich hier ein gutes Studium habe und meine Freunde nicht verlassen will. Man hört oft, dass es im Ausland besser sein soll, aber ich glaube, es hängt davon ab, was man selbst daraus macht. Vielleicht wäre es interessant, aber ich bin zufrieden, wo ich bin.<br>
+                    <em>Paul, 33 Jahre, Frankfurt</em>
+                </p>
+            </div>
+
+            <div class="comment">
+                <div class="question-row question" data-question="q26">
+                    <div class="question-cell number"><strong>26</strong></div>
+                    <div class="question-cell name"><strong>Lisa</strong></div>
+                    <div class="question-cell options">
+                        <button class="option enabled" data-value="Ja">Ja</button>
+                        <button class="option enabled" data-value="Nein">Nein</button>
+                    </div>
+                </div>
+                <p class="comment-text">
+                    Ich finde, ein Studium im Ausland ist eine großartige Möglichkeit, die Welt zu sehen und neue Perspektiven zu gewinnen. Es ist nicht immer leicht, sich in einer fremden Kultur zurechtzufinden, aber genau das macht es wertvoll. Ich plane, nächstes Jahr nach Spanien zu gehen, auch wenn es teuer wird.<br>
+                    <em>Lisa, 21 Jahre, Stuttgart</em>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Teil 5 -->
+<div class="section section-grey-border">
+    <h2><strong>Teil 5:</strong></h2>
+    <p><strong>Lesen Sie die Aufgaben 27 bis 30 und den Text dazu.</strong></p>
+    <p><strong>Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.</strong></p>
+    <p><strong>Arbeitszeit: 10 Minuten</strong></p>
+    <div class="reading-text">
+        <p>Sie planen eine Reise nach Nepal und recherchieren über einen besonderen Tag am Janaki Mandir in Janakpur, einem berühmten Tempel mit tiefer religiöser und kultureller Bedeutung.</p>
+        <div class="reading-content">
+            <h3>Ein Tag am Janaki Mandir in Janakpur</h3>
+            <table class="info-table">
+                <tr>
+                    <th>06:00</th>
+                    <td><strong>Morgenzeremonien</strong><br>Der Tempel öffnet seine Tore. Priester beginnen mit Gebeten und besonderen Ritualen für die Göttin Sita, während Pilger aus Nepal und Indien anreisen.</td>
+                </tr>
+                <tr>
+                    <th>09:00</th>
+                    <td><strong>Führung durch die Geschichte</strong><br>Ein Guide erzählt von der Entstehung des Tempels im Jahr 1910 durch Königin Vrisha Bhanu und zeigt die 60 kunstvoll dekorierten Räume.</td>
+                </tr>
+                <tr>
+                    <th>12:00</th>
+                    <td><strong>Mittagsopfer</strong><br>Pilger bringen Blumen und Süßigkeiten als Gaben. Viele essen einfache Mahlzeiten, die von lokalen Familien vorbereitet werden.</td>
+                </tr>
+                <tr>
+                    <th>15:00</th>
+                    <td><strong>Kulturelle Darbietungen</strong><br>Tänzer zeigen traditionelle Mithila-Tänze, die das Leben von Sita und Rama darstellen, vor dem Hochzeits-Mandapa.</td>
+                </tr>
+                <tr>
+                    <th>18:00</th>
+                    <td><strong>Abendgebete und Lichter</strong><br>Der Tempel leuchtet mit hunderten Lampen. Die Gläubigen singen Lieder und bewundern die Madhubani-Gemälde an den Wänden.</td>
+                </tr>
+                <tr>
+                    <th>20:00</th>
+                    <td><strong>Schließung des Tempels</strong><br>Der Tag endet. Besucher verlassen den Ort, einige kaufen noch Mithila-Kunstwerke als Andenken.</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="question-header">Wähle die richtige Antwort:</div>
+
+    <!-- Randomized Questions -->
+    <div class="question" data-question="q27">
+        <p>27. Was passiert morgens um sechs Uhr am Janaki Mandir?</p>
+        <div class="options">
+            <div class="option enabled" data-value="a" id="q27-a">a) Der Tempel wird für die Nacht geschlossen.</div>
+            <div class="option enabled" data-value="b" id="q27-b">b) Priester führen Rituale für Sita durch.</div>
+            <div class="option enabled" data-value="c" id="q27-c">c) Tänzer zeigen traditionelle Tänze.</div>
+        </div>
+    </div>
+
+    <div class="question" data-question="q28">
+        <p>28. Wann erzählt ein Guide etwas über die Geschichte des Tempels?</p>
+        <div class="options">
+            <div class="option enabled" data-value="a" id="q28-a">a) Um 15 Uhr.</div>
+            <div class="option enabled" data-value="b" id="q28-b">b) Um 12 Uhr.</div>
+            <div class="option enabled" data-value="c" id="q28-c">c) Um 9 Uhr.</div>
+        </div>
+    </div>
+
+    <div class="question" data-question="q29">
+        <p>29. Woher kommt das Essen, das die Pilger mittags essen?</p>
+        <div class="options">
+            <div class="option enabled" data-value="a" id="q29-a">a) Aus teuren Restaurants in Janakpur.</div>
+            <div class="option enabled" data-value="b" id="q29-b">b) Von den Pilgern selbst mitgebracht.</div>
+            <div class="option enabled" data-value="c" id="q29-c">c) Von lokalen Familien bereitgestellt.</div>
+        </div>
+    </div>
+
+    <div class="question" data-question="q30">
+        <p>30. Was können Besucher abends um 18 Uhr erleben?</p>
+        <div class="options">
+            <div class="option enabled" data-value="a" id="q30-a">a) Den Tempel mit Lichtern sehen und Lieder hören.</div>
+            <div class="option enabled" data-value="b" id="q30-b">b) Eine Führung durch die 60 Räume bekommen.</div>
+            <div class="option enabled" data-value="c" id="q30-c">c) Blumen und Süßigkeiten opfern.</div>
+        </div>
+    </div>
+</div>
+
+    <button id="submitBtn" class="submit-button">Submit Your Answers</button>
+</div>
+
+<div id="results" class="results" style="display: none;">
+    <h2 class="review-heading">Review Your Answers</h2>
+    <div id="reviewContent"></div>
+</div>
+
+<div id="progressSection" class="progress-section" style="display: none;">
+    <h2>Your Progress</h2>
+    <div id="progressMessage"></div>
+    <div id="progressScore" class="score"></div>
+    <button id="timeupTryAgainBtn" class="try-again-btn">Try Again</button>
+    <div id="progressSharePrompt">Share your results with friends!</div>
+</div>
+
+<div id="scorePopup" class="popup">
+    <div class="popup-content">
+        <span class="close">×</span>
+        <h2>Your Score</h2>
+        <div class="progress-bar">
+            <div id="progressFill" class="progress-fill"></div>
+        </div>
+        <div id="scoreDisplay" class="score"></div>
+        <div id="scoreMessage"></div>
+        <div id="completionTime"></div>
+        <div id="sharePrompt">Screenshot and share progress with your friends!</div>
+        <button id="viewAnswersBtn" class="popup-button">View My Answers</button>
+        <button id="shareBtn" class="popup-button">📤 Recommend this site</button>
+        <button id="tryAgainBtn" class="try-again-btn">Try Again</button>
+    </div>
+</div>
+
+<div id="timeupPopup" class="popup">
+    <div class="popup-content">
+        <span class="close">×</span>
+        <h2>Time's Up!</h2>
+        <div class="progress-bar">
+            <div id="timeupProgressFill" class="progress-fill"></div>
+        </div>
+        <div id="timeupProgress"></div>
+        <div id="timeupMessage"></div>
+        <div id="timeupSharePrompt">Screenshot and share progress with your friends!</div>
+        <button id="timeupViewAnswersBtn" class="popup-button">View My Answers</button>
+        <button id="timeupShareBtn" class="popup-button">📤 Recommend this site</button>
+        <button id="timeupTryAgainBtn" class="try-again-btn">Try Again</button>
+    </div>
+</div>
+</div>
+</main>
+<script src="/static/css/exam7.js"></script>
+</body>
+
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

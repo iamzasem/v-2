@@ -1,0 +1,1040 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Adjektivdeklination ohne Artikel in German | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/konj2.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+               <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="b1-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>Adjektivdeklination ohne Artikel (Adjective Declension without Articles)</h1>
+            <p>
+                A guide to declining adjectives without articles in German (strong declension), with examples, exercises, and resources.
+            </p>
+        </section>
+
+        <!-- Understanding -->
+        <section id="understanding">
+            <h2>Understanding Adjective Declension without Articles</h2>
+            <div class="subsection">
+                <h3>What Is Strong Declension?</h3>
+                <p>When no article (e.g., der, ein) precedes the noun, the adjective takes "strong" endings to show gender, number, and case.</p>
+                <ul class="example-list">
+                    <li><strong>Example</strong>: Frischer Fisch (fresh fish, masculine nominative) - -er marks masculine and nominative.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Differences -->
+        <section id="differences">
+            <h2>Structure and Formation</h2>
+            <div class="subsection">
+                <h3>Strong Endings Table</h3>
+                <p>Adjective endings depend on gender and case without an article.</p>
+                <table>
+                    <tr><th>Case</th><th>Masculine</th><th>Feminine</th><th>Neuter</th><th>Plural</th></tr>
+                    <tr><td>Nominative</td><td>-er</td><td>-e</td><td>-es</td><td>-e</td></tr>
+                    <tr><td>Accusative</td><td>-en</td><td>-e</td><td>-es</td><td>-e</td></tr>
+                    <tr><td>Dative</td><td>-em</td><td>-er</td><td>-em</td><td>-en</td></tr>
+                    <tr><td>Genitive</td><td>-en</td><td>-er</td><td>-en</td><td>-er</td></tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Uses -->
+        <section id="uses">
+            <h2>Uses of Strong Declension</h2>
+            <div class="subsection">
+                <h3>Indefinite Quantities</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Viel heißes Wasser</em> (Much hot water) - Neuter accusative.</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Professions/Roles</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Er ist junger Arzt.</em> (He is a young doctor) - Masculine nominative.</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Poetic Style</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Kalter Wind weht.</em> (Cold wind blows) - Masculine nominative.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Common Examples -->
+        <section id="examples">
+            <h2>List of 25 Common Examples</h2>
+            <div class="table-container">
+                <table>
+                    <tr><th>Case</th><th>Sentence</th><th>Translation</th></tr>
+                    <!-- Nominative -->
+                    <tr><td rowspan="5">Nominative</td><td><em>Großer Hund bellt laut im Garten.</em></td><td>A big dog barks loudly in the garden.</td></tr>
+                    <tr><td><em>Schöne Blume wächst im Park jeden Frühling.</em></td><td>A beautiful flower grows in the park every spring.</td></tr>
+                    <tr><td><em>Kleines Kind läuft schnell über die Straße.</em></td><td>A small child runs quickly across the street.</td></tr>
+                    <tr><td><em>Nette Leute wohnen in meinem Haus nebenan.</em></td><td>Nice people live in my house next door.</td></tr>
+                    <tr><td><em>Junger Mann hilft mir oft mit den Taschen.</em></td><td>A young man often helps me with the bags.</td></tr>
+                    <!-- Accusative -->
+                    <tr><td rowspan="5">Accusative</td><td><em>Ich sehe hohen Baum im Wald jeden Tag.</em></td><td>I see a tall tree in the forest every day.</td></tr>
+                    <tr><td><em>Sie kauft frische Äpfel auf dem Markt heute.</em></td><td>She buys fresh apples at the market today.</td></tr>
+                    <tr><td><em>Er trinkt kaltes Bier nach der Arbeit gerne.</em></td><td>He drinks cold beer after work happily.</td></tr>
+                    <tr><td><em>Wir hören laute Musik aus dem Zimmer oben.</em></td><td>We hear loud music from the room upstairs.</td></tr>
+                    <tr><td><em>Du findest neuen Stift auf dem Tisch jetzt.</em></td><td>You find a new pen on the table now.</td></tr>
+                    <!-- Dative -->
+                    <tr><td rowspan="5">Dative</td><td><em>Ich gebe altem Hund jeden Morgen sein Futter.</em></td><td>I give an old dog his food every morning.</td></tr>
+                    <tr><td><em>Sie hilft kleiner Schwester mit den Hausaufgaben abends.</em></td><td>She helps a little sister with homework in the evening.</td></tr>
+                    <tr><td><em>Er schreibt jungem Freund einen Brief heute Nachmittag.</em></td><td>He writes a letter to a young friend this afternoon.</td></tr>
+                    <tr><td><em>Wir sprechen freundlichen Nachbarn auf der Straße oft.</em></td><td>We talk to friendly neighbors on the street often.</td></tr>
+                    <tr><td><em>Ich leihe großem Bruder mein Fahrrad für den Tag.</em></td><td>I lend my bike to a big brother for the day.</td></tr>
+                    <!-- Genitive -->
+                    <tr><td rowspan="5">Genitive</td><td><em>Ich denke an alten Freund aus meiner Schule manchmal.</em></td><td>I think of an old friend from my school sometimes.</td></tr>
+                    <tr><td><em>Sie träumt von schöner Reise in den Bergen immer.</em></td><td>She dreams of a beautiful trip in the mountains always.</td></tr>
+                    <tr><td><em>Er spricht von neuem Auto mit seinen Kollegen heute.</em></td><td>He talks about a new car with his colleagues today.</td></tr>
+                    <tr><td><em>Wir erinnern uns an lustiger Tage im Sommer oft.</em></td><td>We remember funny days in the summer often.</td></tr>
+                    <tr><td><em>Du hörst von kluger Lehrer in der Stadt selten.</em></td><td>You hear of a smart teacher in the city rarely.</td></tr>
+                    <!-- Mixed -->
+                    <tr><td rowspan="5">Mixed</td><td><em>Hoher Berg steht ruhig im Nebel jeden Morgen.</em> (Nom.)</td><td>A high mountain stands quietly in the fog every morning.</td></tr>
+                    <tr><td><em>Ich esse warmes Brot mit Butter zum Frühstück heute.</em> (Acc.)</td><td>I eat warm bread with butter for breakfast today.</td></tr>
+                    <tr><td><em>Sie tanzt mit jungem Mann auf der Party heute Abend.</em> (Dat.)</td><td>She dances with a young man at the party tonight.</td></tr>
+                    <tr><td><em>Er wartet auf schnelles Taxi vor dem Haus jetzt.</em> (Acc.)</td><td>He waits for a fast taxi in front of the house now.</td></tr>
+                    <tr><td><em>Wir denken an schöner Abend mit Freunden gestern.</em> (Gen.)</td><td>We think of a nice evening with friends yesterday.</td></tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Exercises -->
+        <section id="practice">
+            <h2>Exercises to Practice Strong Declension</h2>
+            <div class="subsection" id="exercise1">
+                <h3>Exercise 1: Choose the Correct Ending (Nominative)</h3>
+                <p>Select the correct adjective ending for nominative case.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>___ Hund läuft im Park.  
+                            <select class="answer-select" data-correct="Großer Hund läuft im Park.">
+                                <option value="">Select</option>
+                                <option value="Große Hund läuft im Park.">große</option>
+                                <option value="Großer Hund läuft im Park.">großer</option>
+                                <option value="Großes Hund läuft im Park.">großes</option>
+                                <option value="Großen Hund läuft im Park.">großen</option>
+                                <option value="Große Hund läuft im Park.">große</option>
+                            </select>
+                        </li>
+                        <li>___ Blume riecht gut.  
+                            <select class="answer-select" data-correct="Schöne Blume riecht gut.">
+                                <option value="">Select</option>
+                                <option value="Schöner Blume riecht gut.">schöner</option>
+                                <option value="Schöne Blume riecht gut.">schöne</option>
+                                <option value="Schönes Blume riecht gut.">schönes</option>
+                                <option value="Schönen Blume riecht gut.">schönen</option>
+                                <option value="Schöne Blume riecht gut.">schöne</option>
+                            </select>
+                        </li>
+                        <li>___ Kind spielt draußen.  
+                            <select class="answer-select" data-correct="Kleines Kind spielt draußen.">
+                                <option value="">Select</option>
+                                <option value="Kleines Kind spielt draußen.">kleines</option>
+                                <option value="Kleiner Kind spielt draußen.">kleiner</option>
+                                <option value="Kleine Kind spielt draußen.">kleine</option>
+                                <option value="Kleinen Kind spielt draußen.">kleinen</option>
+                                <option value="Kleine Kind spielt draußen.">kleine</option>
+                            </select>
+                        </li>
+                        <li>___ Leute kommen heute.  
+                            <select class="answer-select" data-correct="Nette Leute kommen heute.">
+                                <option value="">Select</option>
+                                <option value="Nette Leute kommen heute.">nette</option>
+                                <option value="Netter Leute kommen heute.">netter</option>
+                                <option value="Nettes Leute kommen heute.">nettes</option>
+                                <option value="Netten Leute kommen heute.">netten</option>
+                                <option value="Nettem Leute kommen heute.">nettem</option>
+                            </select>
+                        </li>
+                        <li>___ Mann wohnt hier.  
+                            <select class="answer-select" data-correct="Junger Mann wohnt hier.">
+                                <option value="">Select</option>
+                                <option value="Junger Mann wohnt hier.">junger</option>
+                                <option value="Junge Mann wohnt hier.">junge</option>
+                                <option value="Junges Mann wohnt hier.">junges</option>
+                                <option value="Jungen Mann wohnt hier.">jungen</option>
+                                <option value="Jungem Mann wohnt hier.">jungem</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Großer Hund läuft im Park.</em></li>
+                            <li><em>Schöne Blume riecht gut.</em></li>
+                            <li><em>Kleines Kind spielt draußen.</em></li>
+                            <li><em>Nette Leute kommen heute.</em></li>
+                            <li><em>Junger Mann wohnt hier.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise2">
+                <h3>Exercise 2: Fill in the Blank (Accusative)</h3>
+                <p>Choose the correct adjective ending for accusative case.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>Ich sehe ___ Baum.  
+                            <select class="answer-select" data-correct="Ich sehe hohen Baum.">
+                                <option value="">Select</option>
+                                <option value="Ich sehe hoher Baum.">hoher</option>
+                                <option value="Ich sehe hohe Baum.">hohe</option>
+                                <option value="Ich sehe hohes Baum.">hohes</option>
+                                <option value="Ich sehe hohen Baum.">hohen</option>
+                                <option value="Ich sehe hohem Baum.">hohem</option>
+                            </select>
+                        </li>
+                        <li>Sie kauft ___ Milch.  
+                            <select class="answer-select" data-correct="Sie kauft frische Milch.">
+                                <option value="">Select</option>
+                                <option value="Sie kauft frischer Milch.">frischer</option>
+                                <option value="Sie kauft frische Milch.">frische</option>
+                                <option value="Sie kauft frisches Milch.">frisches</option>
+                                <option value="Sie kauft frischen Milch.">frischen</option>
+                                <option value="Sie kauft frischem Milch.">frischem</option>
+                            </select>
+                        </li>
+                        <li>Er trinkt ___ Wasser.  
+                            <select class="answer-select" data-correct="Er trinkt kaltes Wasser.">
+                                <option value="">Select</option>
+                                <option value="Er trinkt kalter Wasser.">kalter</option>
+                                <option value="Er trinkt kalte Wasser.">kalte</option>
+                                <option value="Er trinkt kaltes Wasser.">kaltes</option>
+                                <option value="Er trinkt kalten Wasser.">kalten</option>
+                                <option value="Er trinkt kaltem Wasser.">kaltem</option>
+                            </select>
+                        </li>
+                        <li>Wir hören ___ Stimmen.  
+                            <select class="answer-select" data-correct="Wir hören laute Stimmen.">
+                                <option value="">Select</option>
+                                <option value="Wir hören lauter Stimmen.">lauter</option>
+                                <option value="Wir hören laute Stimmen.">laute</option>
+                                <option value="Wir hören lautes Stimmen.">lautes</option>
+                                <option value="Wir hören lauten Stimmen.">lauten</option>
+                                <option value="Wir hören lautem Stimmen.">lautem</option>
+                            </select>
+                        </li>
+                        <li>Du findest ___ Buch.  
+                            <select class="answer-select" data-correct="Du findest neuen Buch.">
+                                <option value="">Select</option>
+                                <option value="Du findest neuer Buch.">neuer</option>
+                                <option value="Du findest neue Buch.">neue</option>
+                                <option value="Du findest neues Buch.">neues</option>
+                                <option value="Du findest neuen Buch.">neuen</option>
+                                <option value="Du findest neuem Buch.">neuem</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Ich sehe hohen Baum.</em></li>
+                            <li><em>Sie kauft frische Milch.</em></li>
+                            <li><em>Er trinkt kaltes Wasser.</em></li>
+                            <li><em>Wir hören laute Stimmen.</em></li>
+                            <li><em>Du findest neuen Buch.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise3">
+                <h3>Exercise 3: Translate (Dative)</h3>
+                <p>Choose the correct translation with the appropriate adjective ending for dative case.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>I give food to an old cat.  
+                            <select class="answer-select" data-correct="Ich gebe alter Katze Futter.">
+                                <option value="">Select</option>
+                                <option value="Ich gebe alter Katze Futter.">Ich gebe alter Katze Futter.</option>
+                                <option value="Ich gebe alte Katze Futter.">Ich gebe alte Katze Futter.</option>
+                                <option value="Ich gebe altem Katze Futter.">Ich gebe altem Katze Futter.</option>
+                                <option value="Ich gebe alten Katze Futter.">Ich gebe alten Katze Futter.</option>
+                                <option value="Ich gebe altes Katze Futter.">Ich gebe altes Katze Futter.</option>
+                            </select>
+                        </li>
+                        <li>She helps a young boy.  
+                            <select class="answer-select" data-correct="Sie hilft jungem Junge.">
+                                <option value="">Select</option>
+                                <option value="Sie hilft junger Junge.">Sie hilft junger Junge.</option>
+                                <option value="Sie hilft jungem Junge.">Sie hilft jungem Junge.</option>
+                                <option value="Sie hilft junge Junge.">Sie hilft junge Junge.</option>
+                                <option value="Sie hilft jungen Junge.">Sie hilft jungen Junge.</option>
+                                <option value="Sie hilft junges Junge.">Sie hilft junges Junge.</option>
+                            </select>
+                        </li>
+                        <li>He writes to a small girl.  
+                            <select class="answer-select" data-correct="Er schreibt kleiner Mädchen.">
+                                <option value="">Select</option>
+                                <option value="Er schreibt kleiner Mädchen.">Er schreibt kleiner Mädchen.</option>
+                                <option value="Er schreibt kleine Mädchen.">Er schreibt kleine Mädchen.</option>
+                                <option value="Er schreibt kleinem Mädchen.">Er schreibt kleinem Mädchen.</option>
+                                <option value="Er schreibt kleines Mädchen.">Er schreibt kleines Mädchen.</option>
+                                <option value="Er schreibt kleinen Mädchen.">Er schreibt kleinen Mädchen.</option>
+                            </select>
+                        </li>
+                        <li>We talk to nice teachers.  
+                            <select class="answer-select" data-correct="Wir sprechen netten Lehrer.">
+                                <option value="">Select</option>
+                                <option value="Wir sprechen netter Lehrer.">Wir sprechen netter Lehrer.</option>
+                                <option value="Wir sprechen nette Lehrer.">Wir sprechen nette Lehrer.</option>
+                                <option value="Wir sprechen netten Lehrer.">Wir sprechen netten Lehrer.</option>
+                                <option value="Wir sprechen nettem Lehrer.">Wir sprechen nettem Lehrer.</option>
+                                <option value="Wir sprechen nettes Lehrer.">Wir sprechen nettes Lehrer.</option>
+                            </select>
+                        </li>
+                        <li>I lend a book to a big friend.  
+                            <select class="answer-select" data-correct="Ich leihe großem Freund ein Buch.">
+                                <option value="">Select</option>
+                                <option value="Ich leihe großem Freund ein Buch.">Ich leihe großem Freund ein Buch.</option>
+                                <option value="Ich leihe großer Freund ein Buch.">Ich leihe großer Freund ein Buch.</option>
+                                <option value="Ich leihe große Freund ein Buch.">Ich leihe große Freund ein Buch.</option>
+                                <option value="Ich leihe großen Freund ein Buch.">Ich leihe großen Freund ein Buch.</option>
+                                <option value="Ich leihe großes Freund ein Buch.">Ich leihe großes Freund ein Buch.</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Ich gebe alter Katze Futter.</em></li>
+                            <li><em>Sie hilft jungem Junge.</em></li>
+                            <li><em>Er schreibt kleiner Mädchen.</em></li>
+                            <li><em>Wir sprechen netten Lehrer.</em></li>
+                            <li><em>Ich leihe großem Freund ein Buch.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise4">
+                <h3>Exercise 4: Correct the Mistake</h3>
+                <p>Choose the corrected sentence with the right adjective ending.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Ich sehe große Baum.</em>  
+                            <select class="answer-select" data-correct="Ich sehe hohen Baum.">
+                                <option value="">Select</option>
+                                <option value="Ich sehe großer Baum.">Ich sehe großer Baum.</option>
+                                <option value="Ich sehe großes Baum.">Ich sehe großes Baum.</option>
+                                <option value="Ich sehe hohen Baum.">Ich sehe hohen Baum.</option>
+                                <option value="Ich sehe hohem Baum.">Ich sehe hohem Baum.</option>
+                                <option value="Ich sehe hoher Baum.">Ich sehe hoher Baum.</option>
+                            </select>
+                        </li>
+                        <li><em>Sie hilft kleine Schwester.</em>  
+                            <select class="answer-select" data-correct="Sie hilft kleiner Schwester.">
+                                <option value="">Select</option>
+                                <option value="Sie hilft kleiner Schwester.">Sie hilft kleiner Schwester.</option>
+                                <option value="Sie hilft kleines Schwester.">Sie hilft kleines Schwester.</option>
+                                <option value="Sie hilft klein Schwester.">Sie hilft klein Schwester.</option>
+                                <option value="Sie hilft kleinen Schwester.">Sie hilft kleinen Schwester.</option>
+                                <option value="Sie hilft kleinem Schwester.">Sie hilft kleinem Schwester.</option>
+                            </select>
+                        </li>
+                        <li><em>Er trinkt kalt Wasser.</em>  
+                            <select class="answer-select" data-correct="Er trinkt kaltes Wasser.">
+                                <option value="">Select</option>
+                                <option value="Er trinkt kalter Wasser.">Er trinkt kalter Wasser.</option>
+                                <option value="Er trinkt kaltes Wasser.">Er trinkt kaltes Wasser.</option>
+                                <option value="Er trinkt kalten Wasser.">Er trinkt kalten Wasser.</option>
+                                <option value="Er trinkt kalte Wasser.">Er trinkt kalte Wasser.</option>
+                                <option value="Er trinkt kaltem Wasser.">Er trinkt kaltem Wasser.</option>
+                            </select>
+                        </li>
+                        <li><em>Wir sprechen nette Leute.</em>  
+                            <select class="answer-select" data-correct="Wir sprechen netten Leute.">
+                                <option value="">Select</option>
+                                <option value="Wir sprechen netter Leute.">Wir sprechen netter Leute.</option>
+                                <option value="Wir sprechen nettes Leute.">Wir sprechen nettes Leute.</option>
+                                <option value="Wir sprechen netten Leute.">Wir sprechen netten Leute.</option>
+                                <option value="Wir sprechen nettem Leute.">Wir sprechen nettem Leute.</option>
+                                <option value="Wir sprechen netten Leuten.">Wir sprechen netten Leuten.</option>
+                            </select>
+                        </li>
+                        <li><em>Ich denke an schöne Stadt.</em>  
+                            <select class="answer-select" data-correct="Ich denke an schöner Stadt.">
+                                <option value="">Select</option>
+                                <option value="Ich denke an schöner Stadt.">Ich denke an schöner Stadt.</option>
+                                <option value="Ich denke an schöne Städte.">Ich denke an schöne Städte.</option>
+                                <option value="Ich denke an schön Stadt.">Ich denke an schön Stadt.</option>
+                                <option value="Ich denke an schönes Stadt.">Ich denke an schönes Stadt.</option>
+                                <option value="Ich denke an schönen Stadt.">Ich denke an schönen Stadt.</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Ich sehe hohen Baum.</em></li>
+                            <li><em>Sie hilft kleiner Schwester.</em></li>
+                            <li><em>Er trinkt kaltes Wasser.</em></li>
+                            <li><em>Wir sprechen netten Leute.</em></li>
+                            <li><em>Ich denke an schöner Stadt.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise5">
+                <h3>Exercise 5: Mixed Cases</h3>
+                <p>Choose the correct adjective ending for the specified case.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>___ Hund bellt laut. (Nom.)  
+                            <select class="answer-select" data-correct="Großer Hund bellt laut.">
+                                <option value="">Select</option>
+                                <option value="Großer Hund bellt laut.">großer</option>
+                                <option value="Große Hund bellt laut.">große</option>
+                                <option value="Großes Hund bellt laut.">großes</option>
+                                <option value="Großen Hund bellt laut.">großen</option>
+                                <option value="Großem Hund bellt laut.">großem</option>
+                            </select>
+                        </li>
+                        <li>Ich kaufe ___ Äpfel. (Acc.)  
+                            <select class="answer-select" data-correct="Ich kaufe frische Äpfel.">
+                                <option value="">Select</option>
+                                <option value="Ich kaufe frischer Äpfel.">frischer</option>
+                                <option value="Ich kaufe frische Äpfel.">frische</option>
+                                <option value="Ich kaufe frisches Äpfel.">frisches</option>
+                                <option value="Ich kaufe frischen Äpfel.">frischen</option>
+                                <option value="Ich kaufe frischem Äpfel.">frischem</option>
+                            </select>
+                        </li>
+                        <li>Sie hilft ___ Mann. (Dat.)  
+                            <select class="answer-select" data-correct="Sie hilft altem Mann.">
+                                <option value="">Select</option>
+                                <option value="Sie hilft alter Mann.">alter</option>
+                                <option value="Sie hilft alte Mann.">alte</option>
+                                <option value="Sie hilft altem Mann.">altem</option>
+                                <option value="Sie hilft alten Mann.">alten</option>
+                                <option value="Sie hilft altes Mann.">altes</option>
+                            </select>
+                        </li>
+                        <li>Er denkt an ___ Lied. (Gen.)  
+                            <select class="answer-select" data-correct="Er denkt an neuen Lied.">
+                                <option value="">Select</option>
+                                <option value="Er denkt an neuer Lied.">neuer</option>
+                                <option value="Er denkt an neue Lied.">neue</option>
+                                <option value="Er denkt an neues Lied.">neues</option>
+                                <option value="Er denkt an neuen Lied.">neuen</option>
+                                <option value="Er denkt an neuem Lied.">neuem</option>
+                            </select>
+                        </li>
+                        <li>Wir hören ___ Musik. (Acc.)  
+                            <select class="answer-select" data-correct="Wir hören laute Musik.">
+                                <option value="">Select</option>
+                                <option value="Wir hören lauter Musik.">lauter</option>
+                                <option value="Wir hören laute Musik.">laute</option>
+                                <option value="Wir hören lautes Musik.">lautes</option>
+                                <option value="Wir hören lauten Musik.">lauten</option>
+                                <option value="Wir hören lautem Musik.">lautem</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Großer Hund bellt laut.</em></li>
+                            <li><em>Ich kaufe frische Äpfel.</em></li>
+                            <li><em>Sie hilft altem Mann.</em></li>
+                            <li><em>Er denkt an neuen Lied.</em></li>
+                            <li><em>Wir hören laute Musik.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips -->
+        <section id="tips">
+            <h2>Tips to Master Strong Declension</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Learn the Table</strong>: Memorize endings like -er (masc. nom.), -es (neut. acc.), -em (masc./neut. dat.).</li>
+                    <li><strong>Check Gender</strong>: Know the noun’s gender to pick the right ending (Hund = masc., Milch = fem.).</li>
+                    <li><strong>Case Context</strong>: Identify the noun’s role (subject = nom., object = acc., etc.).</li>
+                    <li><strong>Practice Common Phrases</strong>: Use viel heißes Wasser, junger Arzt to get the feel.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Resources -->
+        <section id="resources">
+            <h2>Resources for Extra Practice</h2>
+            <div class="resource-links">
+                <div class="resource-card">
+                    <p><strong>YouTube - Learn German with Anja</strong><br>Videos on adjective declension.</p>
+                    <a href="https://www.youtube.com/@LearnGermanwithAnja" class="resource-btn">Visit Learn German with Anja</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>Deutsch Lernen (Lingolia)</strong><br>Lessons on strong declension.</p>
+                    <a href="https://deutsch.lingolia.com/en/grammar/declension/adjective-declension" class="resource-btn">Visit Lingolia</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>YouTube - Easy German</strong><br>Contextual examples.</p>
+                    <a href="https://www.youtube.com/@EasyGerman" class="resource-btn">Visit Easy German</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="konnektoren.html" class="see-also-rect">Zweiteilige Konnektoren</a>
+                <a href="reflexive.html" class="see-also-rect">Reflexive Pronouns</a>
+                <a href="brauchen-zu.html" class="see-also-rect">Nicht/Kein & Nur Brauchen Zu</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="konnektoren.html" class="next-btn">Next: Zweiteilige Konnektoren →</a>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark Mode Toggle
+        const modeToggle = document.getElementById('mode-toggle');
+        modeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Load dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Toggle Answers
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const answersDiv = button.nextElementSibling;
+                if (button.classList.contains('show-answers')) {
+                    answersDiv.classList.toggle('hidden');
+                } else if (button.classList.contains('check-answers')) {
+                    const selects = button.parentElement.querySelectorAll('.answer-select');
+                    selects.forEach(select => {
+                        const selectedValue = select.value;
+                        const correctValue = select.getAttribute('data-correct');
+                        if (selectedValue === correctValue) {
+                            select.style.backgroundColor = '#d4edda'; // Green for correct
+                        } else {
+                            select.style.backgroundColor = '#f8d7da'; // Red for incorrect
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

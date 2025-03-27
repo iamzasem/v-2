@@ -1,0 +1,1150 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      German B1 Lesen Prüfung Model 4 | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+
+<link rel="stylesheet" href="/static/css/exam1.css">
+
+<body>
+    <div class="timer-container">
+        <div class="timer-toggle">
+            <div class="toggle-wrapper">
+                <span class="toggle-icon" data-state="open">👁️</span>
+                <span class="green-dot"></span>
+            </div>
+            <div class="separator"></div>
+            <span id="timer" class="timer">65:00</span>
+        </div>
+        <div class="timer-controls">
+            <button id="pauseBtn" class="timer-control">⏸️</button>
+            <button id="restartBtn" class="timer-control">🔄</button>
+        </div>
+    </div>
+    <main>
+        <div class="container">
+            <div class="header-section">
+                <div class="nav-buttons">
+                    <a href="german.html" class="nav-button">🏠</a>
+                    <a href="practice_Exam.html" class="nav-button">⬅️</a>
+                </div>
+                <header>
+                    <h1>Lesen Prüfung</h1>
+                </header>
+                <div class="exam-title">Deutsch B1 Lesen Prüfung Model 4</div>
+                <button id="startBtn" class="start-button">Begin Exam</button>
+                <div id="timeTaken" class="time-taken" style="display: none;"></div>
+            </div>
+
+            <div id="examContent">
+                <!-- Teil 1 -->
+                <div class="section">
+                    <h2><strong>Teil 1:</strong></h2>
+                    <p><strong>Lesen Sie den Text und die Aufgaben 1 bis 6 dazu.</strong></p>
+                    <p><strong>Wählen Sie: Sind die Aussagen richtig oder falsch?</strong></p>
+                    <p><strong>Arbeitszeit: 10 Minuten</strong></p>
+                    <div class="reading-text">
+                        <h3>Lina’s Vlog – Mein Wochenende auf dem Klimafestival</h3>
+                        <p>Lina Berger</p>
+                        <p>20. März 2025</p>
+                        <p>Hallo zusammen,</p>
+                        <p>ich bin Lina, und heute erzähle ich euch von meinem Wochenende auf dem Klimafestival in München! Ich habe schon lange darauf gewartet, an so einem Event teilzunehmen, und am 15. März war es endlich soweit. Ich bin früh morgens um 7 Uhr mit dem Zug in München angekommen und direkt zum Festivalgelände gegangen.</p>
+                        <p>Das Festival war beeindruckend! Es gab Stände mit nachhaltigen Produkten, Workshops und Vorträge über den Klimawandel. Am ersten Tag habe ich an einem Workshop teilgenommen, bei dem wir gelernt haben, wie man alte Kleidung repariert, statt sie wegzuwerfen. Das hat mir richtig Spaß gemacht! Danach habe ich mit anderen Besuchern über nachhaltiges Leben gesprochen.</p>
+                        <p>Am zweiten Tag, dem 16. März, war ein großer Vortrag von einer bekannten Umweltaktivistin aus Schweden. Sie hat über die Zukunft der Erde gesprochen, und ich fand ihre Ideen inspirierend. Leider hat es am Nachmittag geregnet, und meine Schuhe waren komplett nass. Zum Glück gab es einen Zeltbereich, wo ich mich aufwärmen konnte.</p>
+                        <p>Am letzten Tag habe ich ein paar nachhaltige Produkte gekauft, zum Beispiel eine Bambuszahnbürste und eine Trinkflasche aus Metall. Insgesamt waren es fünf Sachen, und ich habe sie in meinem Rucksack verstaut. Das Highlight war ein Konzert am Abend mit Bands, die für den Klimaschutz singen. Die Stimmung war toll, und ich habe neue Freunde gefunden, die auch für die Umwelt kämpfen wollen.</p>
+                        <p>Das Klimafestival war für mich ein großes Erlebnis. Es war manchmal anstrengend, vor allem wegen des Wetters, aber ich habe viel gelernt und hatte Spaß. Nächstes Jahr will ich wieder hingehen! Was meint ihr, soll ich es nochmal besuchen? Schreibt mir in die Kommentare!</p>
+                        <p>Liebe Grüße,</p>
+                        <p>Lina</p>
+                    </div>
+
+                    <!-- Randomized Questions -->
+                    <div class="question" data-question="q1">
+                        <p>1. Der Workshop am ersten Tag hat Lina gefallen.</p>
+                        <div class="options">
+                            <div class="option enabled" data-value="richtig">Richtig</div>
+                            <div class="option enabled" data-value="falsch">Falsch</div>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="q2">
+                        <p>2. Am letzten Tag hat Lina fünf nachhaltige Produkte gekauft.</p>
+                        <div class="options">
+                            <div class="option enabled" data-value="richtig">Richtig</div>
+                            <div class="option enabled" data-value="falsch">Falsch</div>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="q3">
+                        <p>3. Lina hat wegen des Regens keine trockenen Schuhe mehr gehabt.</p>
+                        <div class="options">
+                            <div class="option enabled" data-value="richtig">Richtig</div>
+                            <div class="option enabled" data-value="falsch">Falsch</div>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="q4">
+                        <p>4. Lina fand das Klimafestival langweilig und will nicht wiederkommen.</p>
+                        <div class="options">
+                            <div class="option enabled" data-value="richtig">Richtig</div>
+                            <div class="option enabled" data-value="falsch">Falsch</div>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="q5">
+                        <p>5. Sie hat an einem Vortrag von einer deutschen Aktivistin teilgenommen.</p>
+                        <div class="options">
+                            <div class="option enabled" data-value="richtig">Richtig</div>
+                            <div class="option enabled" data-value="falsch">Falsch</div>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="q6">
+                        <p>6. Lina ist am 15. März in München angekommen.</p>
+                        <div class="options">
+                            <div class="option enabled" data-value="richtig">Richtig</div>
+                            <div class="option enabled" data-value="falsch">Falsch</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teil 2 -->
+                <div class="section">
+                    <h2><strong>Teil 2:</strong></h2>
+                    <p><strong>Lesen Sie den Text aus der Presse und die Aufgaben 7 bis 9 dazu.</strong></p>
+                    <p><strong>Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.</strong></p>
+                    <p><strong>Arbeitszeit: 20 Minuten</strong></p>
+                    <div class="reading-text">
+                        <h3>Die Macht der Künstlichen Intelligenz</h3>
+                        <p>Mark ist 22 Jahre alt und studiert Informatik in Berlin. Er arbeitet an einem Projekt über Künstliche Intelligenz (KI) und verbringt viele Stunden damit, Programme zu schreiben. Oft bleibt er bis spät in die Nacht wach, weil er seine Arbeit perfekt machen will. Am Morgen ist er dann müde und kann sich in den Vorlesungen kaum konzentrieren. Er trinkt viel Energydrinks, aber das hilft nicht lange. Sein Mitbewohner Paul sieht, dass Mark gestresst ist, und sagt: „Mark, du musst mehr Pausen machen! KI kann viel, aber du bist auch wichtig. Wenn du dich ausruhst, kannst du besser denken und programmieren.“ Mark überlegt und beschließt, jeden Abend um 23 Uhr aufzuhören. Nach einer Woche fühlt er sich viel besser: Er ist nicht mehr so müde, kann sich in der Uni konzentrieren und hat sogar bessere Ideen für sein Projekt. Außerdem hat er wieder Zeit, mit Paul abends Filme zu schauen. Mark ist froh, dass er auf Paul gehört hat, und erkennt, wie wichtig Balance ist, selbst wenn man mit KI arbeitet.</p>
+                    </div>
+
+                    <div class="question-header">Wähle die richtige Antwort:</div>
+
+                    <!-- Randomized Questions -->
+                    <div class="question" data-question="q7">
+                        <p>7. Was passiert, nachdem Mark früher aufhört zu arbeiten?</p>
+                        <div class="options">
+                            <div class="option enabled" data-value="a" id="q7-a">a) Er hat bessere Ideen und mehr Zeit für Freunde.</div>
+                            <div class="option enabled" data-value="b" id="q7-b">b) Er hat weniger Zeit für sein Projekt.</div>
+                            <div class="option enabled" data-value="c" id="q7-c">c) Er wird noch gestresster.</div>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="q8">
+                        <p>8. Warum hat Mark Probleme in der Uni?</p>
+                        <div class="options">
+                            <div class="option enabled" data-value="a" id="q8-a">a) Weil er zu viele Filme schaut.</div>
+                            <div class="option enabled" data-value="b" id="q8-b">b) Weil er zu wenig schläft.</div>
+                            <div class="option enabled" data-value="c" id="q8-c">c) Weil er keine Lust hat.</div>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="q9">
+                        <p>9. Was rät Paul Mark?</p>
+                        <div class="options">
+                            <div class="option enabled" data-value="a" id="q9-a">a) Er soll mehr Energydrinks trinken.</div>
+                            <div class="option enabled" data-value="b" id="q9-b">b) Er soll mehr Pausen machen.</div>
+                            <div class="option enabled" data-value="c" id="q9-c">c) Er soll weniger programmieren.</div>
+                        </div>
+                    </div>
+
+                    <p><strong>Lesen Sie den Text aus der Presse und die Aufgaben 10 bis 12 dazu.</strong></p>
+                    <p><strong>Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.</strong></p>
+                    <div class="reading-text">
+                        <h3>Der Einfluss von TikTok auf junge Leute</h3>
+                        <p>Sara ist 16 Jahre alt und geht in die 10. Klasse. Sie liebt TikTok und verbringt jeden Tag nach der Schule Stunden damit, Videos anzuschauen oder selbst welche zu machen. Sie tanzt, singt und teilt lustige Clips mit ihren Freunden. Aber Sara merkt, dass sie oft keine Zeit mehr für ihre Hausaufgaben hat, weil sie so viel Zeit auf TikTok verbringt. Morgens ist sie müde, weil sie bis Mitternacht online ist, und in der Schule fällt es ihr schwer, aufzupassen. Ihre Mutter, Frau Klein, nutzt auch TikTok. Sie schaut gerne Kochvideos und teilt Rezepte mit ihren Freundinnen. Aber sie verbringt oft zwei Stunden am Tag damit und hat dann weniger Zeit, mit Sara zu reden. Eines Tages sprechen sie darüber und merken, dass sie beide zu viel Zeit online verbringen. Sie beschließen, nur noch eine Stunde am Tag TikTok zu nutzen. Stattdessen machen sie jetzt abends gemeinsam Essen oder spielen Karten. Nach ein paar Wochen fühlt sich Sara besser, hat mehr Zeit für Schule und schläft besser.</p>
+                    </div>
+
+                    <!-- Randomized Questions -->
+                    <div class="question" data-question="q10">
+                        <p>10. Warum findet Frau Klein TikTok nützlich?</p>
+                        <div class="options">
+                            <div class="option enabled" data-value="a" id="q10-a">a) Weil sie lustige Videos schauen kann.</div>
+                            <div class="option enabled" data-value="b" id="q10-b">b) Weil sie Kochrezepte findet.</div>
+                            <div class="option enabled" data-value="c" id="q10-c">c) Weil sie Spiele spielen kann.</div>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="q11">
+                        <p>11. Was machen Sara und ihre Mutter jetzt abends?</p>
+                        <div class="options">
+                            <div class="option enabled" data-value="a" id="q11-a">a) Sie schauen mehr TikTok-Videos.</div>
+                            <div class="option enabled" data-value="b" id="q11-b">b) Sie kochen zusammen oder spielen Karten.</div>
+                            <div class="option enabled" data-value="c" id="q11-c">c) Sie lernen zusammen für die Schule.</div>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="q12">
+                        <p>12. Warum hat Sara keine Zeit für ihre Hausaufgaben?</p>
+                        <div class="options">
+                            <div class="option enabled" data-value="a" id="q12-a">a) Weil sie jeden Tag Sport macht.</div>
+                            <div class="option enabled" data-value="b" id="q12-b">b) Weil sie zu viel Zeit auf TikTok verbringt.</div>
+                            <div class="option enabled" data-value="c" id="q12-c">c) Weil sie zu viel fernsieht.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teil 3 -->
+                <div class="section" id="teil3">
+                    <h2><strong>Teil 3: Werbeanzeigen für Apps aus einem Magazin</strong></h2>
+                    <div class="reading-text">
+                        <p><strong>Arbeitszeit: 10 Minuten</strong></p>
+                        <p>Lesen Sie die Situationen 13 bis 19 und die Anzeigen a bis j.</p>
+                        <p>Welche Anzeige passt zu welcher Situation? Sie können jede Anzeige nur einmal verwenden. Für eine Situation gibt es KEINE passende Anzeige. In diesem Fall wählen Sie 0.</p>
+                    </div>
+
+                    <!-- Randomized Questions -->
+                    <div class="question" data-question="q13">
+                        <p>13. Sophie möchte eine App für Fotobearbeitung.</p>
+                        <div class="options">
+                            <select class="option-select enabled" data-value="">
+                                <option value="" disabled selected>Wählen Sie eine Anzeige</option>
+                                <option value="0">0</option>
+                                <option value="a">a</option>
+                                <option value="b">b</option>
+                                <option value="c">c</option>
+                                <option value="d">d</option>
+                                <option value="e">e</option>
+                                <option value="f">f</option>
+                                <option value="g">g</option>
+                                <option value="h">h</option>
+                                <option value="i">i</option>
+                                <option value="j">j</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="q14">
+                        <p>14. Anna interessiert sich für eine App zum Meditieren.</p>
+                        <div class="options">
+                            <select class="option-select enabled" data-value="">
+                                <option value="" disabled selected>Wählen Sie eine Anzeige</option>
+                                <option value="0">0</option>
+                                <option value="a">a</option>
+                                <option value="b">b</option>
+                                <option value="c">c</option>
+                                <option value="d">d</option>
+                                <option value="e">e</option>
+                                <option value="f">f</option>
+                                <option value="g">g</option>
+                                <option value="h">h</option>
+                                <option value="i">i</option>
+                                <option value="j">j</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="q15">
+                        <p>15. Paul sucht eine App, um Musik zu streamen.</p>
+                        <div class="options">
+                            <select class="option-select enabled" data-value="">
+                                <option value="" disabled selected>Wählen Sie eine Anzeige</option>
+                                <option value="0">0</option>
+                                <option value="a">a</option>
+                                <option value="b">b</option>
+                                <option value="c">c</option>
+                                <option value="d">d</option>
+                                <option value="e">e</option>
+                                <option value="f">f</option>
+                                <option value="g">g</option>
+                                <option value="h">h</option>
+                                <option value="i">i</option>
+                                <option value="j">j</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="q16">
+                        <p>16. Jonas möchte eine App, um nachhaltige Rezepte zu finden.</p>
+                        <div class="options">
+                            <select class="option-select enabled" data-value="">
+                                <option value="" disabled selected>Wählen Sie eine Anzeige</option>
+                                <option value="0">0</option>
+                                <option value="a">a</option>
+                                <option value="b">b</option>
+                                <option value="c">c</option>
+                                <option value="d">d</option>
+                                <option value="e">e</option>
+                                <option value="f">f</option>
+                                <option value="g">g</option>
+                                <option value="h">h</option>
+                                <option value="i">i</option>
+                                <option value="j">j</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="q17">
+                        <p>17. Tim möchte eine App für Fitnessübungen zu Hause.</p>
+                        <div class="options">
+                            <select class="option-select enabled" data-value="">
+                                <option value="" disabled selected>Wählen Sie eine Anzeige</option>
+                                <option value="0">0</option>
+                                <option value="a">a</option>
+                                <option value="b">b</option>
+                                <option value="c">c</option>
+                                <option value="d">d</option>
+                                <option value="e">e</option>
+                                <option value="f">f</option>
+                                <option value="g">g</option>
+                                <option value="h">h</option>
+                                <option value="i">i</option>
+                                <option value="j">j</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="q18">
+                        <p>18. Lukas sucht eine App, um die besten Reiseziele zu finden.</p>
+                        <div class="options">
+                            <select class="option-select enabled" data-value="">
+                                <option value="" disabled selected>Wählen Sie eine Anzeige</option>
+                                <option value="0">0</option>
+                                <option value="a">a</option>
+                                <option value="b">b</option>
+                                <option value="c">c</option>
+                                <option value="d">d</option>
+                                <option value="e">e</option>
+                                <option value="f">f</option>
+                                <option value="g">g</option>
+                                <option value="h">h</option>
+                                <option value="i">i</option>
+                                <option value="j">j</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="q19">
+                        <p>19. Mia sucht eine App, um Spanisch zu lernen.</p>
+                        <div class="options">
+                            <select class="option-select enabled" data-value="">
+                                <option value="" disabled selected>Wählen Sie eine Anzeige</option>
+                                <option value="0">0</option>
+                                <option value="a">a</option>
+                                <option value="b">b</option>
+                                <option value="c">c</option>
+                                <option value="d">d</option>
+                                <option value="e">e</option>
+                                <option value="f">f</option>
+                                <option value="g">g</option>
+                                <option value="h">h</option>
+                                <option value="i">i</option>
+                                <option value="j">j</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="reading-text">
+                        <h3>Anzeigen</h3>
+                        <div class="anzeige-container">
+                            <div class="anzeige-item">
+                                <span class="anzeige-label">a)</span>
+                                <div class="anzeige-card" data-anzeige="a">
+                                    <h4>ECO EATS</h4>
+                                    <p>Eine App mit nachhaltigen Rezepten – vegan, regional und lecker!</p>
+                                    <p>Preis: Kostenlos</p>
+                                    <p><strong>Web:</strong> www.ecoeats.de</p>
+                                </div>
+                            </div>
+                            <div class="anzeige-item">
+                                <span class="anzeige-label">b)</span>
+                                <div class="anzeige-card" data-anzeige="b">
+                                    <h4>LINGUA</h4>
+                                    <p>Lerne Spanisch mit lustigen Übungen und Spielen.</p>
+                                    <p>Preis: 4,99 €/Monat</p>
+                                    <p><strong>Web:</strong> www.lingua-app.de</p>
+                                </div>
+                            </div>
+                            <div class="anzeige-item">
+                                <span class="anzeige-label">c)</span>
+                                <div class="anzeige-card" data-anzeige="c">
+                                    <h4>FIT AT HOME</h4>
+                                    <p>Fitnessübungen für zu Hause – für Anfänger und Profis.</p>
+                                    <p>Preis: 2,99 €</p>
+                                    <p><strong>Web:</strong> www.fitathome.de</p>
+                                </div>
+                            </div>
+                            <div class="anzeige-item">
+                                <span class="anzeige-label">d)</span>
+                                <div class="anzeige-card" data-anzeige="d">
+                                    <h4>CALM MIND</h4>
+                                    <p>Meditations-App für Entspannung und Achtsamkeit.</p>
+                                    <p>Preis: 6,99 €/Monat</p>
+                                    <p><strong>Web:</strong> www.calmmind.de</p>
+                                </div>
+                            </div>
+                            <div class="anzeige-item">
+                                <span class="anzeige-label">e)</span>
+                                <div class="anzeige-card" data-anzeige="e">
+                                    <h4>TRAVEL NOW</h4>
+                                    <p>Entdecke die besten Reiseziele weltweit mit Tipps und Fotos.</p>
+                                    <p>Preis: Kostenlos</p>
+                                    <p><strong>Web:</strong> www.travelnow.de</p>
+                                </div>
+                            </div>
+                            <div class="anzeige-item">
+                                <span class="anzeige-label">f(fake)            <div class="anzeige-card" data-anzeige="f">
+                                    <h4>PHOTO PRO</h4>
+                                    <p>Bearbeite deine Fotos wie ein Profi – Filter und Effekte inklusive.</p>
+                                    <p>Preis: 3,99 €</p>
+                                    <p><strong>Web:</strong> www.photopro.de</p>
+                                </div>
+                            </div>
+                            <div class="anzeige-item">
+                                <span class="anzeige-label">g)</span>
+                                <div class="anzeige-card" data-anzeige="g">
+                                    <h4>MUSIC VIBE</h4>
+                                    <p>Streame deine Lieblingsmusik – überall und jederzeit.</p>
+                                    <p>Preis: 9,99 €/Monat</p>
+                                    <p><strong>Web:</strong> www.musicvibe.de</p>
+                                </div>
+                            </div>
+                            <div class="anzeige-item">
+                                <span class="anzeige-label">h)</span>
+                                <div class="anzeige-card" data-anzeige="h">
+                                    <h4>GARDEN FUN</h4>
+                                    <p>Tipps und Tricks für deinen Garten – für Anfänger.</p>
+                                    <p>Preis: 1,99 €</p>
+                                    <p><strong>Web:</strong> www.gardenfun.de</p>
+                                </div>
+                            </div>
+                            <div class="anzeige-item">
+                                <span class="anzeige-label">i)</span>
+                                <div class="anzeige-card" data-anzeige="i">
+                                    <h4>NEWS NOW</h4>
+                                    <p>Aktuelle Nachrichten aus aller Welt – schnell und einfach.</p>
+                                    <p>Preis: Kostenlos</p>
+                                    <p><strong>Web:</strong> www.newsnow.de</p>
+                                </div>
+                            </div>
+                            <div class="anzeige-item">
+                                <span class="anzeige-label">j)</span>
+                                <div class="anzeige-card" data-anzeige="j">
+                                    <h4>GAME ZONE</h4>
+                                    <p>Spiele lustige Games auf deinem Handy.</p>
+                                    <p>Preis: 2,99 €</p>
+                                    <p><strong>Web:</strong> www.gamezone.de</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teil 4 -->
+                <div class="section" id="teil4">
+                    <h2><strong>Teil 4: Digitales Leben oder Offline-Zeit?</strong></h2>
+                    <div class="reading-text">
+                        <p>Viele Menschen diskutieren heute, ob ein digitales Leben mit viel Technologie oder mehr Offline-Zeit ohne Bildschirme besser ist. Ein digitales Leben bedeutet, dass man ständig vernetzt ist, Apps nutzt und Informationen schnell bekommt. Offline-Zeit hingegen bietet Ruhe, direkte Gespräche und weniger Stress durch Benachrichtigungen. Wir haben Meinungen aus einer Zeitschrift gesammelt.</p>
+                        <p><strong>Arbeitszeit: 15 Minuten</strong></p>
+                        <p>Lesen Sie die Texte 20 bis 26. Wählen Sie: Ist die Person für ein digitales Leben?</p>
+                    </div>
+
+                    <div class="question-table">
+                        <div class="kommentare-section">
+                            <!-- Randomized Questions -->
+                            <div class="comment">
+                                <div class="question-row question" data-question="q20">
+                                    <div class="question-cell number"><strong>20</strong></div>
+                                    <div class="question-cell name"><strong>Max</strong></div>
+                                    <div class="question-cell options">
+                                        <button class="option enabled" data-value="Ja">Ja</button>
+                                        <button class="option enabled" data-value="Nein">Nein</button>
+                                    </div>
+                                </div>
+                                <p class="comment-text">
+                                    Ich denke, wir brauchen mehr Offline-Zeit. Ständig online zu sein macht mich unruhig. Ein Tag ohne Handy fühlt sich an wie Urlaub, und ich kann meine Gedanken besser ordnen.<br>
+                                    <em>Max, 35 Jahre, München</em>
+                                </p>
+                            </div>
+
+                            <div class="comment">
+                                <div class="question-row question" data-question="q21">
+                                    <div class="question-cell number"><strong>21</strong></div>
+                                    <div class="question-cell name"><strong>Lisa</strong></div>
+                                    <div class="question-cell options">
+                                        <button class="option enabled" data-value="Ja">Ja</button>
+                                        <button class="option enabled" data-value="Nein">Nein</button>
+                                    </div>
+                                </div>
+                                <p class="comment-text">
+                                    Ohne mein Handy könnte ich nicht leben! Ich finde alles online – Rezepte, Nachrichten, Freunde. Offline sein fühlt sich altmodisch an und ich verpasse wichtige Dinge.<br>
+                                    <em>Lisa, 17 Jahre, Frankfurt</em>
+                                </p>
+                            </div>
+
+                            <div class="comment">
+                                <div class="question-row question" data-question="q22">
+                                    <div class="question-cell number"><strong>22</strong></div>
+                                    <div class="question-cell name"><strong>Paul</strong></div>
+                                    <div class="question-cell options">
+                                        <button class="option enabled" data-value="Ja">Ja</button>
+                                        <button class="option enabled" data-value="Nein">Nein</button>
+                                    </div>
+                                </div>
+                                <p class="comment-text">
+                                    Ich liebe es, draußen zu sein und Bücher zu lesen, statt auf Bildschirme zu schauen. Digitales Leben ist praktisch, aber Offline-Zeit macht mich glücklich und ausgeglichen.<br>
+                                    <em>Paul, 40 Jahre, Stuttgart</em>
+                                </p>
+                            </div>
+
+                            <div class="comment">
+                                <div class="question-row question" data-question="q23">
+                                    <div class="question-cell number"><strong>23</strong></div>
+                                    <div class="question-cell name"><strong>Sofia</strong></div>
+                                    <div class="question-cell options">
+                                        <button class="option enabled" data-value="Ja">Ja</button>
+                                        <button class="option enabled" data-value="Nein">Nein</button>
+                                    </div>
+                                </div>
+                                <p class="comment-text">
+                                    Dank Technologie kann ich mit meiner Familie in Spanien sprechen, obwohl ich in Deutschland lebe. Ohne das Internet wäre das unmöglich. Digitales Leben ist super!<br>
+                                    <em>Sofia, 28 Jahre, Berlin</em>
+                                </p>
+                            </div>
+
+                            <div class="comment">
+                                <div class="question-row question" data-question="q24">
+                                    <div class="question-cell number"><strong>24</strong></div>
+                                    <div class="question-cell name"><strong>Tom</strong></div>
+                                    <div class="question-cell options">
+                                        <button class="option enabled" data-value="Ja">Ja</button>
+                                        <button class="option enabled" data-value="Nein">Nein</button>
+                                    </div>
+                                </div>
+                                <p class="comment-text">
+                                    Ich verbringe zu viel Zeit am Handy und fühle mich oft gestresst. Ohne Bildschirme kann ich entspannen, mit Freunden reden oder in der Natur sein. Das ist viel besser für mich.<br>
+                                    <em>Tom, 19 Jahre, Köln</em>
+                                </p>
+                            </div>
+
+                            <div class="comment">
+                                <div class="question-row question" data-question="q25">
+                                    <div class="question-cell number"><strong>25</strong></div>
+                                    <div class="question-cell name"><strong>Anna</strong></div>
+                                    <div class="question-cell options">
+                                        <button class="option enabled" data-value="Ja">Ja</button>
+                                        <button class="option enabled" data-value="Nein">Nein</button>
+                                    </div>
+                                </div>
+                                <p class="comment-text">
+                                    Mit meinem Laptop kann ich überall arbeiten und lernen. Technologie gibt mir Freiheit und spart Zeit. Offline sein ist für mich langweilig und unpraktisch.<br>
+                                    <em>Anna, 27 Jahre, Leipzig</em>
+                                </p>
+                            </div>
+
+                            <div class="comment">
+                                <div class="question-row question" data-question="q26">
+                                    <div class="question-cell number"><strong>26</strong></div>
+                                    <div class="question-cell name"><strong>Lena</strong></div>
+                                    <div class="question-cell options">
+                                        <button class="option enabled" data-value="Ja">Ja</button>
+                                        <button class="option enabled" data-value="Nein">Nein</button>
+                                    </div>
+                                </div>
+                                <p class="comment-text">
+                                    Ich finde, Technologie macht das Leben einfacher. Mit Apps kann ich alles schnell erledigen – einkaufen, lernen oder Freunde treffen. Ohne mein Handy würde ich mich verloren fühlen.<br>
+                                    <em>Lena, 23 Jahre, Hamburg</em>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teil 5 -->
+                <div class="section section-grey-border">
+                    <h2><strong>Teil 5:</strong></h2>
+                    <p><strong>Lesen Sie die Aufgaben 27 bis 30 und den Text dazu.</strong></p>
+                    <p><strong>Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.</strong></p>
+                    <p><strong>Arbeitszeit: 10 Minuten</strong></p>
+                    <div class="reading-text">
+                        <p>Sie informieren sich über einen Tag auf der Tech-Messe in Berlin, bevor Sie Ihren Freund nächstes Jahr besuchen. Die Messe zeigt neue Technologien und zieht viele Besucher an.</p>
+                        <div class="reading-content">
+                            <h3>Ein Tag auf der Tech-Messe Berlin</h3>
+                            <table class="info-table">
+                                <tr>
+                                    <th>9:00</th>
+                                    <td><strong>Öffnung der Messe</strong><br>Die Tech-Messe in Berlin öffnet ihre Tore. Besucher können die neuesten Technologien wie Roboter, KI und smarte Geräte sehen.</td>
+                                </tr>
+                                <tr>
+                                    <th>10:00</th>
+                                    <td><strong>Workshops starten</strong><br>Die ersten Workshops beginnen. Experten zeigen, wie man mit KI arbeitet oder Roboter programmiert.</td>
+                                </tr>
+                                <tr>
+                                    <th>12:00</th>
+                                    <td><strong>Mittagspause</strong><br>Es gibt einen Food-Bereich mit Snacks und Getränken, aber viele Besucher gehen auch in nahegelegene Cafés.</td>
+                                </tr>
+                                <tr>
+                                    <th>14:00</th>
+                                    <td><strong>Vorträge</strong><br>Bekannte Tech-Experten sprechen über die Zukunft von Technologie, z. B. nachhaltige Gadgets oder Datensicherheit.</td>
+                                </tr>
+                                <tr>
+                                    <th>16:00</th>
+                                    <td><strong>Demo-Zeit</strong><br>Besucher können neue Geräte testen, z. B. smarte Lautsprecher oder Elektroautos.</td>
+                                </tr>
+                                <tr>
+                                    <th>18:00</th>
+                                    <td><strong>Abend-Event</strong><br>Ein DJ spielt Musik, und Besucher können entspannen und Kontakte knüpfen.</td>
+                                </tr>
+                                <tr>
+                                    <th>20:00</th>
+                                    <td><strong>Schließung der Messe</strong><br>Die Tech-Messe schließt. Viele machen noch Fotos draußen bei den beleuchteten Ständen.</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="question-header">Wähle die richtige Antwort:</div>
+
+                    <!-- Randomized Questions -->
+                    <div class="question" data-question="q27">
+                        <p>27. Was passiert auf der Tech-Messe um 16 Uhr?</p>
+                        <div class="options">
+                            <div class="option enabled" data-value="a" id="q27-a">a) Besucher können neue Geräte ausprobieren.</div>
+                            <div class="option enabled" data-value="b" id="q27-b">b) Die Messe schließt ihre Tore.</div>
+                            <div class="option enabled" data-value="c" id="q27-c">c) Experten halten Vorträge über Datensicherheit.</div>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="q28">
+                        <p>28. Wann beginnt das Abend-Event mit Musik?</p>
+                        <div class="options">
+                            <div class="option enabled" data-value="a" id="q28-a">a) Um 14 Uhr.</div>
+                            <div class="option enabled" data-value="b" id="q28-b">b) Um 18 Uhr.</div>
+                            <div class="option enabled" data-value="c" id="q28-c">c) Um 20 Uhr.</div>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="q29">
+                        <p>29. Wo essen viele Besucher während der Mittagspause?</p>
+                        <div class="options">
+                            <div class="option enabled" data-value="a" id="q29-a">a) Nur im Food-Bereich der Messe.</div>
+                            <div class="option enabled" data-value="b" id="q29-b">b) In nahegelegenen Cafés.</div>
+                            <div class="option enabled" data-value="c" id="q29-c">c) Draußen vor den Ständen.</div>
+                        </div>
+                    </div>
+
+                    <div class="question" data-question="q30">
+                        <p>30. Was passiert morgens um 10 Uhr?</p>
+                        <div class="options">
+                            <div class="option enabled" data-value="a" id="q30-a">a) Die Messe öffnet ihre Tore.</div>
+                            <div class="option enabled" data-value="b" id="q30-b">b) Besucher können Elektroautos testen.</div>
+                            <div class="option enabled" data-value="c" id="q30-c">c) Workshops über KI und Roboter beginnen.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="submitBtn" class="submit-button">Submit Your Answers</button>
+            </div>
+
+            <div id="results" class="results" style="display: none;">
+                <h2 class="review-heading">Review Your Answers</h2>
+                <div id="reviewContent"></div>
+            </div>
+
+            <div id="progressSection" class="progress-section" style="display: none;">
+                <h2>Your Progress</h2>
+                <div id="progressMessage"></div>
+                <div id="progressScore" class="score"></div>
+                <button id="timeupTryAgainBtn" class="try-again-btn">Try Again</button>
+                <div id="progressSharePrompt">Share your results with friends!</div>
+            </div>
+
+            <div id="scorePopup" class="popup">
+                <div class="popup-content">
+                    <span class="close">×</span>
+                    <h2>Your Score</h2>
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <div id="scoreDisplay" class="score"></div>
+                    <div id="scoreMessage"></div>
+                    <div id="completionTime"></div>
+                    <div id="sharePrompt">Screenshot and share progress with your friends!</div>
+                    <button id="viewAnswersBtn" class="popup-button">View My Answers</button>
+                    <button id="shareBtn" class="popup-button">📤 Recommend this site</button>
+                    <button id="tryAgainBtn" class="try-again-btn">Try Again</button>
+                </div>
+            </div>
+
+            <div id="timeupPopup" class="popup">
+                <div class="popup-content">
+                    <span class="close">×</span>
+                    <h2>Time's Up!</h2>
+                    <div class="progress-bar">
+                        <div id="timeupProgressFill" class="progress-fill"></div>
+                    </div>
+                    <div id="timeupProgress"></div>
+                    <div id="timeupMessage"></div>
+                    <div id="timeupSharePrompt">Screenshot and share progress with your friends!</div>
+                    <button id="timeupViewAnswersBtn" class="popup-button">View My Answers</button>
+                    <button id="timeupShareBtn" class="popup-button">📤 Recommend this site</button>
+                    <button id="timeupTryAgainBtn" class="try-again-btn">Try Again</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="/static/css/exam4.js"></script>
+</body>
+
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

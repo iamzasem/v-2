@@ -1,0 +1,1252 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Deshalb, Darum, and Deswegen in German | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/deshalb-darum.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+               <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="b1-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>Deshalb, Darum, and Deswegen in German</h1>
+            <p>
+              
+            </p>
+        </section>
+
+        <!-- Understanding -->
+        <section id="understanding">
+            <h2>Understanding "Deshalb," "Darum," and "Deswegen"</h2>
+            <p>These conjunctions are used to show a cause-and-effect relationship, meaning "therefore" or "that’s why." They connect a reason (cause) to a result (effect) and always introduce a main clause with verb-second word order. While they are often interchangeable, their usage depends on the tone and context of the sentence.</p>
+            <div class="subsection">
+                <h3>Key Points</h3>
+                <ul class="example-list">
+                    <li><strong>Deshalb</strong>: Typically used in formal or written contexts, such as academic writing or professional settings (e.g., Ich habe viel gelernt, deshalb habe ich die Prüfung bestanden.).</li>
+                    <li><strong>Darum</strong>: More casual and conversational, often used in spoken German or informal situations (e.g., Ich habe viel gelernt, darum habe ich die Prüfung bestanden.).</li>
+                    <li><strong>Deswegen</strong>: Neutral and versatile, suitable for both formal and informal contexts (e.g., Ich habe viel gelernt, deswegen habe ich die Prüfung bestanden.).</li>
+                    <li><strong>Structure</strong>: Reason clause, conjunction, result clause (e.g., Cause, deshalb/darum/deswegen result.).</li>
+                    <li><strong>Word Order</strong>: The verb in the result clause always comes in the second position after the conjunction.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Differences -->
+        <section id="differences">
+            <h2>Differences Between "Deshalb," "Darum," and "Deswegen"</h2>
+            <div class="subsection">
+                <h3>Tone and Context</h3>
+                <p>While all three conjunctions mean "therefore," they differ in tone and context, which affects their usage:</p>
+                <ul class="example-list">
+                    <li><strong>Deshalb</strong>: Preferred in formal settings, such as essays, reports, or official communication. It gives a logical and structured tone (e.g., Die Ergebnisse waren schlecht, deshalb wurde das Projekt gestoppt.).</li>
+                    <li><strong>Darum</strong>: Common in casual conversations, often used to emphasize a reason in spoken German. It can also stand alone as an answer to "Warum?" (e.g., Es regnet, darum bleibe ich drinnen. or Warum bist du hier? Darum!).</li>
+                    <li><strong>Deswegen</strong>: A neutral option that works in both formal and informal contexts, often used when the tone is neither distinctly formal nor casual (e.g., Ich bin beschäftigt, deswegen rufe ich später an.).</li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>Nuances in Usage</h3>
+                <p>In some cases, the choice of conjunction can slightly change the emphasis:</p>
+                <ul class="example-list">
+                    <li>Deshalb emphasizes the logical connection between cause and effect.</li>
+                    <li>Darum can add a sense of immediacy or emphasis in casual speech.</li>
+                    <li>Deswegen often feels more neutral and straightforward, focusing on the result.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Uses -->
+        <section id="uses">
+            <h2>Uses of "Deshalb," "Darum," and "Deswegen"</h2>
+            <div class="subsection">
+                <h3>Explaining a Reason in Everyday Situations</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Ich bin krank, deshalb gehe ich zum Arzt.</em> (I’m sick, therefore I go to the doctor.)</li>
+                        <li><em>Es regnet, darum bleibe ich drinnen.</em> (It’s raining, that’s why I stay inside.)</li>
+                        <li><em>Ich habe viel Arbeit, deswegen bin ich gestresst.</em> (I have a lot of work, that’s why I’m stressed.)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Responding to "Warum?" Questions</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Warum bist du so müde? Ich habe wenig geschlafen, darum!</em> (Why are you so tired? I slept little, that’s why!)</li>
+                        <li><em>Warum hast du das Buch gekauft? Ich mag den Autor, deswegen!</em> (Why did you buy the book? I like the author, that’s why!)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>In Formal Writing or Professional Contexts</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Die Daten waren unvollständig, deshalb wurde der Bericht abgelehnt.</em> (The data was incomplete, therefore the report was rejected.)</li>
+                        <li><em>Das Budget war überschritten, deswegen wurde das Projekt gestoppt.</em> (The budget was exceeded, therefore the project was stopped.)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Expressing Preferences or Choices</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Ich mag keinen Kaffee, darum trinke ich Tee.</em> (I don’t like coffee, that’s why I drink tea.)</li>
+                        <li><em>Das Restaurant ist zu teuer, deswegen essen wir zu Hause.</em> (The restaurant is too expensive, that’s why we eat at home.)</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Common Examples -->
+        <section id="examples">
+            <h2>List of 25 Common Examples</h2>
+            <div class="table-container">
+                <table>
+                    <tr><th>Sentence</th><th>Translation</th></tr>
+                    <tr><td><em>Ich bin krank, deshalb gehe ich zum Arzt.</em></td><td>I’m sick, therefore I go to the doctor.</td></tr>
+                    <tr><td><em>Es ist spät, deshalb fahre ich nach Hause.</em></td><td>It’s late, therefore I drive home.</td></tr>
+                    <tr><td><em>Die Prüfung war schwer, deshalb habe ich viel gelernt.</em></td><td>The exam was hard, therefore I studied a lot.</td></tr>
+                    <tr><td><em>Er hat keine Zeit, deshalb kommt er nicht.</em></td><td>He has no time, therefore he doesn’t come.</td></tr>
+                    <tr><td><em>Ich habe Hunger, deshalb mache ich ein Sandwich.</em></td><td>I’m hungry, therefore I make a sandwich.</td></tr>
+                    <tr><td><em>Das Wetter ist schlecht, deshalb bleiben wir zu Hause.</em></td><td>The weather is bad, therefore we stay home.</td></tr>
+                    <tr><td><em>Ich habe das Buch gelesen, deshalb kenne ich die Geschichte.</em></td><td>I read the book, therefore I know the story.</td></tr>
+                    <tr><td><em>Die Tickets sind teuer, deshalb kaufen wir sie nicht.</em></td><td>The tickets are expensive, therefore we don’t buy them.</td></tr>
+                    <tr><td><em>Die Daten waren unvollständig, deshalb wurde der Bericht abgelehnt.</em></td><td>The data was incomplete, therefore the report was rejected.</td></tr>
+                    <tr><td><em>Ich bin müde, darum gehe ich ins Bett.</em></td><td>I’m tired, that’s why I go to bed.</td></tr>
+                    <tr><td><em>Es regnet, darum nehme ich einen Regenschirm.</em></td><td>It’s raining, that’s why I take an umbrella.</td></tr>
+                    <tr><td><em>Ich mag keine Pizza, darum esse ich Pasta.</em></td><td>I don’t like pizza, that’s why I eat pasta.</td></tr>
+                    <tr><td><em>Er ist krank, darum bleibt er zu Hause.</em></td><td>He is sick, that’s why he stays home.</td></tr>
+                    <tr><td><em>Ich habe keine Lust, darum gehe ich nicht mit.</em></td><td>I don’t feel like it, that’s why I don’t go along.</td></tr>
+                    <tr><td><em>Das Essen ist kalt, darum wärme ich es auf.</em></td><td>The food is cold, that’s why I heat it up.</td></tr>
+                    <tr><td><em>Ich bin gestresst, darum mache ich eine Pause.</em></td><td>I’m stressed, that’s why I take a break.</td></tr>
+                    <tr><td><em>Ich mag keinen Kaffee, darum trinke ich Tee.</em></td><td>I don’t like coffee, that’s why I drink tea.</td></tr>
+                    <tr><td><em>Ich bin beschäftigt, deswegen rufe ich später an.</em></td><td>I’m busy, that’s why I’ll call later.</td></tr>
+                    <tr><td><em>Das Auto ist kaputt, deswegen nehme ich den Bus.</em></td><td>The car is broken, that’s why I take the bus.</td></tr>
+                    <tr><td><em>Ich habe viel Arbeit, deswegen bin ich gestresst.</em></td><td>I have a lot of work, that’s why I’m stressed.</td></tr>
+                    <tr><td><em>Es ist laut, deswegen kann ich nicht schlafen.</em></td><td>It’s loud, that’s why I can’t sleep.</td></tr>
+                    <tr><td><em>Die Aufgabe ist schwer, deswegen brauche ich Hilfe.</em></td><td>The task is difficult, that’s why I need help.</td></tr>
+                    <tr><td><em>Ich mag den Film, deswegen schaue ich ihn nochmal.</em></td><td>I like the movie, that’s why I watch it again.</td></tr>
+                    <tr><td><em>Das Restaurant ist teuer, deswegen essen wir zu Hause.</em></td><td>The restaurant is expensive, that’s why we eat at home.</td></tr>
+                    <tr><td><em>Das Geschäft ist weit weg, deswegen bestelle ich online.</em></td><td>The store is far away, that’s why I order online.</td></tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Exercises -->
+        <section id="practice">
+            <h2>Exercises to Practice "Deshalb," "Darum," and "Deswegen"</h2>
+            <div class="subsection" id="exercise1">
+                <h3>Exercise 1: Choose the Correct Conjunction Based on Tone</h3>
+                <p>Select the appropriate conjunction based on the tone of the sentence (formal, casual, or neutral).</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>Ich habe die Prüfung nicht bestanden, ___ bin ich traurig. (Formal tone)  
+                            <select class="answer-select" data-correct="Ich habe die Prüfung nicht bestanden, deshalb bin ich traurig.">
+                                <option value="">Select</option>
+                                <option value="Ich habe die Prüfung nicht bestanden, deshalb bin ich traurig.">deshalb</option>
+                                <option value="Ich habe die Prüfung nicht bestanden, darum bin ich traurig.">darum</option>
+                                <option value="Ich habe die Prüfung nicht bestanden, deswegen bin ich traurig.">deswegen</option>
+                                <option value="Ich habe die Prüfung nicht bestanden, weil bin ich traurig.">weil</option>
+                                <option value="Ich habe die Prüfung nicht bestanden, dass bin ich traurig.">dass</option>
+                            </select>
+                        </li>
+                        <li>Ich mag keine Suppe, ___ esse ich einen Salat. (Casual tone)  
+                            <select class="answer-select" data-correct="Ich mag keine Suppe, darum esse ich einen Salat.">
+                                <option value="">Select</option>
+                                <option value="Ich mag keine Suppe, deshalb esse ich einen Salat.">deshalb</option>
+                                <option value="Ich mag keine Suppe, darum esse ich einen Salat.">darum</option>
+                                <option value="Ich mag keine Suppe, deswegen esse ich einen Salat.">deswegen</option>
+                                <option value="Ich mag keine Suppe, wenn esse ich einen Salat.">wenn</option>
+                                <option value="Ich mag keine Suppe, obwohl esse ich einen Salat.">obwohl</option>
+                            </select>
+                        </li>
+                        <li>Das Geschäft ist geschlossen, ___ gehe ich woanders hin. (Neutral tone)  
+                            <select class="answer-select" data-correct="Das Geschäft ist geschlossen, deswegen gehe ich woanders hin.">
+                                <option value="">Select</option>
+                                <option value="Das Geschäft ist geschlossen, deshalb gehe ich woanders hin.">deshalb</option>
+                                <option value="Das Geschäft ist geschlossen, darum gehe ich woanders hin.">darum</option>
+                                <option value="Das Geschäft ist geschlossen, deswegen gehe ich woanders hin.">deswegen</option>
+                                <option value="Das Geschäft ist geschlossen, nach gehe ich woanders hin.">nach</option>
+                                <option value="Das Geschäft ist geschlossen, während gehe ich woanders hin.">während</option>
+                            </select>
+                        </li>
+                        <li>Die Ergebnisse waren schlecht, ___ wurde das Projekt gestoppt. (Formal tone)  
+                            <select class="answer-select" data-correct="Die Ergebnisse waren schlecht, deshalb wurde das Projekt gestoppt.">
+                                <option value="">Select</option>
+                                <option value="Die Ergebnisse waren schlecht, deshalb wurde das Projekt gestoppt.">deshalb</option>
+                                <option value="Die Ergebnisse waren schlecht, darum wurde das Projekt gestoppt.">darum</option>
+                                <option value="Die Ergebnisse waren schlecht, deswegen wurde das Projekt gestoppt.">deswegen</option>
+                                <option value="Die Ergebnisse waren schlecht, weil wurde das Projekt gestoppt.">weil</option>
+                                <option value="Die Ergebnisse waren schlecht, dass wurde das Projekt gestoppt.">dass</option>
+                            </select>
+                        </li>
+                        <li>Ich habe keine Zeit, ___ mache ich das morgen. (Neutral tone)  
+                            <select class="answer-select" data-correct="Ich habe keine Zeit, deswegen mache ich das morgen.">
+                                <option value="">Select</option>
+                                <option value="Ich habe keine Zeit, deshalb mache ich das morgen.">deshalb</option>
+                                <option value="Ich habe keine Zeit, darum mache ich das morgen.">darum</option>
+                                <option value="Ich habe keine Zeit, deswegen mache ich das morgen.">deswegen</option>
+                                <option value="Ich habe keine Zeit, wenn mache ich das morgen.">wenn</option>
+                                <option value="Ich habe keine Zeit, obwohl mache ich das morgen.">obwohl</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Ich habe die Prüfung nicht bestanden, deshalb bin ich traurig.</em> (Formal tone, deshalb fits best.)</li>
+                            <li><em>Ich mag keine Suppe, darum esse ich einen Salat.</em> (Casual tone, darum fits best.)</li>
+                            <li><em>Das Geschäft ist geschlossen, deswegen gehe ich woanders hin.</em> (Neutral tone, deswegen fits best.)</li>
+                            <li><em>Die Ergebnisse waren schlecht, deshalb wurde das Projekt gestoppt.</em> (Formal tone, deshalb fits best.)</li>
+                            <li><em>Ich habe keine Zeit, deswegen mache ich das morgen.</em> (Neutral tone, deswegen fits best.)</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise2">
+                <h3>Exercise 2: Fill in the Blank with the Best Conjunction</h3>
+                <p>Choose the conjunction that best fits the context and tone of the sentence.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>Ich bin krank, ___ bleibe ich zu Hause. (Casual tone)  
+                            <select class="answer-select" data-correct="Ich bin krank, darum bleibe ich zu Hause.">
+                                <option value="">Select</option>
+                                <option value="Ich bin krank, deshalb bleibe ich zu Hause.">deshalb</option>
+                                <option value="Ich bin krank, darum bleibe ich zu Hause.">darum</option>
+                                <option value="Ich bin krank, deswegen bleibe ich zu Hause.">deswegen</option>
+                                <option value="Ich bin krank, weil bleibe ich zu Hause.">weil</option>
+                                <option value="Ich bin krank, dass bleibe ich zu Hause.">dass</option>
+                            </select>
+                        </li>
+                        <li>Die Aufgabe ist schwer, ___ brauche ich mehr Zeit. (Neutral tone)  
+                            <select class="answer-select" data-correct="Die Aufgabe ist schwer, deswegen brauche ich mehr Zeit.">
+                                <option value="">Select</option>
+                                <option value="Die Aufgabe ist schwer, deshalb brauche ich mehr Zeit.">deshalb</option>
+                                <option value="Die Aufgabe ist schwer, darum brauche ich mehr Zeit.">darum</option>
+                                <option value="Die Aufgabe ist schwer, deswegen brauche ich mehr Zeit.">deswegen</option>
+                                <option value="Die Aufgabe ist schwer, wenn brauche ich mehr Zeit.">wenn</option>
+                                <option value="Die Aufgabe ist schwer, obwohl brauche ich mehr Zeit.">obwohl</option>
+                            </select>
+                        </li>
+                        <li>Der Bericht war unklar, ___ wurde er überarbeitet. (Formal tone)  
+                            <select class="answer-select" data-correct="Der Bericht war unklar, deshalb wurde er überarbeitet.">
+                                <option value="">Select</option>
+                                <option value="Der Bericht war unklar, deshalb wurde er überarbeitet.">deshalb</option>
+                                <option value="Der Bericht war unklar, darum wurde er überarbeitet.">darum</option>
+                                <option value="Der Bericht war unklar, deswegen wurde er überarbeitet.">deswegen</option>
+                                <option value="Der Bericht war unklar, weil wurde er überarbeitet.">weil</option>
+                                <option value="Der Bericht war unklar, dass wurde er überarbeitet.">dass</option>
+                            </select>
+                        </li>
+                        <li>Ich mag den Film nicht, ___ schaue ich ihn nicht. (Casual tone)  
+                            <select class="answer-select" data-correct="Ich mag den Film nicht, darum schaue ich ihn nicht.">
+                                <option value="">Select</option>
+                                <option value="Ich mag den Film nicht, deshalb schaue ich ihn nicht.">deshalb</option>
+                                <option value="Ich mag den Film nicht, darum schaue ich ihn nicht.">darum</option>
+                                <option value="Ich mag den Film nicht, deswegen schaue ich ihn nicht.">deswegen</option>
+                                <option value="Ich mag den Film nicht, wenn schaue ich ihn nicht.">wenn</option>
+                                <option value="Ich mag den Film nicht, obwohl schaue ich ihn nicht.">obwohl</option>
+                            </select>
+                        </li>
+                        <li>Es ist kalt draußen, ___ trage ich einen Mantel. (Neutral tone)  
+                            <select class="answer-select" data-correct="Es ist kalt draußen, deswegen trage ich einen Mantel.">
+                                <option value="">Select</option>
+                                <option value="Es ist kalt draußen, deshalb trage ich einen Mantel.">deshalb</option>
+                                <option value="Es ist kalt draußen, darum trage ich einen Mantel.">darum</option>
+                                <option value="Es ist kalt draußen, deswegen trage ich einen Mantel.">deswegen</option>
+                                <option value="Es ist kalt draußen, weil trage ich einen Mantel.">weil</option>
+                                <option value="Es ist kalt draußen, dass trage ich einen Mantel.">dass</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Ich bin krank, darum bleibe ich zu Hause.</em> (Casual tone, darum fits best.)</li>
+                            <li><em>Die Aufgabe ist schwer, deswegen brauche ich mehr Zeit.</em> (Neutral tone, deswegen fits best.)</li>
+                            <li><em>Der Bericht war unklar, deshalb wurde er überarbeitet.</em> (Formal tone, deshalb fits best.)</li>
+                            <li><em>Ich mag den Film nicht, darum schaue ich ihn nicht.</em> (Casual tone, darum fits best.)</li>
+                            <li><em>Es ist kalt draußen, deswegen trage ich einen Mantel.</em> (Neutral tone, deswegen fits best.)</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise3">
+                <h3>Exercise 3: Translate into German with the Correct Conjunction</h3>
+                <p>Translate the sentences into German, choosing the correct conjunction based on the tone.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>I’m tired, therefore I go to bed early. (Formal tone)  
+                            <select class="answer-select" data-correct="Ich bin müde, deshalb gehe ich früh ins Bett.">
+                                <option value="">Select</option>
+                                <option value="Ich bin müde, deshalb gehe ich früh ins Bett.">Ich bin müde, deshalb gehe ich früh ins Bett.</option>
+                                <option value="Ich bin müde, darum gehe ich früh ins Bett.">Ich bin müde, darum gehe ich früh ins Bett.</option>
+                                <option value="Ich bin müde, deswegen gehe ich früh ins Bett.">Ich bin müde, deswegen gehe ich früh ins Bett.</option>
+                                <option value="Ich bin müde, weil gehe ich früh ins Bett.">Ich bin müde, weil gehe ich früh ins Bett.</option>
+                                <option value="Ich bin müde, dass gehe ich früh ins Bett.">Ich bin müde, dass gehe ich früh ins Bett.</option>
+                            </select>
+                        </li>
+                        <li>It’s raining, that’s why I stay inside. (Casual tone)  
+                            <select class="answer-select" data-correct="Es regnet, darum bleibe ich drinnen.">
+                                <option value="">Select</option>
+                                <option value="Es regnet, deshalb bleibe ich drinnen.">Es regnet, deshalb bleibe ich drinnen.</option>
+                                <option value="Es regnet, darum bleibe ich drinnen.">Es regnet, darum bleibe ich drinnen.</option>
+                                <option value="Es regnet, deswegen bleibe ich drinnen.">Es regnet, deswegen bleibe ich drinnen.</option>
+                                <option value="Es regnet, weil bleibe ich drinnen.">Es regnet, weil bleibe ich drinnen.</option>
+                                <option value="Es regnet, dass bleibe ich drinnen.">Es regnet, dass bleibe ich drinnen.</option>
+                            </select>
+                        </li>
+                        <li>The store is far, that’s why I order online. (Neutral tone)  
+                            <select class="answer-select" data-correct="Das Geschäft ist weit weg, deswegen bestelle ich online.">
+                                <option value="">Select</option>
+                                <option value="Das Geschäft ist weit weg, deshalb bestelle ich online.">Das Geschäft ist weit weg, deshalb bestelle ich online.</option>
+                                <option value="Das Geschäft ist weit weg, darum bestelle ich online.">Das Geschäft ist weit weg, darum bestelle ich online.</option>
+                                <option value="Das Geschäft ist weit weg, deswegen bestelle ich online.">Das Geschäft ist weit weg, deswegen bestelle ich online.</option>
+                                <option value="Das Geschäft ist weit weg, weil bestelle ich online.">Das Geschäft ist weit weg, weil bestelle ich online.</option>
+                                <option value="Das Geschäft ist weit weg, dass bestelle ich online.">Das Geschäft ist weit weg, dass bestelle ich online.</option>
+                            </select>
+                        </li>
+                        <li>The meeting was canceled, therefore we went home. (Formal tone)  
+                            <select class="answer-select" data-correct="Das Meeting wurde abgesagt, deshalb gingen wir nach Hause.">
+                                <option value="">Select</option>
+                                <option value="Das Meeting wurde abgesagt, deshalb gingen wir nach Hause.">Das Meeting wurde abgesagt, deshalb gingen wir nach Hause.</option>
+                                <option value="Das Meeting wurde abgesagt, darum gingen wir nach Hause.">Das Meeting wurde abgesagt, darum gingen wir nach Hause.</option>
+                                <option value="Das Meeting wurde abgesagt, deswegen gingen wir nach Hause.">Das Meeting wurde abgesagt, deswegen gingen wir nach Hause.</option>
+                                <option value="Das Meeting wurde abgesagt, weil gingen wir nach Hause.">Das Meeting wurde abgesagt, weil gingen wir nach Hause.</option>
+                                <option value="Das Meeting wurde abgesagt, dass gingen wir nach Hause.">Das Meeting wurde abgesagt, dass gingen wir nach Hause.</option>
+                            </select>
+                        </li>
+                        <li>I don’t like coffee, that’s why I drink tea. (Casual tone)  
+                            <select class="answer-select" data-correct="Ich mag keinen Kaffee, darum trinke ich Tee.">
+                                <option value="">Select</option>
+                                <option value="Ich mag keinen Kaffee, deshalb trinke ich Tee.">Ich mag keinen Kaffee, deshalb trinke ich Tee.</option>
+                                <option value="Ich mag keinen Kaffee, darum trinke ich Tee.">Ich mag keinen Kaffee, darum trinke ich Tee.</option>
+                                <option value="Ich mag keinen Kaffee, deswegen trinke ich Tee.">Ich mag keinen Kaffee, deswegen trinke ich Tee.</option>
+                                <option value="Ich mag keinen Kaffee, weil trinke ich Tee.">Ich mag keinen Kaffee, weil trinke ich Tee.</option>
+                                <option value="Ich mag keinen Kaffee, dass trinke ich Tee.">Ich mag keinen Kaffee, dass trinke ich Tee.</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Ich bin müde, deshalb gehe ich früh ins Bett.</em> (Formal tone, deshalb fits best.)</li>
+                            <li><em>Es regnet, darum bleibe ich drinnen.</em> (Casual tone, darum fits best.)</li>
+                            <li><em>Das Geschäft ist weit weg, deswegen bestelle ich online.</em> (Neutral tone, deswegen fits best.)</li>
+                            <li><em>Das Meeting wurde abgesagt, deshalb gingen wir nach Hause.</em> (Formal tone, deshalb fits best.)</li>
+                            <li><em>Ich mag keinen Kaffee, darum trinke ich Tee.</em> (Casual tone, darum fits best.)</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise4">
+                <h3>Exercise 4: Correct the Wrong Conjunction</h3>
+                <p>Identify the incorrect conjunction and choose the correct one based on the tone.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Ich bin müde, weil gehe ich ins Bett.</em> (Casual tone)  
+                            <select class="answer-select" data-correct="Ich bin müde, darum gehe ich ins Bett.">
+                                <option value="">Select</option>
+                                <option value="Ich bin müde, deshalb gehe ich ins Bett.">deshalb</option>
+                                <option value="Ich bin müde, darum gehe ich ins Bett.">darum</option>
+                                <option value="Ich bin müde, deswegen gehe ich ins Bett.">deswegen</option>
+                                <option value="Ich bin müde, dass gehe ich ins Bett.">dass</option>
+                                <option value="Ich bin müde, wenn gehe ich ins Bett.">wenn</option>
+                            </select>
+                        </li>
+                        <li><em>Das Projekt ist wichtig, darum arbeiten wir hart.</em> (Formal tone)  
+                            <select class="answer-select" data-correct="Das Projekt ist wichtig, deshalb arbeiten wir hart.">
+                                <option value="">Select</option>
+                                <option value="Das Projekt ist wichtig, deshalb arbeiten wir hart.">deshalb</option>
+                                <option value="Das Projekt ist wichtig, darum arbeiten wir hart.">darum</option>
+                                <option value="Das Projekt ist wichtig, deswegen arbeiten wir hart.">deswegen</option>
+                                <option value="Das Projekt ist wichtig, weil arbeiten wir hart.">weil</option>
+                                <option value="Das Projekt ist wichtig, dass arbeiten wir hart.">dass</option>
+                            </select>
+                        </li>
+                        <li><em>Es ist laut, deshalb kann ich nicht arbeiten.</em> (Neutral tone)  
+                            <select class="answer-select" data-correct="Es ist laut, deswegen kann ich nicht arbeiten.">
+                                <option value="">Select</option>
+                                <option value="Es ist laut, deshalb kann ich nicht arbeiten.">deshalb</option>
+                                <option value="Es ist laut, darum kann ich nicht arbeiten.">darum</option>
+                                <option value="Es ist laut, deswegen kann ich nicht arbeiten.">deswegen</option>
+                                <option value="Es ist laut, weil kann ich nicht arbeiten.">weil</option>
+                                <option value="Es ist laut, dass kann ich nicht arbeiten.">dass</option>
+                            </select>
+                        </li>
+                        <li><em>Ich habe Hunger, deswegen esse ich jetzt.</em> (Casual tone)  
+                            <select class="answer-select" data-correct="Ich habe Hunger, darum esse ich jetzt.">
+                                <option value="">Select</option>
+                                <option value="Ich habe Hunger, deshalb esse ich jetzt.">deshalb</option>
+                                <option value="Ich habe Hunger, darum esse ich jetzt.">darum</option>
+                                <option value="Ich habe Hunger, deswegen esse ich jetzt.">deswegen</option>
+                                <option value="Ich habe Hunger, weil esse ich jetzt.">weil</option>
+                                <option value="Ich habe Hunger, dass esse ich jetzt.">dass</option>
+                            </select>
+                        </li>
+                        <li><em>Die Daten sind korrekt, darum akzeptieren wir sie.</em> (Formal tone)  
+                            <select class="answer-select" data-correct="Die Daten sind korrekt, deshalb akzeptieren wir sie.">
+                                <option value="">Select</option>
+                                <option value="Die Daten sind korrekt, deshalb akzeptieren wir sie.">deshalb</option>
+                                <option value="Die Daten sind korrekt, darum akzeptieren wir sie.">darum</option>
+                                <option value="Die Daten sind korrekt, deswegen akzeptieren wir sie.">deswegen</option>
+                                <option value="Die Daten sind korrekt, weil akzeptieren wir sie.">weil</option>
+                                <option value="Die Daten sind korrekt, dass akzeptieren wir sie.">dass</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Ich bin müde, darum gehe ich ins Bett.</em> (Casual tone, darum fits best.)</li>
+                            <li><em>Das Projekt ist wichtig, deshalb arbeiten wir hart.</em> (Formal tone, deshalb fits best.)</li>
+                            <li><em>Es ist laut, deswegen kann ich nicht arbeiten.</em> (Neutral tone, deswegen fits best.)</li>
+                            <li><em>Ich habe Hunger, darum esse ich jetzt.</em> (Casual tone, darum fits best.)</li>
+                            <li><em>Die Daten sind korrekt, deshalb akzeptieren wir sie.</em> (Formal tone, deshalb fits best.)</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise5">
+                <h3>Exercise 5: Write a Sentence with the Given Conjunction</h3>
+                <p>Complete the sentence by choosing the correct result clause to match the given conjunction and tone.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>Ich habe viel gelernt, deshalb ___ (Formal tone)  
+                            <select class="answer-select" data-correct="Ich habe viel gelernt, deshalb habe ich die Prüfung bestanden.">
+                                <option value="">Select</option>
+                                <option value="Ich habe viel gelernt, deshalb habe ich die Prüfung bestanden.">habe ich die Prüfung bestanden.</option>
+                                <option value="Ich habe viel gelernt, deshalb esse ich jetzt.">esse ich jetzt.</option>
+                                <option value="Ich habe viel gelernt, deshalb bleibe ich zu Hause.">bleibe ich zu Hause.</option>
+                                <option value="Ich habe viel gelernt, deshalb trinke ich Tee.">trinke ich Tee.</option>
+                            </select>
+                        </li>
+                        <li>Es regnet, darum ___ (Casual tone)  
+                            <select class="answer-select" data-correct="Es regnet, darum bleibe ich drinnen.">
+                                <option value="">Select</option>
+                                <option value="Es regnet, darum bleibe ich drinnen.">bleibe ich drinnen.</option>
+                                <option value="Es regnet, darum arbeite ich hart.">arbeite ich hart.</option>
+                                <option value="Es regnet, darum bestelle ich online.">bestelle ich online.</option>
+                                <option value="Es regnet, darum trage ich einen Mantel.">trage ich einen Mantel.</option>
+                            </select>
+                        </li>
+                        <li>Ich bin beschäftigt, deswegen ___ (Neutral tone)  
+                            <select class="answer-select" data-correct="Ich bin beschäftigt, deswegen rufe ich später an.">
+                                <option value="">Select</option>
+                                <option value="Ich bin beschäftigt, deswegen rufe ich später an.">rufe ich später an.</option>
+                                <option value="Ich bin beschäftigt, deswegen esse ich jetzt.">esse ich jetzt.</option>
+                                <option value="Ich bin beschäftigt, deswegen gehe ich ins Bett.">gehe ich ins Bett.</option>
+                                <option value="Ich bin beschäftigt, deswegen trinke ich Tee.">trinke ich Tee.</option>
+                            </select>
+                        </li>
+                        <li>Die Prüfung war schwer, deshalb ___ (Formal tone)  
+                            <select class="answer-select" data-correct="Die Prüfung war schwer, deshalb habe ich viel gelernt.">
+                                <option value="">Select</option>
+                                <option value="Die Prüfung war schwer, deshalb habe ich viel gelernt.">habe ich viel gelernt.</option>
+                                <option value="Die Prüfung war schwer, deshalb bleibe ich drinnen.">bleibe ich drinnen.</option>
+                                <option value="Die Prüfung war schwer, deshalb trage ich einen Mantel.">trage ich einen Mantel.</option>
+                                <option value="Die Prüfung war schwer, deshalb esse ich jetzt.">esse ich jetzt.</option>
+                            </select>
+                        </li>
+                        <li>Ich mag keine Pizza, darum ___ (Casual tone)  
+                            <select class="answer-select" data-correct="Ich mag keine Pizza, darum esse ich Pasta.">
+                                <option value="">Select</option>
+                                <option value="Ich mag keine Pizza, darum esse ich Pasta.">esse ich Pasta.</option>
+                                <option value="Ich mag keine Pizza, darum arbeite ich hart.">arbeite ich hart.</option>
+                                <option value="Ich mag keine Pizza, darum bestelle ich online.">bestelle ich online.</option>
+                                <option value="Ich mag keine Pizza, darum trinke ich Tee.">trinke ich Tee.</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Ich habe viel gelernt, deshalb habe ich die Prüfung bestanden.</em> (Formal tone, deshalb fits best.)</li>
+                            <li><em>Es regnet, darum bleibe ich drinnen.</em> (Casual tone, darum fits best.)</li>
+                            <li><em>Ich bin beschäftigt, deswegen rufe ich später an.</em> (Neutral tone, deswegen fits best.)</li>
+                            <li><em>Die Prüfung war schwer, deshalb habe ich viel gelernt.</em> (Formal tone, deshalb fits best.)</li>
+                            <li><em>Ich mag keine Pizza, darum esse ich Pasta.</em> (Casual tone, darum fits best.)</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise6">
+                <h3>Exercise 6: Match the Reason to the Result</h3>
+                <p>Match the reason clause with the correct result clause, choosing the appropriate conjunction based on the tone.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>Ich bin krank, ___ (Casual tone)  
+                            <select class="answer-select" data-correct="Ich bin krank, darum gehe ich nicht zur Arbeit.">
+                                <option value="">Select</option>
+                                <option value="Ich bin krank, deshalb gehe ich nicht zur Arbeit.">deshalb gehe ich nicht zur Arbeit.</option>
+                                <option value="Ich bin krank, darum gehe ich nicht zur Arbeit.">darum gehe ich nicht zur Arbeit.</option>
+                                <option value="Ich bin krank, deswegen gehe ich nicht zur Arbeit.">deswegen gehe ich nicht zur Arbeit.</option>
+                                <option value="Ich bin krank, weil gehe ich nicht zur Arbeit.">weil gehe ich nicht zur Arbeit.</option>
+                            </select>
+                        </li>
+                        <li>Die Präsentation war unklar, ___ (Formal tone)  
+                            <select class="answer-select" data-correct="Die Präsentation war unklar, deshalb wurde sie überarbeitet.">
+                                <option value="">Select</option>
+                                <option value="Die Präsentation war unklar, deshalb wurde sie überarbeitet.">deshalb wurde sie überarbeitet.</option>
+                                <option value="Die Präsentation war unklar, darum wurde sie überarbeitet.">darum wurde sie überarbeitet.</option>
+                                <option value="Die Präsentation war unklar, deswegen wurde sie überarbeitet.">deswegen wurde sie überarbeitet.</option>
+                                <option value="Die Präsentation war unklar, dass wurde sie überarbeitet.">dass wurde sie überarbeitet.</option>
+                            </select>
+                        </li>
+                        <li>Ich habe viel Arbeit, ___ (Neutral tone)  
+                            <select class="answer-select" data-correct="Ich habe viel Arbeit, deswegen bin ich gestresst.">
+                                <option value="">Select</option>
+                                <option value="Ich habe viel Arbeit, deshalb bin ich gestresst.">deshalb bin ich gestresst.</option>
+                                <option value="Ich habe viel Arbeit, darum bin ich gestresst.">darum bin ich gestresst.</option>
+                                <option value="Ich habe viel Arbeit, deswegen bin ich gestresst.">deswegen bin ich gestresst.</option>
+                                <option value="Ich habe viel Arbeit, weil bin ich gestresst.">weil bin ich gestresst.</option>
+                            </select>
+                        </li>
+                        <li>Es ist kalt, ___ (Casual tone)  
+                            <select class="answer-select" data-correct="Es ist kalt, darum trage ich einen Schal.">
+                                <option value="">Select</option>
+                                <option value="Es ist kalt, deshalb trage ich einen Schal.">deshalb trage ich einen Schal.</option>
+                                <option value="Es ist kalt, darum trage ich einen Schal.">darum trage ich einen Schal.</option>
+                                <option value="Es ist kalt, deswegen trage ich einen Schal.">deswegen trage ich einen Schal.</option>
+                                <option value="Es ist kalt, dass trage ich einen Schal.">dass trage ich einen Schal.</option>
+                            </select>
+                        </li>
+                        <li>Das Restaurant ist voll, ___ (Neutral tone)  
+                            <select class="answer-select" data-correct="Das Restaurant ist voll, deswegen essen wir woanders.">
+                                <option value="">Select</option>
+                                <option value="Das Restaurant ist voll, deshalb essen wir woanders.">deshalb essen wir woanders.</option>
+                                <option value="Das Restaurant ist voll, darum essen wir woanders.">darum essen wir woanders.</option>
+                                <option value="Das Restaurant ist voll, deswegen essen wir woanders.">deswegen essen wir woanders.</option>
+                                <option value="Das Restaurant ist voll, weil essen wir woanders.">weil essen wir woanders.</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Ich bin krank, darum gehe ich nicht zur Arbeit.</em> (Casual tone, darum fits best.)</li>
+                            <li><em>Die Präsentation war unklar, deshalb wurde sie überarbeitet.</em> (Formal tone, deshalb fits best.)</li>
+                            <li><em>Ich habe viel Arbeit, deswegen bin ich gestresst.</em> (Neutral tone, deswegen fits best.)</li>
+                            <li><em>Es ist kalt, darum trage ich einen Schal.</em> (Casual tone, darum fits best.)</li>
+                            <li><em>Das Restaurant ist voll, deswegen essen wir woanders.</em> (Neutral tone, deswegen fits best.)</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise7">
+                <h3>Exercise 7: Respond to "Warum?" with the Correct Conjunction</h3>
+                <p>Choose the correct standalone conjunction to answer the "Warum?" question based on the tone.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>Warum bist du so müde? (Casual tone)  
+                            <select class="answer-select" data-correct="Darum!">
+                                <option value="">Select</option>
+                                <option value="Deshalb!">Deshalb!</option>
+                                <option value="Darum!">Darum!</option>
+                                <option value="Deswegen!">Deswegen!</option>
+                                <option value="Weil!">Weil!</option>
+                            </select>
+                        </li>
+                        <li>Warum wurde das Projekt abgelehnt? (Formal tone)  
+                            <select class="answer-select" data-correct="Deshalb!">
+                                <option value="">Select</option>
+                                <option value="Deshalb!">Deshalb!</option>
+                                <option value="Darum!">Darum!</option>
+                                <option value="Deswegen!">Deswegen!</option>
+                                <option value="Dass!">Dass!</option>
+                            </select>
+                        </li>
+                        <li>Warum hast du das Buch gekauft? (Neutral tone)  
+                            <select class="answer-select" data-correct="Deswegen!">
+                                <option value="">Select</option>
+                                <option value="Deshalb!">Deshalb!</option>
+                                <option value="Darum!">Darum!</option>
+                                <option value="Deswegen!">Deswegen!</option>
+                                <option value="Weil!">Weil!</option>
+                            </select>
+                        </li>
+                        <li>Warum gehst du nicht mit? (Casual tone)  
+                            <select class="answer-select" data-correct="Darum!">
+                                <option value="">Select</option>
+                                <option value="Deshalb!">Deshalb!</option>
+                                <option value="Darum!">Darum!</option>
+                                <option value="Deswegen!">Deswegen!</option>
+                                <option value="Dass!">Dass!</option>
+                            </select>
+                        </li>
+                        <li>Warum bestellst du online? (Neutral tone)  
+                            <select class="answer-select" data-correct="Deswegen!">
+                                <option value="">Select</option>
+                                <option value="Deshalb!">Deshalb!</option>
+                                <option value="Darum!">Darum!</option>
+                                <option value="Deswegen!">Deswegen!</option>
+                                <option value="Weil!">Weil!</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Darum!</em> (Casual tone, darum fits best.)</li>
+                            <li><em>Deshalb!</em> (Formal tone, deshalb fits best.)</li>
+                            <li><em>Deswegen!</em> (Neutral tone, deswegen fits best.)</li>
+                            <li><em>Darum!</em> (Casual tone, darum fits best.)</li>
+                            <li><em>Deswegen!</em> (Neutral tone, deswegen fits best.)</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise8">
+                <h3>Exercise 8: Combine Sentences Using the Correct Conjunction</h3>
+                <p>Combine the two sentences into one using the appropriate conjunction based on the tone.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>I’m sick. I stay home. (Casual tone)  
+                            <select class="answer-select" data-correct="Ich bin krank, darum bleibe ich zu Hause.">
+                                <option value="">Select</option>
+                                <option value="Ich bin krank, deshalb bleibe ich zu Hause.">Ich bin krank, deshalb bleibe ich zu Hause.</option>
+                                <option value="Ich bin krank, darum bleibe ich zu Hause.">Ich bin krank, darum bleibe ich zu Hause.</option>
+                                <option value="Ich bin krank, deswegen bleibe ich zu Hause.">Ich bin krank, deswegen bleibe ich zu Hause.</option>
+                                <option value="Ich bin krank, weil bleibe ich zu Hause.">Ich bin krank, weil bleibe ich zu Hause.</option>
+                            </select>
+                        </li>
+                        <li>The report was incomplete. It was rejected. (Formal tone)  
+                            <select class="answer-select" data-correct="Der Bericht war unvollständig, deshalb wurde er abgelehnt.">
+                                <option value="">Select</option>
+                                <option value="Der Bericht war unvollständig, deshalb wurde er abgelehnt.">Der Bericht war unvollständig, deshalb wurde er abgelehnt.</option>
+                                <option value="Der Bericht war unvollständig, darum wurde er abgelehnt.">Der Bericht war unvollständig, darum wurde er abgelehnt.</option>
+                                <option value="Der Bericht war unvollständig, deswegen wurde er abgelehnt.">Der Bericht war unvollständig, deswegen wurde er abgelehnt.</option>
+                                <option value="Der Bericht war unvollständig, dass wurde er abgelehnt.">Der Bericht war unvollständig, dass wurde er abgelehnt.</option>
+                            </select>
+                        </li>
+                        <li>I have a lot of work. I’m stressed. (Neutral tone)  
+                            <select class="answer-select" data-correct="Ich habe viel Arbeit, deswegen bin ich gestresst.">
+                                <option value="">Select</option>
+                                <option value="Ich habe viel Arbeit, deshalb bin ich gestresst.">Ich habe viel Arbeit, deshalb bin ich gestresst.</option>
+                                <option value="Ich habe viel Arbeit, darum bin ich gestresst.">Ich habe viel Arbeit, darum bin ich gestresst.</option>
+                                <option value="Ich habe viel Arbeit, deswegen bin ich gestresst.">Ich habe viel Arbeit, deswegen bin ich gestresst.</option>
+                                <option value="Ich habe viel Arbeit, weil bin ich gestresst.">Ich habe viel Arbeit, weil bin ich gestresst.</option>
+                            </select>
+                        </li>
+                        <li>I don’t like the movie. I don’t watch it. (Casual tone)  
+                            <select class="answer-select" data-correct="Ich mag den Film nicht, darum schaue ich ihn nicht.">
+                                <option value="">Select</option>
+                                <option value="Ich mag den Film nicht, deshalb schaue ich ihn nicht.">Ich mag den Film nicht, deshalb schaue ich ihn nicht.</option>
+                                <option value="Ich mag den Film nicht, darum schaue ich ihn nicht.">Ich mag den Film nicht, darum schaue ich ihn nicht.</option>
+                                <option value="Ich mag den Film nicht, deswegen schaue ich ihn nicht.">Ich mag den Film nicht, deswegen schaue ich ihn nicht.</option>
+                                <option value="Ich mag den Film nicht, weil schaue ich ihn nicht.">Ich mag den Film nicht, weil schaue ich ihn nicht.</option>
+                            </select>
+                        </li>
+                        <li>The store is closed. I shop online. (Neutral tone)  
+                            <select class="answer-select" data-correct="Das Geschäft ist geschlossen, deswegen kaufe ich online.">
+                                <option value="">Select</option>
+                                <option value="Das Geschäft ist geschlossen, deshalb kaufe ich online.">Das Geschäft ist geschlossen, deshalb kaufe ich online.</option>
+                                <option value="Das Geschäft ist geschlossen, darum kaufe ich online.">Das Geschäft ist geschlossen, darum kaufe ich online.</option>
+                                <option value="Das Geschäft ist geschlossen, deswegen kaufe ich online.">Das Geschäft ist geschlossen, deswegen kaufe ich online.</option>
+                                <option value="Das Geschäft ist geschlossen, weil kaufe ich online.">Das Geschäft ist geschlossen, weil kaufe ich online.</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Ich bin krank, darum bleibe ich zu Hause.</em> (Casual tone, darum fits best.)</li>
+                            <li><em>Der Bericht war unvollständig, deshalb wurde er abgelehnt.</em> (Formal tone, deshalb fits best.)</li>
+                            <li><em>Ich habe viel Arbeit, deswegen bin ich gestresst.</em> (Neutral tone, deswegen fits best.)</li>
+                            <li><em>Ich mag den Film nicht, darum schaue ich ihn nicht.</em> (Casual tone, darum fits best.)</li>
+                            <li><em>Das Geschäft ist geschlossen, deswegen kaufe ich online.</em> (Neutral tone, deswegen fits best.)</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips -->
+        <section id="tips">
+            <h2>Tips to Master "Deshalb," "Darum," and "Deswegen"</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Match the Tone to the Context</strong>: Use deshalb for formal writing or professional settings, darum for casual conversations with friends, and deswegen for neutral or mixed contexts.</li>
+                    <li><strong>Create Cause-and-Effect Pairs</strong>: Practice by writing sentences about your daily life, such as why you made a certain decision (e.g., Ich bin müde, darum gehe ich ins Bett.).</li>
+                    <li><strong>Use in Conversations</strong>: Try answering "Warum?" questions with these conjunctions to get comfortable with their standalone usage (e.g., Warum bist du hier? Darum!).</li>
+                    <li><strong>Pay Attention to Word Order</strong>: Ensure the verb in the result clause is in the second position (e.g., Es regnet, darum bleibe ich drinnen.).</li>
+                    <li><strong>Listen to Native Speakers</strong>: Watch German movies, series, or podcasts to hear how these conjunctions are used in different contexts.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Resources -->
+        <section id="resources">
+            <h2>Resources for Extra Practice</h2>
+            <div class="resource-links">
+                <div class="resource-card">
+                    <p><strong>YouTube - Learn German with Anja</strong><br>Videos on conjunctions like "deshalb."</p>
+                    <a href="https://www.youtube.com/@LearnGermanwithAnja" class="resource-btn">Visit Learn German with Anja</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>Deutsch Lernen (Lingolia)</strong><br>Lessons on causal conjunctions.</p>
+                    <a href="https://deutsch.lingolia.com/en/grammar/conjunctions" class="resource-btn">Visit Lingolia</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>YouTube - Easy German</strong><br>Real-life use of "deshalb" and "darum."</p>
+                    <a href="https://www.youtube.com/@EasyGerman" class="resource-btn">Visit Easy German</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="weil.html" class="see-also-rect">Weil</a>
+                <a href="temp-praep.html" class="see-also-rect">Temporal Prepositions</a>
+                <a href="praeteritum.html" class="see-also-rect">Präteritum Tense</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="weil.html" class="next-btn">Next: Weil →</a>
+        </div>
+    </main>
+   <!-- JavaScript -->
+  <script>
+    // Dark Mode Toggle
+    const modeToggle = document.getElementById('mode-toggle');
+    modeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
+
+    // Load dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+    }
+
+    // Toggle Answers
+    document.querySelectorAll('.toggle-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const answersDiv = button.nextElementSibling;
+            if (button.classList.contains('show-answers')) {
+                answersDiv.classList.toggle('hidden');
+            } else if (button.classList.contains('check-answers')) {
+                const selects = button.parentElement.querySelectorAll('.answer-select');
+                selects.forEach(select => {
+                    const selectedValue = select.value;
+                    const correctValue = select.getAttribute('data-correct');
+                    if (selectedValue === correctValue) {
+                        select.style.backgroundColor = '#d4edda'; // Green for correct
+                    } else {
+                        select.style.backgroundColor = '#f8d7da'; // Red for incorrect
+                    }
+                });
+            }
+        });
+    });
+</script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

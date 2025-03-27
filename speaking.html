@@ -1,0 +1,871 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      German Speaking | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/speaking.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+               <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="other-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>German Speaking: A Super Simple and Awesome Guide for Beginners</h1>
+            <p>
+                Speaking German is all about opening your mouth and having fun with the language! It might feel scary at first, but with a few easy tricks, you’ll be chatting in no time. This guide is made extra simple and clear for beginners—no complicated stuff, just the basics to get you talking confidently. We’ll cover how to start speaking, key phrases, pronunciation tips, and ways to practice. Plus, I’ll throw in some bonus ideas to make it even better. Let’s jump in and get you speaking German like a champ!
+            </p>
+        </section>
+
+        <!-- Why Speaking German is Awesome -->
+        <section id="key-points">
+            <h2>Why Speaking German is Awesome</h2>
+            <div class="subsection">
+                <div class="examples">
+                    <ul class="example-list">
+                        <li>It’s how you connect with people—like saying "Hallo" to a new friend.</li>
+                        <li>It makes your learning real—you’re not just reading, you’re <em>using</em> it!</li>
+                        <li>It builds confidence—every word you say is a win.</li>
+                    </ul>
+                    <p>
+                        German sounds cool with its strong <em>r</em> and fun umlauts (<em>ä, ö, ü</em>), and you don’t need to be perfect to start. Even little sentences like <em>Ich mag dich</em> (I like you) can make someone smile!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 1: Start with Super Easy Phrases -->
+        <section id="phrases">
+            <h2>Step 1: Start with Super Easy Phrases</h2>
+            <div class="subsection">
+                <p>You don’t need big sentences—just a few words can get you going. Here are some must-know phrases to say out loud right now:</p>
+            </div>
+            <div class="subsection">
+                <h3>Everyday Basics</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Hallo!</em> – Hello! (Say: "HAH-lo")</li>
+                        <li><em>Tschüss!</em> – Bye! (Say: "CHEWSS")</li>
+                        <li><em>Danke!</em> – Thanks! (Say: "DAHN-keh")</li>
+                        <li><em>Bitte!</em> – Please! (Say: "BIT-teh")</li>
+                        <li><em>Ja.</em> – Yes. (Say: "YAH")</li>
+                        <li><em>Nein.</em> – No. (Say: "NINE")</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Meeting People</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Wie heißt du?</em> – What’s your name? (Say: "VEE hyst doo?")</li>
+                        <li><em>Ich heiße [your name].</em> – My name is [your name]. (Say: "ICK HY-seh...")</li>
+                        <li><em>Wie geht’s?</em> – How are you? (Say: "VEE gates?")</li>
+                        <li><em>Gut, danke!</em> – Good, thanks! (Say: "GOOT, DAHN-keh")</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Simple Chats</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Ich mag das.</em> – I like that. (Say: "ICK mahk dahs")</li>
+                        <li><em>Was machst du?</em> – What are you doing? (Say: "VAHS mahkst doo?")</li>
+                        <li><em>Es ist schön.</em> – It’s nice. (Say: "ESS ist shurn")</li>
+                    </ul>
+                    <p><strong>Try It:</strong> Say <em>Hallo, wie heißt du?</em> to a mirror. Then answer: <em>Ich heiße [your name].</em> Feels good, right?</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 2: Sound Like a German -->
+        <section id="pronunciation">
+            <h2>Step 2: Sound Like a German (Pronunciation Made Easy)</h2>
+            <div class="subsection">
+                <p>German sounds are different, but you can master them with a little practice. Here’s the simplest way to get the big ones right:</p>
+            </div>
+            <div class="subsection">
+                <h3>Vowels</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>A</em> – Like "ah" in "father" (e.g., <em>Apfel</em> – "AH-pfel" – apple).</li>
+                        <li><em>E</em> – Like "eh" in "bed" (e.g., <em>Bett</em> – "BET").</li>
+                        <li><em>I</em> – Like "ee" in "see" (e.g., <em>Liebe</em> – "LEE-beh" – love).</li>
+                        <li><em>O</em> – Like "oh" in "open" (e.g., <em>Boot</em> – "BOHT" – boat).</li>
+                        <li><em>U</em> – Like "oo" in "moon" (e.g., <em>Huhn</em> – "HOON" – chicken).</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Umlauts (Ä, Ö, Ü)</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Ä</em> – Like "e" in "bed," but brighter (e.g., <em>Mädchen</em> – "MED-chen" – girl).</li>
+                        <li><em>Ö</em> – Round your lips like "o," say "e" (e.g., <em>König</em> – "KUR-nig" – king).</li>
+                        <li><em>Ü</em> – Round your lips like "u," say "ee" (e.g., <em>Mütter</em> – "MOO-ter" – mothers).</li>
+                    </ul>
+                    <p><strong>Trick:</strong> Smile a little when you say umlauts—it helps!</p>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Tricky Consonants</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>R</em> – A soft growl in your throat, not rolled (e.g., <em>rot</em> – "rOHT" – red).</li>
+                        <li><em>Ch</em> – Two ways:</li>
+                        <li>After <em>a, o, u</em>: A throaty hiss (e.g., <em>Buch</em> – "BOOHH" – book).</li>
+                        <li>After <em>e, i</em>: Soft, like "sh" but lighter (e.g., <em>ich</em> – "ISH").</li>
+                        <li><em>W</em> – Like English "v" (e.g., <em>Wasser</em> – "VASS-er" – water).</li>
+                        <li><em>V</em> – Like "f" (e.g., <em>Vogel</em> – "FOH-gel" – bird).</li>
+                        <li><em>S</em> – Before <em>p</em> or <em>t</em>, it’s "sh" (e.g., <em>Spinne</em> – "SHPI-nneh" – spider).</li>
+                    </ul>
+                    <p><strong>Try It:</strong> Say <em>Ich bin gut</em> (I am good) – "ISH bin GOOT." Repeat 5 times fast!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 3: Build Tiny Sentences -->
+        <section id="sentences">
+            <h2>Step 3: Build Tiny Sentences</h2>
+            <div class="subsection">
+                <p>Start with short, easy sentences you can say anywhere. Use this formula:</p>
+                <ul class="example-list">
+                    <li><strong>Subject + Verb + Object/Extra Info</strong></li>
+                    <li>Add <strong>time</strong> or <strong>place</strong> if you want.</li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>Examples</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Ich esse Brot.</em> – I eat bread. (Say: "ICK ESS-eh BROHT")</li>
+                        <li><em>Du trinkst Wasser.</em> – You drink water. (Say: "DOO TRINKST VASS-er")</li>
+                        <li><em>Wir gehen heute zum Park.</em> – We go to the park today. (Say: "VEER GAY-en HOY-teh tsoom PARK")</li>
+                    </ul>
+                    <p><strong>Try It:</strong> Make 3 sentences about your day: <em>Ich [verb] [something].</em> Example: <em>Ich sehe Fernsehen.</em> (I watch TV.)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 4: Practice Speaking Every Day -->
+        <section id="practice">
+            <h2>Step 4: Practice Speaking Every Day</h2>
+            <div class="subsection">
+                <p>Speaking gets better the more you do it. Here are super easy ways to practice:</p>
+            </div>
+            <div class="subsection">
+                <h3>1. Talk to Yourself</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li>Say what you’re doing: <em>Ich mache Kaffee.</em> (I make coffee.)</li>
+                        <li>Describe stuff: <em>Das ist ein Tisch.</em> (This is a table.)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>2. Shadow Native Speakers</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li>Find a German video (like from YouTube below), listen to a sentence, and repeat it right after.</li>
+                        <li>Example: Hear <em>Wie geht es dir?</em> (How are you?), then say it loud.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>3. Use Apps</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><strong>Duolingo:</strong> Short speaking exercises.</li>
+                        <li><strong>HelloTalk:</strong> Chat with real Germans who’ll correct you.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>4. Find a Buddy</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li>Ask a friend to learn with you, or join a language group online.</li>
+                        <li>Say: <em>Hallo, willst du Deutsch sprechen?</em> (Hi, want to speak German?)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>5. Sing Along</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li>Try a German song like "99 Luftballons" by Nena. Sing the chorus—it’s fun!</li>
+                    </ul>
+                    <p><strong>Try It:</strong> Say <em>Ich lerne Deutsch</em> (I learn German) 10 times today—anywhere, anytime!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 5: Top YouTube Channels -->
+        <section id="youtube">
+            <h2>Step 5: Top YouTube Channels to Hear and Speak</h2>
+            <div class="subsection">
+                <p>These channels are perfect for listening to real German and practicing your speaking. Click the links to start!</p>
+            </div>
+            <div class="subsection">
+                <h3>1. Learn German with Anja</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><strong>Why It’s Awesome:</strong> Anja speaks slow and clear, perfect for copying her pronunciation.</li>
+                        <li><strong>Link:</strong> <a href="https://www.youtube.com/@GermanwithAnja" target="_blank">Learn German with Anja</a></li>
+                        <li><strong>Try:</strong> Her "Speak German Now" videos—repeat every word she says!</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>2. Easy German</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><strong>Why It’s Awesome:</strong> Real people talking on the street with subtitles.</li>
+                        <li><strong>Link:</strong> <a href="https://www.youtube.com/@EasyGerman" target="_blank">Easy German</a></li>
+                        <li><strong>Try:</strong> Watch an episode and say 5 sentences you hear out loud.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>3. Deutsch für Euch</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><strong>Why It’s Awesome:</strong> Katja explains sounds and phrases simply, with examples to repeat.</li>
+                        <li><strong>Link:</strong> <a href="https://www.youtube.com/@DeutschFuerEuch" target="_blank">Deutsch für Euch</a></li>
+                        <li><strong>Try:</strong> Her "Pronunciation Basics" video—pause and mimic her.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>4. Get Germanized</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><strong>Why It’s Awesome:</strong> Dominik’s fun vibe makes speaking feel less scary.</li>
+                        <li><strong>Link:</strong> <a href="https://www.youtube.com/@MeisterLehnsherr" target="_blank">Get Germanized</a></li>
+                        <li><strong>Try:</strong> His "German Phrases" videos—say them with him!</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>5. GermanPod101</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><strong>Why It’s Awesome:</strong> Short lessons with dialogues to practice speaking.</li>
+                        <li><strong>Link:</strong> <a href="https://www.youtube.com/@GermanPod101" target="_blank">GermanPod101</a></li>
+                        <li><strong>Try:</strong> Their "Learn German in 3 Minutes" series—repeat the phrases!</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>6. Lingoni German</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><strong>Why It’s Awesome:</strong> Clear explanations and speaking exercises for beginners.</li>
+                        <li><strong>Link:</strong> <a href="https://www.youtube.com/@lingonigerman" target="_blank">Lingoni German</a></li>
+                        <li><strong>Try:</strong> "German for Beginners" playlist—shadow the sentences!</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Extra Fun Boosters -->
+        <section id="boosters">
+            <h2>Extra Fun Boosters</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Make a Game:</strong> Count how many German words you say in a day—aim for 20!</li>
+                    <li><strong>Pretend Play:</strong> Act like a German shopkeeper: <em>Hallo, was willst du?</em> (Hi, what do you want?)</li>
+                    <li><strong>Reward Yourself:</strong> Say 5 sentences, then eat a snack—<em>Ich mag Schokolade!</em> (I like chocolate!)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Practice Time -->
+        <section id="practice-time">
+            <h2>Practice Time!</h2>
+            <div class="subsection">
+                <h3>Exercise 1: Say It Loud</h3>
+                <p>Say these 5 phrases 3 times each:</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Hallo, ich bin [your name].</em> (Hi, I’m [your name].)</li>
+                        <li><em>Wie geht es dir?</em> (How are you?)</li>
+                        <li><em>Ich mag Deutsch.</em> (I like German.)</li>
+                        <li><em>Wo ist das Buch?</em> (Where is the book?)</li>
+                        <li><em>Tschüss, bis morgen!</em> (Bye, see you tomorrow!)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Exercise 2: Make Your Own</h3>
+                <p>Say 3 sentences about you:</p>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Ich bin...</em> (I am...)</li>
+                        <li><em>Ich mag...</em> (I like...)</li>
+                        <li><em>Ich gehe...</em> (I go...)</li>
+                    </ul>
+                    <p>Example: <em>Ich bin Anna. Ich mag Pizza. Ich gehe zur Schule.</em></p>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Exercise 3: Shadow a Video</h3>
+                <p>Pick a YouTube video from above. Listen to 3 sentences, pause, and repeat them exactly. Do it 5 times!</p>
+            </div>
+        </section>
+
+        <!-- Mistakes? No Problem! -->
+        <section id="mistakes">
+            <h2>Mistakes? No Problem!</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Wrong Sounds:</strong> Germans will still get it—<em>ick</em> instead of <em>ish</em> for <em>ich</em> is fine at first.</li>
+                    <li><strong>Mixing Words:</strong> Saying <em>Ich sehe dich</em> (I see you) instead of <em>Ich mag dich</em> (I like you) happens—just laugh and fix it!</li>
+                    <li><strong>Pausing:</strong> It’s okay to stop and think—better slow than silent.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Super Simple Tips -->
+        <section id="tips">
+            <h2>Super Simple Tips</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Start Tiny:</strong> One word (<em>Hallo</em>) is enough to begin.</li>
+                    <li><strong>Repeat Daily:</strong> Say <em>Guten Morgen</em> (Good morning) every day.</li>
+                    <li><strong>Copy Cats:</strong> Mimic videos—it’s the fastest way to sound good.</li>
+                    <li><strong>Smile:</strong> Speaking is fun—enjoy it!</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Final Thoughts -->
+        <section id="final-thoughts">
+            <h2>You’re a German Speaker Now!</h2>
+            <p>
+                You’ve got the phrases, the sounds, and the tricks to start speaking German today. Say <em>Hallo</em> to your mirror, shadow Anja or Katja from YouTube, and talk about your day in tiny sentences. You don’t need to be perfect—just brave. Every word you say makes you better. <em>Los geht’s!</em> (Let’s go!)
+            </p>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="listening.html" class="see-also-btn">German Listening</a>
+                <a href="writing.html" class="see-also-btn">German Writing</a>
+                <a href="structure.html" class="see-also-btn">German Sentence Structure</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="writing.html" class="next-btn">Next: German Writing →</a>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.toggle-btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const hiddenContent = this.nextElementSibling;
+                    if (hiddenContent.classList.contains('hidden')) {
+                        hiddenContent.classList.remove('hidden');
+                    } else {
+                        hiddenContent.classList.add('hidden');
+                    }
+                });
+            });
+
+            const modeToggle = document.getElementById('mode-toggle');
+            const body = document.body;
+            modeToggle.addEventListener('click', function() {
+                body.classList.toggle('dark-mode');
+                const isDark = body.classList.contains('dark-mode');
+                modeToggle.querySelector('svg').setAttribute('d', isDark ? 
+                    'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z' : 
+                    'M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z');
+            });
+        });
+    </script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1029 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Wegen and Trotz in German | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/wegen-trotz.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+               <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="b1-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>Wegen and Trotz in German</h1>
+            <p>
+                A clear guide to the German genitive prepositions "wegen" (because of) and "trotz" (despite), explaining their meanings, uses, and grammar rules, with 25 examples, exercises, and resources.
+            </p>
+        </section>
+
+        <!-- Understanding -->
+        <section id="understanding">
+            <h2>Understanding "Wegen" and "Trotz"</h2>
+            <p>"Wegen" means "because of" and explains reasons, while "trotz" means "despite" and shows contrast. Both take the genitive case, though dative is common informally.</p>
+            <div class="subsection">
+                <h3>Key Points</h3>
+                <ul class="example-list">
+                    <li><strong>Wegen</strong>: "Because of" or "due to" (e.g., wegen des Regens).</li>
+                    <li><strong>Trotz</strong>: "Despite" or "in spite of" (e.g., trotz des Regens).</li>
+                    <li><strong>Genitive Case</strong>: Required for formal use.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Cases and Structure -->
+        <section id="cases-structure">
+            <h2>Cases and Structure</h2>
+            <div class="subsection">
+                <h3>Genitive Articles</h3>
+                <p>Masculine/Neuter: des; Feminine/Plural: der; Indefinite: eines/einer.</p>
+            </div>
+            <div class="subsection">
+                <h3>Noun Endings</h3>
+                <p>Masculine/Neuter: -s or -es; Feminine/Plural: no change.</p>
+            </div>
+            <div class="subsection">
+                <h3>Word Order</h3>
+                <p>Usually before the noun, but flexible (e.g., Wegen des Regens bleibe ich...).</p>
+            </div>
+        </section>
+
+        <!-- Uses -->
+        <section id="uses">
+            <h2>Uses of "Wegen" and "Trotz"</h2>
+            <div class="subsection">
+                <h3>Wegen: Explaining Reasons</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Wegen des Sturms fällt der Flug aus.</em> (Due to the storm, the flight is canceled.)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Trotz: Showing Contrast</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Trotz der Kälte geht er joggen.</em> (Despite the cold, he goes jogging.)</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Common Examples -->
+        <section id="examples">
+            <h2>List of 25 Common Examples</h2>
+            <div class="table-container">
+                <table>
+                    <tr><th>Sentence</th><th>Translation</th></tr>
+                    <tr><td><em>Wegen des Regens bleibe ich drinnen.</em></td><td>Because of the rain, I stay inside.</td></tr>
+                    <tr><td><em>Wegen seines Fehlers müssen wir warten.</em></td><td>Due to his mistake, we have to wait.</td></tr>
+                    <tr><td><em>Wegen der Hitze trinke ich viel Wasser.</em></td><td>Because of the heat, I drink a lot of water.</td></tr>
+                    <tr><td><em>Wegen des Schnees ist die Schule geschlossen.</em></td><td>Due to the snow, the school is closed.</td></tr>
+                    <tr><td><em>Wegen meiner Arbeit habe ich keine Zeit.</em></td><td>Because of my work, I have no time.</td></tr>
+                    <tr><td><em>Wegen des Lärms kann ich nicht schlafen.</em></td><td>Because of the noise, I can’t sleep.</td></tr>
+                    <tr><td><em>Wegen ihrer Krankheit bleibt sie zu Hause.</em></td><td>Due to her illness, she stays home.</td></tr>
+                    <tr><td><em>Wegen des Sturms fahren keine Züge.</em></td><td>Because of the storm, no trains are running.</td></tr>
+                    <tr><td><em>Wegen seines Talents wurde er ausgewählt.</em></td><td>Due to his talent, he was chosen.</td></tr>
+                    <tr><td><em>Wegen der Kälte ziehe ich einen Mantel an.</em></td><td>Because of the cold, I wear a coat.</td></tr>
+                    <tr><td><em>Wegen eines Problems ist das System ausgefallen.</em></td><td>Due to a problem, the system crashed.</td></tr>
+                    <tr><td><em>Wegen des Wetters machen wir keinen Ausflug.</em></td><td>Because of the weather, we’re not going on a trip.</td></tr>
+                    <tr><td><em>Trotz des Regens gehe ich spazieren.</em></td><td>Despite the rain, I go for a walk.</td></tr>
+                    <tr><td><em>Trotz seiner Müdigkeit arbeitet er weiter.</em></td><td>Despite his tiredness, he keeps working.</td></tr>
+                    <tr><td><em>Trotz der Hitze spiele ich Fußball.</em></td><td>In spite of the heat, I play soccer.</td></tr>
+                    <tr><td><em>Trotz des Schnees fahre ich zur Arbeit.</em></td><td>Despite the snow, I drive to work.</td></tr>
+                    <tr><td><em>Trotz meiner Angst versuche ich es.</em></td><td>In spite of my fear, I try it.</td></tr>
+                    <tr><td><em>Trotz des Lärms höre ich Musik.</em></td><td>Despite the noise, I listen to music.</td></tr>
+                    <tr><td><em>Trotz ihrer Armut ist sie glücklich.</em></td><td>Despite her poverty, she’s happy.</td></tr>
+                    <tr><td><em>Trotz des Sturms bleiben wir draußen.</em></td><td>In spite of the storm, we stay outside.</td></tr>
+                    <tr><td><em>Trotz seines Alters läuft er schnell.</em></td><td>Despite his age, he runs fast.</td></tr>
+                    <tr><td><em>Trotz der Kälte schwimme ich im See.</em></td><td>In spite of the cold, I swim in the lake.</td></tr>
+                    <tr><td><em>Trotz eines Fehlers funktioniert es.</em></td><td>Despite a mistake, it works.</td></tr>
+                    <tr><td><em>Trotz des Wetters genießen wir den Tag.</em></td><td>Despite the weather, we enjoy the day.</td></tr>
+                    <tr><td><em>Trotz ihrer Eile liest sie das Buch.</em></td><td>In spite of her hurry, she reads the book.</td></tr>
+                </table>
+            </div>
+        </section>
+<!-- Exercises -->
+<section id="practice">
+    <h2>Exercises to Practice "Wegen" and "Trotz"</h2>
+    <div class="subsection" id="exercise1">
+        <h3>Exercise 1: Choose the Correct Preposition</h3>
+        <p>Select "wegen" or "trotz" to fit the sentence.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>___ des Regens bleibe ich zu Hause.
+                    <select class="answer-select" data-correct="Wegen des Regens bleibe ich zu Hause.">
+                        <option value="">Select</option>
+                        <option value="Mit des Regens bleibe ich zu Hause.">Mit</option>
+                        <option value="Wegen des Regens bleibe ich zu Hause.">Wegen</option>
+                        <option value="Für des Regens bleibe ich zu Hause.">Für</option>
+                        <option value="Ohne des Regens bleibe ich zu Hause.">Ohne</option>
+                        <option value="Trotz des Regens bleibe ich zu Hause.">Trotz</option>
+                    </select>
+                </li>
+                <li>___ der Kälte gehe ich joggen.
+                    <select class="answer-select" data-correct="Trotz der Kälte gehe ich joggen.">
+                        <option value="">Select</option>
+                        <option value="An der Kälte gehe ich joggen.">An</option>
+                        <option value="Wegen der Kälte gehe ich joggen.">Wegen</option>
+                        <option value="Trotz der Kälte gehe ich joggen.">Trotz</option>
+                        <option value="Bei der Kälte gehe ich joggen.">Bei</option>
+                        <option value="Um der Kälte gehe ich joggen.">Um</option>
+                    </select>
+                </li>
+                <li>___ seines Fehlers müssen wir warten.
+                    <select class="answer-select" data-correct="Wegen seines Fehlers müssen wir warten.">
+                        <option value="">Select</option>
+                        <option value="Wegen seines Fehlers müssen wir warten.">Wegen</option>
+                        <option value="Vor seines Fehlers müssen wir warten.">Vor</option>
+                        <option value="Trotz seines Fehlers müssen wir warten.">Trotz</option>
+                        <option value="Zu seines Fehlers müssen wir warten.">Zu</option>
+                        <option value="Nach seines Fehlers müssen wir warten.">Nach</option>
+                    </select>
+                </li>
+                <li>___ des Lärms schlafe ich gut.
+                    <select class="answer-select" data-correct="Trotz des Lärms schlafe ich gut.">
+                        <option value="">Select</option>
+                        <option value="Auf des Lärms schlafe ich gut.">Auf</option>
+                        <option value="Über des Lärms schlafe ich gut.">Über</option>
+                        <option value="Wegen des Lärms schlafe ich gut.">Wegen</option>
+                        <option value="Trotz des Lärms schlafe ich gut.">Trotz</option>
+                        <option value="Unter des Lärms schlafe ich gut.">Unter</option>
+                    </select>
+                </li>
+                <li>___ des Sturms fällt der Flug aus.
+                    <select class="answer-select" data-correct="Wegen des Sturms fällt der Flug aus.">
+                        <option value="">Select</option>
+                        <option value="Ohne des Sturms fällt der Flug aus.">Ohne</option>
+                        <option value="Trotz des Sturms fällt der Flug aus.">Trotz</option>
+                        <option value="Von des Sturms fällt der Flug aus.">Von</option>
+                        <option value="Mit des Sturms fällt der Flug aus.">Mit</option>
+                        <option value="Wegen des Sturms fällt der Flug aus.">Wegen</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Wegen des Regens bleibe ich zu Hause.</em></li>
+                    <li><em>Trotz der Kälte gehe ich joggen.</em></li>
+                    <li><em>Wegen seines Fehlers müssen wir warten.</em></li>
+                    <li><em>Trotz des Lärms schlafe ich gut.</em></li>
+                    <li><em>Wegen des Sturms fällt der Flug aus.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise2">
+        <h3>Exercise 2: Fill in the Genitive Article</h3>
+        <p>Choose the correct genitive article.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Wegen ___ Wetters bleibe ich drinnen.
+                    <select class="answer-select" data-correct="Wegen des Wetters bleibe ich drinnen.">
+                        <option value="">Select</option>
+                        <option value="Wegen den Wetters bleibe ich drinnen.">den</option>
+                        <option value="Wegen das Wetters bleibe ich drinnen.">das</option>
+                        <option value="Wegen des Wetters bleibe ich drinnen.">des</option>
+                        <option value="Wegen dem Wetters bleibe ich drinnen.">dem</option>
+                        <option value="Wegen der Wetters bleibe ich drinnen.">der</option>
+                    </select>
+                </li>
+                <li>Trotz ___ Hitze spiele ich draußen.
+                    <select class="answer-select" data-correct="Trotz der Hitze spiele ich draußen.">
+                        <option value="">Select</option>
+                        <option value="Trotz der Hitze spiele ich draußen.">der</option>
+                        <option value="Trotz den Hitze spiele ich draußen.">den</option>
+                        <option value="Trotz des Hitze spiele ich draußen.">des</option>
+                        <option value="Trotz die Hitze spiele ich draußen.">die</option>
+                        <option value="Trotz dem Hitze spiele ich draußen.">dem</option>
+                    </select>
+                </li>
+                <li>Wegen ___ Problems ist er spät.
+                    <select class="answer-select" data-correct="Wegen eines Problems ist er spät.">
+                        <option value="">Select</option>
+                        <option value="Wegen des Problems ist er spät.">des</option>
+                        <option value="Wegen ein Problems ist er spät.">ein</option>
+                        <option value="Wegen einer Problems ist er spät.">einer</option>
+                        <option value="Wegen einem Problems ist er spät.">einem</option>
+                        <option value="Wegen eines Problems ist er spät.">eines</option>
+                    </select>
+                </li>
+                <li>Trotz ___ Kälte trinke ich Eiswasser.
+                    <select class="answer-select" data-correct="Trotz der Kälte trinke ich Eiswasser.">
+                        <option value="">Select</option>
+                        <option value="Trotz dem Kälte trinke ich Eiswasser.">dem</option>
+                        <option value="Trotz die Kälte trinke ich Eiswasser.">die</option>
+                        <option value="Trotz der Kälte trinke ich Eiswasser.">der</option>
+                        <option value="Trotz des Kälte trinke ich Eiswasser.">des</option>
+                        <option value="Trotz den Kälte trinke ich Eiswasser.">den</option>
+                    </select>
+                </li>
+                <li>Wegen ___ Schnees bleibt die Schule zu.
+                    <select class="answer-select" data-correct="Wegen des Schnees bleibt die Schule zu.">
+                        <option value="">Select</option>
+                        <option value="Wegen das Schnees bleibt die Schule zu.">das</option>
+                        <option value="Wegen des Schnees bleibt die Schule zu.">des</option>
+                        <option value="Wegen den Schnees bleibt die Schule zu.">den</option>
+                        <option value="Wegen dem Schnees bleibt die Schule zu.">dem</option>
+                        <option value="Wegen der Schnees bleibt die Schule zu.">der</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Wegen des Wetters bleibe ich drinnen.</em></li>
+                    <li><em>Trotz der Hitze spiele ich draußen.</em></li>
+                    <li><em>Wegen eines Problems ist er spät.</em></li>
+                    <li><em>Trotz der Kälte trinke ich Eiswasser.</em></li>
+                    <li><em>Wegen des Schnees bleibt die Schule zu.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise3">
+        <h3>Exercise 3: Translate into German</h3>
+        <p>Choose the correct translation using "wegen" or "trotz."</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Because of the rain, I stay home.
+                    <select class="answer-select" data-correct="Wegen des Regens bleibe ich zu Hause.">
+                        <option value="">Select</option>
+                        <option value="Wegen dem Regen bleibe ich zu Hause.">Wegen dem Regen bleibe ich zu Hause.</option>
+                        <option value="Trotz des Regens bleibe ich zu Hause.">Trotz des Regens bleibe ich zu Hause.</option>
+                        <option value="Wegen des Regens bleibe ich zu Hause.">Wegen des Regens bleibe ich zu Hause.</option>
+                        <option value="Trotz der Regen bleibe ich zu Hause.">Trotz der Regen bleibe ich zu Hause.</option>
+                        <option value="Wegen des Regens gehe ich zu Hause.">Wegen des Regens gehe ich zu Hause.</option>
+                    </select>
+                </li>
+                <li>Despite the heat, I play outside.
+                    <select class="answer-select" data-correct="Trotz der Hitze spiele ich draußen.">
+                        <option value="">Select</option>
+                        <option value="Wegen der Hitze spiele ich draußen.">Wegen der Hitze spiele ich draußen.</option>
+                        <option value="Trotz der Hitze spiele ich draußen.">Trotz der Hitze spiele ich draußen.</option>
+                        <option value="Trotz dem Hitze spiele ich draußen.">Trotz dem Hitze spiele ich draußen.</option>
+                        <option value="Wegen des Hitze spiele ich draußen.">Wegen des Hitze spiele ich draußen.</option>
+                        <option value="Trotz der Hitze bleibe ich draußen.">Trotz der Hitze bleibe ich draußen.</option>
+                    </select>
+                </li>
+                <li>Due to his mistake, we wait.
+                    <select class="answer-select" data-correct="Wegen seines Fehlers warten wir.">
+                        <option value="">Select</option>
+                        <option value="Trotz des Fehlers warten wir.">Trotz des Fehlers warten wir.</option>
+                        <option value="Wegen seinem Fehler warten wir.">Wegen seinem Fehler warten wir.</option>
+                        <option value="Wegen seines Fehlers gehen wir.">Wegen seines Fehlers gehen wir.</option>
+                        <option value="Wegen seines Fehlers warten wir.">Wegen seines Fehlers warten wir.</option>
+                        <option value="Trotz seines Fehlers warten wir.">Trotz seines Fehlers warten wir.</option>
+                    </select>
+                </li>
+                <li>In spite of the noise, I sleep well.
+                    <select class="answer-select" data-correct="Trotz des Lärms schlafe ich gut.">
+                        <option value="">Select</option>
+                        <option value="Trotz des Lärms wache ich gut.">Trotz des Lärms wache ich gut.</option>
+                        <option value="Wegen des Lärms schlafe ich gut.">Wegen des Lärms schlafe ich gut.</option>
+                        <option value="Trotz dem Lärm schlafe ich gut.">Trotz dem Lärm schlafe ich gut.</option>
+                        <option value="Trotz des Lärms schlafe ich gut.">Trotz des Lärms schlafe ich gut.</option>
+                        <option value="Wegen der Lärm schlafe ich gut.">Wegen der Lärm schlafe ich gut.</option>
+                    </select>
+                </li>
+                <li>Because of the storm, the train stops.
+                    <select class="answer-select" data-correct="Wegen des Sturms hält der Zug.">
+                        <option value="">Select</option>
+                        <option value="Wegen des Sturms hält der Zug.">Wegen des Sturms hält der Zug.</option>
+                        <option value="Trotz der Sturm hält der Zug.">Trotz der Sturm hält der Zug.</option>
+                        <option value="Wegen dem Sturm hält der Zug.">Wegen dem Sturm hält der Zug.</option>
+                        <option value="Trotz des Sturms hält der Zug.">Trotz des Sturms hält der Zug.</option>
+                        <option value="Wegen des Sturms fährt der Zug.">Wegen des Sturms fährt der Zug.</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Wegen des Regens bleibe ich zu Hause.</em></li>
+                    <li><em>Trotz der Hitze spiele ich draußen.</em></li>
+                    <li><em>Wegen seines Fehlers warten wir.</em></li>
+                    <li><em>Trotz des Lärms schlafe ich gut.</em></li>
+                    <li><em>Wegen des Sturms hält der Zug.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise4">
+        <h3>Exercise 4: Correct the Mistake</h3>
+        <p>Choose the corrected sentence with proper genitive.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Wegen dem Regen bleibe ich zu Hause.
+                    <select class="answer-select" data-correct="Wegen des Regens bleibe ich zu Hause.">
+                        <option value="">Select</option>
+                        <option value="Wegen dem Regens bleibe ich zu Hause.">Wegen dem Regens bleibe ich zu Hause.</option>
+                        <option value="Trotz des Regens bleibe ich zu Hause.">Trotz des Regens bleibe ich zu Hause.</option>
+                        <option value="Wegen des Regens bleibe ich zu Hause.">Wegen des Regens bleibe ich zu Hause.</option>
+                        <option value="Wegen des Regen bleibe ich zu Hause.">Wegen des Regen bleibe ich zu Hause.</option>
+                        <option value="Wegen der Regen bleibe ich zu Hause.">Wegen der Regen bleibe ich zu Hause.</option>
+                    </select>
+                </li>
+                <li>Trotz die Kälte gehe ich raus.
+                    <select class="answer-select" data-correct="Trotz der Kälte gehe ich raus.">
+                        <option value="">Select</option>
+                        <option value="Trotz der Kälte gehe ich raus.">Trotz der Kälte gehe ich raus.</option>
+                        <option value="Trotz der Kältes gehe ich raus.">Trotz der Kältes gehe ich raus.</option>
+                        <option value="Trotz dem Kälte gehe ich raus.">Trotz dem Kälte gehe ich raus.</option>
+                        <option value="Wegen der Kälte gehe ich raus.">Wegen der Kälte gehe ich raus.</option>
+                        <option value="Trotz des Kälte gehe ich raus.">Trotz des Kälte gehe ich raus.</option>
+                    </select>
+                </li>
+                <li>Wegen seiner Fehler warten wir.
+                    <select class="answer-select" data-correct="Wegen seines Fehlers warten wir.">
+                        <option value="">Select</option>
+                        <option value="Wegen dem Fehler warten wir.">Wegen dem Fehler warten wir.</option>
+                        <option value="Wegen seines Fehlers warten wir.">Wegen seines Fehlers warten wir.</option>
+                        <option value="Trotz seines Fehlers warten wir.">Trotz seines Fehlers warten wir.</option>
+                        <option value="Wegen des Fehlers warten wir.">Wegen des Fehlers warten wir.</option>
+                        <option value="Wegen seiner Fehlers warten wir.">Wegen seiner Fehlers warten wir.</option>
+                    </select>
+                </li>
+                <li>Trotz dem Lärm schlafe ich gut.
+                    <select class="answer-select" data-correct="Trotz des Lärms schlafe ich gut.">
+                        <option value="">Select</option>
+                        <option value="Trotz des Lärmes schlafe ich gut.">Trotz des Lärmes schlafe ich gut.</option>
+                        <option value="Trotz den Lärm schlafe ich gut.">Trotz den Lärm schlafe ich gut.</option>
+                        <option value="Wegen des Lärms schlafe ich gut.">Wegen des Lärms schlafe ich gut.</option>
+                        <option value="Trotz der Lärm schlafe ich gut.">Trotz der Lärm schlafe ich gut.</option>
+                        <option value="Trotz des Lärms schlafe ich gut.">Trotz des Lärms schlafe ich gut.</option>
+                    </select>
+                </li>
+                <li>Wegen das Wetter machen wir nichts.
+                    <select class="answer-select" data-correct="Wegen des Wetters machen wir nichts.">
+                        <option value="">Select</option>
+                        <option value="Wegen des Wetter machen wir nichts.">Wegen des Wetter machen wir nichts.</option>
+                        <option value="Wegen des Wetters machen wir nichts.">Wegen des Wetters machen wir nichts.</option>
+                        <option value="Wegen der Wetter machen wir nichts.">Wegen der Wetter machen wir nichts.</option>
+                        <option value="Trotz des Wetters machen wir nichts.">Trotz des Wetters machen wir nichts.</option>
+                        <option value="Wegen dem Wetter machen wir nichts.">Wegen dem Wetter machen wir nichts.</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Wegen des Regens bleibe ich zu Hause.</em></li>
+                    <li><em>Trotz der Kälte gehe ich raus.</em></li>
+                    <li><em>Wegen seines Fehlers warten wir.</em></li>
+                    <li><em>Trotz des Lärms schlafe ich gut.</em></li>
+                    <li><em>Wegen des Wetters machen wir nichts.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise5">
+        <h3>Exercise 5: Create Your Own</h3>
+        <p>Choose the correct sentence based on the prompt.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Because of the snow, I stay inside.
+                    <select class="answer-select" data-correct="Wegen des Schnees bleibe ich drinnen.">
+                        <option value="">Select</option>
+                        <option value="Wegen des Schnee bleibe ich drinnen.">Wegen des Schnee bleibe ich drinnen.</option>
+                        <option value="Wegen der Schnees bleibe ich drinnen.">Wegen der Schnees bleibe ich drinnen.</option>
+                        <option value="Trotz des Schnees bleibe ich drinnen.">Trotz des Schnees bleibe ich drinnen.</option>
+                        <option value="Wegen des Schnees bleibe ich drinnen.">Wegen des Schnees bleibe ich drinnen.</option>
+                        <option value="Wegen dem Schnee bleibe ich drinnen.">Wegen dem Schnee bleibe ich drinnen.</option>
+                    </select>
+                </li>
+                <li>Despite the cold, I go out.
+                    <select class="answer-select" data-correct="Trotz der Kälte gehe ich raus.">
+                        <option value="">Select</option>
+                        <option value="Trotz der Kälte gehe ich raus.">Trotz der Kälte gehe ich raus.</option>
+                        <option value="Trotz der Kältes gehe ich raus.">Trotz der Kältes gehe ich raus.</option>
+                        <option value="Wegen der Kälte gehe ich raus.">Wegen der Kälte gehe ich raus.</option>
+                        <option value="Trotz dem Kälte gehe ich raus.">Trotz dem Kälte gehe ich raus.</option>
+                        <option value="Trotz des Kälte gehe ich raus.">Trotz des Kälte gehe ich raus.</option>
+                    </select>
+                </li>
+                <li>Due to his age, he’s slow.
+                    <select class="answer-select" data-correct="Wegen seines Alters ist er langsam.">
+                        <option value="">Select</option>
+                        <option value="Wegen seines Alters ist er langsam.">Wegen seines Alters ist er langsam.</option>
+                        <option value="Wegen seiner Alters ist er langsam.">Wegen seiner Alters ist er langsam.</option>
+                        <option value="Wegen des Alter ist er langsam.">Wegen des Alter ist er langsam.</option>
+                        <option value="Trotz seines Alters ist er langsam.">Trotz seines Alters ist er langsam.</option>
+                        <option value="Wegen seinem Alter ist er langsam.">Wegen seinem Alter ist er langsam.</option>
+                    </select>
+                </li>
+                <li>In spite of the noise, she reads.
+                    <select class="answer-select" data-correct="Trotz des Lärms liest sie.">
+                        <option value="">Select</option>
+                        <option value="Trotz des Lärmes liest sie.">Trotz des Lärmes liest sie.</option>
+                        <option value="Wegen des Lärms liest sie.">Wegen des Lärms liest sie.</option>
+                        <option value="Trotz der Lärms liest sie.">Trotz der Lärms liest sie.</option>
+                        <option value="Trotz dem Lärm liest sie.">Trotz dem Lärm liest sie.</option>
+                        <option value="Trotz des Lärms liest sie.">Trotz des Lärms liest sie.</option>
+                    </select>
+                </li>
+                <li>Because of the heat, I’m tired.
+                    <select class="answer-select" data-correct="Wegen der Hitze bin ich müde.">
+                        <option value="">Select</option>
+                        <option value="Wegen des Hitze bin ich müde.">Wegen des Hitze bin ich müde.</option>
+                        <option value="Wegen der Hitzes bin ich müde.">Wegen der Hitzes bin ich müde.</option>
+                        <option value="Wegen der Hitze bin ich müde.">Wegen der Hitze bin ich müde.</option>
+                        <option value="Trotz der Hitze bin ich müde.">Trotz der Hitze bin ich müde.</option>
+                        <option value="Wegen dem Hitze bin ich müde.">Wegen dem Hitze bin ich müde.</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Wegen des Schnees bleibe ich drinnen.</em></li>
+                    <li><em>Trotz der Kälte gehe ich raus.</em></li>
+                    <li><em>Wegen seines Alters ist er langsam.</em></li>
+                    <li><em>Trotz des Lärms liest sie.</em></li>
+                    <li><em>Wegen der Hitze bin ich müde.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Tips -->
+        <section id="tips">
+            <h2>Tips for Using "Wegen" and "Trotz" Correctly</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Stick to Genitive</strong>: Use des or der correctly (e.g., des Regens).</li>
+                    <li><strong>Know the Difference</strong>: "Wegen" for reasons, "trotz" for contrast.</li>
+                    <li><strong>Practice Placement</strong>: Move "wegen" or "trotz" in sentences.</li>
+                    <li><strong>Listen for Dative</strong>: Note informal use but aim for genitive.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Resources -->
+        <section id="resources">
+            <h2>Resources for Extra Practice</h2>
+            <div class="resource-links">
+                <div class="resource-card">
+                    <p><strong>YouTube - Learn German with Anja</strong><br>Videos on prepositions like "wegen" and "trotz."</p>
+                    <a href="https://www.youtube.com/@LearnGermanwithAnja" class="resource-btn">Visit Learn German with Anja</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>Deutsch Lernen (Lingolia)</strong><br>Lessons on genitive prepositions.</p>
+                    <a href="https://deutsch.lingolia.com/en/grammar/prepositions" class="resource-btn">Visit Lingolia</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>YouTube - Easy German</strong><br>Real-life examples of "wegen" and "trotz."</p>
+                    <a href="https://www.youtube.com/@EasyGerman" class="resource-btn">Visit Easy German</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="infinitivmitzu.html" class="see-also-rect">Infinitiv mit zu</a>
+                <a href="obwohl.html" class="see-also-rect">Obwohl in German</a>
+                <a href="genitiv.html" class="see-also-rect">Genitive Case</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="wfrageprep.html" class="next-btn">Next: W-Fragen mit Präpositionen →</a>
+        </div>
+    </main>
+
+   <!-- JavaScript -->
+  <script>
+    // Dark Mode Toggle
+    const modeToggle = document.getElementById('mode-toggle');
+    modeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
+
+    // Load dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+    }
+
+    // Toggle Answers
+    document.querySelectorAll('.toggle-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const answersDiv = button.nextElementSibling;
+            if (button.classList.contains('show-answers')) {
+                answersDiv.classList.toggle('hidden');
+            } else if (button.classList.contains('check-answers')) {
+                const selects = button.parentElement.querySelectorAll('.answer-select');
+                selects.forEach(select => {
+                    const selectedValue = select.value;
+                    const correctValue = select.getAttribute('data-correct');
+                    if (selectedValue === correctValue) {
+                        select.style.backgroundColor = '#d4edda'; // Green for correct
+                    } else {
+                        select.style.backgroundColor = '#f8d7da'; // Red for incorrect
+                    }
+                });
+            }
+        });
+    });
+</script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

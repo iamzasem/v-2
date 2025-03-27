@@ -1,0 +1,1562 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Gallery | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<!-- Gallery Section -->
+<section class="gallery-section">
+    <h1>My Gallery</h1>
+    <div class="album-container">
+        
+        <div class="album">
+            <div class="album-cover">
+                <img src="/static/gallery/AndhaRajaRani%20with%20Friends/IMG_20230401_113124.jpg" alt="Andharajarani with friends Cover">
+                <div class="album-title">Andharajarani with friends</div>
+            </div>
+            <!-- Hidden data for photos -->
+            <div class="album-photos" style="display: none;">
+                
+                <div class="photo-data" data-src="/static/gallery/AndhaRajaRani%20with%20Friends/IMG_20230401_113124.jpg" data-title="AndhaRajaRani with Friends/IMG_20230401_113124"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/AndhaRajaRani%20with%20Friends/IMG_20230401_163439.jpg" data-title="AndhaRajaRani with Friends/IMG_20230401_163439"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/AndhaRajaRani%20with%20Friends/IMG_20230401_163759.jpg" data-title="AndhaRajaRani with Friends/IMG_20230401_163759"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/AndhaRajaRani%20with%20Friends/IMG_20230401_165506.jpg" data-title="AndhaRajaRani with Friends/IMG_20230401_165506"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/AndhaRajaRani%20with%20Friends/IMG_20230401_165510.jpg" data-title="AndhaRajaRani with Friends/IMG_20230401_165510"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/AndhaRajaRani%20with%20Friends/IMG_20230401_165614.jpg" data-title="AndhaRajaRani with Friends/IMG_20230401_165614"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/AndhaRajaRani%20with%20Friends/IMG_20230401_165746.jpg" data-title="AndhaRajaRani with Friends/IMG_20230401_165746"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/AndhaRajaRani%20with%20Friends/IMG_20230401_173024.jpg" data-title="AndhaRajaRani with Friends/IMG_20230401_173024"></div>
+                
+            </div>
+        </div>
+        
+        <div class="album">
+            <div class="album-cover">
+                <img src="/static/gallery/dhankuta%20travels/IMG_20240726_120414.jpg" alt="Dhankuta travels Cover">
+                <div class="album-title">Dhankuta travels</div>
+            </div>
+            <!-- Hidden data for photos -->
+            <div class="album-photos" style="display: none;">
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_120414.jpg" data-title="dhankuta travels/IMG_20240726_120414"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_133944.jpg" data-title="dhankuta travels/IMG_20240726_133944"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_133949.jpg" data-title="dhankuta travels/IMG_20240726_133949"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_133953.jpg" data-title="dhankuta travels/IMG_20240726_133953"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_134000.jpg" data-title="dhankuta travels/IMG_20240726_134000"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_135439.jpg" data-title="dhankuta travels/IMG_20240726_135439"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_135717.jpg" data-title="dhankuta travels/IMG_20240726_135717"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_135849.jpg" data-title="dhankuta travels/IMG_20240726_135849"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_135940.jpg" data-title="dhankuta travels/IMG_20240726_135940"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_140105.jpg" data-title="dhankuta travels/IMG_20240726_140105"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_140120.jpg" data-title="dhankuta travels/IMG_20240726_140120"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_140738.jpg" data-title="dhankuta travels/IMG_20240726_140738"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_141041.jpg" data-title="dhankuta travels/IMG_20240726_141041"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_141139.jpg" data-title="dhankuta travels/IMG_20240726_141139"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_141400.jpg" data-title="dhankuta travels/IMG_20240726_141400"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_141515.jpg" data-title="dhankuta travels/IMG_20240726_141515"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_141621.jpg" data-title="dhankuta travels/IMG_20240726_141621"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_141741.jpg" data-title="dhankuta travels/IMG_20240726_141741"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_142301.jpg" data-title="dhankuta travels/IMG_20240726_142301"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_142450.jpg" data-title="dhankuta travels/IMG_20240726_142450"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_142524.jpg" data-title="dhankuta travels/IMG_20240726_142524"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_142540.jpg" data-title="dhankuta travels/IMG_20240726_142540"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_142600.jpg" data-title="dhankuta travels/IMG_20240726_142600"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_142643.jpg" data-title="dhankuta travels/IMG_20240726_142643"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_142930.jpg" data-title="dhankuta travels/IMG_20240726_142930"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_143022.jpg" data-title="dhankuta travels/IMG_20240726_143022"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_143115.jpg" data-title="dhankuta travels/IMG_20240726_143115"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_143429.jpg" data-title="dhankuta travels/IMG_20240726_143429"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_143444.jpg" data-title="dhankuta travels/IMG_20240726_143444"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_143506.jpg" data-title="dhankuta travels/IMG_20240726_143506"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_143539.jpg" data-title="dhankuta travels/IMG_20240726_143539"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_151510.jpg" data-title="dhankuta travels/IMG_20240726_151510"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_151519.jpg" data-title="dhankuta travels/IMG_20240726_151519"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_151538.jpg" data-title="dhankuta travels/IMG_20240726_151538"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_151604.jpg" data-title="dhankuta travels/IMG_20240726_151604"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_152432.jpg" data-title="dhankuta travels/IMG_20240726_152432"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_152444.jpg" data-title="dhankuta travels/IMG_20240726_152444"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_152500.jpg" data-title="dhankuta travels/IMG_20240726_152500"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_152733.jpg" data-title="dhankuta travels/IMG_20240726_152733"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_152931.jpg" data-title="dhankuta travels/IMG_20240726_152931"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_152939.jpg" data-title="dhankuta travels/IMG_20240726_152939"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_153000.jpg" data-title="dhankuta travels/IMG_20240726_153000"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_153034.jpg" data-title="dhankuta travels/IMG_20240726_153034"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_153041.jpg" data-title="dhankuta travels/IMG_20240726_153041"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_153420.jpg" data-title="dhankuta travels/IMG_20240726_153420"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_154029.jpg" data-title="dhankuta travels/IMG_20240726_154029"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_172037.jpg" data-title="dhankuta travels/IMG_20240726_172037"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_172129.jpg" data-title="dhankuta travels/IMG_20240726_172129"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_172148.jpg" data-title="dhankuta travels/IMG_20240726_172148"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_172221.jpg" data-title="dhankuta travels/IMG_20240726_172221"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_172609.jpg" data-title="dhankuta travels/IMG_20240726_172609"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_172650.jpg" data-title="dhankuta travels/IMG_20240726_172650"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_172848.jpg" data-title="dhankuta travels/IMG_20240726_172848"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_173011.jpg" data-title="dhankuta travels/IMG_20240726_173011"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_173524.jpg" data-title="dhankuta travels/IMG_20240726_173524"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_173546.jpg" data-title="dhankuta travels/IMG_20240726_173546"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_173654.jpg" data-title="dhankuta travels/IMG_20240726_173654"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_203303.jpg" data-title="dhankuta travels/IMG_20240726_203303"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_203459.jpg" data-title="dhankuta travels/IMG_20240726_203459"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_203551.jpg" data-title="dhankuta travels/IMG_20240726_203551"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240726_203752.jpg" data-title="dhankuta travels/IMG_20240726_203752"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_074646.jpg" data-title="dhankuta travels/IMG_20240727_074646"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_074651.jpg" data-title="dhankuta travels/IMG_20240727_074651"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_074715.jpg" data-title="dhankuta travels/IMG_20240727_074715"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_074802.jpg" data-title="dhankuta travels/IMG_20240727_074802"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_074818.jpg" data-title="dhankuta travels/IMG_20240727_074818"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_075153.jpg" data-title="dhankuta travels/IMG_20240727_075153"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_075159.jpg" data-title="dhankuta travels/IMG_20240727_075159"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_075414.jpg" data-title="dhankuta travels/IMG_20240727_075414"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_075422.jpg" data-title="dhankuta travels/IMG_20240727_075422"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_075440.jpg" data-title="dhankuta travels/IMG_20240727_075440"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_080702.jpg" data-title="dhankuta travels/IMG_20240727_080702"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_080728.jpg" data-title="dhankuta travels/IMG_20240727_080728"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_090849.jpg" data-title="dhankuta travels/IMG_20240727_090849"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_091100.jpg" data-title="dhankuta travels/IMG_20240727_091100"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_091207.jpg" data-title="dhankuta travels/IMG_20240727_091207"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_091230.jpg" data-title="dhankuta travels/IMG_20240727_091230"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_091256.jpg" data-title="dhankuta travels/IMG_20240727_091256"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_091309.jpg" data-title="dhankuta travels/IMG_20240727_091309"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_091331.jpg" data-title="dhankuta travels/IMG_20240727_091331"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_091346.jpg" data-title="dhankuta travels/IMG_20240727_091346"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_091655.jpg" data-title="dhankuta travels/IMG_20240727_091655"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_101740.jpg" data-title="dhankuta travels/IMG_20240727_101740"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_113515.jpg" data-title="dhankuta travels/IMG_20240727_113515"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_113701.jpg" data-title="dhankuta travels/IMG_20240727_113701"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_122439.jpg" data-title="dhankuta travels/IMG_20240727_122439"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_122551.jpg" data-title="dhankuta travels/IMG_20240727_122551"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_122655.jpg" data-title="dhankuta travels/IMG_20240727_122655"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_142142.jpg" data-title="dhankuta travels/IMG_20240727_142142"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_142151.jpg" data-title="dhankuta travels/IMG_20240727_142151"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_142204.jpg" data-title="dhankuta travels/IMG_20240727_142204"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_142444.jpg" data-title="dhankuta travels/IMG_20240727_142444"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_142510.jpg" data-title="dhankuta travels/IMG_20240727_142510"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/dhankuta%20travels/IMG_20240727_150809.jpg" data-title="dhankuta travels/IMG_20240727_150809"></div>
+                
+            </div>
+        </div>
+        
+        <div class="album">
+            <div class="album-cover">
+                <img src="/static/gallery/Food%20Fun%2C%20Friends/IMG_20230329_113912.jpg" alt="Food fun, friends Cover">
+                <div class="album-title">Food fun, friends</div>
+            </div>
+            <!-- Hidden data for photos -->
+            <div class="album-photos" style="display: none;">
+                
+                <div class="photo-data" data-src="/static/gallery/Food%20Fun%2C%20Friends/IMG_20230329_113912.jpg" data-title="Food Fun, Friends/IMG_20230329_113912"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Food%20Fun%2C%20Friends/IMG_20230329_113937.jpg" data-title="Food Fun, Friends/IMG_20230329_113937"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Food%20Fun%2C%20Friends/IMG_20230329_113948.jpg" data-title="Food Fun, Friends/IMG_20230329_113948"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Food%20Fun%2C%20Friends/IMG_20230329_123147.jpg" data-title="Food Fun, Friends/IMG_20230329_123147"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Food%20Fun%2C%20Friends/IMG_20230329_123440.jpg" data-title="Food Fun, Friends/IMG_20230329_123440"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Food%20Fun%2C%20Friends/IMG_20230329_123443.jpg" data-title="Food Fun, Friends/IMG_20230329_123443"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Food%20Fun%2C%20Friends/IMG_20230329_202932.jpg" data-title="Food Fun, Friends/IMG_20230329_202932"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Food%20Fun%2C%20Friends/IMG_20230329_203155.jpg" data-title="Food Fun, Friends/IMG_20230329_203155"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Food%20Fun%2C%20Friends/IMG_20230329_203408.jpg" data-title="Food Fun, Friends/IMG_20230329_203408"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Food%20Fun%2C%20Friends/IMG_20230706_181741.jpg" data-title="Food Fun, Friends/IMG_20230706_181741"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Food%20Fun%2C%20Friends/IMG_20230706_181747.jpg" data-title="Food Fun, Friends/IMG_20230706_181747"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Food%20Fun%2C%20Friends/IMG_20230706_181816.jpg" data-title="Food Fun, Friends/IMG_20230706_181816"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Food%20Fun%2C%20Friends/IMG_20230706_181822.jpg" data-title="Food Fun, Friends/IMG_20230706_181822"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Food%20Fun%2C%20Friends/IMG_20230706_181826.jpg" data-title="Food Fun, Friends/IMG_20230706_181826"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Food%20Fun%2C%20Friends/IMG_20230706_182056.jpg" data-title="Food Fun, Friends/IMG_20230706_182056"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Food%20Fun%2C%20Friends/IMG_20230706_182108.jpg" data-title="Food Fun, Friends/IMG_20230706_182108"></div>
+                
+            </div>
+        </div>
+        
+        <div class="album">
+            <div class="album-cover">
+                <img src="/static/gallery/Gauradha/IMG_20230502_211433.jpg" alt="Gauradha Cover">
+                <div class="album-title">Gauradha</div>
+            </div>
+            <!-- Hidden data for photos -->
+            <div class="album-photos" style="display: none;">
+                
+                <div class="photo-data" data-src="/static/gallery/Gauradha/IMG_20230502_211433.jpg" data-title="Gauradha/IMG_20230502_211433"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Gauradha/IMG_20230502_211437.jpg" data-title="Gauradha/IMG_20230502_211437"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Gauradha/IMG_20230502_211444.jpg" data-title="Gauradha/IMG_20230502_211444"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Gauradha/IMG_20230502_211447.jpg" data-title="Gauradha/IMG_20230502_211447"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Gauradha/IMG_20230502_211842.jpg" data-title="Gauradha/IMG_20230502_211842"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Gauradha/IMG_20230502_211848.jpg" data-title="Gauradha/IMG_20230502_211848"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Gauradha/IMG_20230502_211850.jpg" data-title="Gauradha/IMG_20230502_211850"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Gauradha/IMG_20230503_132832.jpg" data-title="Gauradha/IMG_20230503_132832"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Gauradha/IMG_20230503_132839.jpg" data-title="Gauradha/IMG_20230503_132839"></div>
+                
+            </div>
+        </div>
+        
+        <div class="album">
+            <div class="album-cover">
+                <img src="/static/gallery/Illam%20Trip%2C%202080%2C%202023/IMG_20230812_154700.jpg" alt="Illam trip, 2080, 2023 Cover">
+                <div class="album-title">Illam trip, 2080, 2023</div>
+            </div>
+            <!-- Hidden data for photos -->
+            <div class="album-photos" style="display: none;">
+                
+                <div class="photo-data" data-src="/static/gallery/Illam%20Trip%2C%202080%2C%202023/IMG_20230812_154700.jpg" data-title="Illam Trip, 2080, 2023/IMG_20230812_154700"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Illam%20Trip%2C%202080%2C%202023/IMG_20230812_173622.jpg" data-title="Illam Trip, 2080, 2023/IMG_20230812_173622"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Illam%20Trip%2C%202080%2C%202023/IMG_20230812_173656.jpg" data-title="Illam Trip, 2080, 2023/IMG_20230812_173656"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Illam%20Trip%2C%202080%2C%202023/IMG_20230812_173802.jpg" data-title="Illam Trip, 2080, 2023/IMG_20230812_173802"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Illam%20Trip%2C%202080%2C%202023/IMG_20230812_173816.jpg" data-title="Illam Trip, 2080, 2023/IMG_20230812_173816"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Illam%20Trip%2C%202080%2C%202023/IMG_20230812_174509.jpg" data-title="Illam Trip, 2080, 2023/IMG_20230812_174509"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Illam%20Trip%2C%202080%2C%202023/IMG_20230812_174635.jpg" data-title="Illam Trip, 2080, 2023/IMG_20230812_174635"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Illam%20Trip%2C%202080%2C%202023/IMG_20230812_174647.jpg" data-title="Illam Trip, 2080, 2023/IMG_20230812_174647"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Illam%20Trip%2C%202080%2C%202023/IMG_20230812_175442.jpg" data-title="Illam Trip, 2080, 2023/IMG_20230812_175442"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Illam%20Trip%2C%202080%2C%202023/IMG_20230812_175449.jpg" data-title="Illam Trip, 2080, 2023/IMG_20230812_175449"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Illam%20Trip%2C%202080%2C%202023/IMG_20230813_045040.jpg" data-title="Illam Trip, 2080, 2023/IMG_20230813_045040"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Illam%20Trip%2C%202080%2C%202023/IMG_20230813_045930.jpg" data-title="Illam Trip, 2080, 2023/IMG_20230813_045930"></div>
+                
+            </div>
+        </div>
+        
+        <div class="album">
+            <div class="album-cover">
+                <img src="/static/gallery/SathasiDham/IMG_20230330_150554.jpg" alt="Sathasidham Cover">
+                <div class="album-title">Sathasidham</div>
+            </div>
+            <!-- Hidden data for photos -->
+            <div class="album-photos" style="display: none;">
+                
+                <div class="photo-data" data-src="/static/gallery/SathasiDham/IMG_20230330_150554.jpg" data-title="SathasiDham/IMG_20230330_150554"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/SathasiDham/IMG_20230330_150634.jpg" data-title="SathasiDham/IMG_20230330_150634"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/SathasiDham/IMG_20230330_150813.jpg" data-title="SathasiDham/IMG_20230330_150813"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/SathasiDham/IMG_20230330_151330.jpg" data-title="SathasiDham/IMG_20230330_151330"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/SathasiDham/IMG_20230330_151403.jpg" data-title="SathasiDham/IMG_20230330_151403"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/SathasiDham/IMG_20230513_141823.jpg" data-title="SathasiDham/IMG_20230513_141823"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/SathasiDham/IMG_20230513_141855.jpg" data-title="SathasiDham/IMG_20230513_141855"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/SathasiDham/IMG_20230513_141905.jpg" data-title="SathasiDham/IMG_20230513_141905"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/SathasiDham/IMG_20230513_141916.jpg" data-title="SathasiDham/IMG_20230513_141916"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/SathasiDham/IMG_20230513_142102.jpg" data-title="SathasiDham/IMG_20230513_142102"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/SathasiDham/IMG_20230513_142224.jpg" data-title="SathasiDham/IMG_20230513_142224"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/SathasiDham/IMG_20230513_142314.jpg" data-title="SathasiDham/IMG_20230513_142314"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/SathasiDham/IMG_20230513_142425.jpg" data-title="SathasiDham/IMG_20230513_142425"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/SathasiDham/IMG_20230513_142443.jpg" data-title="SathasiDham/IMG_20230513_142443"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/SathasiDham/IMG_20230513_142454.jpg" data-title="SathasiDham/IMG_20230513_142454"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/SathasiDham/IMG_20230513_142511.jpg" data-title="SathasiDham/IMG_20230513_142511"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/SathasiDham/IMG_20230513_142559.jpg" data-title="SathasiDham/IMG_20230513_142559"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/SathasiDham/IMG_20230513_142647.jpg" data-title="SathasiDham/IMG_20230513_142647"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/SathasiDham/IMG_20230513_142650.jpg" data-title="SathasiDham/IMG_20230513_142650"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/SathasiDham/IMG_20230513_142658.jpg" data-title="SathasiDham/IMG_20230513_142658"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/SathasiDham/IMG_20230513_142716.jpg" data-title="SathasiDham/IMG_20230513_142716"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/SathasiDham/IMG_20230513_142722.jpg" data-title="SathasiDham/IMG_20230513_142722"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/SathasiDham/IMG_20230513_142727.jpg" data-title="SathasiDham/IMG_20230513_142727"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/SathasiDham/IMG_20230513_142804.jpg" data-title="SathasiDham/IMG_20230513_142804"></div>
+                
+            </div>
+        </div>
+        
+        <div class="album">
+            <div class="album-cover">
+                <img src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_100134.jpg" alt="Tinjure, taplejung Cover">
+                <div class="album-title">Tinjure, taplejung</div>
+            </div>
+            <!-- Hidden data for photos -->
+            <div class="album-photos" style="display: none;">
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_100134.jpg" data-title="Tinjure, Taplejung/IMG_20230414_100134"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_100136.jpg" data-title="Tinjure, Taplejung/IMG_20230414_100136"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_100145.jpg" data-title="Tinjure, Taplejung/IMG_20230414_100145"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_101625.jpg" data-title="Tinjure, Taplejung/IMG_20230414_101625"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_101634.jpg" data-title="Tinjure, Taplejung/IMG_20230414_101634"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_104946.jpg" data-title="Tinjure, Taplejung/IMG_20230414_104946"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_104950.jpg" data-title="Tinjure, Taplejung/IMG_20230414_104950"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_105132.jpg" data-title="Tinjure, Taplejung/IMG_20230414_105132"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_105137.jpg" data-title="Tinjure, Taplejung/IMG_20230414_105137"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_105142.jpg" data-title="Tinjure, Taplejung/IMG_20230414_105142"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_105457.jpg" data-title="Tinjure, Taplejung/IMG_20230414_105457"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_105619.jpg" data-title="Tinjure, Taplejung/IMG_20230414_105619"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_105636.jpg" data-title="Tinjure, Taplejung/IMG_20230414_105636"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_110952.jpg" data-title="Tinjure, Taplejung/IMG_20230414_110952"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_123305.jpg" data-title="Tinjure, Taplejung/IMG_20230414_123305"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_123310.jpg" data-title="Tinjure, Taplejung/IMG_20230414_123310"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_170503.jpg" data-title="Tinjure, Taplejung/IMG_20230414_170503"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_180734.jpg" data-title="Tinjure, Taplejung/IMG_20230414_180734"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_180747.jpg" data-title="Tinjure, Taplejung/IMG_20230414_180747"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_180904.jpg" data-title="Tinjure, Taplejung/IMG_20230414_180904"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_180910.jpg" data-title="Tinjure, Taplejung/IMG_20230414_180910"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_180920.jpg" data-title="Tinjure, Taplejung/IMG_20230414_180920"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_180924.jpg" data-title="Tinjure, Taplejung/IMG_20230414_180924"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_180933.jpg" data-title="Tinjure, Taplejung/IMG_20230414_180933"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_180940.jpg" data-title="Tinjure, Taplejung/IMG_20230414_180940"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_180944.jpg" data-title="Tinjure, Taplejung/IMG_20230414_180944"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_181036.jpg" data-title="Tinjure, Taplejung/IMG_20230414_181036"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_181041.jpg" data-title="Tinjure, Taplejung/IMG_20230414_181041"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_181457.jpg" data-title="Tinjure, Taplejung/IMG_20230414_181457"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_181508.jpg" data-title="Tinjure, Taplejung/IMG_20230414_181508"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_181512.jpg" data-title="Tinjure, Taplejung/IMG_20230414_181512"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_181610.jpg" data-title="Tinjure, Taplejung/IMG_20230414_181610"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_182138.jpg" data-title="Tinjure, Taplejung/IMG_20230414_182138"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_182147.jpg" data-title="Tinjure, Taplejung/IMG_20230414_182147"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_182152.jpg" data-title="Tinjure, Taplejung/IMG_20230414_182152"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_182204.jpg" data-title="Tinjure, Taplejung/IMG_20230414_182204"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_182306.jpg" data-title="Tinjure, Taplejung/IMG_20230414_182306"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_182309.jpg" data-title="Tinjure, Taplejung/IMG_20230414_182309"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_182324.jpg" data-title="Tinjure, Taplejung/IMG_20230414_182324"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_182345.jpg" data-title="Tinjure, Taplejung/IMG_20230414_182345"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_182356.jpg" data-title="Tinjure, Taplejung/IMG_20230414_182356"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_182951.jpg" data-title="Tinjure, Taplejung/IMG_20230414_182951"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_185535.jpg" data-title="Tinjure, Taplejung/IMG_20230414_185535"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_185746.jpg" data-title="Tinjure, Taplejung/IMG_20230414_185746"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_185820.jpg" data-title="Tinjure, Taplejung/IMG_20230414_185820"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_185824.jpg" data-title="Tinjure, Taplejung/IMG_20230414_185824"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_185903.jpg" data-title="Tinjure, Taplejung/IMG_20230414_185903"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_185944.jpg" data-title="Tinjure, Taplejung/IMG_20230414_185944"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_185955.jpg" data-title="Tinjure, Taplejung/IMG_20230414_185955"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_190010.jpg" data-title="Tinjure, Taplejung/IMG_20230414_190010"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_190345.jpg" data-title="Tinjure, Taplejung/IMG_20230414_190345"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_190404.jpg" data-title="Tinjure, Taplejung/IMG_20230414_190404"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_195527.jpg" data-title="Tinjure, Taplejung/IMG_20230414_195527"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230414_195856.jpg" data-title="Tinjure, Taplejung/IMG_20230414_195856"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_104219.jpg" data-title="Tinjure, Taplejung/IMG_20230415_104219"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_110628.jpg" data-title="Tinjure, Taplejung/IMG_20230415_110628"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_110632.jpg" data-title="Tinjure, Taplejung/IMG_20230415_110632"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_110635.jpg" data-title="Tinjure, Taplejung/IMG_20230415_110635"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_110640.jpg" data-title="Tinjure, Taplejung/IMG_20230415_110640"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_111021.jpg" data-title="Tinjure, Taplejung/IMG_20230415_111021"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_111419.jpg" data-title="Tinjure, Taplejung/IMG_20230415_111419"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_111433.jpg" data-title="Tinjure, Taplejung/IMG_20230415_111433"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_111619.jpg" data-title="Tinjure, Taplejung/IMG_20230415_111619"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_111934.jpg" data-title="Tinjure, Taplejung/IMG_20230415_111934"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_112615.jpg" data-title="Tinjure, Taplejung/IMG_20230415_112615"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_112622.jpg" data-title="Tinjure, Taplejung/IMG_20230415_112622"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_112651.jpg" data-title="Tinjure, Taplejung/IMG_20230415_112651"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_112730.jpg" data-title="Tinjure, Taplejung/IMG_20230415_112730"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_113145.jpg" data-title="Tinjure, Taplejung/IMG_20230415_113145"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_113331.jpg" data-title="Tinjure, Taplejung/IMG_20230415_113331"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_113544.jpg" data-title="Tinjure, Taplejung/IMG_20230415_113544"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_113551.jpg" data-title="Tinjure, Taplejung/IMG_20230415_113551"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_113655.jpg" data-title="Tinjure, Taplejung/IMG_20230415_113655"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_114613.jpg" data-title="Tinjure, Taplejung/IMG_20230415_114613"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_114621.jpg" data-title="Tinjure, Taplejung/IMG_20230415_114621"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_114627.jpg" data-title="Tinjure, Taplejung/IMG_20230415_114627"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_115108.jpg" data-title="Tinjure, Taplejung/IMG_20230415_115108"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_115111.jpg" data-title="Tinjure, Taplejung/IMG_20230415_115111"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_115114.jpg" data-title="Tinjure, Taplejung/IMG_20230415_115114"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_115118.jpg" data-title="Tinjure, Taplejung/IMG_20230415_115118"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_115124.jpg" data-title="Tinjure, Taplejung/IMG_20230415_115124"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_115127.jpg" data-title="Tinjure, Taplejung/IMG_20230415_115127"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_121650.jpg" data-title="Tinjure, Taplejung/IMG_20230415_121650"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_121653.jpg" data-title="Tinjure, Taplejung/IMG_20230415_121653"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_121725.jpg" data-title="Tinjure, Taplejung/IMG_20230415_121725"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_121854.jpg" data-title="Tinjure, Taplejung/IMG_20230415_121854"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_121900.jpg" data-title="Tinjure, Taplejung/IMG_20230415_121900"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_122127.jpg" data-title="Tinjure, Taplejung/IMG_20230415_122127"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_122133.jpg" data-title="Tinjure, Taplejung/IMG_20230415_122133"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_122143.jpg" data-title="Tinjure, Taplejung/IMG_20230415_122143"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_124422.jpg" data-title="Tinjure, Taplejung/IMG_20230415_124422"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_124510.jpg" data-title="Tinjure, Taplejung/IMG_20230415_124510"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_125003.jpg" data-title="Tinjure, Taplejung/IMG_20230415_125003"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_125502.jpg" data-title="Tinjure, Taplejung/IMG_20230415_125502"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_125905.jpg" data-title="Tinjure, Taplejung/IMG_20230415_125905"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_125911.jpg" data-title="Tinjure, Taplejung/IMG_20230415_125911"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_125918.jpg" data-title="Tinjure, Taplejung/IMG_20230415_125918"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_130424.jpg" data-title="Tinjure, Taplejung/IMG_20230415_130424"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_130425.jpg" data-title="Tinjure, Taplejung/IMG_20230415_130425"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_131108.jpg" data-title="Tinjure, Taplejung/IMG_20230415_131108"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_131141.jpg" data-title="Tinjure, Taplejung/IMG_20230415_131141"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_131308.jpg" data-title="Tinjure, Taplejung/IMG_20230415_131308"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_131342.jpg" data-title="Tinjure, Taplejung/IMG_20230415_131342"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_131448.jpg" data-title="Tinjure, Taplejung/IMG_20230415_131448"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_131534.jpg" data-title="Tinjure, Taplejung/IMG_20230415_131534"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_131744.jpg" data-title="Tinjure, Taplejung/IMG_20230415_131744"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_132554.jpg" data-title="Tinjure, Taplejung/IMG_20230415_132554"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_132703.jpg" data-title="Tinjure, Taplejung/IMG_20230415_132703"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_132740.jpg" data-title="Tinjure, Taplejung/IMG_20230415_132740"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_132749.jpg" data-title="Tinjure, Taplejung/IMG_20230415_132749"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_132951.jpg" data-title="Tinjure, Taplejung/IMG_20230415_132951"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_133002.jpg" data-title="Tinjure, Taplejung/IMG_20230415_133002"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_133112.jpg" data-title="Tinjure, Taplejung/IMG_20230415_133112"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_133115.jpg" data-title="Tinjure, Taplejung/IMG_20230415_133115"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_133343.jpg" data-title="Tinjure, Taplejung/IMG_20230415_133343"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_133346.jpg" data-title="Tinjure, Taplejung/IMG_20230415_133346"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_133352.jpg" data-title="Tinjure, Taplejung/IMG_20230415_133352"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_133357.jpg" data-title="Tinjure, Taplejung/IMG_20230415_133357"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_133423.jpg" data-title="Tinjure, Taplejung/IMG_20230415_133423"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_133433.jpg" data-title="Tinjure, Taplejung/IMG_20230415_133433"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_133605.jpg" data-title="Tinjure, Taplejung/IMG_20230415_133605"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_133608.jpg" data-title="Tinjure, Taplejung/IMG_20230415_133608"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_133724.jpg" data-title="Tinjure, Taplejung/IMG_20230415_133724"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_133729.jpg" data-title="Tinjure, Taplejung/IMG_20230415_133729"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_133743.jpg" data-title="Tinjure, Taplejung/IMG_20230415_133743"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_133751.jpg" data-title="Tinjure, Taplejung/IMG_20230415_133751"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_133753.jpg" data-title="Tinjure, Taplejung/IMG_20230415_133753"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_141427.jpg" data-title="Tinjure, Taplejung/IMG_20230415_141427"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_141433.jpg" data-title="Tinjure, Taplejung/IMG_20230415_141433"></div>
+                
+                <div class="photo-data" data-src="/static/gallery/Tinjure%2C%20Taplejung/IMG_20230415_213101.jpg" data-title="Tinjure, Taplejung/IMG_20230415_213101"></div>
+                
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<!-- Album Popup -->
+<div id="albumPopup" class="album-popup">
+    <span class="close-popup">×</span>
+    <div class="album-popup-wrapper">
+        <div class="album-popup-content">
+            <h2 id="popup-title"></h2>
+            <div id="popup-photos" class="photo-grid"></div>
+            <button id="load-more-btn" style="display: none;">Load More</button>
+        </div>
+    </div>
+</div>
+
+<!-- Photo Lightbox -->
+<div id="photoLightbox" class="photo-lightbox">
+    <span class="close-lightbox">×</span>
+    <img id="lightbox-image" src="" alt="">
+    <div id="lightbox-caption"></div>
+    <button id="prev_photo">❮</button>
+    <button id="next_photo">❯</button>
+</div>
+
+<!-- Styles -->
+<style>
+    .gallery-section {
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .gallery-section h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-family: 'Arial', sans-serif;
+    }
+    .album-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    .album {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+    .album:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .album-cover {
+        position: relative;
+    }
+    .album-cover img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px 10px 0 0;
+    }
+    .album-title {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 10px;
+        text-align: center;
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+    }
+    .album-popup {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 80px);
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .album-popup.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    .album-popup-wrapper {
+        height: 100%;
+        overflow-y: auto;
+        padding: 20px;
+    }
+    .album-popup-content {
+        background: white;
+        padding: 20px;
+        width: 90%;
+        max-width: 800px;
+        margin: 0 auto;
+        border-radius: 8px;
+    }
+    .close-popup {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+        color: white;
+        background: red;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .close-popup:hover {
+        background: darkred;
+    }
+    .photo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin-top: 20px;
+    }
+    .photo-grid .photo-wrapper {
+        position: relative;
+        width: 100%;
+        height: 150px;
+        background: #f0f0f0;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .photo-grid img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 5px;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    .photo-grid img.loaded {
+        opacity: 1;
+    }
+    .photo-grid .loading-spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30px;
+        height: 30px;
+        border: 4px solid #ccc;
+        border-top: 4px solid #007bff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+        0% { transform: translate(-50%, -50%) rotate(0deg); }
+        100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+    #load-more-btn {
+        padding: 10px 20px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 20px auto;
+        display: block;
+    }
+    #load-more-btn:hover {
+        background: #0056b3;
+    }
+    .photo-lightbox {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 2000;
+        text-align: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .photo-lightbox.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    .close-lightbox {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 40px;
+        color: white;
+        background: red;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .close-lightbox:hover {
+        background: darkred;
+    }
+    #lightbox-image {
+        max-width: 90%;
+        max-height: 80vh;
+        margin-top: 50px;
+    }
+    #lightbox-caption {
+        color: white;
+        margin-top: 20px;
+        font-size: 18px;
+    }
+    #prev_photo, #next_photo {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        color: white;
+        font-size: 40px;
+        cursor: pointer;
+        display: block;
+    }
+    #prev_photo {
+        left: 20px;
+    }
+    #next_photo {
+        right: 20px;
+    }
+    @media (max-width: 600px) {
+        .album-container {
+            grid-template-columns: 1fr;
+        }
+        .photo-grid {
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        }
+        .album-popup-content {
+            width: 95%;
+        }
+        .close-popup, .close-lightbox {
+            font-size: 35px;
+            width: 45px;
+            height: 45px;
+        }
+        #lightbox-caption {
+            font-size: 16px;
+        }
+        #prev_photo, #next_photo {
+            font-size: 50px;
+        }
+    }
+    @media (min-width: 601px) and (max-width: 1024px) {
+        .album-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .photo-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+</style>
+
+<!-- Scripts -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const albums = document.querySelectorAll('.album');
+    const album_popup = document.getElementById('albumPopup');
+    const popup_title = document.getElementById('popup-title');
+    const popup_photos = document.getElementById('popup-photos');
+    const load_more_btn = document.getElementById('load-more-btn');
+    const close_popup = document.querySelector('.close-popup');
+    const photo_lightbox = document.getElementById('photoLightbox');
+    const lightbox_image = document.getElementById('lightbox-image');
+    const lightbox_caption = document.getElementById('lightbox-caption');
+    const close_lightbox = document.querySelector('.close-lightbox');
+    const prev_photo = document.getElementById('prev_photo');
+    const next_photo = document.getElementById('next_photo');
+    let current_album_photos = [];
+    let current_index = 0;
+    let current_page = 0;
+    const photos_per_page = 8;
+
+    // Function to load a batch of photos with loading animation
+    function load_photos(start_index) {
+        const end_index = Math.min(start_index + photos_per_page, current_album_photos.length);
+        for (let i = start_index; i < end_index; i++) {
+            const photo = current_album_photos[i];
+            const wrapper = document.createElement('div');
+            wrapper.className = 'photo-wrapper';
+
+            // Add loading spinner
+            const spinner = document.createElement('div');
+            spinner.className = 'loading-spinner';
+            wrapper.appendChild(spinner);
+
+            // Add image
+            const img = document.createElement('img');
+            img.src = photo.src;
+            img.alt = photo.title;
+            wrapper.appendChild(img);
+
+            // Remove spinner when image loads
+            img.onload = function() {
+                wrapper.removeChild(spinner);
+                img.classList.add('loaded');
+            };
+
+            popup_photos.appendChild(wrapper);
+        }
+        if (end_index < current_album_photos.length) {
+            load_more_btn.style.display = 'block';
+        } else {
+            load_more_btn.style.display = 'none';
+        }
+    }
+
+    // Open album popup
+    albums.forEach(album => {
+        album.addEventListener('click', function() {
+            const album_name = this.querySelector('.album-title').textContent;
+            const photo_elements = this.querySelectorAll('.album-photos .photo-data');
+            current_album_photos = Array.from(photo_elements).map(photo => ({
+                src: photo.dataset.src,
+                title: photo.dataset.title
+            }));
+
+            popup_photos.innerHTML = '';
+            if (current_album_photos.length === 0) {
+                popup_photos.innerHTML = '<p>No photos in this album.</p>';
+                load_more_btn.style.display = 'none';
+            } else {
+                current_page = 0;
+                load_photos(0); // Load first 8 photos
+            }
+            popup_title.textContent = album_name;
+            album_popup.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    // Load more photos
+    load_more_btn.addEventListener('click', function() {
+        current_page++;
+        load_photos(current_page * photos_per_page);
+    });
+
+    // Close album popup when clicking grey area
+    album_popup.addEventListener('click', function(e) {
+        if (e.target === album_popup) { // Only close if clicking the grey area
+            album_popup.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Close album popup with close button
+    close_popup.addEventListener('click', function() {
+        album_popup.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+
+    // Open lightbox when a photo is clicked, prevent popup closure
+    popup_photos.addEventListener('click', function(e) {
+        if (e.target.tagName === 'IMG') {
+            e.stopPropagation(); // Prevent click from bubbling to album_popup
+            current_index = Array.from(popup_photos.querySelectorAll('img')).indexOf(e.target);
+            show_lightbox(current_index);
+        }
+    });
+
+    // Show lightbox with the selected photo
+    function show_lightbox(index) {
+        if (current_album_photos.length > 0) {
+            current_index = (index + current_album_photos.length) % current_album_photos.length;
+            const photo = current_album_photos[current_index];
+            lightbox_image.src = photo.src;
+            lightbox_image.alt = photo.title;
+            lightbox_caption.textContent = photo.title;
+            photo_lightbox.classList.add('active');
+            prev_photo.style.display = 'block';
+            next_photo.style.display = 'block';
+        }
+    }
+
+    // Close lightbox
+    close_lightbox.addEventListener('click', function() {
+        photo_lightbox.classList.remove('active');
+    });
+
+    photo_lightbox.addEventListener('click', function(e) {
+        if (e.target === photo_lightbox) {
+            photo_lightbox.classList.remove('active');
+        }
+    });
+
+    // Navigate to previous photo with wrap-around to last photo
+    prev_photo.addEventListener('click', function() {
+        current_index = (current_index - 1 + current_album_photos.length) % current_album_photos.length;
+        show_lightbox(current_index);
+    });
+
+    // Navigate to next photo with wrap-around to first photo
+    next_photo.addEventListener('click', function() {
+        current_index = (current_index + 1) % current_album_photos.length;
+        show_lightbox(current_index);
+    });
+
+    // Close popups with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            if (photo_lightbox.classList.contains('active')) {
+                photo_lightbox.classList.remove('active');
+            } else if (album_popup.classList.contains('active')) {
+                album_popup.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+    });
+});
+</script>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

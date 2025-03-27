@@ -1,0 +1,862 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Passiv, Präteritum, Perfekt in German | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/konj2.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+               <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="b1-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>Passiv, Präteritum, Perfekt in German</h1>
+            <p>
+                A guide to passive voice ('Passiv'), its formation ('Bindung des Passivs'), 'Werden + Partizip II', simple past ('Präteritum'), and present perfect ('Perfekt'), with examples, exercises, and resources.
+            </p>
+        </section>
+
+        <!-- Understanding -->
+        <section id="understanding">
+            <h2>Understanding Passive Voice and Tenses</h2>
+            <div class="subsection">
+                <h3>What Is Passive Voice?</h3>
+                <p>Passive voice shifts focus to the action or object, using 'werden' + past participle (Partizip II), e.g., 'Das Haus wird gebaut' (The house is built).</p>
+            </div>
+            <div class="subsection">
+                <h3>Simple Past and Present Perfect</h3>
+                <p>'Präteritum' (e.g., 'ich machte') is used for written past, while 'Perfekt' (e.g., 'ich habe gemacht') is common in spoken German.</p>
+            </div>
+        </section>
+
+        <!-- Differences -->
+        <section id="differences">
+            <h2>Structure and Formation</h2>
+            <div class="subsection">
+                <h3>Passive Formation ('Bindung des Passivs')</h3>
+                <p>Object becomes subject + 'werden' (conjugated) + Partizip II, optionally 'von' + dative for doer.</p>
+                <table>
+                    <tr><th>Active</th><th>Passive</th></tr>
+                    <tr><td>Der Junge kickt den Ball.</td><td>Der Ball wird gekickt.</td></tr>
+                    <tr><td>Die Frau malt das Bild.</td><td>Das Bild wird gemalt.</td></tr>
+                </table>
+            </div>
+            <div class="subsection">
+                <h3>Werden + Partizip II</h3>
+                <p>'Werden' changes with tense: 'wird' (present), 'wurde' (past), 'wird … werden' (future).</p>
+            </div>
+            <div class="subsection">
+                <h3>Präteritum and Perfekt</h3>
+                <p>'Präteritum': Stem + '-te' or irregular form; 'Perfekt': 'haben/sein' + Partizip II.</p>
+            </div>
+        </section>
+
+        <!-- Uses -->
+        <section id="uses">
+            <h2>Uses of Passive and Tenses</h2>
+            <div class="subsection">
+                <h3>Passive: Unknown Doer</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Das Haus wird gebaut.</em> (The house is being built.)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Präteritum: Stories</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Er lief nach Hause.</em> (He ran home.)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Perfekt: Spoken Past</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Ich habe das Buch gelesen.</em> (I’ve read the book.)</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Common Examples -->
+        <section id="examples">
+            <h2>List of Common Examples</h2>
+            <div class="table-container">
+                <table>
+                    <tr><th>Category</th><th>Sentence</th><th>Translation</th></tr>
+                    <!-- Passiv -->
+                    <tr><td rowspan="5">Passiv</td><td><em>Das Auto wird gewaschen.</em></td><td>The car is being washed.</td></tr>
+                    <tr><td><em>Die Tür wird geöffnet.</em></td><td>The door is opened.</td></tr>
+                    <tr><td><em>Das Buch wird gelesen.</em></td><td>The book is read.</td></tr>
+                    <tr><td><em>Die Fenster werden geputzt.</em></td><td>The windows are cleaned.</td></tr>
+                    <tr><td><em>Der Brief wird von ihr geschrieben.</em></td><td>The letter is written by her.</td></tr>
+                    <!-- Bindung des Passivs -->
+                    <tr><td rowspan="5">Bindung des Passivs</td><td><em>Die Aufgabe wird erklärt.</em></td><td>The task is explained.</td></tr>
+                    <tr><td><em>Der Kuchen wird gegessen.</em></td><td>The cake is eaten.</td></tr>
+                    <tr><td><em>Ein Brief wird geschrieben.</em></td><td>A letter is written.</td></tr>
+                    <tr><td><em>Ein Haus wird gebaut.</em></td><td>A house is built.</td></tr>
+                    <tr><td><em>Der Saft wird getrunken.</em></td><td>The juice is drunk.</td></tr>
+                    <!-- Werden + Partizip II -->
+                    <tr><td rowspan="5">Werden + Partizip II</td><td><em>Das Essen wird gekocht.</em></td><td>The food is being cooked.</td></tr>
+                    <tr><td><em>Der Tisch wurde gedeckt.</em></td><td>The table was set.</td></tr>
+                    <tr><td><em>Die Arbeit wird erledigt.</em></td><td>The work is being done.</td></tr>
+                    <tr><td><em>Das Spiel wurde gespielt.</em></td><td>The game was played.</td></tr>
+                    <tr><td><em>Das Fenster wird von ihm geschlossen.</em></td><td>The window is closed by him.</td></tr>
+                    <!-- Präteritum -->
+                    <tr><td rowspan="5">Präteritum</td><td><em>Ich spielte im Park.</em></td><td>I played in the park.</td></tr>
+                    <tr><td><em>Sie schrieb einen Brief.</em></td><td>She wrote a letter.</td></tr>
+                    <tr><td><em>Das Haus wurde gebaut.</em></td><td>The house was built.</td></tr>
+                    <tr><td><em>Wir gingen zur Schule.</em></td><td>We went to school.</td></tr>
+                    <tr><td><em>Er trank Wasser.</em></td><td>He drank water.</td></tr>
+                    <!-- Perfekt -->
+                    <tr><td rowspan="5">Perfekt</td><td><em>Ich habe Pizza gegessen.</em></td><td>I’ve eaten pizza.</td></tr>
+                    <tr><td><em>Sie ist zur Schule gegangen.</em></td><td>She has gone to school.</td></tr>
+                    <tr><td><em>Das Fenster ist geöffnet worden.</em></td><td>The window has been opened.</td></tr>
+                    <tr><td><em>Wir haben ein Lied gesungen.</em></td><td>We’ve sung a song.</td></tr>
+                    <tr><td><em>Er hat den Hund gefüttert.</em></td><td>He has fed the dog.</td></tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Exercises -->
+        <section id="practice">
+            <h2>Exercises to Practice Passive and Tenses</h2>
+            <div class="subsection" id="exercise1">
+                <h3>Exercise 1: Passiv (Choose Passive Form)</h3>
+                <p>Select the correct passive form of the active sentence.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>Active: 'Der Lehrer schreibt die Aufgabe.' Passive:  
+                            <select class="answer-select" data-correct="Die Aufgabe wird geschrieben.">
+                                <option value="">Select</option>
+                                <option value="Die Aufgabe wird schreiben.">Die Aufgabe wird schreiben.</option>
+                                <option value="Die Aufgabe wird geschrieben.">Die Aufgabe wird geschrieben.</option>
+                                <option value="Die Aufgabe schreibt wird.">Die Aufgabe schreibt wird.</option>
+                            </select>
+                        </li>
+                        <li>Active: 'Die Kinder malen das Bild.' Passive:  
+                            <select class="answer-select" data-correct="Das Bild wird gemalt.">
+                                <option value="">Select</option>
+                                <option value="Das Bild wird gemalt.">Das Bild wird gemalt.</option>
+                                <option value="Das Bild malt wird.">Das Bild malt wird.</option>
+                                <option value="Das Bild wird malen.">Das Bild wird malen.</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Die Aufgabe wird geschrieben.</em></li>
+                            <li><em>Das Bild wird gemalt.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise2">
+                <h3>Exercise 2: Bindung des Passivs (Rewrite in Passive)</h3>
+                <p>Choose the correct passive version of the active sentence.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>'Ich esse den Apfel.'  
+                            <select class="answer-select" data-correct="Der Apfel wird gegessen.">
+                                <option value="">Select</option>
+                                <option value="Der Apfel wird gegessen.">Der Apfel wird gegessen.</option>
+                                <option value="Der Apfel esse wird.">Der Apfel esse wird.</option>
+                                <option value="Der Apfel wird essen.">Der Apfel wird essen.</option>
+                            </select>
+                        </li>
+                        <li>'Sie öffnen die Tür.'  
+                            <select class="answer-select" data-correct="Die Tür wird geöffnet.">
+                                <option value="">Select</option>
+                                <option value="Die Tür wird öffnen.">Die Tür wird öffnen.</option>
+                                <option value="Die Tür wird geöffnet.">Die Tür wird geöffnet.</option>
+                                <option value="Die Tür öffnet wird.">Die Tür öffnet wird.</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Der Apfel wird gegessen.</em></li>
+                            <li><em>Die Tür wird geöffnet.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise3">
+                <h3>Exercise 3: Werden + Partizip II (Fill in Tense)</h3>
+                <p>Choose the correct form of 'werden' for the tense.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>Past: 'Das Buch ___ gelesen.'  
+                            <select class="answer-select" data-correct="Das Buch wurde gelesen.">
+                                <option value="">Select</option>
+                                <option value="Das Buch wird gelesen.">wird</option>
+                                <option value="Das Buch wurde gelesen.">wurde</option>
+                                <option value="Das Buch ist gelesen.">ist</option>
+                            </select>
+                        </li>
+                        <li>Present: 'Die Fenster ___ geputzt.'  
+                            <select class="answer-select" data-correct="Die Fenster werden geputzt.">
+                                <option value="">Select</option>
+                                <option value="Die Fenster werden geputzt.">werden</option>
+                                <option value="Die Fenster wurde geputzt.">wurde</option>
+                                <option value="Die Fenster sind geputzt.">sind</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Das Buch wurde gelesen.</em></li>
+                            <li><em>Die Fenster werden geputzt.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise4">
+                <h3>Exercise 4: Präteritum (Simple Past Form)</h3>
+                <p>Choose the correct simple past form.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>'Ich ___ das Lied.' (singen)  
+                            <select class="answer-select" data-correct="Ich sang das Lied.">
+                                <option value="">Select</option>
+                                <option value="Ich singe das Lied.">singe</option>
+                                <option value="Ich sang das Lied.">sang</option>
+                                <option value="Ich habe gesungen das Lied.">habe gesungen</option>
+                            </select>
+                        </li>
+                        <li>'Die Tür ___ geschlossen.' (Passive)  
+                            <select class="answer-select" data-correct="Die Tür wurde geschlossen.">
+                                <option value="">Select</option>
+                                <option value="Die Tür wird geschlossen.">wird</option>
+                                <option value="Die Tür wurde geschlossen.">wurde</option>
+                                <option value="Die Tür ist geschlossen.">ist</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Ich sang das Lied.</em></li>
+                            <li><em>Die Tür wurde geschlossen.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise5">
+                <h3>Exercise 5: Perfekt (Present Perfect Form)</h3>
+                <p>Choose the correct present perfect form.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>'Wir ___ das Spiel ___.' (Passive: spielen)  
+                            <select class="answer-select" data-correct="Wir sind das Spiel gespielt worden.">
+                                <option value="">Select</option>
+                                <option value="Wir haben das Spiel gespielt.">haben … gespielt</option>
+                                <option value="Wir sind das Spiel gespielt worden.">sind … gespielt worden</option>
+                                <option value="Wir haben das Spiel spielen.">haben … spielen</option>
+                            </select>
+                        </li>
+                        <li>'Er ___ das Buch ___.' (lesen)  
+                            <select class="answer-select" data-correct="Er hat das Buch gelesen.">
+                                <option value="">Select</option>
+                                <option value="Er hat das Buch gelesen.">hat … gelesen</option>
+                                <option value="Er ist das Buch gelesen.">ist … gelesen</option>
+                                <option value="Er hat das Buch lesen.">hat … lesen</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Wir sind das Spiel gespielt worden.</em></li>
+                            <li><em>Er hat das Buch gelesen.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips -->
+        <section id="tips">
+            <h2>Tips to Master Passive and Tenses</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Passive Focus</strong>: Use 'werden' + Partizip II, e.g., 'wird gemacht' (is done).</li>
+                    <li><strong>Tense Clue</strong>: 'Wurde' = past, 'ist … worden' = perfect passive.</li>
+                    <li><strong>Präteritum vs. Perfekt</strong>: Use 'machte' for stories, 'habe gemacht' for talk.</li>
+                    <li><strong>Verb Type</strong>: Only transitive verbs (with objects) work in passive.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Resources -->
+        <section id="resources">
+            <h2>Resources for Extra Practice</h2>
+            <div class="resource-links">
+                <div class="resource-card">
+                    <p><strong>YouTube - Learn German with Anja</strong><br>Videos on passive and tenses.</p>
+                    <a href="https://www.youtube.com/@LearnGermanwithAnja" class="resource-btn">Visit Learn German with Anja</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>Lingolia</strong><br>Lessons on passive voice and tenses.</p>
+                    <a href="https://deutsch.lingolia.com/en/grammar/verbs/passive" class="resource-btn">Visit Lingolia</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>YouTube - Easy German</strong><br>Everyday examples.</p>
+                    <a href="https://www.youtube.com/@EasyGerman" class="resource-btn">Visit Easy German</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="ohneartikel.html" class="see-also-rect">Adjektivdeklination ohne Artikel</a>
+                <a href="konnektoren.html" class="see-also-rect">Zweiteilige Konnektoren</a>
+                <a href="reflexive.html" class="see-also-rect">Reflexive Pronouns</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="ohneartikel.html" class="next-btn">Next: Adjektivdeklination ohne Artikel →</a>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark Mode Toggle
+        const modeToggle = document.getElementById('mode-toggle');
+        modeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Load dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Toggle Answers
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const answersDiv = button.nextElementSibling;
+                if (button.classList.contains('show-answers')) {
+                    answersDiv.classList.toggle('hidden');
+                } else if (button.classList.contains('check-answers')) {
+                    const selects = button.parentElement.querySelectorAll('.answer-select');
+                    selects.forEach(select => {
+                        const selectedValue = select.value;
+                        const correctValue = select.getAttribute('data-correct');
+                        if (selectedValue === correctValue) {
+                            select.style.backgroundColor = '#d4edda'; // Green for correct
+                        } else {
+                            select.style.backgroundColor = '#f8d7da'; // Red for incorrect
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,692 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      German B1 Sprechen Prüfung Model 1 | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+
+<link rel="stylesheet" href="/static/css/sprechenb1m1.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+<body>
+    <main>
+   
+        <div class="container">
+            <div class="header-section">
+                <header>
+                    <h1>Sprechen Prüfung</h1>
+                </header>
+                <div class="exam-title">Deutsch B1 Sprechen Model 1</div>
+                <div class="nav-buttons">
+                    <a href="german.html" class="btn home-btn">Home</a>
+                    <a href="practice_Exam.html" class="btn back-btn">Back</a>
+                </div>
+            </div>
+        </div>
+<!-- Teil 1: Gemeinsam etwas planen -->
+<div class="section" id="teil1">
+    <h2><strong>Teil 1: Gemeinsam etwas planen</strong></h2>
+    <p>Ihre Sprachschule möchte eine eigene Internetseite haben und hat Sie beauftragt, alles dafür zu organisieren. Sie müssen auch ein Team zusammenstellen, um diese Aufgabe zu erledigen.</p>
+    <p>Sprechen Sie über die Punkte unten, machen Sie Vorschläge und reagieren Sie auf die Vorschläge Ihres Gesprächspartners / Ihrer Gesprächspartnerin. Planen und entscheiden Sie gemeinsam, was Sie tun möchten.</p>
+    <div class="clipboard">
+        <div class="clipboard-header">
+            <div class="clip"></div>
+            <h3>Team bilden und Internetseite einrichten</h3>
+        </div>
+        <div class="clipboard-content">
+            <ul>
+                <li>Wer mitmachen?</li>
+                <li>Treffen? (Wie oft? Wo?)</li>
+                <li>Welche Informationen kommen auf die Seite? (über Sprachschule, Sprachenlernen allgemein, …)</li>
+                <li>Werbung aufnehmen?</li>
+                <li>…</li>
+            </ul>
+        </div>
+        <div class="pen"></div>
+    </div>
+    <div class="conversation-section">
+        <h4>Gespräch zwischen Anna und Ben:</h4>
+        <div class="chat-bubble left">
+            <p><strong>Anna:</strong> Hallo Ben! Wir sollen eine Internetseite für unsere Sprachschule machen. Wer könnte denn mitmachen?</p>
+        </div>
+        <div class="chat-bubble right">
+            <p><strong>Ben:</strong> Hallo Anna! Ich denke, wir brauchen drei Personen: einen Designer, einen Programmierer und einen Lehrer. Was meinst du?</p>
+        </div>
+        <div class="chat-bubble left">
+            <p><strong>Anna:</strong> Hm, drei Personen finde ich zu wenig. Wir brauchen auch einen Marketingexperten, damit die Seite bekannt wird. Ich schlage vor, dass wir ein Team aus fünf Personen machen: zwei Designer, ein Programmierer, ein Marketingexperte und ein Lehrer. Bist du einverstanden?</p>
+        </div>
+        <div class="chat-bubble right">
+            <p><strong>Ben:</strong> Ja, das klingt besser. Fünf Personen sind gut. Ich kenne einen Programmierer, Max, und einen Lehrer, Frau Müller. Du kennst vielleicht Designer?</p>
+        </div>
+        <div class="chat-bubble left">
+            <p><strong>Anna:</strong> Ja, ich kenne zwei Designer, Lisa und Tom. Und für den Marketingexperten könnten wir Sara fragen. Okay, jetzt die Treffen: Wie wäre es, wenn wir uns jeden Tag treffen?</p>
+        </div>
+        <div class="chat-bubble right">
+            <p><strong>Ben:</strong> Jeden Tag ist zu viel, finde ich. Wir haben doch auch andere Aufgaben. Ich schlage vor, dass wir uns einmal pro Woche treffen, mittwochs um 15 Uhr in der Sprachschule. Passt dir das?</p>
+        </div>
+        <div class="chat-bubble left">
+            <p><strong>Anna:</strong> Mittwochs um 15 Uhr ist okay, aber ich finde, einmal pro Woche ist zu wenig. Wie wäre es mit zweimal pro Woche, mittwochs und freitags? Und in der Sprachschule ist gut.</p>
+        </div>
+        <div class="chat-bubble right">
+            <p><strong>Ben:</strong> Ja, zweimal pro Woche klingt gut. Mittwochs und freitags um 15 Uhr in der Sprachschule passt mir. Jetzt die Inhalte: Ich denke, wir sollten nur die Kurse und Preise auf die Seite setzen. Was meinst du?</p>
+        </div>
+        <div class="chat-bubble left">
+            <p><strong>Anna:</strong> Nur Kurse und Preise finde ich zu wenig. Wir sollten auch die Lehrer vorstellen und Erfahrungsberichte von Schülern zeigen. Und vielleicht Tipps zum Sprachenlernen, damit die Seite nützlich ist. Was hältst du davon?</p>
+        </div>
+        <div class="chat-bubble right">
+            <p><strong>Ben:</strong> Das ist eine gute Idee! Also Kurse, Preise, Lehrer, Erfahrungsberichte und Tipps. Ich würde auch ein Kontaktformular vorschlagen, damit die Leute uns erreichen können. Einverstanden?</p>
+        </div>
+        <div class="chat-bubble left">
+            <p><strong>Anna:</strong> Ja, ein Kontaktformular ist super! Jetzt der letzte Punkt: Sollen wir Werbung auf der Seite aufnehmen? Ich finde, wir könnten Werbung von Buchverlagen machen.</p>
+        </div>
+        <div class="chat-bubble right">
+            <p><strong>Ben:</strong> Ich bin dagegen. Werbung macht die Seite unprofessionell. Ich schlage vor, dass wir keine Werbung aufnehmen, zumindest am Anfang. Was meinst du?</p>
+        </div>
+        <div class="chat-bubble left">
+            <p><strong>Anna:</strong> Okay, du hast recht. Keine Werbung ist besser. Also, unser Plan: Team aus Lisa, Tom, Max, Sara und Frau Müller. Treffen mittwochs und freitags um 15 Uhr in der Sprachschule. Inhalte sind Kurse, Preise, Lehrer, Erfahrungsberichte, Tipps und ein Kontaktformular. Keine Werbung. Stimmt das?</p>
+        </div>
+        <div class="chat-bubble right">
+            <p><strong>Ben:</strong> Ja, das stimmt genau! Wir haben einen guten Plan. Ich freue mich, dass wir uns geeinigt haben. Bis mittwoch, Anna!</p>
+        </div>
+        <div class="chat-bubble left">
+            <p><strong>Anna:</strong> Bis mittwoch, Ben! Tschüss!</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- Teil 2: Ein Thema präsentieren -->
+<div class="section" id="teil2">
+    <h2><strong>Teil 2: Ein Thema präsentieren</strong></h2>
+    <p>Sie sollen Ihren Zuhörern ein aktuelles Thema präsentieren. Danach finden Sie hier fünf Folien. Folgen Sie den Anweisungen links und sehen Sie die Schlüsselwörter rechts, um Ihre Präsentation vorzubereiten.</p>
+    <div class="presentation-box">
+        <div class="slide">
+            <div class="slide-left">
+                <h4>Folie 1</h4>
+                <p>„Ich gehe auf die Demo!“</p>
+                <p>Sollte man seinen Protest zeigen, indem man bei einer Demonstration mitmacht?</p>
+            </div>
+            <div class="slide-right">
+                <h5>Schlüsselwörter:</h5>
+                <ul>
+                    <li>Protest zeigen</li>
+                    <li>Aufmerksamkeit</li>
+                    <li>Umweltdemos</li>
+                </ul>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="slide-left">
+                <h4>Folie 2</h4>
+                <p>Sollte man seinen Protest zeigen, indem man bei einer Demonstration mitmacht?</p>
+                <p>Meine persönlichen Erfahrungen</p>
+            </div>
+            <div class="slide-right">
+                <h5>Schlüsselwörter:</h5>
+                <ul>
+                    <li>Klimaschutz-Demo</li>
+                    <li>tolle Erfahrung</li>
+                    <li>zusammen kämpfen</li>
+                </ul>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="slide-left">
+                <h4>Folie 3</h4>
+                <p>Sollte man seinen Protest zeigen, indem man bei einer Demonstration mitmacht?</p>
+                <p>Die Rolle von Demonstrationen in meinem Heimatland</p>
+            </div>
+            <div class="slide-right">
+                <h5>Schlüsselwörter:</h5>
+                <ul>
+                    <li>politische Veränderungen</li>
+                    <li>Wahlen</li>
+                    <li>wichtig</li>
+                </ul>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="slide-left">
+                <h4>Folie 4</h4>
+                <p>Sollte man seinen Protest zeigen, indem man bei einer Demonstration mitmacht?</p>
+                <p>Vor- und Nachteile & Meine Meinung</p>
+            </div>
+            <div class="slide-right">
+                <h5>Schlüsselwörter:</h5>
+                <ul>
+                    <li>Aufmerksamkeit schaffen</li>
+                    <li>Gewalt</li>
+                    <li>friedlich</li>
+                </ul>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="slide-left">
+                <h4>Folie 5</h4>
+                <p>Sollte man seinen Protest zeigen, indem man bei einer Demonstration mitmacht?</p>
+                <p>Abschluss & Dank</p>
+            </div>
+            <div class="slide-right">
+                <h5>Schlüsselwörter:</h5>
+                <ul>
+                    <li>zusammenfassen</li>
+                    <li>friedlich</li>
+                    <li>Danke</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="presentation-answer">
+        <h4>Präsentation:</h4>
+        <p><strong>Vor der Präsentation:</strong> Guten Tag, meine Damen und Herren! Ich heiße Lisa und freue mich, dass ich heute hier bin. Ich möchte über ein wichtiges Thema sprechen, nämlich: „Sollte man seinen Protest zeigen, indem man bei einer Demonstration mitmacht?“ In meiner Präsentation erzähle ich zuerst, warum Demonstrationen wichtig sind, wenn man ein Problem hat. Danach spreche ich über meine Erfahrungen und die Rolle von Demonstrationen in meinem Heimatland Indien. Am Ende erkläre ich die Vor- und Nachteile und sage meine Meinung, weil ich das Thema sehr interessant finde.</p>
+        
+        <p><strong>Folie 1:</strong> Ich finde, man sollte seinen Protest zeigen, wenn man ein Problem hat. Demonstrationen machen auf wichtige Themen aufmerksam, wie zum Beispiel Umweltdemos, die den Klimaschutz zeigen. Deshalb denke ich, dass Demonstrationen eine gute Idee sind, obwohl sie manchmal laut sind.</p>
+        <p><strong>Übergang:</strong> Jetzt möchte ich über meine persönlichen Erfahrungen mit Demonstrationen sprechen.</p>
+        
+        <p><strong>Folie 2:</strong> Ich war letztes Jahr bei einer Klimaschutz-Demo in Berlin, als ich dort gelebt habe. Es war eine tolle Erfahrung, weil viele Menschen zusammen für die Umwelt gekämpft haben. Obwohl es geregnet hat, habe ich mich sehr stark gefühlt.</p>
+        <p><strong>Übergang:</strong> Jetzt erzähle ich Ihnen, wie Demonstrationen in meinem Heimatland Indien sind.</p>
+        
+        <p><strong>Folie 3:</strong> In Indien sind Demonstrationen sehr wichtig, weil sie oft politische Veränderungen gemacht haben. Als ich klein war, haben die Menschen bei Wahlen protestiert, damit es mehr Gerechtigkeit gibt. Wegen dieser Proteste hat die Regierung manchmal zugehört.</p>
+        <p><strong>Übergang:</strong> Jetzt möchte ich über die Vor- und Nachteile von Demonstrationen sprechen und meine Meinung äußern.</p>
+        
+        <p><strong>Folie 4:</strong> Demonstrationen haben Vorteile und Nachteile. <br>
+        <strong>Vorteile:</strong> Erstens schaffen Demonstrationen Aufmerksamkeit, wenn ein Problem groß ist. Zweitens bringen sie Menschen zusammen, die das gleiche Ziel haben. Drittens können sie Politiker beeinflussen, weil sie die Probleme sehen. <br>
+        <strong>Nachteile:</strong> Erstens gibt es manchmal Gewalt, obwohl viele Menschen friedlich sind. Zweitens sind Demonstrationen oft laut, deshalb können sie andere stören. Drittens dauern sie lange, und das ist anstrengend. <br>
+        <strong>Meine Meinung:</strong> Ich finde Demonstrationen gut, wenn sie friedlich sind. Ich mag keine Gewalt, deshalb denke ich, dass Frieden wichtig ist. Trotzdem sind Demonstrationen nützlich, weil sie Veränderungen bringen können.</p>
+        <p><strong>Übergang:</strong> Zum Schluss möchte ich meine Präsentation zusammenfassen und mich bedanken.</p>
+        
+        <p><strong>Folie 5:</strong> Zusammenfassend finde ich, dass Demonstrationen wichtig sind, obwohl sie Nachteile haben. Sie sollten immer friedlich sein, damit die Botschaft klar ist. Vielen Dank, dass Sie mir zugehört haben, und wenn Sie Fragen haben, beantworte ich sie gern!</p>
+    </div>
+</div>
+
+<!-- Teil 3: Über ein Thema sprechen -->
+<div class="section" id="teil3">
+    <h2><strong>Teil 3: Über ein Thema sprechen</strong></h2>
+    <p>Nach Ihrer Präsentation: Reagieren Sie auf die Rückmeldung und Fragen der Prüfer/-innen und des Gesprächspartners / der Gesprächspartnerin.</p>
+    <div class="qa-section">
+        <div class="qa-card">
+            <h4>Rückmeldung und Frage vom Lehrer:</h4>
+            <p><strong>Lehrer:</strong> Vielen Dank für deine Präsentation, Lisa, sie war wirklich sehr interessant! Besonders gut fand ich, dass du über deine Erfahrungen bei der Klimaschutz-Demo gesprochen hast, weil das sehr persönlich war. Denkst du, dass Demonstrationen auch online, zum Beispiel in sozialen Medien, genauso effektiv sein können wie auf der Straße?</p>
+            <div class="qa-answer">
+                <h5>Antwort:</h5>
+                <p>Vielen Dank für Ihre Rückmeldung und die Frage! Ich glaube, dass Online-Demonstrationen nützlich sein können, weil sie viele Menschen erreichen, obwohl sie nicht so stark wirken wie auf der Straße. Deshalb denke ich, dass beide Arten zusammen am besten sind, wenn man Protest zeigen will.</p>
+            </div>
+        </div>
+        <div class="qa-card">
+            <h4>Rückmeldung und Frage vom Freund:</h4>
+            <p><strong>Freund (Mark):</strong> Wow, Lisa, deine Präsentation war echt super, ich habe viel gelernt! Besonders spannend fand ich, dass du gesagt hast, Demonstrationen sollten friedlich sein, weil das sehr wichtig ist. Was würdest du machen, wenn du eine Demo organisieren könntest, um die Leute zu motivieren?</p>
+            <div class="qa-answer">
+                <h5>Antwort:</h5>
+                <p>Danke für deine Rückmeldung und die Frage, Mark! Wenn ich eine Demo organisieren könnte, würde ich Musik und Reden planen, weil das die Leute motiviert, obwohl es viel Arbeit ist. Ich würde auch Plakate machen, damit die Botschaft klar ist.</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</main>
+    
+    <script src="/static/css/sprechenb1m1.js"></script>
+</body>
+
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

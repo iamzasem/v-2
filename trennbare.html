@@ -1,0 +1,1038 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      German Trennbare Verben (Separable Verbs) | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/trennbare.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+                <a href="a1-topics.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="/a1-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>German Trennbare Verben (Separable Verbs): A Comprehensive Guide with Examples and Exercises</h1>
+            <p>
+                <strong>Trennbare Verben</strong> (separable verbs) are a unique and essential part of German grammar. They consist of a prefix and a base verb that split apart in certain situations—like <em>aufstehen</em> (to get up) becoming <em>Ich stehe auf</em>. This guide covers everything about trennbare Verben: what they are, how they work in the present and Präteritum tenses, common examples, and detailed rules.
+            </p>
+        </section>
+
+        <!-- What Are Trennbare Verben? -->
+        <section id="what-are">
+            <h2>What Are Trennbare Verben?</h2>
+            <div class="subsection">
+                <p>
+                    Trennbare Verben are verbs with a separable prefix that detaches and moves to the <strong>end</strong> of the sentence in main clauses. The prefix changes or adds to the meaning of the base verb:
+                </p>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>stehen</em> (to stand) → <em>aufstehen</em> (to get up).</li>
+                        <li><em>kommen</em> (to come) → <em>ankommen</em> (to arrive).</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Key Features</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><strong>Prefix</strong>: A word like <em>an-, aus-, auf-, ab-, mit-, vor-</em> attaches to a base verb.</li>
+                        <li><strong>Separation</strong>: In present and Präteritum main clauses, the prefix splits off and goes to the end.</li>
+                        <li><strong>Non-Separation</strong>: In dependent clauses or with modals, the verb stays together.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- How Trennbare Verben Work -->
+        <section id="how-they-work">
+            <h2>How Trennbare Verben Work</h2>
+            <div class="subsection">
+                <h3>In Present Tense</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><strong>Rule</strong>: Conjugate the base verb, place it in second position, and send the prefix to the end.</li>
+                        <li><strong>Structure</strong>: Subject + conjugated base verb + (object/info) + prefix.</li>
+                        <li>Example: <em>Ich stehe früh auf.</em> (I get up early.) – <em>stehe</em> (conjugated) + <em>auf</em> (prefix at end).</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>In Präteritum</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><strong>Rule</strong>: Same as present—conjugate the base verb in Präteritum, prefix still goes to the end.</li>
+                        <li>Example: <em>Ich stand früh auf.</em> (I got up early.) – <em>stand</em> (Präteritum of <em>stehen</em>) + <em>auf</em>.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>With Modal Verbs</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><strong>Rule</strong>: The separable verb stays together as an infinitive at the end.</li>
+                        <li>Example: <em>Ich will früh aufstehen.</em> (I want to get up early.) – <em>will</em> (modal) + <em>aufstehen</em> (infinitive).</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>In Dependent Clauses</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><strong>Rule</strong>: The verb stays together and moves to the end.</li>
+                        <li>Example: <em>Weil ich früh aufstehe…</em> (Because I get up early…) – <em>aufstehe</em> (conjugated, stays together).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Common Separable Prefixes -->
+        <section id="prefixes">
+            <h2>Common Separable Prefixes</h2>
+            <p>Here are the most frequent prefixes with examples:</p>
+            <div class="examples">
+                <ol class="example-list">
+                    <li><strong>ab-</strong> (off, away): <em>abfahren</em> (to depart) – <em>Ich fahre um sechs ab.</em> (I depart at six.)</li>
+                    <li><strong>an-</strong> (on, at, to): <em>ankommen</em> (to arrive) – <em>Er kommt spät an.</em> (He arrives late.)</li>
+                    <li><strong>auf-</strong> (up, open): <em>aufstehen</em> (to get up) – <em>Wir stehen früh auf.</em> (We get up early.)</li>
+                    <li><strong>aus-</strong> (out, off): <em>ausgehen</em> (to go out) – <em>Sie geht heute aus.</em> (She goes out today.)</li>
+                    <li><strong>ein-</strong> (in, into): <em>einkaufen</em> (to shop) – <em>Ich kaufe später ein.</em> (I shop later.)</li>
+                    <li><strong>mit-</strong> (with, along): <em>mitkommen</em> (to come along) – <em>Du kommst mit.</em> (You come along.)</li>
+                    <li><strong>nach-</strong> (after, to): <em>nachschauen</em> (to check) – <em>Er schaut das nach.</em> (He checks it.)</li>
+                    <li><strong>vor-</strong> (before, forward): <em>vorstellen</em> (to introduce) – <em>Ich stelle mich vor.</em> (I introduce myself.)</li>
+                    <li><strong>zu-</strong> (to, closed): <em>zumachen</em> (to close) – <em>Sie macht die Tür zu.</em> (She closes the door.)</li>
+                    <li><strong>weg-</strong> (away): <em>weggehen</em> (to go away) – <em>Wir gehen jetzt weg.</em> (We go away now.)</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Examples -->
+        <section id="examples">
+            <h2>Examples of Trennbare Verben in Action</h2>
+            <div class="subsection">
+                <h3>Present Tense Examples</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Ich rufe dich an.</em> (I call you.) – <em>anrufen</em> → <em>rufe</em> + <em>an</em>.</li>
+                        <li><em>Er macht das Licht aus.</em> (He turns off the light.) – <em>ausmachen</em> → <em>macht</em> + <em>aus</em>.</li>
+                        <li><em>Wir stehen um sieben auf.</em> (We get up at seven.) – <em>aufstehen</em> → <em>stehen</em> + <em>auf</em>.</li>
+                        <li><em>Du kommst später mit.</em> (You come along later.) – <em>mitkommen</em> → <em>kommst</em> + <em>mit</em>.</li>
+                        <li><em>Sie kauft im Laden ein.</em> (She shops in the store.) – <em>einkaufen</em> → <em>kauft</em> + <em>ein</em>.</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Präteritum Examples</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Ich rief dich an.</em> (I called you.) – <em>anrufen</em> → <em>rief</em> + <em>an</em>.</li>
+                        <li><em>Er machte das Licht aus.</em> (He turned off the light.) – <em>ausmachen</em> → <em>machte</em> + <em>aus</em>.</li>
+                        <li><em>Wir standen um sieben auf.</em> (We got up at seven.) – <em>aufstehen</em> → <em>standen</em> + <em>auf</em>.</li>
+                        <li><em>Du kamst später mit.</em> (You came along later.) – <em>mitkommen</em> → <em>kamst</em> + <em>mit</em>.</li>
+                        <li><em>Sie kaufte im Laden ein.</em> (She shopped in the store.) – <em>einkaufen</em> → <em>kaufte</em> + <em>ein</em>.</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>With Modal Verbs</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Ich will dich anrufen.</em> (I want to call you.) – <em>anrufen</em> stays together.</li>
+                        <li><em>Er muss das Licht ausmachen.</em> (He must turn off the light.) – <em>ausmachen</em> stays together.</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>In Dependent Clauses</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Weil ich dich anrufe…</em> (Because I call you…) – <em>anrufe</em> stays together.</li>
+                        <li><em>Wenn sie früh aufsteht…</em> (If she gets up early…) – <em>aufsteht</em> stays together.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Rules Recap -->
+        <section id="key-rules">
+            <h2>Key Rules Recap</h2>
+            <div class="examples">
+                <ol class="example-list">
+                    <li><strong>Main Clause</strong>: Prefix separates, goes to the end. – <em>Ich stehe auf.</em> (I get up.)</li>
+                    <li><strong>Modal/Auxiliary</strong>: Stays together as infinitive. – <em>Ich will aufstehen.</em> (I want to get up.)</li>
+                    <li><strong>Dependent Clause</strong>: Stays together, goes to the end. – <em>Weil ich aufstehe…</em> (Because I get up…)</li>
+                    <li><strong>Negation</strong>: <em>nicht</em> goes before the prefix. – <em>Ich stehe nicht auf.</em> (I don’t get up.)</li>
+                </ol>
+            </div>
+        </section>
+
+<!-- Exercises -->
+<section id="practice">
+    <h2>Exercises with Multiple-Choice Options</h2>
+
+    <div class="subsection" id="exercise1">
+        <h3>Exercise 1: Fill in the Present Tense</h3>
+        <p>Choose the correct form of the separable verb.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Ich ___ meine Mutter ___ (<em>anrufen</em>).
+                    <select class="answer-select" data-correct="rufe … an">
+                        <option value="">Select</option>
+                        <option value="ruf … an">ruf … an</option>
+                        <option value="rufe … an">rufe … an</option>
+                        <option value="anrufe …">anrufe …</option>
+                    </select>
+                </li>
+                <li>Du ___ das Fenster ___ (<em>aufmachen</em>).
+                    <select class="answer-select" data-correct="machst … auf">
+                        <option value="">Select</option>
+                        <option value="machst … auf">machst … auf</option>
+                        <option value="aufmachst …">aufmachst …</option>
+                        <option value="mach … auf">mach … auf</option>
+                    </select>
+                </li>
+                <li>Wir ___ früh ___ (<em>aufstehen</em>).
+                    <select class="answer-select" data-correct="stehen … auf">
+                        <option value="">Select</option>
+                        <option value="aufstehen …">aufstehen …</option>
+                        <option value="steht … auf">steht … auf</option>
+                        <option value="stehen … auf">stehen … auf</option>
+                    </select>
+                </li>
+                <li>Er ___ mit uns ___ (<em>mitkommen</em>).
+                    <select class="answer-select" data-correct="kommt … mit">
+                        <option value="">Select</option>
+                        <option value="komme … mit">komme … mit</option>
+                        <option value="kommt … mit">kommt … mit</option>
+                        <option value="mitkommt …">mitkommt …</option>
+                    </select>
+                </li>
+                <li>Ihr ___ im Supermarkt ___ (<em>einkaufen</em>).
+                    <select class="answer-select" data-correct="kauft … ein">
+                        <option value="">Select</option>
+                        <option value="kauft … ein">kauft … ein</option>
+                        <option value="einkauft …">einkauft …</option>
+                        <option value="kaufen … ein">kaufen … ein</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li>Ich <em>rufe</em> meine Mutter <em>an</em>.</li>
+                    <li>Du <em>machst</em> das Fenster <em>auf</em>.</li>
+                    <li>Wir <em>stehen</em> früh <em>auf</em>.</li>
+                    <li>Er <em>kommt</em> mit uns <em>mit</em>.</li>
+                    <li>Ihr <em>kauft</em> im Supermarkt <em>ein</em>.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise2">
+        <h3>Exercise 2: Fill in the Präteritum</h3>
+        <p>Choose the correct Präteritum form.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Ich ___ dich gestern ___ (<em>anrufen</em>).
+                    <select class="answer-select" data-correct="rief … an">
+                        <option value="">Select</option>
+                        <option value="rief … an">rief … an</option>
+                        <option value="riefen … an">riefen … an</option>
+                        <option value="anrief …">anrief …</option>
+                    </select>
+                </li>
+                <li>Sie ___ das Licht ___ (<em>ausmachen</em>).
+                    <select class="answer-select" data-correct="machte … aus">
+                        <option value="">Select</option>
+                        <option value="macht … aus">macht … aus</option>
+                        <option value="machte … aus">machte … aus</option>
+                        <option value="ausmachte …">ausmachte …</option>
+                    </select>
+                </li>
+                <li>Wir ___ spät ___ (<em>aufstehen</em>).
+                    <select class="answer-select" data-correct="standen … auf">
+                        <option value="">Select</option>
+                        <option value="aufstanden …">aufstanden …</option>
+                        <option value="standen … auf">standen … auf</option>
+                        <option value="steht … auf">steht … auf</option>
+                    </select>
+                </li>
+                <li>Du ___ mit mir ___ (<em>mitkommen</em>).
+                    <select class="answer-select" data-correct="kamst … mit">
+                        <option value="">Select</option>
+                        <option value="kamst … mit">kamst … mit</option>
+                        <option value="mitkamst …">mitkamst …</option>
+                        <option value="kam … mit">kam … mit</option>
+                    </select>
+                </li>
+                <li>Er ___ im Laden ___ (<em>einkaufen</em>).
+                    <select class="answer-select" data-correct="kaufte … ein">
+                        <option value="">Select</option>
+                        <option value="einkaufte …">einkaufte …</option>
+                        <option value="kauften … ein">kauften … ein</option>
+                        <option value="kaufte … ein">kaufte … ein</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li>Ich <em>rief</em> dich gestern <em>an</em>.</li>
+                    <li>Sie <em>machte</em> das Licht <em>aus</em>.</li>
+                    <li>Wir <em>standen</em> spät <em>auf</em>.</li>
+                    <li>Du <em>kamst</em> mit mir <em>mit</em>.</li>
+                    <li>Er <em>kaufte</em> im Laden <em>ein</em>.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise3">
+        <h3>Exercise 3: Modal Verbs with Trennbare Verben</h3>
+        <p>Choose the correct form with a modal verb.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Ich ___ morgen ___ (<em>aufstehen</em>).
+                    <select class="answer-select" data-correct="will … aufstehen">
+                        <option value="">Select</option>
+                        <option value="will … aufstehen">will … aufstehen</option>
+                        <option value="stehe … auf">stehe … auf</option>
+                        <option value="aufstehe …">aufstehe …</option>
+                    </select>
+                </li>
+                <li>Du ___ mich ___ (<em>anrufen</em>).
+                    <select class="answer-select" data-correct="musst … anrufen">
+                        <option value="">Select</option>
+                        <option value="rufst … an">rufst … an</option>
+                        <option value="musst … anrufen">musst … anrufen</option>
+                        <option value="anrufst …">anrufst …</option>
+                    </select>
+                </li>
+                <li>Wir ___ heute ___ (<em>ausgehen</em>).
+                    <select class="answer-select" data-correct="können … ausgehen">
+                        <option value="">Select</option>
+                        <option value="gehen … aus">gehen … aus</option>
+                        <option value="ausgehen …">ausgehen …</option>
+                        <option value="können … ausgehen">können … ausgehen</option>
+                    </select>
+                </li>
+                <li>Er ___ mit ___ (<em>mitkommen</em>).
+                    <select class="answer-select" data-correct="darf … mitkommen">
+                        <option value="">Select</option>
+                        <option value="darf … mitkommen">darf … mitkommen</option>
+                        <option value="kommt … mit">kommt … mit</option>
+                        <option value="mitkommt …">mitkommt …</option>
+                    </select>
+                </li>
+                <li>Ihr ___ das ___ (<em>nachschauen</em>).
+                    <select class="answer-select" data-correct="sollt … nachschauen">
+                        <option value="">Select</option>
+                        <option value="schaut … nach">schaut … nach</option>
+                        <option value="nachschaut …">nachschaut …</option>
+                        <option value="sollt … nachschauen">sollt … nachschauen</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li>Ich <em>will</em> morgen <em>aufstehen</em>.</li>
+                    <li>Du <em>musst</em> mich <em>anrufen</em>.</li>
+                    <li>Wir <em>können</em> heute <em>ausgehen</em>.</li>
+                    <li>Er <em>darf</em> mit <em>mitkommen</em>.</li>
+                    <li>Ihr <em>sollt</em> das <em>nachschauen</em>.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise4">
+        <h3>Exercise 4: Translate and Choose</h3>
+        <p>Translate the sentence, then pick the correct form.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>I turn off the TV. – Translation: Ich ___ den Fernseher ___ (<em>ausmachen</em>).
+                    <select class="answer-select" data-correct="mache … aus">
+                        <option value="">Select</option>
+                        <option value="mache … aus">mache … aus</option>
+                        <option value="ausmache …">ausmache …</option>
+                        <option value="macht … aus">macht … aus</option>
+                    </select>
+                </li>
+                <li>You arrived late. – Translation: Du ___ spät ___ (<em>ankommen</em>).
+                    <select class="answer-select" data-correct="kamst … an">
+                        <option value="">Select</option>
+                        <option value="ankamst …">ankamst …</option>
+                        <option value="kamst … an">kamst … an</option>
+                        <option value="kommst … an">kommst … an</option>
+                    </select>
+                </li>
+                <li>We want to shop. – Translation: Wir ___ ___ (<em>einkaufen</em>).
+                    <select class="answer-select" data-correct="wollen … einkaufen">
+                        <option value="">Select</option>
+                        <option value="kaufen … ein">kaufen … ein</option>
+                        <option value="wollen … einkaufen">wollen … einkaufen</option>
+                        <option value="einkaufen …">einkaufen …</option>
+                    </select>
+                </li>
+                <li>She got up early. – Translation: Sie ___ früh ___ (<em>aufstehen</em>).
+                    <select class="answer-select" data-correct="stand … auf">
+                        <option value="">Select</option>
+                        <option value="aufstand …">aufstand …</option>
+                        <option value="steht … auf">steht … auf</option>
+                        <option value="stand … auf">stand … auf</option>
+                    </select>
+                </li>
+                <li>You all come along. – Translation: Ihr ___ ___ (<em>mitkommen</em>).
+                    <select class="answer-select" data-correct="kommt … mit">
+                        <option value="">Select</option>
+                        <option value="kommt … mit">kommt … mit</option>
+                        <option value="kommen … mit">kommen … mit</option>
+                        <option value="mitkommt …">mitkommt …</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li>Ich <em>mache</em> den Fernseher <em>aus</em>.</li>
+                    <li>Du <em>kamst</em> spät <em>an</em>.</li>
+                    <li>Wir <em>wollen</em> <em>einkaufen</em>.</li>
+                    <li>Sie <em>stand</em> früh <em>auf</em>.</li>
+                    <li>Ihr <em>kommt</em> <em>mit</em>.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise5">
+        <h3>Exercise 5: Creative Story with Options</h3>
+        <p>Fill in the blanks with the correct form to complete the story.</p>
+        <div class="examples">
+            <p>Gestern ___ (1) ich früh ___ (<em>aufstehen</em>). Dann ___ (2) ich meine Freunde ___ (<em>anrufen</em>). Wir ___ (3) zusammen ___ (<em>ausgehen</em>). Später ___ (4) ich im Laden ___ (<em>einkaufen</em>). Es ___ (5) ein toller Tag.</p>
+            <ol class="example-list">
+                <li><select class="answer-select" data-correct="stand … auf">
+                    <option value="">Select</option>
+                    <option value="stand … auf">stand … auf</option>
+                    <option value="aufstand …">aufstand …</option>
+                    <option value="stehe … auf">stehe … auf</option>
+                </select></li>
+                <li><select class="answer-select" data-correct="rief … an">
+                    <option value="">Select</option>
+                    <option value="anrief …">anrief …</option>
+                    <option value="rief … an">rief … an</option>
+                    <option value="rufe … an">rufe … an</option>
+                </select></li>
+                <li><select class="answer-select" data-correct="gingen … aus">
+                    <option value="">Select</option>
+                    <option value="gehen … aus">gehen … aus</option>
+                    <option value="gingen … aus">gingen … aus</option>
+                    <option value="ausgingen …">ausgingen …</option>
+                </select></li>
+                <li><select class="answer-select" data-correct="kaufte … ein">
+                    <option value="">Select</option>
+                    <option value="kaufte … ein">kaufte … ein</option>
+                    <option value="kaufe … ein">kaufe … ein</option>
+                    <option value="einkaufte …">einkaufte …</option>
+                </select></li>
+                <li><select class="answer-select" data-correct="war …">
+                    <option value="">Select</option>
+                    <option value="hatte …">hatte …</option>
+                    <option value="ausmachte …">ausmachte …</option>
+                    <option value="war …">war …</option>
+                </select></li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong> Gestern <em>stand</em> ich früh <em>auf</em>. Dann <em>rief</em> ich meine Freunde <em>an</em>. Wir <em>gingen</em> zusammen <em>aus</em>. Später <em>kaufte</em> ich im Laden <em>ein</em>. Es <em>war</em> ein toller Tag.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Tips -->
+        <section id="tips">
+            <h2>Tips to Master Trennbare Verben</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Spot the Prefix</strong>: Underline it in verbs—<em>auf</em>stehen, <em>an</em>rufen—to see the split.</li>
+                    <li><strong>Practice Splitting</strong>: Say <em>Ich stehe auf</em> aloud 5 times—feel the rhythm.</li>
+                    <li><strong>Mix Tenses</strong>: Write <em>Ich rufe an</em> (present) and <em>Ich rief an</em> (Präteritum).</li>
+                    <li><strong>Use Daily</strong>: <em>Ich mache auf, ich gehe aus</em>—link to routines.</li>
+                    <li><strong>Listen</strong>: Catch <em>abfahren</em> or <em>mitkommen</em> in German songs or shows.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Resources -->
+        <section id="resources">
+            <h2>Resources for Extra Practice</h2>
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h4>YouTube – Learn German with Anja</h4>
+                    <p>Trennbare Verben explained.</p>
+                    <a href="https://www.youtube.com/@GermanwithAnja" class="resource-btn">Visit Learn German with Anja</a>
+                </div>
+                <div class="resource-card">
+                    <h4>Deutsch Lernen</h4>
+                    <p>Free exercises.</p>
+                    <a href="https://www.deutsch-lernen.com/" class="resource-btn">Visit Deutsch Lernen</a>
+                </div>
+                <div class="resource-card">
+                    <h4>Nicos Weg – DW</h4>
+                    <p>Interactive grammar.</p>
+                    <a href="https://learngerman.dw.com/en/grammar" class="resource-btn">Visit Nicos Weg</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Thoughts -->
+        <section id="final-thoughts">
+            <h2>You’re Ready!</h2>
+            <p>
+                This guide covers all you need on trennbare Verben—rules, examples, and your favorite multiple-choice exercises. Work through them, check your answers, and you’ll handle these verbs like a pro! Next, you could explore inseparable verbs or Perfekt tense—your call!
+            </p>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="verbs.html" class="see-also-rect">German Verbs</a>
+                <a href="presenttense.html" class="see-also-rect">Present Tense</a>
+                <a href="praterituma1.html" class="see-also-rect">Präteritum</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="verbs.html" class="next-btn">Next: German Verbs →</a>
+        </div>
+    </main>
+
+   <!-- JavaScript -->
+  <script>
+    // Dark Mode Toggle
+    const modeToggle = document.getElementById('mode-toggle');
+    modeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
+
+    // Load dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+    }
+
+    // Toggle Answers
+    document.querySelectorAll('.toggle-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const answersDiv = button.nextElementSibling;
+            if (button.classList.contains('show-answers')) {
+                answersDiv.classList.toggle('hidden');
+            } else if (button.classList.contains('check-answers')) {
+                const selects = button.parentElement.querySelectorAll('.answer-select');
+                selects.forEach(select => {
+                    const selectedValue = select.value;
+                    const correctValue = select.getAttribute('data-correct');
+                    if (selectedValue === correctValue) {
+                        select.style.backgroundColor = '#d4edda'; // Green for correct
+                    } else {
+                        select.style.backgroundColor = '#f8d7da'; // Red for incorrect
+                    }
+                });
+            }
+        });
+    });
+</script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

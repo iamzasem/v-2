@@ -1,0 +1,1145 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      German Perfekt and Partizip II | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/partizip2.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+               <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="a1-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>German Perfekt and Partizip II: The Ultimate Simple Guide</h1>
+            <p>
+                The <strong>Perfekt</strong> tense is how Germans talk about the past in everyday life—like saying “I have eaten” or “She has gone” in English. It’s made with two parts: a helping verb (<em>haben</em> or <em>sein</em>) and the <strong>Partizip II</strong> (past participle) of the main verb. This guide explains it all step-by-step, with loads of examples and exercises, so you’ll master it without needing another article or video. Let’s go!
+            </p>
+        </section>
+
+        <!-- What is Perfekt? -->
+        <section id="perfekt">
+            <h2>What is the Perfekt Tense?</h2>
+            <p>The Perfekt tense is the German way to say something happened and is done—like “I’ve just finished this” or “We went to the park.” It’s used in casual speech (unlike Präteritum, which is more for writing).</p>
+            <div class="subsection">
+                <h3>How It Works</h3>
+                <p><strong>Formula:</strong> Helping verb (<em>haben</em> or <em>sein</em> in present tense) + Partizip II (at the end).</p>
+                <p><strong>Two Helpers:</strong></p>
+                <ul class="example-list">
+                    <li><em>Haben</em> (to have): Used with most verbs.</li>
+                    <li><em>Sein</em> (to be): Used with verbs of movement or change of state (more on this later).</li>
+                </ul>
+                <p><strong>Quick Example:</strong></p>
+                <ul class="example-list">
+                    <li><em>Ich habe gegessen.</em> (I have eaten.)<br><em>habe</em> (helping verb) + <em>gegessen</em> (Partizip II of <em>essen</em>).</li>
+                    <li><em>Ich bin gegangen.</em> (I have gone.)<br><em>bin</em> (helping verb) + <em>gegangen</em> (Partizip II of <em>gehen</em>).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- What is Partizip II? -->
+        <section id="partizip2">
+            <h2>What is Partizip II?</h2>
+            <p>The <strong>Partizip II</strong> is the past participle—the special past form of a verb used in Perfekt. It’s like “eaten” or “gone” in English. How you make it depends on whether the verb is regular, irregular, or separable.</p>
+        </section>
+
+        <!-- Helping Verbs -->
+        <section id="helping-verbs">
+            <h2>Step 1: The Helping Verbs</h2>
+            <div class="subsection">
+                <h3>Haben (Most Verbs)</h3>
+                <p>Used with verbs that don’t involve movement or a change of state.</p>
+                <div class="table-container">
+                    <table>
+                        <tr><th>Subject</th><th>Haben</th></tr>
+                        <tr><td>ich</td><td>habe</td></tr>
+                        <tr><td>du</td><td>hast</td></tr>
+                        <tr><td>er/sie/es</td><td>hat</td></tr>
+                        <tr><td>wir</td><td>haben</td></tr>
+                        <tr><td>ihr</td><td>habt</td></tr>
+                        <tr><td>sie/Sie</td><td>haben</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Sein (Movement or Change)</h3>
+                <p>Used with verbs of motion (e.g., go, run) or change (e.g., become, die).</p>
+                <div class="table-container">
+                    <table>
+                        <tr><th>Subject</th><th>Sein</th></tr>
+                        <tr><td>ich</td><td>bin</td></tr>
+                        <tr><td>du</td><td>bist</td></tr>
+                        <tr><td>er/sie/es</td><td>ist</td></tr>
+                        <tr><td>wir</td><td>sind</td></tr>
+                        <tr><td>ihr</td><td>seid</td></tr>
+                        <tr><td>sie/Sie</td><td>sind</td></tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forming Partizip II -->
+        <section id="forming">
+            <h2>Step 2: Forming Partizip II</h2>
+            <div class="subsection">
+                <h3>1. Regular Verbs (Weak Verbs)</h3>
+                <p><strong>Rule:</strong> Add <em>ge-</em> to the start + <em>-t</em> to the stem (if it ends in <em>-d</em> or <em>-t</em>, add <em>-et</em>).</p>
+                <p><strong>Pattern:</strong> <em>ge-</em> + stem + <em>-t</em> or <em>-et</em>.</p>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><strong>machen</strong> (to make) → <em>gemacht</em>
+                            <ul>
+                                <li><em>Ich habe einen Kuchen gemacht.</em> (I have made a cake.)</li>
+                                <li><em>Du hast das Bett gemacht.</em> (You have made the bed.)</li>
+                            </ul>
+                        </li>
+                        <li><strong>lernen</strong> (to learn) → <em>gelernt</em>
+                            <ul>
+                                <li><em>Wir haben Deutsch gelernt.</em> (We have learned German.)</li>
+                                <li><em>Sie hat viel gelernt.</em> (She has learned a lot.)</li>
+                            </ul>
+                        </li>
+                        <li><strong>warten</strong> (to wait) → <em>gewartet</em>
+                            <ul>
+                                <li><em>Er hat auf mich gewartet.</em> (He has waited for me.)</li>
+                                <li><em>Ihr habt lange gewartet.</em> (You all have waited a long time.)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>2. Irregular Verbs (Strong Verbs)</h3>
+                <p><strong>Rule:</strong> Add <em>ge-</em> to the start + change the stem (vowel often shifts) + usually <em>-en</em> (no <em>-t</em>).</p>
+                <p><strong>Pattern:</strong> <em>ge-</em> + changed stem + <em>-en</em>.</p>
+                <p><strong>Note:</strong> You need to memorize these—they don’t follow a simple rule.</p>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><strong>essen</strong> (to eat) → <em>gegessen</em>
+                            <ul>
+                                <li><em>Ich habe Pizza gegessen.</em> (I have eaten pizza.)</li>
+                                <li><em>Er hat einen Apfel gegessen.</em> (He has eaten an apple.)</li>
+                            </ul>
+                        </li>
+                        <li><strong>gehen</strong> (to go) → <em>gegangen</em> (<em>sein</em>)
+                            <ul>
+                                <li><em>Ich bin zur Schule gegangen.</em> (I have gone to school.)</li>
+                                <li><em>Wir sind ins Kino gegangen.</em> (We have gone to the cinema.)</li>
+                            </ul>
+                        </li>
+                        <li><strong>trinken</strong> (to drink) → <em>getrunken</em>
+                            <ul>
+                                <li><em>Du hast Wasser getrunken.</em> (You have drunk water.)</li>
+                                <li><em>Sie haben Saft getrunken.</em> (They have drunk juice.)</li>
+                            </ul>
+                        </li>
+                        <li><strong>schreiben</strong> (to write) → <em>geschrieben</em>
+                            <ul>
+                                <li><em>Ich habe einen Brief geschrieben.</em> (I have written a letter.)</li>
+                                <li><em>Er hat eine E-Mail geschrieben.</em> (He has written an email.)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>3. Mixed Verbs (Bit of Both)</h3>
+                <p><strong>Rule:</strong> Add <em>ge-</em> + change stem slightly + <em>-t</em>.</p>
+                <p><strong>Note:</strong> These blend regular and irregular patterns.</p>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><strong>denken</strong> (to think) → <em>gedacht</em>
+                            <ul>
+                                <li><em>Ich habe an dich gedacht.</em> (I have thought about you.)</li>
+                                <li><em>Sie hat lange gedacht.</em> (She has thought for a long time.)</li>
+                            </ul>
+                        </li>
+                        <li><strong>bringen</strong> (to bring) → <em>gebracht</em>
+                            <ul>
+                                <li><em>Er hat ein Geschenk gebracht.</em> (He has brought a gift.)</li>
+                                <li><em>Wir haben Essen gebracht.</em> (We have brought food.)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>4. Separable Verbs</h3>
+                <p><strong>Rule:</strong> Add <em>ge-</em> between the prefix and stem + follow regular/irregular rules.</p>
+                <p><strong>Pattern:</strong> Prefix + <em>ge-</em> + stem + ending.</p>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><strong>aufstehen</strong> (to get up) → <em>aufgestanden</em> (<em>sein</em>)
+                            <ul>
+                                <li><em>Ich bin früh aufgestanden.</em> (I have gotten up early.)</li>
+                                <li><em>Ihr seid spät aufgestanden.</em> (You all have gotten up late.)</li>
+                            </ul>
+                        </li>
+                        <li><strong>einkaufen</strong> (to shop) → <em>eingekauft</em>
+                            <ul>
+                                <li><em>Wir haben Brot eingekauft.</em> (We have shopped for bread.)</li>
+                                <li><em>Sie hat Milch eingekauft.</em> (She has shopped for milk.)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>5. Modal Verbs</h3>
+                <p><strong>Rule:</strong> Add <em>ge-</em> + stem + <em>-t</em>, but in Perfekt, they often pair with an infinitive.</p>
+                <p><strong>Note:</strong> Double infinitive structure is common.</p>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><strong>können</strong> (to be able to) → <em>gekonnt</em>
+                            <ul>
+                                <li><em>Ich habe das gekonnt.</em> (I have been able to do that.)</li>
+                                <li><em>Ich habe schwimmen gekonnt.</em> (I have been able to swim—double infinitive.)</li>
+                            </ul>
+                        </li>
+                        <li><strong>müssen</strong> (to have to) → <em>gemusst</em>
+                            <ul>
+                                <li><em>Du hast das gemusst.</em> (You have had to do that.)</li>
+                                <li><em>Wir haben gehen müssen.</em> (We have had to go.)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Haben vs. Sein -->
+        <section id="haben-sein">
+            <h2>When to Use Haben vs. Sein</h2>
+            <div class="subsection">
+                <h3>Use Haben</h3>
+                <p>Most verbs: Actions, states, or things you do.</p>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Ich habe gespielt.</em> (I have played.)</li>
+                        <li><em>Sie hat gelacht.</em> (She has laughed.)</li>
+                        <li><em>Wir haben gekocht.</em> (We have cooked.)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Use Sein</h3>
+                <p>Verbs of <strong>movement</strong> (e.g., go, run, come) or <strong>change of state</strong> (e.g., become, die).</p>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Ich bin gelaufen.</em> (I have run.)</li>
+                        <li><em>Er ist gestorben.</em> (He has died.)</li>
+                        <li><em>Wir sind geworden.</em> (We have become.)</li>
+                    </ul>
+                </div>
+                <p><strong>Trick to Remember:</strong> <em>Sein</em> verbs often answer “Where did I go?” or “What did I become?”</p>
+                <ul class="example-list">
+                    <li><em>Ich bin ins Haus gegangen.</em> (I went into the house—movement.)</li>
+                    <li><em>Sie ist müde geworden.</em> (She became tired—change.)</li>
+                </ul>
+            </div>
+        </section>
+
+       <!-- Exercises -->
+<section id="practice">
+    <h2>Creative Exercises with Multiple-Choice Options</h2>
+
+    <div class="subsection" id="exercise1">
+        <h3>Exercise 1: Pick the Helping Verb</h3>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Ich ___ zur Schule gegangen.
+                    <select class="answer-select" data-correct="bin">
+                        <option value="">Select</option>
+                        <option value="hast">hast</option>
+                        <option value="bin">bin</option>
+                        <option value="habe">habe</option>
+                    </select>
+                </li>
+                <li>Du ___ ein Lied gesungen.
+                    <select class="answer-select" data-correct="hast">
+                        <option value="">Select</option>
+                        <option value="hast">hast</option>
+                        <option value="bist">bist</option>
+                        <option value="habe">habe</option>
+                    </select>
+                </li>
+                <li>Er ___ das Fenster geöffnet.
+                    <select class="answer-select" data-correct="hat">
+                        <option value="">Select</option>
+                        <option value="bin">bin</option>
+                        <option value="ist">ist</option>
+                        <option value="hat">hat</option>
+                    </select>
+                </li>
+                <li>Sie ___ schnell gelaufen.
+                    <select class="answer-select" data-correct="ist">
+                        <option value="">Select</option>
+                        <option value="hat">hat</option>
+                        <option value="habe">habe</option>
+                        <option value="ist">ist</option>
+                    </select>
+                </li>
+                <li>Wir ___ im Park gespielt.
+                    <select class="answer-select" data-correct="haben">
+                        <option value="">Select</option>
+                        <option value="habt">habt</option>
+                        <option value="sind">sind</option>
+                        <option value="haben">haben</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li>Ich <em>bin</em> zur Schule gegangen.</li>
+                    <li>Du <em>hast</em> ein Lied gesungen.</li>
+                    <li>Er <em>hat</em> das Fenster geöffnet.</li>
+                    <li>Sie <em>ist</em> schnell gelaufen.</li>
+                    <li>Wir <em>haben</em> im Park gespielt.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise2">
+        <h3>Exercise 2: Form the Partizip II</h3>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Ich habe das Buch ___ (lesen).
+                    <select class="answer-select" data-correct="gelesen">
+                        <option value="">Select</option>
+                        <option value="geleset">geleset</option>
+                        <option value="gelesen">gelesen</option>
+                        <option value="gelest">gelest</option>
+                    </select>
+                </li>
+                <li>Du bist früh ___ (aufstehen).
+                    <select class="answer-select" data-correct="aufgestanden">
+                        <option value="">Select</option>
+                        <option value="aufgestanden">aufgestanden</option>
+                        <option value="aufgestammt">aufgestammt</option>
+                        <option value="aufgesteht">aufgesteht</option>
+                    </select>
+                </li>
+                <li>Er hat das Spiel ___ (gewinnen).
+                    <select class="answer-select" data-correct="gewonnen">
+                        <option value="">Select</option>
+                        <option value="gewinnent">gewinnent</option>
+                        <option value="gewinnt">gewinnt</option>
+                        <option value="gewonnen">gewonnen</option>
+                    </select>
+                </li>
+                <li>Sie haben die Tür ___ (machen).
+                    <select class="answer-select" data-correct="gemacht">
+                        <option value="">Select</option>
+                        <option value="gemachet">gemachet</option>
+                        <option value="gemach">gemach</option>
+                        <option value="gemacht">gemacht</option>
+                    </select>
+                </li>
+                <li>Wir sind ins Kino ___ (gehen).
+                    <select class="answer-select" data-correct="gegangen">
+                        <option value="">Select</option>
+                        <option value="gegangt">gegangt</option>
+                        <option value="gegangen">gegangen</option>
+                        <option value="gegan">gegan</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li>Ich habe das Buch <em>gelesen</em>.</li>
+                    <li>Du bist früh <em>aufgestanden</em>.</li>
+                    <li>Er hat das Spiel <em>gewonnen</em>.</li>
+                    <li>Sie haben die Tür <em>gemacht</em>.</li>
+                    <li>Wir sind ins Kino <em>gegangen</em>.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise3">
+        <h3>Exercise 3: Regular vs. Irregular</h3>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Ich habe lange ___ (warten).
+                    <select class="answer-select" data-correct="gewartet">
+                        <option value="">Select</option>
+                        <option value="gewart">gewart</option>
+                        <option value="gewarten">gewarten</option>
+                        <option value="gewartet">gewartet</option>
+                    </select>
+                </li>
+                <li>Du hast viel ___ (trinken).
+                    <select class="answer-select" data-correct="getrunken">
+                        <option value="">Select</option>
+                        <option value="getrunken">getrunken</option>
+                        <option value="getrinkt">getrinkt</option>
+                        <option value="getrankt">getrankt</option>
+                    </select>
+                </li>
+                <li>Er hat das Auto ___ (waschen).
+                    <select class="answer-select" data-correct="gewaschen">
+                        <option value="">Select</option>
+                        <option value="gewasche">gewasche</option>
+                        <option value="gewaschen">gewaschen</option>
+                        <option value="gewascht">gewascht</option>
+                    </select>
+                </li>
+                <li>Sie hat Deutsch ___ (lernen).
+                    <select class="answer-select" data-correct="gelernt">
+                        <option value="">Select</option>
+                        <option value="gelernent">gelernent</option>
+                        <option value="gelernt">gelernt</option>
+                        <option value="gelern">gelern</option>
+                    </select>
+                </li>
+                <li>Wir haben laut ___ (lachen).
+                    <select class="answer-select" data-correct="gelacht">
+                        <option value="">Select</option>
+                        <option value="gelachet">gelachet</option>
+                        <option value="gelachen">gelachen</option>
+                        <option value="gelacht">gelacht</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li>Ich habe lange <em>gewartet</em>.</li>
+                    <li>Du hast viel <em>getrunken</em>.</li>
+                    <li>Er hat das Auto <em>gewaschen</em>.</li>
+                    <li>Sie hat Deutsch <em>gelernt</em>.</li>
+                    <li>Wir haben laut <em>gelacht</em>.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise4">
+        <h3>Exercise 4: Separable Verbs</h3>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Ich habe meine Mutter ___ (anrufen).
+                    <select class="answer-select" data-correct="angerufen">
+                        <option value="">Select</option>
+                        <option value="angecalled">angecalled</option>
+                        <option value="angerufen">angerufen</option>
+                        <option value="angeruft">angeruft</option>
+                    </select>
+                </li>
+                <li>Du bist heute ___ (ausgehen).
+                    <select class="answer-select" data-correct="ausgegangen">
+                        <option value="">Select</option>
+                        <option value="ausgegangen">ausgegangen</option>
+                        <option value="ausgeht">ausgeht</option>
+                        <option value="ausgegangt">ausgegangt</option>
+                    </select>
+                </li>
+                <li>Er hat im Laden ___ (einkaufen).
+                    <select class="answer-select" data-correct="eingekauft">
+                        <option value="">Select</option>
+                        <option value="eingeauft">eingeauft</option>
+                        <option value="eingekaufen">eingekaufen</option>
+                        <option value="eingekauft">eingekauft</option>
+                    </select>
+                </li>
+                <li>Sie ist früh ___ (aufwachen).
+                    <select class="answer-select" data-correct="aufgewacht">
+                        <option value="">Select</option>
+                        <option value="aufgewakt">aufgewakt</option>
+                        <option value="aufgewachen">aufgewachen</option>
+                        <option value="aufgewacht">aufgewacht</option>
+                    </select>
+                </li>
+                <li>Wir haben das Buch ___ (vorlesen).
+                    <select class="answer-select" data-correct="vorgelesen">
+                        <option value="">Select</option>
+                        <option value="vorgelest">vorgelest</option>
+                        <option value="vorgelesen">vorgelesen</option>
+                        <option value="vorgeleset">vorgeleset</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li>Ich habe meine Mutter <em>angerufen</em>.</li>
+                    <li>Du bist heute <em>ausgegangen</em>.</li>
+                    <li>Er hat im Laden <em>eingekauft</em>.</li>
+                    <li>Sie ist früh <em>aufgewacht</em>.</li>
+                    <li>Wir haben das Buch <em>vorgelesen</em>.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise5">
+        <h3>Exercise 5: Modal Verbs</h3>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Ich habe das ___ (wollen).
+                    <select class="answer-select" data-correct="gewollt">
+                        <option value="">Select</option>
+                        <option value="gewollet">gewollet</option>
+                        <option value="gewollen">gewollen</option>
+                        <option value="gewollt">gewollt</option>
+                    </select>
+                </li>
+                <li>Du hast es ___ (können).
+                    <select class="answer-select" data-correct="gekonnt">
+                        <option value="">Select</option>
+                        <option value="gekonnt">gekonnt</option>
+                        <option value="gekannt">gekannt</option>
+                        <option value="gekönnt">gekönnt</option>
+                    </select>
+                </li>
+                <li>Er hat gehen ___ (müssen).
+                    <select class="answer-select" data-correct="gemusst">
+                        <option value="">Select</option>
+                        <option value="gemust">gemust</option>
+                        <option value="gemusst">gemusst</option>
+                        <option value="gemüsst">gemüsst</option>
+                    </select>
+                </li>
+                <li>Sie hat spielen ___ (dürfen).
+                    <select class="answer-select" data-correct="gedurft">
+                        <option value="">Select</option>
+                        <option value="gedarft">gedarft</option>
+                        <option value="gedürft">gedürft</option>
+                        <option value="gedurft">gedurft</option>
+                    </select>
+                </li>
+                <li>Wir haben es ___ (sollen).
+                    <select class="answer-select" data-correct="gesollt">
+                        <option value="">Select</option>
+                        <option value="gesollen">gesollen</option>
+                        <option value="gesollet">gesollet</option>
+                        <option value="gesollt">gesollt</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li>Ich habe das <em>gewollt</em>.</li>
+                    <li>Du hast es <em>gekonnt</em>.</li>
+                    <li>Er hat gehen <em>gemusst</em>.</li>
+                    <li>Sie hat spielen <em>gedurft</em>.</li>
+                    <li>Wir haben es <em>gesollt</em>.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise6">
+        <h3>Exercise 6: Mixed Perfekt Story</h3>
+        <p>Fill in the blanks with the correct Perfekt form.</p>
+        <div class="examples">
+            <p>Gestern ___ (1) ich früh ___ (aufstehen). Ich ___ (2) ein Buch ___ (lesen). Danach ___ (3) ich zur Schule ___ (gehen). Dort ___ (4) ich meine Freunde ___ (treffen). Wir ___ (5) viel ___ (lachen).</p>
+            <ol class="example-list">
+                <li><select class="answer-select" data-correct="bin … aufgestanden">
+                    <option value="">Select</option>
+                    <option value="bin … aufgesteht">bin … aufgesteht</option>
+                    <option value="bin … aufgestanden">bin … aufgestanden</option>
+                    <option value="habe … aufgestanden">habe … aufgestanden</option>
+                </select></li>
+                <li><select class="answer-select" data-correct="habe … gelesen">
+                    <option value="">Select</option>
+                    <option value="habe … gelesen">habe … gelesen</option>
+                    <option value="habe … gelest">habe … gelest</option>
+                    <option value="bin … gelesen">bin … gelesen</option>
+                </select></li>
+                <li><select class="answer-select" data-correct="bin … gegangen">
+                    <option value="">Select</option>
+                    <option value="bin … gegangt">bin … gegangt</option>
+                    <option value="habe … gegangen">habe … gegangen</option>
+                    <option value="bin … gegangen">bin … gegangen</option>
+                </select></li>
+                <li><select class="answer-select" data-correct="habe … getroffen">
+                    <option value="">Select</option>
+                    <option value="habe … getroff">habe … getroff</option>
+                    <option value="bin … getroffen">bin … getroffen</option>
+                    <option value="habe … getroffen">habe … getroffen</option>
+                </select></li>
+                <li><select class="answer-select" data-correct="haben … gelacht">
+                    <option value="">Select</option>
+                    <option value="sind … gelacht">sind … gelacht</option>
+                    <option value="haben … gelachen">haben … gelachen</option>
+                    <option value="haben … gelacht">haben … gelacht</option>
+                </select></li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong> Gestern <em>bin</em> ich früh <em>aufgestanden</em>. Ich <em>habe</em> ein Buch <em>gelesen</em>. Danach <em>bin</em> ich zur Schule <em>gegangen</em>. Dort <em>habe</em> ich meine Freunde <em>getroffen</em>. Wir <em>haben</em> viel <em>gelacht</em>.</p>
+            </div>
+        </div>
+    </div>
+</section>
+        <!-- Tips -->
+        <section id="tips">
+            <h2>Tips to Master Perfekt and Partizip II</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Sing It</strong>: Chant <em>ge-macht, ge-gessen, ge-gangen</em>—make it a song!</li>
+                    <li><strong>Helper Test</strong>: Ask “Did I go somewhere?”—if yes, <em>sein</em>; if no, <em>haben</em>.</li>
+                    <li><strong>Daily Sentences</strong>: Say 5 Perfekt sentences each day—<em>Ich habe gegessen…</em></li>
+                    <li><strong>Flashcards</strong>: Write verbs on one side, Partizip II on the other—flip and learn.</li>
+                    <li><strong>Verb Pairs</strong>: Practice <em>machen-gemacht</em> vs. <em>gehen-gegangen</em>—spot patterns.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Final Thoughts -->
+        <section id="final-thoughts">
+            <h2>You’re Ready!</h2>
+            <p>
+                This guide gives you everything—Perfekt structure, Partizip II rules, examples galore, and exercises to lock it in. You’re ready to talk about the past like a pro! Want to level up? Try mixing Perfekt with Wechselpräpositionen or tackle Plusquamperfekt—your call!
+            </p>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="dative.html" class="see-also-rect">German Dative</a>
+                <a href="akkusative.html" class="see-also-rect">German Accusative</a>
+                <a href="wechsel.html" class="see-also-rect">Wechselpräpositionen</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="wechsel.html" class="next-btn">Next: Wechselpräpositionen →</a>
+        </div>
+    </main>
+
+   <!-- JavaScript -->
+  <script>
+    // Dark Mode Toggle
+    const modeToggle = document.getElementById('mode-toggle');
+    modeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
+
+    // Load dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+    }
+
+    // Toggle Answers
+    document.querySelectorAll('.toggle-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const answersDiv = button.nextElementSibling;
+            if (button.classList.contains('show-answers')) {
+                answersDiv.classList.toggle('hidden');
+            } else if (button.classList.contains('check-answers')) {
+                const selects = button.parentElement.querySelectorAll('.answer-select');
+                selects.forEach(select => {
+                    const selectedValue = select.value;
+                    const correctValue = select.getAttribute('data-correct');
+                    if (selectedValue === correctValue) {
+                        select.style.backgroundColor = '#d4edda'; // Green for correct
+                    } else {
+                        select.style.backgroundColor = '#f8d7da'; // Red for incorrect
+                    }
+                });
+            }
+        });
+    });
+</script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

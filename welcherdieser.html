@@ -1,0 +1,1061 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      German Interrogativartikel and Demonstrativartikel | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/dative.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+               <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="a1-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>German Interrogativartikel and Demonstrativartikel: The Ultimate Simple Guide</h1>
+            <p>
+                In German, <strong>Interrogativartikel</strong> (question articles) and <strong>Demonstrativartikel</strong> (demonstrative articles) help you ask questions or point out specific things. They’re like “which” and “this/that” in English, but they change depending on the noun’s gender, number, and case. This guide covers everything—forms, uses, examples, and exercises—so you’ll master them easily. Let’s dive in!
+            </p>
+        </section>
+
+        <!-- Interrogativartikel -->
+        <section id="interrogativ">
+            <h2>Interrogativartikel (Question Articles)</h2>
+            <div class="subsection">
+                <h3>What Are They?</h3>
+                <p>Interrogativartikel are words like “which” or “what” used to ask about specific nouns. The main ones are <strong>welcher, welche, welches</strong> (which), and they match the noun’s gender and case.</p>
+            </div>
+            <div class="subsection">
+                <h3>Forms of Welcher</h3>
+                <p>Adjusts to <strong>gender</strong> (masculine, feminine, neuter, plural) and <strong>case</strong> (nominative, accusative, dative). No genitive form here (it’s rare—<em>wessen</em> is used instead).</p>
+                <div class="table-container">
+                    <table>
+                        <tr><th>Case</th><th>Masculine</th><th>Feminine</th><th>Neuter</th><th>Plural</th></tr>
+                        <tr><td>Nominative</td><td>welcher</td><td>welche</td><td>welches</td><td>welche</td></tr>
+                        <tr><td>Accusative</td><td>welchen</td><td>welche</td><td>welches</td><td>welche</td></tr>
+                        <tr><td>Dative</td><td>welchem</td><td>welcher</td><td>welchem</td><td>welchen</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>How to Use Them</h3>
+                <p>Ask “which one?” about a specific noun. Always followed by a noun (unlike <em>wer</em> or <em>was</em>, which stand alone).</p>
+                <div class="examples">
+                    <h4>Nominative (Subject)</h4>
+                    <ol class="example-list">
+                        <li><em>Welcher Hund bellt so laut?</em> (Which dog is barking so loud?)</li>
+                        <li><em>Welche Katze gehört dir?</em> (Which cat belongs to you?)</li>
+                        <li><em>Welches Kind spielt im Park?</em> (Which child is playing in the park?)</li>
+                        <li><em>Welche Bücher liegen da?</em> (Which books are lying there?)</li>
+                    </ol>
+                    <h4>Accusative (Direct Object)</h4>
+                    <ol class="example-list">
+                        <li><em>Welchen Film schaust du?</em> (Which movie are you watching?)</li>
+                        <li><em>Welche Tasche kaufst du?</em> (Which bag are you buying?)</li>
+                        <li><em>Welches Spielzeug willst du?</em> (Which toy do you want?)</li>
+                        <li><em>Welche Freunde triffst du?</em> (Which friends are you meeting?)</li>
+                    </ol>
+                    <h4>Dative (Indirect Object)</h4>
+                    <ol class="example-list">
+                        <li><em>Welchem Mann hilfst du?</em> (Which man are you helping?)</li>
+                        <li><em>Welcher Frau gibst du das Buch?</em> (Which woman are you giving the book to?)</li>
+                        <li><em>Welchem Kind schreibst du?</em> (Which child are you writing to?)</li>
+                        <li><em>Welchen Leuten dankst du?</em> (Which people are you thanking?)</li>
+                    </ol>
+                </div>
+                <p><strong>Quick Tips:</strong></p>
+                <ul class="example-list">
+                    <li><strong>Gender Match</strong>: Check the noun’s gender—<em>Hund</em> (masc.), <em>Katze</em> (fem.), <em>Kind</em> (neut.).</li>
+                    <li><strong>Case Clue</strong>: Use the verb—<em>helfen</em> (dative), <em>kaufen</em> (accusative).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Demonstrativartikel -->
+        <section id="demonstrativ">
+            <h2>Demonstrativartikel (Demonstrative Articles)</h2>
+            <div class="subsection">
+                <h3>What Are They?</h3>
+                <p>Demonstrativartikel are words like “this” or “that” to point out specific nouns. The main ones are <strong>dieser, diese, dieses</strong> (this/that), and they change by gender, number, and case.</p>
+            </div>
+            <div class="subsection">
+                <h3>Forms of Dieser</h3>
+                <p>Matches the noun’s <strong>gender</strong> and <strong>case</strong>. Can mean “this” (near) or “that” (far)—context decides.</p>
+                <div class="table-container">
+                    <table>
+                        <tr><th>Case</th><th>Masculine</th><th>Feminine</th><th>Neuter</th><th>Plural</th></tr>
+                        <tr><td>Nominative</td><td>dieser</td><td>diese</td><td>dieses</td><td>diese</td></tr>
+                        <tr><td>Accusative</td><td>diesen</td><td>diese</td><td>dieses</td><td>diese</td></tr>
+                        <tr><td>Dative</td><td>diesem</td><td>dieser</td><td>diesem</td><td>diesen</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>How to Use Them</h3>
+                <p>Point to something specific—nearby (<em>this</em>) or farther (<em>that</em>). Always followed by a noun (unlike <em>dies</em> or <em>das</em>, which can stand alone).</p>
+                <div class="examples">
+                    <h4>Nominative (Subject)</h4>
+                    <ol class="example-list">
+                        <li><em>Dieser Hund ist mein Freund.</em> (This dog is my friend.)</li>
+                        <li><em>Diese Katze schläft viel.</em> (This cat sleeps a lot.)</li>
+                        <li><em>Dieses Kind lacht laut.</em> (This child laughs loudly.)</li>
+                        <li><em>Diese Bücher sind neu.</em> (These books are new.)</li>
+                    </ol>
+                    <h4>Accusative (Direct Object)</h4>
+                    <ol class="example-list">
+                        <li><em>Ich sehe diesen Film heute.</em> (I’m watching this movie today.)</li>
+                        <li><em>Sie kauft diese Tasche.</em> (She’s buying this bag.)</li>
+                        <li><em>Wir nehmen dieses Spielzeug.</em> (We’re taking this toy.)</li>
+                        <li><em>Er liest diese Zeitungen.</em> (He’s reading these newspapers.)</li>
+                    </ol>
+                    <h4>Dative (Indirect Object)</h4>
+                    <ol class="example-list">
+                        <li><em>Ich helfe diesem Mann.</em> (I’m helping this man.)</li>
+                        <li><em>Sie gibt dieser Frau ein Geschenk.</em> (She’s giving this woman a gift.)</li>
+                        <li><em>Wir schreiben diesem Kind.</em> (We’re writing to this child.)</li>
+                        <li><em>Er dankt diesen Freunden.</em> (He’s thanking these friends.)</li>
+                    </ol>
+                </div>
+                <p><strong>Quick Tips:</strong></p>
+                <ul class="example-list">
+                    <li><strong>Specificity</strong>: Use <em>dieser</em> to emphasize—<em>Dieser Hund</em> (THIS dog, not another).</li>
+                    <li><strong>Context</strong>: <em>Dieser</em> can be “that” if far—<em>Dieser Baum da drüben</em> (That tree over there).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Key Differences -->
+        <section id="differences">
+            <h2>Key Differences</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Interrogativartikel</strong>: Asks “Which one?” (<em>Welcher Hund?</em>—Which dog?)</li>
+                    <li><strong>Demonstrativartikel</strong>: Answers or points out (<em>Dieser Hund</em>—This dog.)</li>
+                    <li><strong>Tone</strong>: <em>Welcher</em> is curious; <em>dieser</em> is confident.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Example Sentences -->
+        <section id="examples">
+            <h2>Tons of Example Sentences</h2>
+            <div class="subsection">
+                <h3>Interrogativartikel</h3>
+                <div class="examples">
+                    <h4>Nominative</h4>
+                    <ol class="example-list">
+                        <li><em>Welcher Junge hat gewonnen?</em> (Which boy won?)</li>
+                        <li><em>Welche Lehrerin ist nett?</em> (Which teacher is nice?)</li>
+                        <li><em>Welches Auto fährt schnell?</em> (Which car drives fast?)</li>
+                        <li><em>Welche Schuhe passen dir?</em> (Which shoes fit you?)</li>
+                    </ol>
+                    <h4>Accusative</h4>
+                    <ol class="example-list">
+                        <li><em>Welchen Apfel isst du?</em> (Which apple are you eating?)</li>
+                        <li><em>Welche Jacke trägst du?</em> (Which jacket are you wearing?)</li>
+                        <li><em>Welches Lied hörst du?</em> (Which song are you listening to?)</li>
+                        <li><em>Welche Bilder malst du?</em> (Which pictures are you painting?)</li>
+                    </ol>
+                    <h4>Dative</h4>
+                    <ol class="example-list">
+                        <li><em>Welchem Freund schreibst du?</em> (Which friend are you writing to?)</li>
+                        <li><em>Welcher Schwester hilfst du?</em> (Which sister are you helping?)</li>
+                        <li><em>Welchem Baby gibst du Milch?</em> (Which baby are you giving milk to?)</li>
+                        <li><em>Welchen Gästen winkst du?</em> (Which guests are you waving to?)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Demonstrativartikel</h3>
+                <div class="examples">
+                    <h4>Nominative</h4>
+                    <ol class="example-list">
+                        <li><em>Dieser Tisch ist alt.</em> (This table is old.)</li>
+                        <li><em>Diese Blume riecht gut.</em> (This flower smells nice.)</li>
+                        <li><em>Dieses Haus ist groß.</em> (This house is big.)</li>
+                        <li><em>Diese Kinder spielen draußen.</em> (These children are playing outside.)</li>
+                    </ol>
+                    <h4>Accusative</h4>
+                    <ol class="example-list">
+                        <li><em>Ich kaufe diesen Stuhl.</em> (I’m buying this chair.)</li>
+                        <li><em>Sie sieht diese Show.</em> (She’s watching this show.)</li>
+                        <li><em>Wir nehmen dieses Essen.</em> (We’re taking this food.)</li>
+                        <li><em>Er liebt diese Spiele.</em> (He loves these games.)</li>
+                    </ol>
+                    <h4>Dative</h4>
+                    <ol class="example-list">
+                        <li><em>Ich folge diesem Weg.</em> (I’m following this path.)</li>
+                        <li><em>Sie erklärt dieser Gruppe die Regeln.</em> (She’s explaining the rules to this group.)</li>
+                        <li><em>Wir zeigen diesem Gast das Zimmer.</em> (We’re showing this guest the room.)</li>
+                        <li><em>Er vertraut diesen Leuten.</em> (He trusts these people.)</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sentence Structure -->
+        <section id="structure">
+            <h2>Sentence Structure</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Questions with Interrogativartikel</strong>: <em>Welcher</em> first, then verb, then rest.
+                        <ul><li><em>Welchen Film siehst du?</em> (Which movie are you watching?)</li></ul>
+                    </li>
+                    <li><strong>Statements with Demonstrativartikel</strong>: <em>Dieser</em> before noun, normal word order.
+                        <ul><li><em>Dieser Film ist toll.</em> (This movie is great.)</li></ul>
+                    </li>
+                    <li><strong>Negation</strong>: <em>Nicht</em> after verb, before object.
+                        <ul><li><em>Ich kenne diesen Mann nicht.</em> (I don’t know this man.)</li></ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+       <!-- Exercises -->
+<section id="practice">
+    <h2>Creative Exercises with Multiple-Choice Options</h2>
+
+    <div class="subsection" id="exercise1">
+        <h3>Exercise 1: Interrogativartikel – Pick the Right Form</h3>
+        <div class="examples">
+            <ol class="example-list">
+                <li>___ Hund gehört dir? (Nominative)
+                    <select class="answer-select" data-correct="welcher">
+                        <option value="">Select</option>
+                        <option value="welchen">welchen</option>
+                        <option value="welcher">welcher</option>
+                        <option value="welchem">welchem</option>
+                    </select>
+                </li>
+                <li>___ Tasche kaufst du? (Accusative)
+                    <select class="answer-select" data-correct="welche">
+                        <option value="">Select</option>
+                        <option value="welche">welche</option>
+                        <option value="welcher">welcher</option>
+                        <option value="welchen">welchen</option>
+                    </select>
+                </li>
+                <li>___ Kind hilfst du? (Dative)
+                    <select class="answer-select" data-correct="welchem">
+                        <option value="">Select</option>
+                        <option value="welches">welches</option>
+                        <option value="welchen">welchen</option>
+                        <option value="welchem">welchem</option>
+                    </select>
+                </li>
+                <li>___ Film schaust du? (Accusative)
+                    <select class="answer-select" data-correct="welchen">
+                        <option value="">Select</option>
+                        <option value="welches">welches</option>
+                        <option value="welcher">welcher</option>
+                        <option value="welchen">welchen</option>
+                    </select>
+                </li>
+                <li>___ Freunden dankst du? (Dative)
+                    <select class="answer-select" data-correct="welchen">
+                        <option value="">Select</option>
+                        <option value="welchem">welchem</option>
+                        <option value="welchen">welchen</option>
+                        <option value="welche">welche</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Welcher</em> Hund gehört dir?</li>
+                    <li><em>Welche</em> Tasche kaufst du?</li>
+                    <li><em>Welchem</em> Kind hilfst du?</li>
+                    <li><em>Welchen</em> Film schaust du?</li>
+                    <li><em>Welchen</em> Freunden dankst du?</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise2">
+        <h3>Exercise 2: Demonstrativartikel – Pick the Right Form</h3>
+        <div class="examples">
+            <ol class="example-list">
+                <li>___ Hund ist süß. (Nominative)
+                    <select class="answer-select" data-correct="dieser">
+                        <option value="">Select</option>
+                        <option value="diesem">diesem</option>
+                        <option value="diesen">diesen</option>
+                        <option value="dieser">dieser</option>
+                    </select>
+                </li>
+                <li>Ich sehe ___ Katze. (Accusative)
+                    <select class="answer-select" data-correct="diese">
+                        <option value="">Select</option>
+                        <option value="diese">diese</option>
+                        <option value="dieser">dieser</option>
+                        <option value="diesen">diesen</option>
+                    </select>
+                </li>
+                <li>Ich helfe ___ Mann. (Dative)
+                    <select class="answer-select" data-correct="diesem">
+                        <option value="">Select</option>
+                        <option value="dieser">dieser</option>
+                        <option value="diesen">diesen</option>
+                        <option value="diesem">diesem</option>
+                    </select>
+                </li>
+                <li>Wir kaufen ___ Tisch. (Accusative)
+                    <select class="answer-select" data-correct="diesen">
+                        <option value="">Select</option>
+                        <option value="dieses">dieses</option>
+                        <option value="diesen">diesen</option>
+                        <option value="dieser">dieser</option>
+                    </select>
+                </li>
+                <li>Er winkt ___ Leuten. (Dative)
+                    <select class="answer-select" data-correct="diesen">
+                        <option value="">Select</option>
+                        <option value="diesem">diesem</option>
+                        <option value="diese">diese</option>
+                        <option value="diesen">diesen</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Dieser</em> Hund ist süß.</li>
+                    <li>Ich sehe <em>diese</em> Katze.</li>
+                    <li>Ich helfe <em>diesem</em> Mann.</li>
+                    <li>Wir kaufen <em>diesen</em> Tisch.</li>
+                    <li>Er winkt <em>diesen</em> Leuten.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise3">
+        <h3>Exercise 3: Interrogativartikel vs. Demonstrativartikel</h3>
+        <div class="examples">
+            <ol class="example-list">
+                <li>___ Buch liest du? (Question)
+                    <select class="answer-select" data-correct="welches">
+                        <option value="">Select</option>
+                        <option value="dieses">dieses</option>
+                        <option value="welchem">welchem</option>
+                        <option value="welches">welches</option>
+                    </select>
+                </li>
+                <li>___ Buch ist meins. (Pointing)
+                    <select class="answer-select" data-correct="dieses">
+                        <option value="">Select</option>
+                        <option value="dieses">dieses</option>
+                        <option value="diesem">diesem</option>
+                        <option value="welches">welches</option>
+                    </select>
+                </li>
+                <li>___ Freund hilfst du? (Question)
+                    <select class="answer-select" data-correct="welchem">
+                        <option value="">Select</option>
+                        <option value="diesem">diesem</option>
+                        <option value="welchen">welchen</option>
+                        <option value="welchem">welchem</option>
+                    </select>
+                </li>
+                <li>Ich sehe ___ Auto. (Pointing)
+                    <select class="answer-select" data-correct="dieses">
+                        <option value="">Select</option>
+                        <option value="diesen">diesen</option>
+                        <option value="dieses">dieses</option>
+                        <option value="welches">welches</option>
+                    </select>
+                </li>
+                <li>___ Lehrer dankst du? (Question)
+                    <select class="answer-select" data-correct="welchem">
+                        <option value="">Select</option>
+                        <option value="diesem">diesem</option>
+                        <option value="welchem">welchem</option>
+                        <option value="welchen">welchen</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Welches</em> Buch liest du?</li>
+                    <li><em>Dieses</em> Buch ist meins.</li>
+                    <li><em>Welchem</em> Freund hilfst du?</li>
+                    <li>Ich sehe <em>dieses</em> Auto.</li>
+                    <li><em>Welchem</em> Lehrer dankst du?</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise4">
+        <h3>Exercise 4: Mixed Cases</h3>
+        <div class="examples">
+            <ol class="example-list">
+                <li>___ Frau gehört das? (Nominative, Question)
+                    <select class="answer-select" data-correct="welche">
+                        <option value="">Select</option>
+                        <option value="diese">diese</option>
+                        <option value="welcher">welcher</option>
+                        <option value="welche">welche</option>
+                    </select>
+                </li>
+                <li>Ich kaufe ___ Stuhl. (Accusative, Pointing)
+                    <select class="answer-select" data-correct="diesen">
+                        <option value="">Select</option>
+                        <option value="diesen">diesen</option>
+                        <option value="diesem">diesem</option>
+                        <option value="welchen">welchen</option>
+                    </select>
+                </li>
+                <li>___ Kind gibst du das? (Dative, Question)
+                    <select class="answer-select" data-correct="welchem">
+                        <option value="">Select</option>
+                        <option value="welches">welches</option>
+                        <option value="diesem">diesem</option>
+                        <option value="welchem">welchem</option>
+                    </select>
+                </li>
+                <li>___ Blumen sind schön. (Nominative, Pointing)
+                    <select class="answer-select" data-correct="diese">
+                        <option value="">Select</option>
+                        <option value="diesen">diesen</option>
+                        <option value="diese">diese</option>
+                        <option value="welche">welche</option>
+                    </select>
+                </li>
+                <li>___ Hund siehst du? (Accusative, Question)
+                    <select class="answer-select" data-correct="welchen">
+                        <option value="">Select</option>
+                        <option value="diesen">diesen</option>
+                        <option value="welchem">welchem</option>
+                        <option value="welchen">welchen</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Welche</em> Frau gehört das?</li>
+                    <li>Ich kaufe <em>diesen</em> Stuhl.</li>
+                    <li><em>Welchem</em> Kind gibst du das?</li>
+                    <li><em>Diese</em> Blumen sind schön.</li>
+                    <li><em>Welchen</em> Hund siehst du?</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise5">
+        <h3>Exercise 5: Story with Both</h3>
+        <p>Fill in with the correct interrogativ- or demonstrativartikel.</p>
+        <div class="examples">
+            <p>___ (1) Hund bellt da draußen? Ich sehe ___ (2) Hund jetzt. ___ (3) Katze gibst du Milch? Ich helfe ___ (4) Katze später. ___ (5) Bücher sind deine?</p>
+            <ol class="example-list">
+                <li><select class="answer-select" data-correct="welcher">
+                    <option value="">Select</option>
+                    <option value="dieser">dieser</option>
+                    <option value="welchem">welchem</option>
+                    <option value="welcher">welcher</option>
+                    </select>
+                </li>
+                <li><select class="answer-select" data-correct="diesen">
+                    <option value="">Select</option>
+                    <option value="diesen">diesen</option>
+                    <option value="dieser">dieser</option>
+                    <option value="welchen">welchen</option>
+                    </select>
+                </li>
+                <li><select class="answer-select" data-correct="welcher">
+                    <option value="">Select</option>
+                    <option value="dieser">dieser</option>
+                    <option value="welcher">welcher</option>
+                    <option value="welchem">welchem</option>
+                    </select>
+                </li>
+                <li><select class="answer-select" data-correct="dieser">
+                    <option value="">Select</option>
+                    <option value="welcher">welcher</option>
+                    <option value="diesem">diesem</option>
+                    <option value="dieser">dieser</option>
+                    </select>
+                </li>
+                <li><select class="answer-select" data-correct="welche">
+                    <option value="">Select</option>
+                    <option value="diese">diese</option>
+                    <option value="welchen">welchen</option>
+                    <option value="welche">welche</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong> <em>Welcher</em> Hund bellt da draußen? Ich sehe <em>diesen</em> Hund jetzt. <em>Welcher</em> Katze gibst du Milch? Ich helfe <em>dieser</em> Katze später. <em>Welche</em> Bücher sind deine?</p>
+            </div>
+        </div>
+    </div>
+</section>
+        <!-- Tips -->
+        <section id="tips">
+            <h2>Tips to Master Interrogativ- and Demonstrativartikel</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Sing the Forms</strong>: Chant <em>welcher, welche, welches</em> and <em>dieser, diese, dieses</em>—make it catchy!</li>
+                    <li><strong>Case Check</strong>: Ask “What’s the verb doing?”—<em>sehen</em> (accusative), <em>helfen</em> (dative).</li>
+                    <li><strong>Gender Game</strong>: Match nouns—<em>Hund</em> (welcher/dieser), <em>Tasche</em> (welche/diese).</li>
+                    <li><strong>Point and Ask</strong>: Practice pointing (<em>Dieser Baum!</em>) and asking (<em>Welcher Baum?</em>).</li>
+                    <li><strong>Daily Use</strong>: Say <em>Welches Brot willst du?</em> at breakfast, <em>Diese Tasse ist meine</em> at coffee time.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Final Thoughts -->
+        <section id="final-thoughts">
+            <h2>You’re Ready!</h2>
+            <p>
+                This guide covers interrogativ- and demonstrativartikel completely—forms, uses, examples, and exercises. You’re ready to ask and point like a native! Next, you could explore relative pronouns or mix these with Perfekt—your choice!
+            </p>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="dative.html" class="see-also-rect">German Dative</a>
+                <a href="akkusative.html" class="see-also-rect">German Accusative</a>
+                <a href="partizip2.html" class="see-also-rect">Perfekt & Partizip II</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="partizip2.html" class="next-btn">Next: Perfekt & Partizip II →</a>
+        </div>
+    </main>
+
+   <!-- JavaScript -->
+  <script>
+    // Dark Mode Toggle
+    const modeToggle = document.getElementById('mode-toggle');
+    modeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
+
+    // Load dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+    }
+
+    // Toggle Answers
+    document.querySelectorAll('.toggle-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const answersDiv = button.nextElementSibling;
+            if (button.classList.contains('show-answers')) {
+                answersDiv.classList.toggle('hidden');
+            } else if (button.classList.contains('check-answers')) {
+                const selects = button.parentElement.querySelectorAll('.answer-select');
+                selects.forEach(select => {
+                    const selectedValue = select.value;
+                    const correctValue = select.getAttribute('data-correct');
+                    if (selectedValue === correctValue) {
+                        select.style.backgroundColor = '#d4edda'; // Green for correct
+                    } else {
+                        select.style.backgroundColor = '#f8d7da'; // Red for incorrect
+                    }
+                });
+            }
+        });
+    });
+</script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

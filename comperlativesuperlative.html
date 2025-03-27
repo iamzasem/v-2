@@ -1,0 +1,1282 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Komparativ, Superlativ, und Vergleiche | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/konj2.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+                <a href="index.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="a2-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>Komparativ, Superlativ, und Vergleiche</h1>
+            <p>
+                A beginner-friendly (A2) guide to comparing things in German with Komparativ (comparative), Superlativ (superlative), and Vergleiche (comparisons), including examples, exercises, and tips.
+            </p>
+        </section>
+
+        <!-- Understanding -->
+        <section id="understanding">
+            <h2>Understanding Comparisons</h2>
+            <div class="subsection">
+                <h3>1. Komparativ (Comparative)</h3>
+                <p><strong>Definition:</strong> Compares two things (e.g., "bigger").</p>
+                <p><strong>Formation:</strong> Adjective + -er (e.g., klein → kleiner). Add e if ending in -d, -t, -s, -ß, -z (e.g., heiß → heißer). Umlaut for a, o, u in one-syllable words (e.g., groß → größer). Irregular: gut → besser.</p>
+                <p><strong>Structure:</strong> So … wie (equal), als (unequal).</p>
+            </div>
+            <div class="subsection">
+                <h3>2. Superlativ (Superlative)</h3>
+                <p><strong>Definition:</strong> Shows the highest/lowest degree (e.g., "biggest").</p>
+                <p><strong>Formation:</strong> Attributive: -st/-est + endings (e.g., der kleinste Hund). Predicative: am + -sten (e.g., am kleinsten). Irregular: gut → beste/am besten.</p>
+            </div>
+            <div class="subsection">
+                <h3>3. Vergleiche (Comparisons)</h3>
+                <p><strong>Definition:</strong> Making comparisons using Komparativ or Superlativ.</p>
+                <p><strong>Formation:</strong> Equality: so + adjective + wie. Inequality: -er + als. Superlative: -st(e) or am … -sten.</p>
+            </div>
+        </section>
+
+        <!-- Examples -->
+        <section id="examples">
+            <h2>Examples (30 Total)</h2>
+            <div class="table-container">
+                <table>
+                    <tr><th>Sentence</th><th>Translation</th></tr>
+                    <!-- Komparativ -->
+                    <tr><td><em>Das Haus ist größer als die Wohnung.</em></td><td>The house is bigger than the apartment.</td></tr>
+                    <tr><td><em>Er ist so alt wie ich.</em></td><td>He is as old as I am.</td></tr>
+                    <tr><td><em>Die Katze ist kleiner als der Hund.</em></td><td>The cat is smaller than the dog.</td></tr>
+                    <tr><td><em>Sie läuft schneller als er.</em></td><td>She runs faster than he does.</td></tr>
+                    <tr><td><em>Der Film ist lustiger als das Buch.</em></td><td>The movie is funnier than the book.</td></tr>
+                    <tr><td><em>Mein Stift ist billiger als dein Buch.</em></td><td>My pen is cheaper than your book.</td></tr>
+                    <tr><td><em>Das Wetter ist besser heute.</em></td><td>The weather is better today.</td></tr>
+                    <tr><td><em>Die Tasche ist teurer als der Rucksack.</em></td><td>The bag is more expensive than the backpack.</td></tr>
+                    <tr><td><em>Er ist höher als ich.</em></td><td>He is taller than I am.</td></tr>
+                    <tr><td><em>Die Suppe ist heißer als der Tee.</em></td><td>The soup is hotter than the tea.</td></tr>
+                    <!-- Superlativ -->
+                    <tr><td><em>Das ist der größte Baum im Park.</em></td><td>This is the biggest tree in the park.</td></tr>
+                    <tr><td><em>Sie ist am schnellsten in der Klasse.</em></td><td>She is the fastest in the class.</td></tr>
+                    <tr><td><em>Er ist der jüngste Bruder.</em></td><td>He is the youngest brother.</td></tr>
+                    <tr><td><em>Das Wetter ist am besten im Sommer.</em></td><td>The weather is the best in summer.</td></tr>
+                    <tr><td><em>Die Tasche ist die teuerste.</em></td><td>The bag is the most expensive.</td></tr>
+                    <tr><td><em>Das Auto ist am lautesten.</em></td><td>The car is the loudest.</td></tr>
+                    <tr><td><em>Sie ist die schönste Frau hier.</em></td><td>She is the most beautiful woman here.</td></tr>
+                    <tr><td><em>Der Kaffee ist am heißesten morgens.</em></td><td>The coffee is the hottest in the morning.</td></tr>
+                    <tr><td><em>Das ist der kleinste Hund.</em></td><td>This is the smallest dog.</td></tr>
+                    <tr><td><em>Er ist am klügsten in der Schule.</em></td><td>He is the smartest in school.</td></tr>
+                    <!-- Vergleiche -->
+                    <tr><td><em>Mein Zimmer ist so groß wie deins.</em></td><td>My room is as big as yours.</td></tr>
+                    <tr><td><em>Das Auto ist schneller als das Fahrrad.</em></td><td>The car is faster than the bike.</td></tr>
+                    <tr><td><em>Sie ist die jüngste Schwester.</em></td><td>She is the youngest sister.</td></tr>
+                    <tr><td><em>Die Suppe ist so heiß wie der Tee.</em></td><td>The soup is as hot as the tea.</td></tr>
+                    <tr><td><em>Er ist höher als ich.</em></td><td>He is taller than I am.</td></tr>
+                    <tr><td><em>Das ist das schönste Bild.</em></td><td>This is the most beautiful picture.</td></tr>
+                    <tr><td><em>Die Stadt ist lauter als das Dorf.</em></td><td>The city is louder than the village.</td></tr>
+                    <tr><td><em>Mein Freund ist so nett wie ich.</em></td><td>My friend is as nice as I am.</td></tr>
+                    <tr><td><em>Das Spiel ist am spannendsten.</em></td><td>The game is the most exciting.</td></tr>
+                    <tr><td><em>Die Milch ist kälter als der Kaffee.</em></td><td>The milk is colder than the coffee.</td></tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Exercises -->
+        <section id="practice">
+            <h2>Exercises to Practice (50 Total)</h2>
+            <div class="subsection" id="exercise1">
+                <h3>Exercise 1: Choose the Komparativ (10 Questions)</h3>
+                <p>Select the correct comparative form.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>klein</em>  
+                            <select class="answer-select" data-correct="kleiner">
+                                <option value="">Select</option>
+                                <option value="kleinste">kleinste</option>
+                                <option value="kleiner">kleiner</option>
+                                <option value="am kleinsten">am kleinsten</option>
+                                <option value="klein">klein</option>
+                                <option value="kleinst">kleinst</option>
+                            </select>
+                        </li>
+                        <li><em>groß</em>  
+                            <select class="answer-select" data-correct="größer">
+                                <option value="">Select</option>
+                                <option value="größte">größte</option>
+                                <option value="groß">groß</option>
+                                <option value="am größten">am größten</option>
+                                <option value="größer">größer</option>
+                                <option value="großest">großest</option>
+                            </select>
+                        </li>
+                        <li><em>heiß</em>  
+                            <select class="answer-select" data-correct="heißer">
+                                <option value="">Select</option>
+                                <option value="heißest">heißest</option>
+                                <option value="heiß">heiß</option>
+                                <option value="heißer">heißer</option>
+                                <option value="am heißesten">am heißesten</option>
+                                <option value="heißeste">heißeste</option>
+                            </select>
+                        </li>
+                        <li><em>gut</em>  
+                            <select class="answer-select" data-correct="besser">
+                                <option value="">Select</option>
+                                <option value="gutest">gutest</option>
+                                <option value="am besten">am besten</option>
+                                <option value="besser">besser</option>
+                                <option value="gute">gute</option>
+                                <option value="best">best</option>
+                            </select>
+                        </li>
+                        <li><em>schnell</em>  
+                            <select class="answer-select" data-correct="schneller">
+                                <option value="">Select</option>
+                                <option value="schnell">schnell</option>
+                                <option value="schnellste">schnellste</option>
+                                <option value="am schnellsten">am schnellsten</option>
+                                <option value="schneller">schneller</option>
+                                <option value="schnelle">schnelle</option>
+                            </select>
+                        </li>
+                        <li><em>teuer</em>  
+                            <select class="answer-select" data-correct="teurer">
+                                <option value="">Select</option>
+                                <option value="teuerste">teuerste</option>
+                                <option value="teurer">teurer</option>
+                                <option value="am teuersten">am teuersten</option>
+                                <option value="teuer">teuer</option>
+                                <option value="teuerst">teuerst</option>
+                            </select>
+                        </li>
+                        <li><em>jung</em>  
+                            <select class="answer-select" data-correct="jünger">
+                                <option value="">Select</option>
+                                <option value="junge">junge</option>
+                                <option value="am jüngsten">am jüngsten</option>
+                                <option value="jünger">jünger</option>
+                                <option value="jüngste">jüngste</option>
+                                <option value="jungest">jungest</option>
+                            </select>
+                        </li>
+                        <li><em>laut</em>  
+                            <select class="answer-select" data-correct="lauter">
+                                <option value="">Select</option>
+                                <option value="lauter">lauter</option>
+                                <option value="lautest">lautest</option>
+                                <option value="am lautesten">am lautesten</option>
+                                <option value="lauteste">lauteste</option>
+                                <option value="laut">laut</option>
+                            </select>
+                        </li>
+                        <li><em>hoch</em>  
+                            <select class="answer-select" data-correct="höher">
+                                <option value="">Select</option>
+                                <option value="hoch">hoch</option>
+                                <option value="höchste">höchste</option>
+                                <option value="am höchsten">am höchsten</option>
+                                <option value="höher">höher</option>
+                                <option value="hochest">hochest</option>
+                            </select>
+                        </li>
+                        <li><em>billig</em>  
+                            <select class="answer-select" data-correct="billiger">
+                                <option value="">Select</option>
+                                <option value="billigste">billigste</option>
+                                <option value="billig">billig</option>
+                                <option value="billiger">billiger</option>
+                                <option value="am billigsten">am billigsten</option>
+                                <option value="billigest">billigest</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>kleiner</em></li>
+                            <li><em>größer</em></li>
+                            <li><em>heißer</em></li>
+                            <li><em>besser</em></li>
+                            <li><em>schneller</em></li>
+                            <li><em>teurer</em></li>
+                            <li><em>jünger</em></li>
+                            <li><em>lauter</em></li>
+                            <li><em>höher</em></li>
+                            <li><em>billiger</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise2">
+                <h3>Exercise 2: Choose the Superlativ (Attributive) (10 Questions)</h3>
+                <p>Select the correct attributive superlative form.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>klein</em> (der ___ Hund)  
+                            <select class="answer-select" data-correct="der kleinste Hund">
+                                <option value="">Select</option>
+                                <option value="der kleiner Hund">kleiner</option>
+                                <option value="der kleinste Hund">kleinste</option>
+                                <option value="am kleinsten">am kleinsten</option>
+                                <option value="der klein Hund">klein</option>
+                                <option value="der kleinst Hund">kleinst</option>
+                            </select>
+                        </li>
+                        <li><em>groß</em> (das ___ Haus)  
+                            <select class="answer-select" data-correct="das größte Haus">
+                                <option value="">Select</option>
+                                <option value="das groß Haus">groß</option>
+                                <option value="das größer Haus">größer</option>
+                                <option value="das größte Haus">größte</option>
+                                <option value="am größten">am größten</option>
+                                <option value="das großest Haus">großest</option>
+                            </select>
+                        </li>
+                        <li><em>heiß</em> (die ___ Suppe)  
+                            <select class="answer-select" data-correct="die heißeste Suppe">
+                                <option value="">Select</option>
+                                <option value="die heißer Suppe">heißer</option>
+                                <option value="die heiß Suppe">heiß</option>
+                                <option value="die heißeste Suppe">heißeste</option>
+                                <option value="am heißesten">am heißesten</option>
+                                <option value="die heißest Suppe">heißest</option>
+                            </select>
+                        </li>
+                        <li><em>gut</em> (der ___ Freund)  
+                            <select class="answer-select" data-correct="der beste Freund">
+                                <option value="">Select</option>
+                                <option value="der besser Freund">besser</option>
+                                <option value="der gute Freund">gute</option>
+                                <option value="am besten">am besten</option>
+                                <option value="der beste Freund">beste</option>
+                                <option value="der gutest Freund">gutest</option>
+                            </select>
+                        </li>
+                        <li><em>schnell</em> (das ___ Auto)  
+                            <select class="answer-select" data-correct="das schnellste Auto">
+                                <option value="">Select</option>
+                                <option value="das schneller Auto">schneller</option>
+                                <option value="das schnell Auto">schnell</option>
+                                <option value="das schnellste Auto">schnellste</option>
+                                <option value="am schnellsten">am schnellsten</option>
+                                <option value="das schnelle Auto">schnelle</option>
+                            </select>
+                        </li>
+                        <li><em>teuer</em> (die ___ Tasche)  
+                            <select class="answer-select" data-correct="die teuerste Tasche">
+                                <option value="">Select</option>
+                                <option value="die teurer Tasche">teurer</option>
+                                <option value="die teuer Tasche">teuer</option>
+                                <option value="die teuerste Tasche">teuerste</option>
+                                <option value="am teuersten">am teuersten</option>
+                                <option value="die teuerst Tasche">teuerst</option>
+                            </select>
+                        </li>
+                        <li><em>jung</em> (das ___ Kind)  
+                            <select class="answer-select" data-correct="das jüngste Kind">
+                                <option value="">Select</option>
+                                <option value="das jünger Kind">jünger</option>
+                                <option value="das jung Kind">jung</option>
+                                <option value="das jüngste Kind">jüngste</option>
+                                <option value="am jüngsten">am jüngsten</option>
+                                <option value="das junge Kind">junge</option>
+                            </select>
+                        </li>
+                        <li><em>laut</em> (der ___ Hund)  
+                            <select class="answer-select" data-correct="der lauteste Hund">
+                                <option value="">Select</option>
+                                <option value="der laut Hund">laut</option>
+                                <option value="der lauter Hund">lauter</option>
+                                <option value="am lautesten">am lautesten</option>
+                                <option value="der lauteste Hund">lauteste</option>
+                                <option value="der lautest Hund">lautest</option>
+                            </select>
+                        </li>
+                        <li><em>hoch</em> (der ___ Berg)  
+                            <select class="answer-select" data-correct="der höchste Berg">
+                                <option value="">Select</option>
+                                <option value="der höher Berg">höher</option>
+                                <option value="der hoch Berg">hoch</option>
+                                <option value="der höchste Berg">höchste</option>
+                                <option value="am höchsten">am höchsten</option>
+                                <option value="der hochest Berg">hochest</option>
+                            </select>
+                        </li>
+                        <li><em>billig</em> (der ___ Stift)  
+                            <select class="answer-select" data-correct="der billigste Stift">
+                                <option value="">Select</option>
+                                <option value="der billiger Stift">billiger</option>
+                                <option value="der billig Stift">billig</option>
+                                <option value="am billigsten">am billigsten</option>
+                                <option value="der billigste Stift">billigste</option>
+                                <option value="der billigest Stift">billigest</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>der kleinste Hund</em></li>
+                            <li><em>das größte Haus</em></li>
+                            <li><em>die heißeste Suppe</em></li>
+                            <li><em>der beste Freund</em></li>
+                            <li><em>das schnellste Auto</em></li>
+                            <li><em>die teuerste Tasche</em></li>
+                            <li><em>das jüngste Kind</em></li>
+                            <li><em>der lauteste Hund</em></li>
+                            <li><em>der höchste Berg</em></li>
+                            <li><em>der billigste Stift</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise3">
+                <h3>Exercise 3: Choose the Superlativ (Predicative) (10 Questions)</h3>
+                <p>Select the correct predicative superlative form.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>klein</em> (am ___)  
+                            <select class="answer-select" data-correct="am kleinsten">
+                                <option value="">Select</option>
+                                <option value="klein">klein</option>
+                                <option value="kleiner">kleiner</option>
+                                <option value="kleinste">kleinste</option>
+                                <option value="am kleinsten">am kleinsten</option>
+                                <option value="kleinst">kleinst</option>
+                            </select>
+                        </li>
+                        <li><em>groß</em> (am ___)  
+                            <select class="answer-select" data-correct="am größten">
+                                <option value="">Select</option>
+                                <option value="größer">größer</option>
+                                <option value="groß">groß</option>
+                                <option value="größte">größte</option>
+                                <option value="am größten">am größten</option>
+                                <option value="großest">großest</option>
+                            </select>
+                        </li>
+                        <li><em>heiß</em> (am ___)  
+                            <select class="answer-select" data-correct="am heißesten">
+                                <option value="">Select</option>
+                                <option value="heißer">heißer</option>
+                                <option value="heißeste">heißeste</option>
+                                <option value="heiß">heiß</option>
+                                <option value="am heißesten">am heißesten</option>
+                                <option value="heißest">heißest</option>
+                            </select>
+                        </li>
+                        <li><em>gut</em> (am ___)  
+                            <select class="answer-select" data-correct="am besten">
+                                <option value="">Select</option>
+                                <option value="besser">besser</option>
+                                <option value="gute">gute</option>
+                                <option value="beste">beste</option>
+                                <option value="am besten">am besten</option>
+                                <option value="gutest">gutest</option>
+                            </select>
+                        </li>
+                        <li><em>schnell</em> (am ___)  
+                            <select class="answer-select" data-correct="am schnellsten">
+                                <option value="">Select</option>
+                                <option value="schnell">schnell</option>
+                                <option value="schneller">schneller</option>
+                                <option value="schnellste">schnellste</option>
+                                <option value="am schnellsten">am schnellsten</option>
+                                <option value="schnelle">schnelle</option>
+                            </select>
+                        </li>
+                        <li><em>teuer</em> (am ___)  
+                            <select class="answer-select" data-correct="am teuersten">
+                                <option value="">Select</option>
+                                <option value="teuerste">teuerste</option>
+                                <option value="teurer">teurer</option>
+                                <option value="teuer">teuer</option>
+                                <option value="am teuersten">am teuersten</option>
+                                <option value="teuerst">teuerst</option>
+                            </select>
+                        </li>
+                        <li><em>jung</em> (am ___)  
+                            <select class="answer-select" data-correct="am jüngsten">
+                                <option value="">Select</option>
+                                <option value="junge">junge</option>
+                                <option value="jünger">jünger</option>
+                                <option value="jüngste">jüngste</option>
+                                <option value="am jüngsten">am jüngsten</option>
+                                <option value="jungest">jungest</option>
+                            </select>
+                        </li>
+                        <li><em>laut</em> (am ___)  
+                            <select class="answer-select" data-correct="am lautesten">
+                                <option value="">Select</option>
+                                <option value="lauteste">lauteste</option>
+                                <option value="lauter">lauter</option>
+                                <option value="laut">laut</option>
+                                <option value="am lautesten">am lautesten</option>
+                                <option value="lautest">lautest</option>
+                            </select>
+                        </li>
+                        <li><em>hoch</em> (am ___)  
+                            <select class="answer-select" data-correct="am höchsten">
+                                <option value="">Select</option>
+                                <option value="hoch">hoch</option>
+                                <option value="höher">höher</option>
+                                <option value="höchste">höchste</option>
+                                <option value="am höchsten">am höchsten</option>
+                                <option value="hochest">hochest</option>
+                            </select>
+                        </li>
+                        <li><em>billig</em> (am ___)  
+                            <select class="answer-select" data-correct="am billigsten">
+                                <option value="">Select</option>
+                                <option value="billigste">billigste</option>
+                                <option value="billiger">billiger</option>
+                                <option value="billig">billig</option>
+                                <option value="am billigsten">am billigsten</option>
+                                <option value="billigest">billigest</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>am kleinsten</em></li>
+                            <li><em>am größten</em></li>
+                            <li><em>am heißesten</em></li>
+                            <li><em>am besten</em></li>
+                            <li><em>am schnellsten</em></li>
+                            <li><em>am teuersten</em></li>
+                            <li><em>am jüngsten</em></li>
+                            <li><em>am lautesten</em></li>
+                            <li><em>am höchsten</em></li>
+                            <li><em>am billigsten</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise4">
+                <h3>Exercise 4: Complete the Sentence (Komparativ) (10 Questions)</h3>
+                <p>Choose the correct form to complete the sentence.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Der Hund ist ___ als die Katze.</em> (groß)  
+                            <select class="answer-select" data-correct="Der Hund ist größer als die Katze.">
+                                <option value="">Select</option>
+                                <option value="Der Hund ist groß als die Katze.">groß</option>
+                                <option value="Der Hund ist größer als die Katze.">größer</option>
+                                <option value="Der Hund ist größte als die Katze.">größte</option>
+                                <option value="Der Hund ist am größten als die Katze.">am größten</option>
+                                <option value="Der Hund ist großest als die Katze.">großest</option>
+                            </select>
+                        </li>
+                        <li><em>Sie ist ___ als er.</em> (jung)  
+                            <select class="answer-select" data-correct="Sie ist jünger als er.">
+                                <option value="">Select</option>
+                                <option value="Sie ist jung als er.">jung</option>
+                                <option value="Sie ist jüngste als er.">jüngste</option>
+                                <option value="Sie ist am jüngsten als er.">am jüngsten</option>
+                                <option value="Sie ist junge als er.">junge</option>
+                                <option value="Sie ist jünger als er.">jünger</option>
+                            </select>
+                        </li>
+                        <li><em>Das Auto ist ___ als das Fahrrad.</em> (schnell)  
+                            <select class="answer-select" data-correct="Das Auto ist schneller als das Fahrrad.">
+                                <option value="">Select</option>
+                                <option value="Das Auto ist schnellste als das Fahrrad.">schnellste</option>
+                                <option value="Das Auto ist schnell als das Fahrrad.">schnell</option>
+                                <option value="Das Auto ist schneller als das Fahrrad.">schneller</option>
+                                <option value="Das Auto ist am schnellsten als das Fahrrad.">am schnellsten</option>
+                                <option value="Das Auto ist schnelle als das Fahrrad.">schnelle</option>
+                            </select>
+                        </li>
+                        <li><em>Mein Haus ist ___ als deins.</em> (klein)  
+                            <select class="answer-select" data-correct="Mein Haus ist kleiner als deins.">
+                                <option value="">Select</option>
+                                <option value="Mein Haus ist kleiner als deins.">kleiner</option>
+                                <option value="Mein Haus ist kleinste als deins.">kleinste</option>
+                                <option value="Mein Haus ist am kleinsten als deins.">am kleinsten</option>
+                                <option value="Mein Haus ist klein als deins.">klein</option>
+                                <option value="Mein Haus ist kleinst als deins.">kleinst</option>
+                            </select>
+                        </li>
+                        <li><em>Der Film ist ___ als das Buch.</em> (lustig)  
+                            <select class="answer-select" data-correct="Der Film ist lustiger als das Buch.">
+                                <option value="">Select</option>
+                                <option value="Der Film ist lustigste als das Buch.">lustigste</option>
+                                <option value="Der Film ist lustig als das Buch.">lustig</option>
+                                <option value="Der Film ist am lustigsten als das Buch.">am lustigsten</option>
+                                <option value="Der Film ist lustiger als das Buch.">lustiger</option>
+                                <option value="Der Film ist lustigest als das Buch.">lustigest</option>
+                            </select>
+                        </li>
+                        <li><em>Er ist so ___ wie ich.</em> (alt)  
+                            <select class="answer-select" data-correct="Er ist so alt wie ich.">
+                                <option value="">Select</option>
+                                <option value="Er ist so älter wie ich.">älter</option>
+                                <option value="Er ist so älteste wie ich.">älteste</option>
+                                <option value="Er ist so alt wie ich.">alt</option>
+                                <option value="Er ist so am ältesten wie ich.">am ältesten</option>
+                                <option value="Er ist so altest wie ich.">altest</option>
+                            </select>
+                        </li>
+                        <li><em>Das Essen ist ___ als gestern.</em> (heiß)  
+                            <select class="answer-select" data-correct="Das Essen ist heißer als gestern.">
+                                <option value="">Select</option>
+                                <option value="Das Essen ist heißeste als gestern.">heißeste</option>
+                                <option value="Das Essen ist heiß als gestern.">heiß</option>
+                                <option value="Das Essen ist heißer als gestern.">heißer</option>
+                                <option value="Das Essen ist am heißesten als gestern.">am heißesten</option>
+                                <option value="Das Essen ist heißest als gestern.">heißest</option>
+                            </select>
+                        </li>
+                        <li><em>Die Tasche ist ___ als der Rucksack.</em> (teuer)  
+                            <select class="answer-select" data-correct="Die Tasche ist teurer als der Rucksack.">
+                                <option value="">Select</option>
+                                <option value="Die Tasche ist teuerste als der Rucksack.">teuerste</option>
+                                <option value="Die Tasche ist teuer als der Rucksack.">teuer</option>
+                                <option value="Die Tasche ist teurer als der Rucksack.">teurer</option>
+                                <option value="Die Tasche ist am teuersten als der Rucksack.">am teuersten</option>
+                                <option value="Die Tasche ist teuerst als der Rucksack.">teuerst</option>
+                            </select>
+                        </li>
+                        <li><em>Sie läuft ___ als er.</em> (schnell)  
+                            <select class="answer-select" data-correct="Sie läuft schneller als er.">
+                                <option value="">Select</option>
+                                <option value="Sie läuft schnell als er.">schnell</option>
+                                <option value="Sie läuft schnellste als er.">schnellste</option>
+                                <option value="Sie läuft am schnellsten als er.">am schnellsten</option>
+                                <option value="Sie läuft schneller als er.">schneller</option>
+                                <option value="Sie läuft schnelle als er.">schnelle</option>
+                            </select>
+                        </li>
+                        <li><em>Der Tisch ist ___ als der Stuhl.</em> (niedrig)  
+                            <select class="answer-select" data-correct="Der Tisch ist niedriger als der Stuhl.">
+                                <option value="">Select</option>
+                                <option value="Der Tisch ist niedriger als der Stuhl.">niedriger</option>
+                                <option value="Der Tisch ist niedrigste als der Stuhl.">niedrigste</option>
+                                <option value="Der Tisch ist niedrig als der Stuhl.">niedrig</option>
+                                <option value="Der Tisch ist am niedrigsten als der Stuhl.">am niedrigsten</option>
+                                <option value="Der Tisch ist niedrigest als der Stuhl.">niedrigest</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Der Hund ist größer als die Katze.</em></li>
+                            <li><em>Sie ist jünger als er.</em></li>
+                            <li><em>Das Auto ist schneller als das Fahrrad.</em></li>
+                            <li><em>Mein Haus ist kleiner als deins.</em></li>
+                            <li><em>Der Film ist lustiger als das Buch.</em></li>
+                            <li><em>Er ist so alt wie ich.</em></li>
+                            <li><em>Das Essen ist heißer als gestern.</em></li>
+                            <li><em>Die Tasche ist teurer als der Rucksack.</em></li>
+                            <li><em>Sie läuft schneller als er.</em></li>
+                            <li><em>Der Tisch ist niedriger als der Stuhl.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise5">
+                <h3>Exercise 5: Complete the Sentence (Superlativ and Vergleiche) (10 Questions)</h3>
+                <p>Choose the correct form to complete the sentence.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Das ist ___ Baum im Park.</em> (groß)  
+                            <select class="answer-select" data-correct="Das ist der größte Baum im Park.">
+                                <option value="">Select</option>
+                                <option value="Das ist größer Baum im Park.">größer</option>
+                                <option value="Das ist groß Baum im Park.">groß</option>
+                                <option value="Das ist am größten Baum im Park.">am größten</option>
+                                <option value="Das ist der größte Baum im Park.">größte</option>
+                                <option value="Das ist großest Baum im Park.">großest</option>
+                            </select>
+                        </li>
+                        <li><em>Sie ist ___ Schwester in der Familie.</em> (jung)  
+                            <select class="answer-select" data-correct="Sie ist die jüngste Schwester in der Familie.">
+                                <option value="">Select</option>
+                                <option value="Sie ist jünger Schwester in der Familie.">jünger</option>
+                                <option value="Sie ist jung Schwester in der Familie.">jung</option>
+                                <option value="Sie ist am jüngsten Schwester in der Familie.">am jüngsten</option>
+                                <option value="Sie ist die jüngste Schwester in der Familie.">jüngste</option>
+                                <option value="Sie ist junge Schwester in der Familie.">junge</option>
+                            </select>
+                        </li>
+                        <li><em>Er läuft ___ in der Schule.</em> (schnell)  
+                            <select class="answer-select" data-correct="Er läuft am schnellsten in der Schule.">
+                                <option value="">Select</option>
+                                <option value="Er läuft schneller in der Schule.">schneller</option>
+                                <option value="Er läuft schnell in der Schule.">schnell</option>
+                                <option value="Er läuft schnellste in der Schule.">schnellste</option>
+                                <option value="Er läuft am schnellsten in der Schule.">am schnellsten</option>
+                                <option value="Er läuft schnelle in der Schule.">schnelle</option>
+                            </select>
+                        </li>
+                        <li><em>Das ist ___ Hund hier.</em> (klein)  
+                            <select class="answer-select" data-correct="Das ist der kleinste Hund hier.">
+                                <option value="">Select</option>
+                                <option value="Das ist kleiner Hund hier.">kleiner</option>
+                                <option value="Das ist der kleinste Hund hier.">kleinste</option>
+                                <option value="Das ist am kleinsten Hund hier.">am kleinsten</option>
+                                <option value="Das ist klein Hund hier.">klein</option>
+                                <option value="Das ist kleinst Hund hier.">kleinst</option>
+                            </select>
+                        </li>
+                        <li><em>Der Film ist ___ heute.</em> (lustig)  
+                            <select class="answer-select" data-correct="Der Film ist am lustigsten heute.">
+                                <option value="">Select</option>
+                                <option value="Der Film ist lustiger heute.">lustiger</option>
+                                <option value="Der Film ist lustigste heute.">lustigste</option>
+                                <option value="Der Film ist lustig heute.">lustig</option>
+                                <option value="Der Film ist am lustigsten heute.">am lustigsten</option>
+                                <option value="Der Film ist lustigest heute.">lustigest</option>
+                            </select>
+                        </li>
+                        <li><em>Mein Freund ist so ___ wie ich.</em> (nett)  
+                            <select class="answer-select" data-correct="Mein Freund ist so nett wie ich.">
+                                <option value="">Select</option>
+                                <option value="Mein Freund ist so netter wie ich.">netter</option>
+                                <option value="Mein Freund ist so netteste wie ich.">netteste</option>
+                                <option value="Mein Freund ist so nett wie ich.">nett</option>
+                                <option value="Mein Freund ist so am nettesten wie ich.">am nettesten</option>
+                                <option value="Mein Freund ist so nettest wie ich.">nettest</option>
+                            </select>
+                        </li>
+                        <li><em>Das Wetter ist ___ im Sommer.</em> (gut)  
+                            <select class="answer-select" data-correct="Das Wetter ist am besten im Sommer.">
+                                <option value="">Select</option>
+                                <option value="Das Wetter ist besser im Sommer.">besser</option>
+                                <option value="Das Wetter ist gute im Sommer.">gute</option>
+                                <option value="Das Wetter ist beste im Sommer.">beste</option>
+                                <option value="Das Wetter ist am besten im Sommer.">am besten</option>
+                                <option value="Das Wetter ist gutest im Sommer.">gutest</option>
+                            </select>
+                        </li>
+                        <li><em>Die Stadt ist ___ als das Dorf.</em> (laut)  
+                            <select class="answer-select" data-correct="Die Stadt ist lauter als das Dorf.">
+                                <option value="">Select</option>
+                                <option value="Die Stadt ist lauteste als das Dorf.">lauteste</option>
+                                <option value="Die Stadt ist lauter als das Dorf.">lauter</option>
+                                <option value="Die Stadt ist laut als das Dorf.">laut</option>
+                                <option value="Die Stadt ist am lautesten als das Dorf.">am lautesten</option>
+                                <option value="Die Stadt ist lautest als das Dorf.">lautest</option>
+                            </select>
+                        </li>
+                        <li><em>Das ist ___ Kleid im Laden.</em> (schön)  
+                            <select class="answer-select" data-correct="Das ist das schönste Kleid im Laden.">
+                                <option value="">Select</option>
+                                <option value="Das ist schöner Kleid im Laden.">schöner</option>
+                                <option value="Das ist schön Kleid im Laden.">schön</option>
+                                <option value="Das ist das schönste Kleid im Laden.">schönste</option>
+                                <option value="Das ist am schönsten Kleid im Laden.">am schönsten</option>
+                                <option value="Das ist schönest Kleid im Laden.">schönest</option>
+                            </select>
+                        </li>
+                        <li><em>Die Milch ist ___ als der Kaffee.</em> (kalt)  
+                            <select class="answer-select" data-correct="Die Milch ist kälter als der Kaffee.">
+                                <option value="">Select</option>
+                                <option value="Die Milch ist kälter als der Kaffee.">kälter</option>
+                                <option value="Die Milch ist kälteste als der Kaffee.">kälteste</option>
+                                <option value="Die Milch ist kalt als der Kaffee.">kalt</option>
+                                <option value="Die Milch ist am kältesten als der Kaffee.">am kältesten</option>
+                                <option value="Die Milch ist kaltest als der Kaffee.">kaltest</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Das ist der größte Baum im Park.</em></li>
+                            <li><em>Sie ist die jüngste Schwester in der Familie.</em></li>
+                            <li><em>Er läuft am schnellsten in der Schule.</em></li>
+                            <li><em>Das ist der kleinste Hund hier.</em></li>
+                            <li><em>Der Film ist am lustigsten heute.</em></li>
+                            <li><em>Mein Freund ist so nett wie ich.</em></li>
+                            <li><em>Das Wetter ist am besten im Sommer.</em></li>
+                            <li><em>Die Stadt ist lauter als das Dorf.</em></li>
+                            <li><em>Das ist das schönste Kleid im Laden.</em></li>
+                            <li><em>Die Milch ist kälter als der Kaffee.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips -->
+        <section id="tips">
+            <h2>Tips for A2 Learners</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Mix It Up</strong>: Compare things in your room (e.g., Der Tisch ist größer als der Stuhl).</li>
+                    <li><strong>Listen</strong>: Say forms aloud (klein, kleiner, kleinste) to hear the pattern.</li>
+                    <li><strong>Write</strong>: Make 5 sentences about friends or family.</li>
+                    <li><strong>Check Irregulars</strong>: Memorize gut → besser → beste, hoch → höher → höchste.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Resources -->
+        <section id="resources">
+            <h2>Resources for Extra Practice</h2>
+            <div class="resource-links">
+                <div class="resource-card">
+                    <p><strong>YouTube - Learn German with Anja</strong><br>Beginner-friendly videos.</p>
+                    <a href="https://www.youtube.com/@LearnGermanwithAnja" class="resource-btn">Visit Learn German with Anja</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>Deutsch Lernen (Lingolia)</strong><br>Rules and examples.</p>
+                    <a href="https://deutsch.lingolia.com/en/grammar/adjectives/degrees-of-comparison" class="resource-btn">Visit Lingolia</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>YouTube - Easy German</strong><br>Real-life examples.</p>
+                    <a href="https://www.youtube.com/@EasyGerman" class="resource-btn">Visit Easy German</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="n-dekl.html" class="see-also-rect">N-Deklination</a>
+                <a href="parti.html" class="see-also-rect">Partizip als Adjektiv</a>
+                <a href="jedesto.html" class="see-also-rect">Sätze mit "je ... desto ..."</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="n-dekl.html" class="next-btn">Next: N-Deklination →</a>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark Mode Toggle
+        const modeToggle = document.getElementById('mode-toggle');
+        modeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Load dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Toggle Answers
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const answersDiv = button.nextElementSibling;
+                if (button.classList.contains('show-answers')) {
+                    answersDiv.classList.toggle('hidden');
+                } else if (button.classList.contains('check-answers')) {
+                    const selects = button.parentElement.querySelectorAll('.answer-select');
+                    selects.forEach(select => {
+                        const selectedValue = select.value;
+                        const correctValue = select.getAttribute('data-correct');
+                        if (selectedValue === correctValue) {
+                            select.style.backgroundColor = '#d4edda'; // Green for correct
+                        } else {
+                            select.style.backgroundColor = '#f8d7da'; // Red for incorrect
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

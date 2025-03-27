@@ -1,0 +1,750 @@
+:root {
+    --primary: #2e7d32;
+    --primary-light: #60ad5e;
+    --primary-dark: #1b5e20;
+    --background: #f5f5f5;
+    --white: #ffffff;
+    --text: #1a202c;
+    --secondary-text: #4a5568;
+    --border: #e2e8f0;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --grey-bg: #e5e7eb;
+    --chat-left: #e6f4ea;
+    --chat-right: #d1e7dd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header-section {
+    position: relative;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #1e88e5, #42a5f5);
+    border-radius: 20px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.exam-title {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--white);
+    text-align: center;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+.section {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    margin-bottom: 40px;
+    border-left: 5px solid var(--primary);
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.section p {
+    margin-bottom: 20px;
+    color: var(--text);
+}
+
+/* Clipboard Design for Teil 1 */
+.clipboard {
+    position: relative;
+    background: linear-gradient(145deg, #f9f9f9, #e9e9e9);
+    border: 2px solid #d3d3d3;
+    border-radius: 10px;
+    margin: 30px auto;
+    padding: 25px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    max-width: 550px;
+    transition: transform 0.3s ease;
+}
+
+.clipboard:hover {
+    transform: scale(1.02);
+}
+
+.clipboard-header {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.clipboard-header h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text);
+    padding-top: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.clip {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 35px;
+    background: linear-gradient(180deg, #c0c0c0, #a9a9a9);
+    border: 2px solid #999;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.clip::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 12px;
+    right: 12px;
+    height: 12px;
+    background-color: #d3d3d3;
+    border-radius: 4px;
+}
+
+.clipboard-content {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px dashed #e0e0e0;
+    border-radius: 8px;
+    min-height: 180px;
+}
+
+.clipboard-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.clipboard-content ul li {
+    position: relative;
+    margin-bottom: 12px;
+    padding-left: 25px;
+    font-size: 1rem;
+    color: var(--secondary-text);
+}
+
+.clipboard-content ul li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--text);
+}
+
+.pen {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 120px;
+    height: 120px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>') no-repeat center;
+    background-size: 70px;
+    transform: rotate(45deg);
+    opacity: 0.9;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Conversation Section for Teil 1 */
+.conversation-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9fafb;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.conversation-section h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.chat-bubble {
+    position: relative;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    max-width: 80%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.chat-bubble.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.chat-bubble.left {
+    background-color: var(--chat-left);
+    margin-right: auto;
+}
+
+.chat-bubble.right {
+    background-color: var(--chat-right);
+    margin-left: auto;
+}
+
+.chat-bubble p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text);
+}
+
+.chat-bubble p strong {
+    color: var(--primary-dark);
+}
+
+/* Presentation Slides for Teil 2 */
+.presentation-box {
+    margin-top: 30px;
+}
+
+.slide {
+    display: flex;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+    transform: scale(0.98);
+}
+
+.slide.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.slide:hover {
+    transform: scale(1.02);
+}
+
+.slide-left, .slide-right {
+    padding: 20px;
+    width: 50%;
+}
+
+.slide-left {
+    background: linear-gradient(145deg, #ffffff, #f7f7f7);
+    border-right: 2px dashed var(--border);
+}
+
+.slide-left h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.slide-left p {
+    font-size: 1rem;
+    color: var(--secondary-text);
+}
+
+.slide-right {
+    background: linear-gradient(145deg, #e6f4ea, #d1e7dd);
+}
+
+.slide-right h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+}
+
+.slide-right ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.slide-right ul li {
+    font-size: 0.95rem;
+    color: var(--text);
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.slide-right ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+.presentation-answer {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--grey-bg);
+    border-radius: 10px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+.presentation-answer h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.presentation-answer p {
+    margin-bottom: 15px;
+}
+
+.presentation-answer p strong {
+    color: var(--primary-dark);
+}
+
+/* Q&A Section for Teil 3 */
+.qa-section {
+    margin-top: 30px;
+}
+
+.qa-card {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.qa-card.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.qa-card:hover {
+    transform: translateY(-5px);
+}
+
+.qa-card h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.qa-card p {
+    font-size: 1rem;
+    color: var(--secondary-text);
+    margin-bottom: 20px;
+}
+
+.qa-card p strong {
+    color: var(--primary-dark);
+}
+
+.qa-answer {
+    background-color: #e6f4ea;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.qa-answer h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+}
+
+/* Navigation buttons container */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Button styles */
+.btn {
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.home-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.back-btn {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.home-btn:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.back-btn:hover {
+    background-color: #e9ecef;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .header-section {
+        max-width: 90%;
+        padding: 50px 15px;
+    }
+
+    .section {
+        max-width: 90%;
+    }
+
+    .clipboard {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .header-section {
+        padding: 40px 15px;
+        border-radius: 15px;
+        margin-bottom: 30px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .exam-title {
+        font-size: 1.5rem;
+    }
+
+    .section {
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+    }
+
+    .section h2 {
+        font-size: 1.3rem;
+    }
+
+    .clipboard {
+        max-width: 100%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .clipboard-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .clip {
+        width: 80px;
+        height: 30px;
+        top: -15px;
+    }
+
+    .clip::before {
+        top: 5px;
+        left: 10px;
+        right: 10px;
+        height: 10px;
+    }
+
+    .clipboard-content {
+        padding: 15px;
+        min-height: 150px;
+    }
+
+    .pen {
+        width: 100px;
+        height: 100px;
+        background-size: 60px;
+        bottom: -20px;
+        right: -20px;
+    }
+
+    .conversation-section {
+        padding: 15px;
+    }
+
+    .chat-bubble {
+        max-width: 90%;
+        padding: 12px 15px;
+    }
+
+    .slide {
+        flex-direction: column;
+    }
+
+    .slide-left, .slide-right {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .slide-left {
+        border-right: none;
+        border-bottom: 2px dashed var(--border);
+    }
+
+    .presentation-answer {
+        padding: 15px;
+    }
+
+    .qa-card {
+        padding: 20px;
+    }
+
+    .nav-buttons {
+        gap: 0.75rem;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 8px;
+    }
+
+    .header-section {
+        padding: 30px 10px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+        margin-bottom: 8px;
+    }
+
+    .exam-title {
+        font-size: 1.25rem;
+    }
+
+    .section {
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        border-left-width: 3px;
+    }
+
+    .section h2 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .section p {
+        font-size: 0.95rem;
+    }
+
+    .clipboard {
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .clipboard-header h3 {
+        font-size: 1rem;
+        padding-top: 20px;
+    }
+
+    .clip {
+        width: 60px;
+        height: 25px;
+        top: -12px;
+    }
+
+    .clip::before {
+        top: 4px;
+        left: 8px;
+        right: 8px;
+        height: 8px;
+    }
+
+    .clipboard-content {
+        padding: 10px;
+        min-height: 120px;
+    }
+
+    .clipboard-content ul li {
+        font-size: 0.9rem;
+        padding-left: 20px;
+        margin-bottom: 10px;
+    }
+
+    .pen {
+        width: 80px;
+        height: 80px;
+        background-size: 50px;
+        bottom: -15px;
+        right: -15px;
+    }
+
+    .conversation-section {
+        padding: 10px;
+        margin-top: 20px;
+    }
+
+    .conversation-section h4 {
+        font-size: 1.1rem;
+    }
+
+    .chat-bubble {
+        max-width: 100%;
+        padding: 10px 12px;
+        margin-bottom: 15px;
+    }
+
+    .chat-bubble p {
+        font-size: 0.9rem;
+    }
+
+    .presentation-box {
+        margin-top: 20px;
+    }
+
+    .slide {
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+
+    .slide-left h4, .slide-right h5 {
+        font-size: 1rem;
+    }
+
+    .slide-left p, .slide-right ul li {
+        font-size: 0.9rem;
+    }
+
+    .presentation-answer {
+        padding: 12px;
+        font-size: 0.85rem;
+    }
+
+    .presentation-answer h4 {
+        font-size: 1.1rem;
+    }
+
+    .qa-section {
+        margin-top: 20px;
+    }
+
+    .qa-card {
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    .qa-card h4 {
+        font-size: 1.1rem;
+    }
+
+    .qa-card p {
+        font-size: 0.9rem;
+    }
+
+    .qa-answer {
+        padding: 12px;
+    }
+
+    .qa-answer h5 {
+        font-size: 0.9rem;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 200px;
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+}

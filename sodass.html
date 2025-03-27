@@ -1,0 +1,1032 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      So...dass and Sodass in German | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/sodass.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+               <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="b1-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>So...dass and Sodass in German</h1>
+            <p>
+                A guide to the German consequential conjunctions "so...dass" and "sodass," explaining their meanings ("so...that," "such that") and usage, with examples, exercises, and resources.
+            </p>
+        </section>
+
+        <!-- Understanding -->
+        <section id="understanding">
+            <h2>What Do "So...dass" and "Sodass" Mean?</h2>
+            <p>"So...dass" and "sodass" connect a cause or condition to its result, with the verb at the end of the subordinate clause.</p>
+            <div class="subsection">
+                <h3>Key Points</h3>
+                <ul class="example-list">
+                    <li><strong>So...dass</strong>: "So...that" with so (degree) and dass (result) (e.g., Es ist so kalt, dass ich friere.).</li>
+                    <li><strong>Sodass</strong>: "So that" as one word (e.g., Es ist kalt, sodass ich friere.).</li>
+                    <li><strong>Structure</strong>: Main clause + comma + subordinate clause (verb-end).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Differences -->
+        <section id="differences">
+            <h2>Differences Between "So...dass" and "Sodass"</h2>
+            <div class="subsection">
+                <h3>Structure and Focus</h3>
+                <p>So...dass emphasizes degree with two parts; sodass links cause and effect directly.</p>
+            </div>
+        </section>
+
+        <!-- Uses -->
+        <section id="uses">
+            <h2>Uses of "So...dass" and "Sodass"</h2>
+            <div class="subsection">
+                <h3>Basic: Showing Consequences</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Es ist so laut, dass ich nicht schlafe.</em> (It’s so loud that I don’t sleep.)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Intermediate: Emphasizing Degree</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Sie spricht so leise, dass ich nichts verstehe.</em> (She speaks so quietly that I don’t understand anything.)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Advanced: Formal Writing</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Die Maschine läuft leise, sodass niemand klagt.</em> (The machine runs quietly, so that no one complains.)</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Common Examples -->
+        <section id="examples">
+            <h2>List of 25 Common Examples</h2>
+            <div class="table-container">
+                <table>
+                    <tr><th>Sentence</th><th>Translation</th></tr>
+                    <!-- So...dass Examples (13) -->
+                    <tr><td><em>Es ist so kalt, dass ich friere.</em></td><td>It’s so cold that I’m freezing.</td></tr>
+                    <tr><td><em>Ich bin so müde, dass ich gleich schlafe.</em></td><td>I’m so tired that I’ll sleep soon.</td></tr>
+                    <tr><td><em>Er rennt so schnell, dass niemand mithält.</em></td><td>He runs so fast that no one keeps up.</td></tr>
+                    <tr><td><em>Sie ist so freundlich, dass alle sie mögen.</em></td><td>She’s so friendly that everyone likes her.</td></tr>
+                    <tr><td><em>Das Essen schmeckt so gut, dass ich mehr will.</em></td><td>The food tastes so good that I want more.</td></tr>
+                    <tr><td><em>Der Hund bellt so laut, dass die Nachbarn meckern.</em></td><td>The dog barks so loudly that the neighbors complain.</td></tr>
+                    <tr><td><em>Ich habe so viel Arbeit, dass ich keine Pause mache.</em></td><td>I have so much work that I don’t take a break.</td></tr>
+                    <tr><td><em>Die Musik war so schön, dass ich tanzte.</em></td><td>The music was so beautiful that I danced.</td></tr>
+                    <tr><td><em>Er arbeitet so hart, dass er oft müde ist.</em></td><td>He works so hard that he’s often tired.</td></tr>
+                    <tr><td><em>Das Buch ist so langweilig, dass ich es nicht lese.</em></td><td>The book is so boring that I don’t read it.</td></tr>
+                    <tr><td><em>Sie lacht so viel, dass ich mitlache.</em></td><td>She laughs so much that I laugh along.</td></tr>
+                    <tr><td><em>Es regnet so stark, dass die Straßen nass sind.</em></td><td>It’s raining so heavily that the streets are wet.</td></tr>
+                    <tr><td><em>Die Aufgabe ist so schwer, dass ich Hilfe brauche.</em></td><td>The task is so difficult that I need help.</td></tr>
+                    <!-- Sodass Examples (12) -->
+                    <tr><td><em>Es wird kalt, sodass ich eine Jacke hole.</em></td><td>It’s getting cold, so that I grab a jacket.</td></tr>
+                    <tr><td><em>Ich bin müde, sodass ich heute früh schlafe.</em></td><td>I’m tired, so that I sleep early today.</td></tr>
+                    <tr><td><em>Er läuft schnell, sodass er pünktlich ankommt.</em></td><td>He runs fast, so that he arrives on time.</td></tr>
+                    <tr><td><em>Sie hilft mir, sodass ich fertig werde.</em></td><td>She helps me, so that I finish.</td></tr>
+                    <tr><td><em>Das Wetter ist gut, sodass wir spazieren gehen.</em></td><td>The weather is nice, so that we go for a walk.</td></tr>
+                    <tr><td><em>Ich koche jetzt, sodass wir bald essen können.</em></td><td>I’m cooking now, so that we can eat soon.</td></tr>
+                    <tr><td><em>Er lernt viel, sodass er die Prüfung besteht.</em></td><td>He studies a lot, so that he passes the exam.</td></tr>
+                    <tr><td><em>Die Sonne scheint, sodass wir draußen spielen.</em></td><td>The sun is shining, so that we play outside.</td></tr>
+                    <tr><td><em>Ich rufe an, sodass du Bescheid weißt.</em></td><td>I call, so that you know.</td></tr>
+                    <tr><td><em>Sie singt laut, sodass alle mithören.</em></td><td>She sings loudly, so that everyone hears.</td></tr>
+                    <tr><td><em>Ich spare Geld, sodass ich reisen kann.</em></td><td>I save money, so that I can travel.</td></tr>
+                    <tr><td><em>Er fährt langsam, sodass wir sicher ankommen.</em></td><td>He drives slowly, so that we arrive safely.</td></tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Exercises -->
+        <section id="practice">
+            <h2>Exercises to Practice "So...dass" and "Sodass"</h2>
+            <div class="subsection" id="exercise1">
+                <h3>Exercise 1: Choose the Correct Conjunction</h3>
+                <p>Select "so...dass" or "sodass" to fit the sentence.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>Es ist ___ warm, ___ ich schwitze.  
+                            <select class="answer-select" data-correct="Es ist so warm, dass ich schwitze.">
+                                <option value="">Select</option>
+                                <option value="Es ist weil warm, dass ich schwitze.">weil</option>
+                                <option value="Es ist warm, sodass ich schwitze.">sodass</option>
+                                <option value="Es ist so warm, dass ich schwitze.">so, dass</option>
+                                <option value="Es ist dass warm, dass ich schwitze.">dass</option>
+                                <option value="Es ist obwohl warm, dass ich schwitze.">obwohl</option>
+                            </select>
+                        </li>
+                        <li>Ich lerne viel, ___ ich die Prüfung bestehe.  
+                            <select class="answer-select" data-correct="Ich lerne viel, sodass ich die Prüfung bestehe.">
+                                <option value="">Select</option>
+                                <option value="Ich lerne so viel, dass ich die Prüfung bestehe.">so, dass</option>
+                                <option value="Ich lerne viel, wenn ich die Prüfung bestehe.">wenn</option>
+                                <option value="Ich lerne viel, bis ich die Prüfung bestehe.">bis</option>
+                                <option value="Ich lerne viel, sodass ich die Prüfung bestehe.">sodass</option>
+                                <option value="Ich lerne viel, nachdem ich die Prüfung bestehe.">nachdem</option>
+                            </select>
+                        </li>
+                        <li>Der Kaffee ist ___ heiß, ___ ich warte.  
+                            <select class="answer-select" data-correct="Der Kaffee ist so heiß, dass ich warte.">
+                                <option value="">Select</option>
+                                <option value="Der Kaffee ist heiß, sodass ich warte.">sodass</option>
+                                <option value="Der Kaffee ist so heiß, dass ich warte.">so, dass</option>
+                                <option value="Der Kaffee ist seit heiß, dass ich warte.">seit</option>
+                                <option value="Der Kaffee ist vor heiß, dass ich warte.">vor</option>
+                                <option value="Der Kaffee ist mit heiß, dass ich warte.">mit</option>
+                            </select>
+                        </li>
+                        <li>Sie ruft an, ___ ich Bescheid weiß.  
+                            <select class="answer-select" data-correct="Sie ruft an, sodass ich Bescheid weiß.">
+                                <option value="">Select</option>
+                                <option value="Sie ruft so an, dass ich Bescheid weiß.">so, dass</option>
+                                <option value="Sie ruft an, während ich Bescheid weiß.">während</option>
+                                <option value="Sie ruft an, um ich Bescheid weiß.">um</option>
+                                <option value="Sie ruft an, an ich Bescheid weiß.">an</option>
+                                <option value="Sie ruft an, sodass ich Bescheid weiß.">sodass</option>
+                            </select>
+                        </li>
+                        <li>Die Musik ist ___ leise, ___ ich nichts höre.  
+                            <select class="answer-select" data-correct="Die Musik ist so leise, dass ich nichts höre.">
+                                <option value="">Select</option>
+                                <option value="Die Musik ist leise, sodass ich nichts höre.">sodass</option>
+                                <option value="Die Musik ist nach leise, dass ich nichts höre.">nach</option>
+                                <option value="Die Musik ist so leise, dass ich nichts höre.">so, dass</option>
+                                <option value="Die Musik ist ohne leise, dass ich nichts höre.">ohne</option>
+                                <option value="Die Musik ist zu leise, dass ich nichts höre.">zu</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Es ist so warm, dass ich schwitze.</em></li>
+                            <li><em>Ich lerne viel, sodass ich die Prüfung bestehe.</em></li>
+                            <li><em>Der Kaffee ist so heiß, dass ich warte.</em></li>
+                            <li><em>Sie ruft an, sodass ich Bescheid weiß.</em></li>
+                            <li><em>Die Musik ist so leise, dass ich nichts höre.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise2">
+                <h3>Exercise 2: Fill in the Blank</h3>
+                <p>Choose the correct word to complete the sentence.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>Es ist ___ dunkel, dass ich nichts sehe.  
+                            <select class="answer-select" data-correct="Es ist so dunkel, dass ich nichts sehe.">
+                                <option value="">Select</option>
+                                <option value="Es ist dunkel, sodass ich nichts sehe.">sodass</option>
+                                <option value="Es ist weil dunkel, dass ich nichts sehe.">weil</option>
+                                <option value="Es ist dass dunkel, dass ich nichts sehe.">dass</option>
+                                <option value="Es ist so dunkel, dass ich nichts sehe.">so</option>
+                                <option value="Es ist wenn dunkel, dass ich nichts sehe.">wenn</option>
+                            </select>
+                        </li>
+                        <li>Ich spare Geld, ___ ich reisen kann.  
+                            <select class="answer-select" data-correct="Ich spare Geld, sodass ich reisen kann.">
+                                <option value="">Select</option>
+                                <option value="Ich spare so Geld, dass ich reisen kann.">so</option>
+                                <option value="Ich spare Geld, sodass ich reisen kann.">sodass</option>
+                                <option value="Ich spare Geld, obwohl ich reisen kann.">obwohl</option>
+                                <option value="Ich spare Geld, bis ich reisen kann.">bis</option>
+                                <option value="Ich spare Geld, seit ich reisen kann.">seit</option>
+                            </select>
+                        </li>
+                        <li>Die Suppe ist ___ lecker, dass ich mehr nehme.  
+                            <select class="answer-select" data-correct="Die Suppe ist so lecker, dass ich mehr nehme.">
+                                <option value="">Select</option>
+                                <option value="Die Suppe ist vor lecker, dass ich mehr nehme.">vor</option>
+                                <option value="Die Suppe ist so lecker, dass ich mehr nehme.">so</option>
+                                <option value="Die Suppe ist lecker, sodass ich mehr nehme.">sodass</option>
+                                <option value="Die Suppe ist nach lecker, dass ich mehr nehme.">nach</option>
+                                <option value="Die Suppe ist mit lecker, dass ich mehr nehme.">mit</option>
+                            </select>
+                        </li>
+                        <li>Er fährt langsam, ___ wir sicher ankommen.  
+                            <select class="answer-select" data-correct="Er fährt langsam, sodass wir sicher ankommen.">
+                                <option value="">Select</option>
+                                <option value="Er fährt so langsam, dass wir sicher ankommen.">so</option>
+                                <option value="Er fährt langsam, während wir sicher ankommen.">während</option>
+                                <option value="Er fährt langsam, sodass wir sicher ankommen.">sodass</option>
+                                <option value="Er fährt langsam, um wir sicher ankommen.">um</option>
+                                <option value="Er fährt langsam, an wir sicher ankommen.">an</option>
+                            </select>
+                        </li>
+                        <li>Das Spiel ist ___ spannend, dass ich bleibe.  
+                            <select class="answer-select" data-correct="Das Spiel ist so spannend, dass ich bleibe.">
+                                <option value="">Select</option>
+                                <option value="Das Spiel ist weil spannend, dass ich bleibe.">weil</option>
+                                <option value="Das Spiel ist dass spannend, dass ich bleibe.">dass</option>
+                                <option value="Das Spiel ist spannend, sodass ich bleibe.">sodass</option>
+                                <option value="Das Spiel ist so spannend, dass ich bleibe.">so</option>
+                                <option value="Das Spiel ist wenn spannend, dass ich bleibe.">wenn</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Es ist so dunkel, dass ich nichts sehe.</em></li>
+                            <li><em>Ich spare Geld, sodass ich reisen kann.</em></li>
+                            <li><em>Die Suppe ist so lecker, dass ich mehr nehme.</em></li>
+                            <li><em>Er fährt langsam, sodass wir sicher ankommen.</em></li>
+                            <li><em>Das Spiel ist so spannend, dass ich bleibe.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise3">
+                <h3>Exercise 3: Translate into German</h3>
+                <p>Choose the correct translation with "so...dass" or "sodass."</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>It’s so bright that I need sunglasses.  
+                            <select class="answer-select" data-correct="Es ist so hell, dass ich eine Sonnenbrille brauche.">
+                                <option value="">Select</option>
+                                <option value="Es ist hell, weil ich eine Sonnenbrille brauche.">Es ist hell, weil ich eine Sonnenbrille brauche.</option>
+                                <option value="Es ist so hell, dass ich eine Sonnenbrille brauche.">Es ist so hell, dass ich eine Sonnenbrille brauche.</option>
+                                <option value="Es ist hell, dass ich eine Sonnenbrille brauche.">Es ist hell, dass ich eine Sonnenbrille brauche.</option>
+                                <option value="Es ist hell, sodass ich eine Sonnenbrille brauche.">Es ist hell, sodass ich eine Sonnenbrille brauche.</option>
+                                <option value="Es ist so hell, sodass ich eine Sonnenbrille brauche.">Es ist so hell, sodass ich eine Sonnenbrille brauche.</option>
+                            </select>
+                        </li>
+                        <li>I’m working hard, so that I finish early.  
+                            <select class="answer-select" data-correct="Ich arbeite hart, sodass ich früh fertig bin.">
+                                <option value="">Select</option>
+                                <option value="Ich arbeite so hart, dass ich früh fertig bin.">Ich arbeite so hart, dass ich früh fertig bin.</option>
+                                <option value="Ich arbeite hart, weil ich früh fertig bin.">Ich arbeite hart, weil ich früh fertig bin.</option>
+                                <option value="Ich arbeite hart, sodass ich früh fertig bin.">Ich arbeite hart, sodass ich früh fertig bin.</option>
+                                <option value="Ich arbeite hart, so dass ich früh fertig bin.">Ich arbeite hart, so dass ich früh fertig bin.</option>
+                                <option value="Ich arbeite so hart, sodass ich früh fertig bin.">Ich arbeite so hart, sodass ich früh fertig bin.</option>
+                            </select>
+                        </li>
+                        <li>The cat is so quiet that I don’t notice it.  
+                            <select class="answer-select" data-correct="Die Katze ist so leise, dass ich sie nicht bemerke.">
+                                <option value="">Select</option>
+                                <option value="Die Katze ist leise, weil ich sie nicht bemerke.">Die Katze ist leise, weil ich sie nicht bemerke.</option>
+                                <option value="Die Katze ist so leise, dass ich sie nicht bemerke.">Die Katze ist so leise, dass ich sie nicht bemerke.</option>
+                                <option value="Die Katze ist leise, sodass ich sie nicht bemerke.">Die Katze ist leise, sodass ich sie nicht bemerke.</option>
+                                <option value="Die Katze ist so leise, sodass ich sie nicht bemerke.">Die Katze ist so leise, sodass ich sie nicht bemerke.</option>
+                                <option value="Die Katze ist leise, dass ich sie nicht bemerke.">Die Katze ist leise, dass ich sie nicht bemerke.</option>
+                            </select>
+                        </li>
+                        <li>We’re walking fast, so that we don’t miss the bus.  
+                            <select class="answer-select" data-correct="Wir gehen schnell, sodass wir den Bus nicht verpassen.">
+                                <option value="">Select</option>
+                                <option value="Wir gehen schnell, weil wir den Bus nicht verpassen.">Wir gehen schnell, weil wir den Bus nicht verpassen.</option>
+                                <option value="Wir gehen so schnell, dass wir den Bus nicht verpassen.">Wir gehen so schnell, dass wir den Bus nicht verpassen.</option>
+                                <option value="Wir gehen schnell, dass wir den Bus nicht verpassen.">Wir gehen schnell, dass wir den Bus nicht verpassen.</option>
+                                <option value="Wir gehen schnell, sodass wir den Bus nicht verpassen.">Wir gehen schnell, sodass wir den Bus nicht verpassen.</option>
+                                <option value="Wir gehen so schnell, sodass wir den Bus nicht verpassen.">Wir gehen so schnell, sodass wir den Bus nicht verpassen.</option>
+                            </select>
+                        </li>
+                        <li>The movie is so funny that I laugh a lot.  
+                            <select class="answer-select" data-correct="Der Film ist so lustig, dass ich viel lache.">
+                                <option value="">Select</option>
+                                <option value="Der Film ist lustig, weil ich viel lache.">Der Film ist lustig, weil ich viel lache.</option>
+                                <option value="Der Film ist lustig, dass ich viel lache.">Der Film ist lustig, dass ich viel lache.</option>
+                                <option value="Der Film ist so lustig, dass ich viel lache.">Der Film ist so lustig, dass ich viel lache.</option>
+                                <option value="Der Film ist lustig, sodass ich viel lache.">Der Film ist lustig, sodass ich viel lache.</option>
+                                <option value="Der Film ist so lustig, sodass ich viel lache.">Der Film ist so lustig, sodass ich viel lache.</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Es ist so hell, dass ich eine Sonnenbrille brauche.</em></li>
+                            <li><em>Ich arbeite hart, sodass ich früh fertig bin.</em></li>
+                            <li><em>Die Katze ist so leise, dass ich sie nicht bemerke.</em></li>
+                            <li><em>Wir gehen schnell, sodass wir den Bus nicht verpassen.</em></li>
+                            <li><em>Der Film ist so lustig, dass ich viel lache.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise4">
+                <h3>Exercise 4: Correct the Mistake</h3>
+                <p>Choose the corrected sentence.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Es ist kalt, weil ich eine Jacke hole.</em>  
+                            <select class="answer-select" data-correct="Es ist so kalt, dass ich eine Jacke hole.">
+                                <option value="">Select</option>
+                                <option value="Es ist so kalt, weil ich eine Jacke hole.">Es ist so kalt, weil ich eine Jacke hole.</option>
+                                <option value="Es ist kalt, dass ich eine Jacke hole.">Es ist kalt, dass ich eine Jacke hole.</option>
+                                <option value="Es ist so kalt, dass ich eine Jacke hole.">Es ist so kalt, dass ich eine Jacke hole.</option>
+                                <option value="Es ist kalt, sodass ich eine Jacke hole.">Es ist kalt, sodass ich eine Jacke hole.</option>
+                                <option value="Es ist kalt, so ich eine Jacke hole.">Es ist kalt, so ich eine Jacke hole.</option>
+                            </select>
+                        </li>
+                        <li><em>Ich bin müde, weil ich heute früh schlafe.</em>  
+                            <select class="answer-select" data-correct="Ich bin müde, sodass ich heute früh schlafe.">
+                                <option value="">Select</option>
+                                <option value="Ich bin so müde, dass ich heute früh schlafe.">Ich bin so müde, dass ich heute früh schlafe.</option>
+                                <option value="Ich bin müde, sodass ich heute früh schlafe.">Ich bin müde, sodass ich heute früh schlafe.</option>
+                                <option value="Ich bin müde, so ich heute früh schlafe.">Ich bin müde, so ich heute früh schlafe.</option>
+                                <option value="Ich bin so müde, weil ich heute früh schlafe.">Ich bin so müde, weil ich heute früh schlafe.</option>
+                                <option value="Ich bin müde, dass ich heute früh schlafe.">Ich bin müde, dass ich heute früh schlafe.</option>
+                            </select>
+                        </li>
+                        <li><em>Die Tasche ist schwer, weil ich sie nicht trage.</em>  
+                            <select class="answer-select" data-correct="Die Tasche ist so schwer, dass ich sie nicht trage.">
+                                <option value="">Select</option>
+                                <option value="Die Tasche ist schwer, so ich sie nicht trage.">Die Tasche ist schwer, so ich sie nicht trage.</option>
+                                <option value="Die Tasche ist schwer, sodass ich sie nicht trage.">Die Tasche ist schwer, sodass ich sie nicht trage.</option>
+                                <option value="Die Tasche ist so schwer, dass ich sie nicht trage.">Die Tasche ist so schwer, dass ich sie nicht trage.</option>
+                                <option value="Die Tasche ist so schwer, weil ich sie nicht trage.">Die Tasche ist so schwer, weil ich sie nicht trage.</option>
+                                <option value="Die Tasche ist schwer, dass ich sie nicht trage.">Die Tasche ist schwer, dass ich sie nicht trage.</option>
+                            </select>
+                        </li>
+                        <li><em>Das Wetter ist gut, weil wir spazieren gehen.</em>  
+                            <select class="answer-select" data-correct="Das Wetter ist gut, sodass wir spazieren gehen.">
+                                <option value="">Select</option>
+                                <option value="Das Wetter ist gut, so wir spazieren gehen.">Das Wetter ist gut, so wir spazieren gehen.</option>
+                                <option value="Das Wetter ist so gut, dass wir spazieren gehen.">Das Wetter ist so gut, dass wir spazieren gehen.</option>
+                                <option value="Das Wetter ist gut, dass wir spazieren gehen.">Das Wetter ist gut, dass wir spazieren gehen.</option>
+                                <option value="Das Wetter ist gut, sodass wir spazieren gehen.">Das Wetter ist gut, sodass wir spazieren gehen.</option>
+                                <option value="Das Wetter ist so gut, weil wir spazieren gehen.">Das Wetter ist so gut, weil wir spazieren gehen.</option>
+                            </select>
+                        </li>
+                        <li><em>Er rennt schnell, weil er pünktlich ankommt.</em>  
+                            <select class="answer-select" data-correct="Er rennt schnell, sodass er pünktlich ankommt.">
+                                <option value="">Select</option>
+                                <option value="Er rennt schnell, so er pünktlich ankommt.">Er rennt schnell, so er pünktlich ankommt.</option>
+                                <option value="Er rennt so schnell, weil er pünktlich ankommt.">Er rennt so schnell, weil er pünktlich ankommt.</option>
+                                <option value="Er rennt schnell, dass er pünktlich ankommt.">Er rennt schnell, dass er pünktlich ankommt.</option>
+                                <option value="Er rennt so schnell, dass er pünktlich ankommt.">Er rennt so schnell, dass er pünktlich ankommt.</option>
+                                <option value="Er rennt schnell, sodass er pünktlich ankommt.">Er rennt schnell, sodass er pünktlich ankommt.</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Es ist so kalt, dass ich eine Jacke hole.</em></li>
+                            <li><em>Ich bin müde, sodass ich heute früh schlafe.</em></li>
+                            <li><em>Die Tasche ist so schwer, dass ich sie nicht trage.</em></li>
+                            <li><em>Das Wetter ist gut, sodass wir spazieren gehen.</em></li>
+                            <li><em>Er rennt schnell, sodass er pünktlich ankommt.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise5">
+                <h3>Exercise 5: Create Your Own</h3>
+                <p>Choose the correct sentence based on the prompt.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>Prompt: The room is so small that we can’t dance.  
+                            <select class="answer-select" data-correct="Der Raum ist so klein, dass wir nicht tanzen können.">
+                                <option value="">Select</option>
+                                <option value="Der Raum ist klein, weil wir nicht tanzen können.">Der Raum ist klein, weil wir nicht tanzen können.</option>
+                                <option value="Der Raum ist klein, dass wir nicht tanzen können.">Der Raum ist klein, dass wir nicht tanzen können.</option>
+                                <option value="Der Raum ist so klein, dass wir nicht tanzen können.">Der Raum ist so klein, dass wir nicht tanzen können.</option>
+                                <option value="Der Raum ist klein, sodass wir nicht tanzen können.">Der Raum ist klein, sodass wir nicht tanzen können.</option>
+                                <option value="Der Raum ist so klein, sodass wir nicht tanzen können.">Der Raum ist so klein, sodass wir nicht tanzen können.</option>
+                            </select>
+                        </li>
+                        <li>Prompt: I’m reading now, so that I understand later.  
+                            <select class="answer-select" data-correct="Ich lese jetzt, sodass ich später verstehe.">
+                                <option value="">Select</option>
+                                <option value="Ich lese jetzt, weil ich später verstehe.">Ich lese jetzt, weil ich später verstehe.</option>
+                                <option value="Ich lese so jetzt, dass ich später verstehe.">Ich lese so jetzt, dass ich später verstehe.</option>
+                                <option value="Ich lese jetzt, dass ich später verstehe.">Ich lese jetzt, dass ich später verstehe.</option>
+                                <option value="Ich lese jetzt, sodass ich später verstehe.">Ich lese jetzt, sodass ich später verstehe.</option>
+                                <option value="Ich lese so jetzt, sodass ich später verstehe.">Ich lese so jetzt, sodass ich später verstehe.</option>
+                            </select>
+                        </li>
+                        <li>Prompt: The cake is so sweet that I stop eating.  
+                            <select class="answer-select" data-correct="Der Kuchen ist so süß, dass ich aufhöre zu essen.">
+                                <option value="">Select</option>
+                                <option value="Der Kuchen ist süß, weil ich aufhöre zu essen.">Der Kuchen ist süß, weil ich aufhöre zu essen.</option>
+                                <option value="Der Kuchen ist süß, sodass ich aufhöre zu essen.">Der Kuchen ist süß, sodass ich aufhöre zu essen.</option>
+                                <option value="Der Kuchen ist so süß, dass ich aufhöre zu essen.">Der Kuchen ist so süß, dass ich aufhöre zu essen.</option>
+                                <option value="Der Kuchen ist so süß, sodass ich aufhöre zu essen.">Der Kuchen ist so süß, sodass ich aufhöre zu essen.</option>
+                                <option value="Der Kuchen ist süß, dass ich aufhöre zu essen.">Der Kuchen ist süß, dass ich aufhöre zu essen.</option>
+                            </select>
+                        </li>
+                        <li>Prompt: We’re saving money, so that we buy a car.  
+                            <select class="answer-select" data-correct="Wir sparen Geld, sodass wir ein Auto kaufen.">
+                                <option value="">Select</option>
+                                <option value="Wir sparen Geld, weil wir ein Auto kaufen.">Wir sparen Geld, weil wir ein Auto kaufen.</option>
+                                <option value="Wir sparen so Geld, dass wir ein Auto kaufen.">Wir sparen so Geld, dass wir ein Auto kaufen.</option>
+                                <option value="Wir sparen Geld, dass wir ein Auto kaufen.">Wir sparen Geld, dass wir ein Auto kaufen.</option>
+                                <option value="Wir sparen Geld, sodass wir ein Auto kaufen.">Wir sparen Geld, sodass wir ein Auto kaufen.</option>
+                                <option value="Wir sparen so Geld, sodass wir ein Auto kaufen.">Wir sparen so Geld, sodass wir ein Auto kaufen.</option>
+                            </select>
+                        </li>
+                        <li>Prompt: The teacher explains so well that I learn quickly.  
+                            <select class="answer-select" data-correct="Der Lehrer erklärt so gut, dass ich schnell lerne.">
+                                <option value="">Select</option>
+                                <option value="Der Lehrer erklärt gut, weil ich schnell lerne.">Der Lehrer erklärt gut, weil ich schnell lerne.</option>
+                                <option value="Der Lehrer erklärt gut, dass ich schnell lerne.">Der Lehrer erklärt gut, dass ich schnell lerne.</option>
+                                <option value="Der Lehrer erklärt so gut, sodass ich schnell lerne.">Der Lehrer erklärt so gut, sodass ich schnell lerne.</option>
+                                <option value="Der Lehrer erklärt gut, sodass ich schnell lerne.">Der Lehrer erklärt gut, sodass ich schnell lerne.</option>
+                                <option value="Der Lehrer erklärt so gut, dass ich schnell lerne.">Der Lehrer erklärt so gut, dass ich schnell lerne.</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Der Raum ist so klein, dass wir nicht tanzen können.</em></li>
+                            <li><em>Ich lese jetzt, sodass ich später verstehe.</em></li>
+                            <li><em>Der Kuchen ist so süß, dass ich aufhöre zu essen.</em></li>
+                            <li><em>Wir sparen Geld, sodass wir ein Auto kaufen.</em></li>
+                            <li><em>Der Lehrer erklärt so gut, dass ich schnell lerne.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips -->
+        <section id="tips">
+            <h2>Tips to Master "So...dass" and "Sodass"</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Focus on Degree</strong>: Use so...dass with adjectives (so kalt).</li>
+                    <li><strong>Simplify with Sodass</strong>: Use sodass for direct results.</li>
+                    <li><strong>Practice Verb-End</strong>: Keep verbs at the end of subordinate clauses.</li>
+                    <li><strong>Mix and Match</strong>: Rewrite sentences with both.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Resources -->
+        <section id="resources">
+            <h2>Resources for Extra Practice</h2>
+            <div class="resource-links">
+                <div class="resource-card">
+                    <p><strong>YouTube - Learn German with Anja</strong><br>Videos on conjunctions like "so...dass."</p>
+                    <a href="https://www.youtube.com/@LearnGermanwithAnja" class="resource-btn">Visit Learn German with Anja</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>Deutsch Lernen (Lingolia)</strong><br>Lessons on consequential conjunctions.</p>
+                    <a href="https://deutsch.lingolia.com/en/grammar/conjunctions" class="resource-btn">Visit Lingolia</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>YouTube - Easy German</strong><br>Real-life use of "so...dass" and "sodass."</p>
+                    <a href="https://www.youtube.com/@EasyGerman" class="resource-btn">Visit Easy German</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="deshalb-darum.html" class="see-also-rect">Deshalb and Darum</a>
+                <a href="weil.html" class="see-also-rect">Weil</a>
+                <a href="temp-praep.html" class="see-also-rect">Temporal Prepositions</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="deshalb-darum.html" class="next-btn">Next: Deshalb and Darum →</a>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark Mode Toggle
+        const modeToggle = document.getElementById('mode-toggle');
+        modeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Load dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Toggle Answers
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const answersDiv = button.nextElementSibling;
+                if (button.classList.contains('show-answers')) {
+                    answersDiv.classList.toggle('hidden');
+                } else if (button.classList.contains('check-answers')) {
+                    const selects = button.parentElement.querySelectorAll('.answer-select');
+                    selects.forEach(select => {
+                        const selectedValue = select.value;
+                        const correctValue = select.getAttribute('data-correct');
+                        if (selectedValue === correctValue) {
+                            select.style.backgroundColor = '#d4edda'; // Green for correct
+                        } else {
+                            select.style.backgroundColor = '#f8d7da'; // Red for incorrect
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

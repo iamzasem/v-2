@@ -1,0 +1,1007 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      German Indefinite Pronouns: A Comprehensive Guide | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/dative.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+                <a href="a1-topics.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="a2-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>German Indefinite Pronouns: A Comprehensive Guide</h1>
+            <p>
+                Indefinite pronouns in German are essential tools for referring to unspecified people, things, or quantities. They allow speakers to make general statements, talk about unknown entities, or describe amounts without being specific. This guide focuses on key indefinite pronouns such as <strong>man</strong>, <strong>jemand</strong>, <strong>niemand</strong>, <strong>alles</strong>, <strong>alle</strong>, <strong>einige</strong>, <strong>keiner</strong>, <strong>etwas</strong>, <strong>nichts</strong>, <strong>viele</strong>, <strong>wenige</strong>, and <strong>manche</strong>. We’ll explore their meanings, usage, forms (including declensions where applicable), and provide examples, followed by creative multiple-choice exercises to test your understanding. Let’s get started!
+            </p>
+        </section>
+
+        <!-- What Are Indefinite Pronouns -->
+        <section id="what-are">
+            <h2>What Are Indefinite Pronouns?</h2>
+            <p>
+                Indefinite pronouns refer to non-specific persons, things, or amounts. Unlike definite pronouns (e.g., "he," "she," "it"), they don’t point to a particular entity. In German, they play a crucial role in everyday communication, from general observations to expressing absence or abundance.
+            </p>
+            <h3>Key Examples Covered Here</h3>
+            <ul>
+                <li><strong>man</strong> – one, you (general), people</li>
+                <li><strong>jemand</strong> – someone, somebody</li>
+                <li><strong>niemand</strong> – no one, nobody</li>
+                <li><strong>alles</strong> – everything</li>
+                <li><strong>alle</strong> – everyone, all</li>
+                <li><strong>einige</strong> – some, a few</li>
+                <li><strong>keiner</strong> – none, no one</li>
+                <li><strong>etwas</strong> – something</li>
+                <li><strong>nichts</strong> – nothing</li>
+                <li><strong>viele</strong> – many</li>
+                <li><strong>wenige</strong> – few</li>
+                <li><strong>manche</strong> – some, certain people/things</li>
+            </ul>
+        </section>
+
+        <!-- Detailed Explanation of Each Pronoun -->
+        <section id="pronouns">
+            <h2>Detailed Explanation of Each Pronoun</h2>
+
+            <div class="subsection">
+                <h3>1. man</h3>
+                <p><strong>Meaning</strong>: "one," "you" (in a general sense), "people"</p>
+                <p><strong>Usage</strong>: Used for general statements or when the subject is unspecified. It’s always singular and pairs with third-person singular verbs.</p>
+                <p><strong>Example</strong>: <em>Man sollte jeden Tag lernen.</em> (One should learn every day.)</p>
+            </div>
+
+            <div class="subsection">
+                <h3>2. jemand</h3>
+                <p><strong>Meaning</strong>: "someone," "somebody"</p>
+                <p><strong>Usage</strong>: Refers to an unspecified person.</p>
+                <p><strong>Declension</strong>:</p>
+                <ul>
+                    <li>Nominative/Accusative: <em>jemand</em></li>
+                    <li>Genitive: <em>jemandes</em> (e.g., <em>Das ist jemandes Tasche.</em> – That is someone’s bag.)</li>
+                    <li>Dative: <em>jemandem</em> (e.g., <em>Ich helfe jemandem.</em> – I help someone.)</li>
+                </ul>
+                <p><strong>Example</strong>: <em>Jemand klopft an die Tür.</em> (Someone is knocking on the door.)</p>
+            </div>
+
+            <div class="subsection">
+                <h3>3. niemand</h3>
+                <p><strong>Meaning</strong>: "no one," "nobody"</p>
+                <p><strong>Usage</strong>: Indicates the absence of a person.</p>
+                <p><strong>Declension</strong>:</p>
+                <ul>
+                    <li>Nominative/Accusative: <em>niemand</em></li>
+                    <li>Genitive: <em>niemandes</em> (e.g., <em>Das gehört niemandem.</em> – That belongs to no one.)</li>
+                    <li>Dative: <em>niemandem</em> (e.g., <em>Ich spreche mit niemandem.</em> – I speak to no one.)</li>
+                </ul>
+                <p><strong>Example</strong>: <em>Niemand hat geantwortet.</em> (No one answered.)</p>
+            </div>
+
+            <div class="subsection">
+                <h3>4. alles</h3>
+                <p><strong>Meaning</strong>: "everything"</p>
+                <p><strong>Usage</strong>: Refers to all things, typically indeclinable.</p>
+                <p><strong>Example</strong>: <em>Alles ist möglich.</em> (Everything is possible.)</p>
+                <p><strong>Note</strong>: Can appear in expressions like <em>alles Gute</em> (all the best), showing genitive usage.</p>
+            </div>
+
+            <div class="subsection">
+                <h3>5. alle</h3>
+                <p><strong>Meaning</strong>: "everyone," "all"</p>
+                <p><strong>Usage</strong>: Refers to all people or things in a group.</p>
+                <p><strong>Declension</strong> (changes with case):</p>
+                <ul>
+                    <li>Nominative: <em>alle</em></li>
+                    <li>Genitive: <em>aller</em> (e.g., <em>aller Kinder</em> – of all children)</li>
+                    <li>Dative: <em>allen</em> (e.g., <em>allen Freunden</em> – to all friends)</li>
+                    <li>Accusative: <em>alle</em></li>
+                </ul>
+                <p><strong>Example</strong>: <em>Alle kommen zur Party.</em> (Everyone is coming to the party.)</p>
+            </div>
+
+            <div class="subsection">
+                <h3>6. einige</h3>
+                <p><strong>Meaning</strong>: "some," "a few"</p>
+                <p><strong>Usage</strong>: Indicates an unspecified small number of people or things.</p>
+                <p><strong>Declension</strong>:</p>
+                <ul>
+                    <li>Nominative: <em>einige</em></li>
+                    <li>Genitive: <em>einiger</em> (e.g., <em>einiger Leute</em> – of some people)</li>
+                    <li>Dative: <em>einigen</em> (e.g., <em>einigen Kindern</em> – to some children)</li>
+                    <li>Accusative: <em>einige</em></li>
+                </ul>
+                <p><strong>Example</strong>: <em>Einige Schüler sind krank.</em> (Some students are sick.)</p>
+            </div>
+
+            <div class="subsection">
+                <h3>7. keiner</h3>
+                <p><strong>Meaning</strong>: "none," "no one"</p>
+                <p><strong>Usage</strong>: Denies the existence of any person or thing.</p>
+                <p><strong>Declension</strong> (varies by gender and case):</p>
+                <ul>
+                    <li>Masculine: <em>keiner</em> (nom.), <em>keines</em> (gen.), <em>keinem</em> (dat.), <em>keinen</em> (acc.)</li>
+                    <li>Feminine: <em>keine</em> (nom./acc.), <em>keiner</em> (gen./dat.)</li>
+                    <li>Neuter: <em>keines</em> (nom./acc.), <em>keines</em> (gen.), <em>keinem</em> (dat.)</li>
+                    <li>Plural: <em>keine</em> (nom./acc.), <em>keiner</em> (gen.), <em>keinen</em> (dat.)</li>
+                </ul>
+                <p><strong>Example</strong>: <em>Keiner weiß die Antwort.</em> (No one knows the answer.)</p>
+            </div>
+
+            <div class="subsection">
+                <h3>8. etwas</h3>
+                <p><strong>Meaning</strong>: "something"</p>
+                <p><strong>Usage</strong>: Refers to an unspecified thing, indeclinable.</p>
+                <p><strong>Example</strong>: <em>Ich brauche etwas Zeit.</em> (I need some time.)</p>
+            </div>
+
+            <div class="subsection">
+                <h3>9. nichts</h3>
+                <p><strong>Meaning</strong>: "nothing"</p>
+                <p><strong>Usage</strong>: Indicates the absence of anything, indeclinable.</p>
+                <p><strong>Example</strong>: <em>Nichts ist verloren.</em> (Nothing is lost.)</p>
+            </div>
+
+            <div class="subsection">
+                <h3>10. viele</h3>
+                <p><strong>Meaning</strong>: "many"</p>
+                <p><strong>Usage</strong>: Refers to a large number of people or things.</p>
+                <p><strong>Declension</strong>:</p>
+                <ul>
+                    <li>Nominative: <em>viele</em></li>
+                    <li>Genitive: <em>vieler</em> (e.g., <em>vieler Bücher</em> – of many books)</li>
+                    <li>Dative: <em>vielen</em> (e.g., <em>vielen Freunden</em> – to many friends)</li>
+                    <li>Accusative: <em>viele</em></li>
+                </ul>
+                <p><strong>Example</strong>: <em>Viele Touristen besuchen Berlin.</em> (Many tourists visit Berlin.)</p>
+            </div>
+
+            <div class="subsection">
+                <h3>11. wenige</h3>
+                <p><strong>Meaning</strong>: "few"</p>
+                <p><strong>Usage</strong>: Refers to a small number of people or things.</p>
+                <p><strong>Declension</strong>:</p>
+                <ul>
+                    <li>Nominative: <em>wenige</em></li>
+                    <li>Genitive: <em>weniger</em> (e.g., <em>weniger Leute</em> – of few people)</li>
+                    <li>Dative: <em>wenigen</em> (e.g., <em>wenigen Kindern</em> – to few children)</li>
+                    <li>Accusative: <em>wenige</em></li>
+                </ul>
+                <p><strong>Example</strong>: <em>Wenige verstehen das Problem.</em> (Few understand the problem.)</p>
+            </div>
+
+            <div class="subsection">
+                <h3>12. manche</h3>
+                <p><strong>Meaning</strong>: "some," "certain people/things"</p>
+                <p><strong>Usage</strong>: Refers to an unspecified portion, often with a sense of distinction.</p>
+                <p><strong>Declension</strong>:</p>
+                <ul>
+                    <li>Nominative: <em>manche</em></li>
+                    <li>Genitive: <em>mancher</em> (e.g., <em>mancher Freunde</em> – of some friends)</li>
+                    <li>Dative: <em>manchen</em> (e.g., <em>manchen Leuten</em> – to some people)</li>
+                    <li>Accusative: <em>manche</em></li>
+                </ul>
+                <p><strong>Example</strong>: <em>Manche glauben an Wunder.</em> (Some believe in miracles.)</p>
+            </div>
+        </section>
+
+        <!-- Special Notes and Tips -->
+        <section id="tips">
+            <h2>Special Notes and Tips</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>man vs. jemand</strong>: Use <em>man</em> for general statements (<em>Man lebt nur einmal.</em> – One only lives once), and <em>jemand</em> for a specific but unknown person (<em>Jemand hat mein Buch.</em> – Someone has my book).</li>
+                    <li><strong>alles vs. alle</strong>: <em>Alles</em> is for things (<em>Alles ist teuer.</em> – Everything is expensive), while <em>alle</em> is for people or groups (<em>Alle sind müde.</em> – Everyone is tired).</li>
+                    <li><strong>Declinable vs. Indeclinable</strong>: Pronouns like <em>alles</em>, <em>etwas</em>, and <em>nichts</em> don’t change, while <em>alle</em>, <em>einige</em>, <em>keiner</em>, <em>viele</em>, <em>wenige</em>, and <em>manche</em> adjust based on case and gender.</li>
+                    <li><strong>Common Mistake</strong>: Don’t confuse <em>niemand</em> (no one) with <em>keiner</em> (none/no one); <em>niemand</em> is simpler and doesn’t decline as much.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Exercises -->
+        <section id="practice">
+            <h2>Creative Exercises with Multiple-Choice Options</h2>
+
+            <div class="subsection" id="exercise1">
+                <h3>Exercise 1: Basic Usage</h3>
+                <p>Choose the correct pronoun.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>___ sollte höflich sein.
+                            <select class="answer-select" data-correct="Man">
+                                <option value="">Select</option>
+                                <option value="Jemand">Jemand</option>
+                                <option value="Man">Man</option>
+                                <option value="Niemand">Niemand</option>
+                            </select>
+                        </li>
+                        <li>Ich habe ___ gefunden.
+                            <select class="answer-select" data-correct="etwas">
+                                <option value="">Select</option>
+                                <option value="etwas">etwas</option>
+                                <option value="nichts">nichts</option>
+                                <option value="alles">alles</option>
+                            </select>
+                        </li>
+                        <li>___ Leute sind nett.
+                            <select class="answer-select" data-correct="Manche">
+                                <option value="">Select</option>
+                                <option value="Viele">Viele</option>
+                                <option value="Wenige">Wenige</option>
+                                <option value="Manche">Manche</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Man</em> sollte höflich sein.</li>
+                            <li>Ich habe <em>etwas</em> gefunden.</li>
+                            <li><em>Manche</em> Leute sind nett.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise2">
+                <h3>Exercise 2: Declension Focus</h3>
+                <p>Choose the correct form of the pronoun.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>Ich helfe ___.
+                            <select class="answer-select" data-correct="jemandem">
+                                <option value="">Select</option>
+                                <option value="jemand">jemand</option>
+                                <option value="jemandem">jemandem</option>
+                                <option value="jemandes">jemandes</option>
+                            </select>
+                        </li>
+                        <li>Das gehört ___.
+                            <select class="answer-select" data-correct="niemandes">
+                                <option value="">Select</option>
+                                <option value="niemand">niemand</option>
+                                <option value="niemandem">niemandem</option>
+                                <option value="niemandes">niemandes</option>
+                            </select>
+                        </li>
+                        <li>Ich danke ___ Freunden.
+                            <select class="answer-select" data-correct="allen">
+                                <option value="">Select</option>
+                                <option value="allen">allen</option>
+                                <option value="alle">alle</option>
+                                <option value="aller">aller</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li>Ich helfe <em>jemandem</em>.</li>
+                            <li>Das gehört <em>niemandes</em>.</li>
+                            <li>Ich danke <em>allen</em> Freunden.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise3">
+                <h3>Exercise 3: Context Clues</h3>
+                <p>Choose the pronoun that fits the sentence.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>___ hat mein Handy genommen.
+                            <select class="answer-select" data-correct="Jemand">
+                                <option value="">Select</option>
+                                <option value="Jemand">Jemand</option>
+                                <option value="Niemand">Niemand</option>
+                                <option value="Man">Man</option>
+                            </select>
+                        </li>
+                        <li>___ ist heute perfekt.
+                            <select class="answer-select" data-correct="Alles">
+                                <option value="">Select</option>
+                                <option value="Alles">Alles</option>
+                                <option value="Alle">Alle</option>
+                                <option value="Einige">Einige</option>
+                            </select>
+                        </li>
+                        <li>___ wissen die Wahrheit.
+                            <select class="answer-select" data-correct="Wenige">
+                                <option value="">Select</option>
+                                <option value="Viele">Viele</option>
+                                <option value="Wenige">Wenige</option>
+                                <option value="Keiner">Keiner</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Jemand</em> hat mein Handy genommen.</li>
+                            <li><em>Alles</em> ist heute perfekt.</li>
+                            <li><em>Wenige</em> wissen die Wahrheit.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise4">
+                <h3>Exercise 4: Mixed Pronouns</h3>
+                <p>Fill in the blank with the correct pronoun.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>___ sind zur Feier gekommen.
+                            <select class="answer-select" data-correct="Alle">
+                                <option value="">Select</option>
+                                <option value="Alle">Alle</option>
+                                <option value="Alles">Alles</option>
+                                <option value="Manche">Manche</option>
+                            </select>
+                        </li>
+                        <li>Ich kenne ___ hier.
+                            <select class="answer-select" data-correct="niemand">
+                                <option value="">Select</option>
+                                <option value="niemand">niemand</option>
+                                <option value="jemand">jemand</option>
+                                <option value="man">man</option>
+                            </select>
+                        </li>
+                        <li>___ Gute zum Geburtstag!
+                            <select class="answer-select" data-correct="Alles">
+                                <option value="">Select</option>
+                                <option value="Alles">Alles</option>
+                                <option value="Alle">Alle</option>
+                                <option value="Einige">Einige</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Alle</em> sind zur Feier gekommen.</li>
+                            <li>Ich kenne <em>niemand</em> hier.</li>
+                            <li><em>Alles</em> Gute zum Geburtstag!</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise5">
+                <h3>Exercise 5: Story Completion</h3>
+                <p>Fill in the blanks with the correct pronoun.</p>
+                <div class="examples">
+                    <p>___ (1) sagt, dass Lernen wichtig ist. ___ (2) hilft mir dabei. ___ (3) Leute finden es langweilig, aber ___ (4) denken, es ist nützlich. Am Ende ist ___ (5) klar.</p>
+                    <ol class="example-list">
+                        <li>
+                            <select class="answer-select" data-correct="Man">
+                                <option value="">Select</option>
+                                <option value="Man">Man</option>
+                                <option value="Jemand">Jemand</option>
+                                <option value="Niemand">Niemand</option>
+                            </select>
+                        </li>
+                        <li>
+                            <select class="answer-select" data-correct="Jemand">
+                                <option value="">Select</option>
+                                <option value="Jemand">Jemand</option>
+                                <option value="Niemand">Niemand</option>
+                                <option value="Keiner">Keiner</option>
+                            </select>
+                        </li>
+                        <li>
+                            <select class="answer-select" data-correct="Einige">
+                                <option value="">Select</option>
+                                <option value="Einige">Einige</option>
+                                <option value="Viele">Viele</option>
+                                <option value="Wenige">Wenige</option>
+                            </select>
+                        </li>
+                        <li>
+                            <select class="answer-select" data-correct="Manche">
+                                <option value="">Select</option>
+                                <option value="Manche">Manche</option>
+                                <option value="Alles">Alles</option>
+                                <option value="Alle">Alle</option>
+                            </select>
+                        </li>
+                        <li>
+                            <select class="answer-select" data-correct="alles">
+                                <option value="">Select</option>
+                                <option value="alles">alles</option>
+                                <option value="alle">alle</option>
+                                <option value="nichts">nichts</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong> <em>Man</em> sagt, dass Lernen wichtig ist. <em>Jemand</em> hilft mir dabei. <em>Einige</em> Leute finden es langweilig, aber <em>manche</em> denken, es ist nützlich. Am Ende ist <em>alles</em> klar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips to Master Indefinite Pronouns -->
+        <section id="master-tips">
+            <h2>Tips to Master Indefinite Pronouns</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Practice Context</strong>: Write 3 sentences for each pronoun to see how they fit.</li>
+                    <li><strong>Flashcards</strong>: Pair pronouns with meanings and examples (e.g., <em>man</em> – "one" – <em>Man lebt nur einmal.</em>).</li>
+                    <li><strong>Listen Up</strong>: Watch German shows or listen to podcasts—note how natives use <em>man</em>, <em>jemand</em>, etc.</li>
+                    <li><strong>Declension Drills</strong>: Focus on <em>alle</em>, <em>einige</em>, <em>keiner</em>—practice their forms with nouns.</li>
+                    <li><strong>Compare</strong>: Contrast <em>alles</em> vs. <em>alle</em>, <em>jemand</em> vs. <em>niemand</em> in similar sentences.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Resources -->
+        <section id="resources">
+            <h2>Resources for Extra Practice</h2>
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h4>DeutschAkademie</h4>
+                    <p>Free grammar exercises.</p>
+                    <a href="https://www.deutschakademie.de/online-deutschkurs/" class="resource-btn">Visit DeutschAkademie</a>
+                </div>
+                <div class="resource-card">
+                    <h4>GermanPod101</h4>
+                    <p>Audio lessons on pronouns.</p>
+                    <a href="https://www.germanpod101.com/" class="resource-btn">Visit GermanPod101</a>
+                </div>
+                <div class="resource-card">
+                    <h4>DW Learn German</h4>
+                    <p>Interactive pronoun practice.</p>
+                    <a href="https://learngerman.dw.com/en/overview" class="resource-btn">Visit DW Learn German</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Thoughts -->
+        <section id="final-thoughts">
+            <h2>You’re Ready!</h2>
+            <p>
+                This guide gives you a full rundown of German indefinite pronouns like <em>man</em>, <em>jemand</em>, <em>niemand</em>, and more—complete with usage, forms, examples, and exercises. Work through the activities, and you’ll be using these pronouns like a pro! Next, you might explore German relative pronouns or adjectives—keep learning!
+            </p>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="relative-pronouns.html" class="see-also-rect">German Relative Pronouns</a>
+                <a href="adjectives.html" class="see-also-rect">German Adjectives</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="relative-pronouns.html" class="next-btn">Next: German Relative Pronouns →</a>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark Mode Toggle
+        const modeToggle = document.getElementById('mode-toggle');
+        modeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+    
+        // Load dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+    
+        // Toggle Answers
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const answersDiv = button.nextElementSibling;
+                if (button.classList.contains('show-answers')) {
+                    answersDiv.classList.toggle('hidden');
+                } else if (button.classList.contains('check-answers')) {
+                    const selects = button.parentElement.querySelectorAll('.answer-select');
+                    selects.forEach(select => {
+                        const selectedValue = select.value;
+                        const correctValue = select.getAttribute('data-correct');
+                        if (selectedValue === correctValue) {
+                            select.style.backgroundColor = '#d4edda'; // Green for correct
+                        } else {
+                            select.style.backgroundColor = '#f8d7da'; // Red for incorrect
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

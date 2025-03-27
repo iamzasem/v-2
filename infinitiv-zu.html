@@ -1,0 +1,983 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Infinitiv mit zu in German | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/infinitiv-zu.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+               <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="b1-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>Infinitiv mit zu in German</h1>
+            <p>
+                A clear guide to the Infinitiv mit zu construction in German, explaining how to use it with verbs, adjectives, and expressions, featuring 25 common examples, exercises, and resources for practice.
+            </p>
+        </section>
+
+        <!-- Understanding -->
+        <section id="understanding">
+            <h2>Understanding Infinitiv mit zu in German</h2>
+            <p>The Infinitiv mit zu construction uses an infinitive verb (e.g., 'gehen', 'lernen') with the particle 'zu' (to) to express a purpose, reason, or additional action tied to the main clause. It’s similar to English "to + verb," but follows specific German rules. It doesn’t have its own subject and typically appears at the end of the sentence.</p>
+            <div class="subsection">
+                <h3>Key Points</h3>
+                <ul class="example-list">
+                    <li><strong>Structure</strong>: Main clause + 'zu' + infinitive (e.g., 'Ich habe Zeit, zu lesen.' - I have time to read.)</li>
+                    <li><strong>No Separate Subject</strong>: The subject of the main clause applies to the infinitive.</li>
+                    <li><strong>Comma Use</strong>: A comma often separates the main clause from the infinitive clause.</li>
+                    <li><strong>Verb Position</strong>: The infinitive with 'zu' goes to the end of the clause.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- When to Use -->
+        <section id="when-to-use">
+            <h2>When to Use Infinitiv mit zu</h2>
+            <div class="subsection">
+                <h3>After Certain Verbs</h3>
+                <p>Verbs like 'versuchen' (to try), 'vergessen' (to forget), or 'hoffen' (to hope) often trigger 'zu' + infinitive.</p>
+            </div>
+            <div class="subsection">
+                <h3>With Adjectives</h3>
+                <p>Adjectives like 'leicht' (easy) or 'schwer' (hard) pair with 'zu' + infinitive to describe something.</p>
+            </div>
+            <div class="subsection">
+                <h3>Expressions</h3>
+                <p>Phrases like 'es ist Zeit' (it’s time) or 'zu viel' (too much) use this construction.</p>
+            </div>
+        </section>
+
+        <!-- Common Uses -->
+        <section id="uses">
+            <h2>Common Uses of Infinitiv mit zu</h2>
+            <div class="subsection">
+                <h3>Purpose or Intention</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Ich lerne Deutsch, zu reisen.</em> (I learn German to travel.)</li>
+                    </ol>
+                    <p><strong>Note:</strong> More commonly 'um zu reisen', but possible without 'um' in some contexts.</p>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>After Modal-like Verbs</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Sie versucht, zu singen.</em> (She tries to sing.)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Describing Qualities</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Das Buch ist leicht zu lesen.</em> (The book is easy to read.)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>After Expressions</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Es ist Zeit, zu gehen.</em> (It’s time to go.)</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- List of Verbs -->
+        <section id="list">
+            <h2>List of 25 Common Verbs with Infinitiv mit zu</h2>
+            <div class="table-container">
+                <table>
+                    <tr><th>Verb</th><th>Meaning</th><th>Example Sentence</th></tr>
+                    <tr><td><strong>versuchen</strong></td><td>to try</td><td><em>Ich versuche, zu verstehen.</em> (I try to understand.)</td></tr>
+                    <tr><td><strong>hoffen</strong></td><td>to hope</td><td><em>Er hofft, zu gewinnen.</em> (He hopes to win.)</td></tr>
+                    <tr><td><strong>vergessen</strong></td><td>to forget</td><td><em>Sie vergisst, zu antworten.</em> (She forgets to answer.)</td></tr>
+                    <tr><td><strong>anfangen</strong></td><td>to begin</td><td><em>Wir fangen an, zu arbeiten.</em> (We begin to work.)</td></tr>
+                    <tr><td><strong>aufhören</strong></td><td>to stop</td><td><em>Er hört auf, zu rauchen.</em> (He stops smoking.)</td></tr>
+                    <tr><td><strong>lernen</strong></td><td>to learn</td><td><em>Ich lerne, zu kochen.</em> (I learn to cook.)</td></tr>
+                    <tr><td><strong>planen</strong></td><td>to plan</td><td><em>Sie plant, zu reisen.</em> (She plans to travel.)</td></tr>
+                    <tr><td><strong>entscheiden</strong></td><td>to decide</td><td><em>Er entscheidet, zu bleiben.</em> (He decides to stay.)</td></tr>
+                    <tr><td><strong>brauchen</strong></td><td>to need</td><td><em>Ich brauche Zeit, zu lesen.</em> (I need time to read.)</td></tr>
+                    <tr><td><strong>wissen</strong></td><td>to know</td><td><em>Weißt du, wie zu fahren?</em> (Do you know how to drive?)</td></tr>
+                    <tr><td><strong>scheinen</strong></td><td>to seem</td><td><em>Es scheint, zu regnen.</em> (It seems to rain.)</td></tr>
+                    <tr><td><strong>helfen</strong></td><td>to help</td><td><em>Er hilft mir, zu lernen.</em> (He helps me to learn.)</td></tr>
+                    <tr><td><strong>bitten</strong></td><td>to ask</td><td><em>Ich bitte dich, zu kommen.</em> (I ask you to come.)</td></tr>
+                    <tr><td><strong>erlauben</strong></td><td>to allow</td><td><em>Sie erlaubt mir, zu spielen.</em> (She allows me to play.)</td></tr>
+                    <tr><td><strong>verbieten</strong></td><td>to forbid</td><td><em>Er verbietet uns, zu reden.</em> (He forbids us to talk.)</td></tr>
+                    <tr><td><strong>bereit sein</strong></td><td>to be ready</td><td><em>Ich bin bereit, zu gehen.</em> (I’m ready to go.)</td></tr>
+                    <tr><td><strong>schwer sein</strong></td><td>to be hard</td><td><em>Das ist schwer zu verstehen.</em> (That’s hard to understand.)</td></tr>
+                    <tr><td><strong>leicht sein</strong></td><td>to be easy</td><td><em>Es ist leicht zu machen.</em> (It’s easy to do.)</td></tr>
+                    <tr><td><strong>sicher sein</strong></td><td>to be sure</td><td><em>Ich bin sicher, zu gewinnen.</em> (I’m sure to win.)</td></tr>
+                    <tr><td><strong>versprechen</strong></td><td>to promise</td><td><em>Er verspricht, zu helfen.</em> (He promises to help.)</td></tr>
+                    <tr><td><strong>warten</strong></td><td>to wait</td><td><em>Ich warte darauf, zu beginnen.</em> (I wait to begin.)</td></tr>
+                    <tr><td><strong>zögern</strong></td><td>to hesitate</td><td><em>Sie zögert, zu antworten.</em> (She hesitates to answer.)</td></tr>
+                    <tr><td><strong>üben</strong></td><td>to practice</td><td><em>Ich übe, zu singen.</em> (I practice singing.)</td></tr>
+                    <tr><td><strong>freuen sich</strong></td><td>to be happy</td><td><em>Sie freut sich, zu tanzen.</em> (She’s happy to dance.)</td></tr>
+                    <tr><td><strong>genug haben</strong></td><td>to have enough</td><td><em>Ich habe genug Geld, zu kaufen.</em> (I have enough money to buy.)</td></tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Detailed Examples -->
+        <section id="examples">
+            <h2>Detailed Examples</h2>
+            <div class="examples">
+                <ol class="example-list">
+                    <li><em>Ich versuche, Deutsch zu lernen.</em> (I try to learn German.)</li>
+                    <li><em>Er hofft, morgen zu kommen.</em> (He hopes to come tomorrow.)</li>
+                    <li><em>Das Buch ist leicht zu lesen.</em> (The book is easy to read.)</li>
+                    <li><em>Sie vergisst, den Brief zu schreiben.</em> (She forgets to write the letter.)</li>
+                    <li><em>Es ist Zeit, nach Hause zu gehen.</em> (It’s time to go home.)</li>
+                </ol>
+            </div>
+        </section>
+
+      <!-- Exercises -->
+<section id="practice">
+    <h2>Exercises to Master Infinitiv mit zu</h2>
+    <div class="subsection" id="exercise1">
+        <h3>Exercise 1: Fill in the Blank</h3>
+        <p>Add 'zu' + the correct infinitive from the list.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Ich versuche, ___ (understand).  
+                    <select class="answer-select" data-correct="Ich versuche, zu verstehen.">
+                        <option value="">Select</option>
+                        <option value="Ich versuche, verstehen.">Ich versuche, verstehen.</option>
+                        <option value="Ich versuche, zu verstehen.">Ich versuche, zu verstehen.</option>
+                    </select>
+                </li>
+                <li>Er hofft, ___ (win).  
+                    <select class="answer-select" data-correct="Er hofft, zu gewinnen.">
+                        <option value="">Select</option>
+                        <option value="Er hofft, zu gewinnen.">Er hofft, zu gewinnen.</option>
+                        <option value="Er hofft, gewinnen.">Er hofft, gewinnen.</option>
+                    </select>
+                </li>
+                <li>Das ist schwer ___ (do).  
+                    <select class="answer-select" data-correct="Das ist schwer zu machen.">
+                        <option value="">Select</option>
+                        <option value="Das ist schwer machen.">Das ist schwer machen.</option>
+                        <option value="Das ist schwer zu machen.">Das ist schwer zu machen.</option>
+                    </select>
+                </li>
+                <li>Sie plant, ___ (travel).  
+                    <select class="answer-select" data-correct="Sie plant, zu reisen.">
+                        <option value="">Select</option>
+                        <option value="Sie plant, reisen.">Sie plant, reisen.</option>
+                        <option value="Sie plant, zu reisen.">Sie plant, zu reisen.</option>
+                    </select>
+                </li>
+                <li>Ich habe genug Zeit, ___ (read).  
+                    <select class="answer-select" data-correct="Ich habe genug Zeit, zu lesen.">
+                        <option value="">Select</option>
+                        <option value="Ich habe genug Zeit, zu lesen.">Ich habe genug Zeit, zu lesen.</option>
+                        <option value="Ich habe genug Zeit, lesen.">Ich habe genug Zeit, lesen.</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Ich versuche, zu verstehen.</em></li>
+                    <li><em>Er hofft, zu gewinnen.</em></li>
+                    <li><em>Das ist schwer zu machen.</em></li>
+                    <li><em>Sie plant, zu reisen.</em></li>
+                    <li><em>Ich habe genug Zeit, zu lesen.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="subsection" id="exercise2">
+        <h3>Exercise 2: Translate into German</h3>
+        <p>Translate using 'zu' + infinitive.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>I try to sing.  
+                    <select class="answer-select" data-correct="Ich versuche, zu singen.">
+                        <option value="">Select</option>
+                        <option value="Ich versuche, singen.">Ich versuche, singen.</option>
+                        <option value="Ich versuche, zu singen.">Ich versuche, zu singen.</option>
+                    </select>
+                </li>
+                <li>It’s easy to learn.  
+                    <select class="answer-select" data-correct="Es ist leicht zu lernen.">
+                        <option value="">Select</option>
+                        <option value="Es ist leicht zu lernen.">Es ist leicht zu lernen.</option>
+                        <option value="Es ist leicht lernen.">Es ist leicht lernen.</option>
+                    </select>
+                </li>
+                <li>She forgets to call.  
+                    <select class="answer-select" data-correct="Sie vergisst, zu anrufen.">
+                        <option value="">Select</option>
+                        <option value="Sie vergisst, anrufen.">Sie vergisst, anrufen.</option>
+                        <option value="Sie vergisst, zu anrufen.">Sie vergisst, zu anrufen.</option>
+                    </select>
+                </li>
+                <li>He promises to help.  
+                    <select class="answer-select" data-correct="Er verspricht, zu helfen.">
+                        <option value="">Select</option>
+                        <option value="Er verspricht, zu helfen.">Er verspricht, zu helfen.</option>
+                        <option value="Er verspricht, helfen.">Er verspricht, helfen.</option>
+                    </select>
+                </li>
+                <li>We need time to finish.  
+                    <select class="answer-select" data-correct="Wir brauchen Zeit, zu fertig werden.">
+                        <option value="">Select</option>
+                        <option value="Wir brauchen Zeit, fertig werden.">Wir brauchen Zeit, fertig werden.</option>
+                        <option value="Wir brauchen Zeit, zu fertig werden.">Wir brauchen Zeit, zu fertig werden.</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Ich versuche, zu singen.</em></li>
+                    <li><em>Es ist leicht zu lernen.</em></li>
+                    <li><em>Sie vergisst, zu anrufen.</em></li>
+                    <li><em>Er verspricht, zu helfen.</em></li>
+                    <li><em>Wir brauchen Zeit, zu fertig werden.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="subsection" id="exercise3">
+        <h3>Exercise 3: Correct the Mistakes</h3>
+        <p>Fix the errors in these sentences.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Ich hoffe, kommen.  
+                    <select class="answer-select" data-correct="Ich hoffe, zu kommen.">
+                        <option value="">Select</option>
+                        <option value="Ich hoffe, kommen zu.">Ich hoffe, kommen zu.</option>
+                        <option value="Ich hoffe, zu kommen.">Ich hoffe, zu kommen.</option>
+                    </select>
+                </li>
+                <li>Das ist schwer verstehen.  
+                    <select class="answer-select" data-correct="Das ist schwer zu verstehen.">
+                        <option value="">Select</option>
+                        <option value="Das ist schwer zu verstehen.">Das ist schwer zu verstehen.</option>
+                        <option value="Das ist schwer verstehen zu.">Das ist schwer verstehen zu.</option>
+                    </select>
+                </li>
+                <li>Er lernt, kochen zu.  
+                    <select class="answer-select" data-correct="Er lernt, zu kochen.">
+                        <option value="">Select</option>
+                        <option value="Er lernt, kochen.">Er lernt, kochen.</option>
+                        <option value="Er lernt, zu kochen.">Er lernt, zu kochen.</option>
+                    </select>
+                </li>
+                <li>Sie erlaubt mir, spielen zu.  
+                    <select class="answer-select" data-correct="Sie erlaubt mir, zu spielen.">
+                        <option value="">Select</option>
+                        <option value="Sie erlaubt mir, zu spielen.">Sie erlaubt mir, zu spielen.</option>
+                        <option value="Sie erlaubt mir, spielen.">Sie erlaubt mir, spielen.</option>
+                    </select>
+                </li>
+                <li>Ich bin bereit gehen.  
+                    <select class="answer-select" data-correct="Ich bin bereit, zu gehen.">
+                        <option value="">Select</option>
+                        <option value="Ich bin bereit gehen zu.">Ich bin bereit gehen zu.</option>
+                        <option value="Ich bin bereit, zu gehen.">Ich bin bereit, zu gehen.</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Ich hoffe, zu kommen.</em></li>
+                    <li><em>Das ist schwer zu verstehen.</em></li>
+                    <li><em>Er lernt, zu kochen.</em></li>
+                    <li><em>Sie erlaubt mir, zu spielen.</em></li>
+                    <li><em>Ich bin bereit, zu gehen.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="subsection" id="exercise4">
+        <h3>Exercise 4: Combine Sentences</h3>
+        <p>Combine using 'zu' + infinitive.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Ich versuche es. Ich will es verstehen.  
+                    <select class="answer-select" data-correct="Ich versuche, es zu verstehen.">
+                        <option value="">Select</option>
+                        <option value="Ich versuche, es verstehen.">Ich versuche, es verstehen.</option>
+                        <option value="Ich versuche, es zu verstehen.">Ich versuche, es zu verstehen.</option>
+                    </select>
+                </li>
+                <li>Das Buch ist leicht. Man kann es lesen.  
+                    <select class="answer-select" data-correct="Das Buch ist leicht zu lesen.">
+                        <option value="">Select</option>
+                        <option value="Das Buch ist leicht zu lesen.">Das Buch ist leicht zu lesen.</option>
+                        <option value="Das Buch ist leicht lesen.">Das Buch ist leicht lesen.</option>
+                    </select>
+                </li>
+                <li>Er plant etwas. Er will reisen.  
+                    <select class="answer-select" data-correct="Er plant, zu reisen.">
+                        <option value="">Select</option>
+                        <option value="Er plant, reisen.">Er plant, reisen.</option>
+                        <option value="Er plant, zu reisen.">Er plant, zu reisen.</option>
+                    </select>
+                </li>
+                <li>Sie hilft mir. Ich lerne Deutsch.  
+                    <select class="answer-select" data-correct="Sie hilft mir, Deutsch zu lernen.">
+                        <option value="">Select</option>
+                        <option value="Sie hilft mir, Deutsch lernen.">Sie hilft mir, Deutsch lernen.</option>
+                        <option value="Sie hilft mir, Deutsch zu lernen.">Sie hilft mir, Deutsch zu lernen.</option>
+                    </select>
+                </li>
+                <li>Ich habe Zeit. Ich kann spielen.  
+                    <select class="answer-select" data-correct="Ich habe Zeit, zu spielen.">
+                        <option value="">Select</option>
+                        <option value="Ich habe Zeit, zu spielen.">Ich habe Zeit, zu spielen.</option>
+                        <option value="Ich habe Zeit, spielen.">Ich habe Zeit, spielen.</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Ich versuche, es zu verstehen.</em></li>
+                    <li><em>Das Buch ist leicht zu lesen.</em></li>
+                    <li><em>Er plant, zu reisen.</em></li>
+                    <li><em>Sie hilft mir, Deutsch zu lernen.</em></li>
+                    <li><em>Ich habe Zeit, zu spielen.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="subsection" id="exercise5">
+        <h3>Exercise 5: Create Your Own</h3>
+        <p>Write sentences using these verbs with 'zu' + infinitive.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Anfangen  
+                    <select class="answer-select" data-correct="Ich fange an, zu arbeiten.">
+                        <option value="">Select</option>
+                        <option value="Ich fange an, arbeiten.">Ich fange an, arbeiten.</option>
+                        <option value="Ich fange an, zu arbeiten.">Ich fange an, zu arbeiten.</option>
+                    </select>
+                </li>
+                <li>Leicht sein  
+                    <select class="answer-select" data-correct="Das Spiel ist leicht zu gewinnen.">
+                        <option value="">Select</option>
+                        <option value="Das Spiel ist leicht zu gewinnen.">Das Spiel ist leicht zu gewinnen.</option>
+                        <option value="Das Spiel ist leicht gewinnen.">Das Spiel ist leicht gewinnen.</option>
+                    </select>
+                </li>
+                <li>Versprechen  
+                    <select class="answer-select" data-correct="Er verspricht, zu kommen.">
+                        <option value="">Select</option>
+                        <option value="Er verspricht, kommen.">Er verspricht, kommen.</option>
+                        <option value="Er verspricht, zu kommen.">Er verspricht, zu kommen.</option>
+                    </select>
+                </li>
+                <li>Vergessen  
+                    <select class="answer-select" data-correct="Sie vergisst, zu schreiben.">
+                        <option value="">Select</option>
+                        <option value="Sie vergisst, zu schreiben.">Sie vergisst, zu schreiben.</option>
+                        <option value="Sie vergisst, schreiben.">Sie vergisst, schreiben.</option>
+                    </select>
+                </li>
+                <li>Hoffen  
+                    <select class="answer-select" data-correct="Ich hoffe, zu lernen.">
+                        <option value="">Select</option>
+                        <option value="Ich hoffe, lernen.">Ich hoffe, lernen.</option>
+                        <option value="Ich hoffe, zu lernen.">Ich hoffe, zu lernen.</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Ich fange an, zu arbeiten.</em></li>
+                    <li><em>Das Spiel ist leicht zu gewinnen.</em></li>
+                    <li><em>Er verspricht, zu kommen.</em></li>
+                    <li><em>Sie vergisst, zu schreiben.</em></li>
+                    <li><em>Ich hoffe, zu lernen.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Tips -->
+        <section id="tips">
+            <h2>Tips for Mastery</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Memorize Triggers</strong>: Learn verbs and adjectives that use 'zu' + infinitive.</li>
+                    <li><strong>Practice End Position</strong>: Always place 'zu' + infinitive at the end.</li>
+                    <li><strong>Combine with um</strong>: Practice 'um zu' for purpose (e.g., 'Ich lerne, um zu reisen.').</li>
+                    <li><strong>Read Aloud</strong>: Say sentences to get the rhythm.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Resources for Extra Practice -->
+        <section id="resources">
+            <h2>Resources for Extra Practice</h2>
+            <div class="resource-links">
+                <div class="resource-card">
+                    <p><strong>YouTube - Learn German with Anja</strong><br>Explanations of infinitive constructions.</p>
+                    <a href="https://www.youtube.com/@LearnGermanwithAnja" class="resource-btn">Visit Learn German with Anja</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>Deutsch Lernen (Lingolia)</strong><br>Lessons on 'zu' + infinitive.</p>
+                    <a href="https://deutsch.lingolia.com/en/grammar/sentence-structure/infinitive-clauses" class="resource-btn">Visit Lingolia</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>YouTube - Easy German</strong><br>Real-life examples in conversations.</p>
+                    <a href="https://www.youtube.com/@EasyGerman" class="resource-btn">Visit Easy German</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="damitumzu.html" class="see-also-rect">German Damit and Um...zu</a>
+                <a href="konjunktivII.html" class="see-also-rect">Konjunktiv II: Hätten, Wären, Würden</a>
+                <a href="verbenmitprepositionen.html" class="see-also-rect">Verbs with Prepositions</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="wfrageprep.html" class="next-btn">Next: W-Fragen mit Präpositionen →</a>
+        </div>
+    </main>
+
+   <!-- JavaScript -->
+   <script>
+    // Dark Mode Toggle
+    const modeToggle = document.getElementById('mode-toggle');
+    modeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
+
+    // Load dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+    }
+
+    // Toggle Answers
+    document.querySelectorAll('.toggle-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const answersDiv = button.nextElementSibling;
+            if (button.classList.contains('show-answers')) {
+                answersDiv.classList.toggle('hidden');
+            } else if (button.classList.contains('check-answers')) {
+                const selects = button.parentElement.querySelectorAll('.answer-select');
+                selects.forEach(select => {
+                    const selectedValue = select.value;
+                    const correctValue = select.getAttribute('data-correct');
+                    if (selectedValue === correctValue) {
+                        select.style.backgroundColor = '#d4edda'; // Green for correct
+                    } else {
+                        select.style.backgroundColor = '#f8d7da'; // Red for incorrect
+                    }
+                });
+            }
+        });
+    });
+</script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

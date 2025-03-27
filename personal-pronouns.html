@@ -1,0 +1,1024 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      German Personal Pronouns | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/konj2.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+                <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="a1-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>German Personal Pronouns: A Simple Guide for Beginners</h1>
+            <p>
+                Personal pronouns are the backbone of any language, and in German, they’re your key to building clear, correct sentences. This guide is designed to be simple for beginners. We’ll cover <strong>what personal pronouns are</strong>, <strong>how they work in German</strong>, and <strong>how to use them</strong> in all cases (nominative, accusative, dative) with examples and practice tips. Let’s dive into <em>Personalpronomen</em>!
+            </p>
+        </section>
+
+        <!-- What Are Personal Pronouns -->
+        <section id="what-are">
+            <h2>What Are Personal Pronouns?</h2>
+            <p>
+                Personal pronouns replace nouns sujetsto refer to people or things—like "I," "you," or "he" in English. In German, they change depending on:
+            </p>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Person</strong>: Who’s talking or being talked about (e.g., I, you, they).</li>
+                    <li><strong>Number</strong>: Singular (one person) or plural (more than one).</li>
+                    <li><strong>Case</strong>: Their role in the sentence—subject (nominative), direct object (accusative), or indirect object (dative).</li>
+                </ul>
+            </div>
+            <p>
+                German has more pronoun forms than English because of its case system, but don’t worry—we’ll break it down step by step.
+            </p>
+        </section>
+
+        <!-- German Personal Pronouns by Case -->
+        <section id="key-points">
+            <h2>German Personal Pronouns by Case</h2>
+            <p>
+                German uses <strong>four cases</strong> for pronouns: nominative, accusative, dative, and genitive. For beginners, we’ll focus on the first three (nominative, accusative, dative)—genitive comes later. Here’s the full chart, followed by explanations and examples.
+            </p>
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Person</th>
+                        <th>Nominative (Subject)</th>
+                        <th>Accusative (Direct Object)</th>
+                        <th>Dative (Indirect Object)</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Ich</strong> (I)</td>
+                        <td>ich</td>
+                        <td>mich</td>
+                        <td>mir</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Du</strong> (you, informal)</td>
+                        <td>du</td>
+                        <td>dich</td>
+                        <td>dir</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Er</strong> (he)</td>
+                        <td>er</td>
+                        <td>ihn</td>
+                        <td>ihm</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sie</strong> (she)</td>
+                        <td>sie</td>
+                        <td>sie</td>
+                        <td>ihr</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Es</strong> (it)</td>
+                        <td>es</td>
+                        <td>es</td>
+                        <td>ihm</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wir</strong> (we)</td>
+                        <td>wir</td>
+                        <td>uns</td>
+                        <td>uns</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ihr</strong> (you all, informal)</td>
+                        <td>ihr</td>
+                        <td>euch</td>
+                        <td>euch</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sie</strong> (they)</td>
+                        <td>sie</td>
+                        <td>sie</td>
+                        <td>ihnen</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sie</strong> (you, formal)</td>
+                        <td>Sie</td>
+                        <td>Sie</td>
+                        <td>Ihnen</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Nominative Case -->
+        <section id="nominative">
+            <h2>Nominative Case: The Subject</h2>
+            <div class="subsection">
+                <h3>What It Does</h3>
+                <p>The nominative case is for the <strong>subject</strong>—the person or thing doing the action.</p>
+            </div>
+            <div class="subsection">
+                <h3>How It Works</h3>
+                <p>Use these pronouns when the pronoun starts the sentence or answers "who" or "what" is acting. Verb comes second (V2 rule).</p>
+            </div>
+            <div class="subsection">
+                <h3>Examples</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Ich</em> gehe zur Schule. (I go to school.) <br> - Who goes? <em>Ich</em> (I).</li>
+                        <li><em>Du</em> bist mein Freund. (You are my friend.) <br> - Who is? <em>Du</em> (you).</li>
+                        <li><em>Er</em> spielt Fußball. (He plays soccer.) <br> - Who plays? <em>Er</em> (he).</li>
+                        <li><em>Sie</em> wohnt in Berlin. (She lives in Berlin.) <br> - Who lives? <em>Sie</em> (she).</li>
+                        <li><em>Es</em> regnet heute. (It’s raining today.) <br> - What’s happening? <em>Es</em> (it).</li>
+                        <li><em>Wir</em> lernen Deutsch. (We learn German.) <br> - Who learns? <em>Wir</em> (we).</li>
+                        <li><em>Ihr</em> seid laut. (You all are loud.) <br> - Who’s loud? <em>Ihr</em> (you all).</li>
+                        <li><em>Sie</em> kommen später. (They come later.) <br> - Who comes? <em>Sie</em> (they).</li>
+                        <li><em>Sie</em> trinken Kaffee. (You [formal] drink coffee.) <br> - Who drinks? <em>Sie</em> (you).</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Practice Tip</h3>
+                <p>Write 5 sentences with nominative pronouns: <em>Ich esse. Du trinkst. Er läuft.</em> Say them loud to lock them in.</p>
+            </div>
+        </section>
+
+        <!-- Accusative Case -->
+        <section id="accusative">
+            <h2>Accusative Case: The Direct Object</h2>
+            <div class="subsection">
+                <h3>What It Does</h3>
+                <p>The accusative case is for the <strong>direct object</strong>—the person or thing receiving the action.</p>
+            </div>
+            <div class="subsection">
+                <h3>How It Works</h3>
+                <p>Use these after verbs like <em>sehen</em> (to see), <em>haben</em> (to have), or <em>kaufen</em> (to buy). Often follows accusative prepositions (<em>durch, für, gegen, ohne, um</em>).</p>
+            </div>
+            <div class="subsection">
+                <h3>Examples</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li>Ich sehe <em>dich</em>. (I see you.) <br> - Who’s seen? <em>Dich</em> (you).</li>
+                        <li>Er mag <em>mich</em>. (He likes me.) <br> - Who’s liked? <em>Mich</em> (me).</li>
+                        <li>Sie trifft <em>ihn</em>. (She meets him.) <br> - Who’s met? <em>Ihn</em> (him).</li>
+                        <li>Wir hören <em>sie</em>. (We hear her.) <br> - Who’s heard? <em>Sie</em> (her).</li>
+                        <li>Du hast <em>es</em>. (You have it.) <br> - What’s had? <em>Es</em> (it).</li>
+                        <li>Er hilft <em>uns</em>. (He helps us.) <br> - Who’s helped? <em>Uns</em> (us).</li>
+                        <li>Ich kenne <em>euch</em>. (I know you all.) <br> - Who’s known? <em>Euch</em> (you all).</li>
+                        <li>Sie kaufen <em>sie</em>. (They buy them.) <br> - What’s bought? <em>Sie</em> (them).</li>
+                        <li>Ich rufe <em>Sie</em> an. (I call you [formal].) <br> - Who’s called? <em>Sie</em> (you).</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Practice Tip</h3>
+                <p>Make 5 accusative sentences: <em>Ich sehe dich. Er mag es. Wir hören ihn.</em> Test yourself by switching subjects.</p>
+            </div>
+        </section>
+
+        <!-- Dative Case -->
+        <section id="dative">
+            <h2>Dative Case: The Indirect Object</h2>
+            <div class="subsection">
+                <h3>What It Does</h3>
+                <p>The dative case is for the <strong>indirect object</strong>—the person or thing affected by the action, often "to" or "for" someone.</p>
+            </div>
+            <div class="subsection">
+                <h3>How It Works</h3>
+                <p>Use after verbs like <em>geben</em> (to give), <em>helfen</em> (to help), <em>schreiben</em> (to write). Follows dative prepositions (<em>aus, bei, mit, nach, seit, von, zu</em>).</p>
+            </div>
+            <div class="subsection">
+                <h3>Examples</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li>Ich gebe <em>dir</em> ein Buch. (I give you a book.) <br> - To whom? <em>Dir</em> (you).</li>
+                        <li>Er hilft <em>mir</em>. (He helps me.) <br> - To whom? <em>Mir</em> (me).</li>
+                        <li>Sie schreibt <em>ihm</em>. (She writes to him.) <br> - To whom? <em>Ihm</em> (him).</li>
+                        <li>Wir danken <em>ihr</em>. (We thank her.) <br> - To whom? <em>Ihr</em> (her).</li>
+                        <li>Du gibst <em>ihm</em> den Ball. (You give him the ball.) <br> - To whom? <em>Ihm</em> (him—it’s neuter for <em>Ball</em>).</li>
+                        <li>Sie sprechen <em>uns</em>. (They talk to us.) <br> - To whom? <em>Uns</em> (us).</li>
+                        <li>Ich zeige <em>euch</em> den Weg. (I show you all the way.) <br> - To whom? <em>Euch</em> (you all).</li>
+                        <li>Er antwortet <em>ihnen</em>. (He answers them.) <br> - To whom? <em>Ihnen</em> (them).</li>
+                        <li>Ich sage <em>Ihnen</em> die Wahrheit. (I tell you [formal] the truth.) <br> - To whom? <em>Ihnen</em> (you).</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Practice Tip</h3>
+                <p>Create 5 dative sentences: <em>Ich helfe dir. Sie gibt mir Geld. Er schreibt ihnen.</em> Say them to feel the pattern.</p>
+            </div>
+        </section>
+
+        <!-- Key Differences from English -->
+        <section id="differences">
+            <h2>Key Differences from English</h2>
+            <div class="examples">
+                <ol class="example-list">
+                    <li><strong>More Forms</strong>: English uses "you" for everything—German splits it into <em>du</em> (informal), <em>ihr</em> (plural informal), and <em>Sie</em> (formal).</li>
+                    <li><strong>Case Changes</strong>: English "he" stays "he"—German <em>er</em> becomes <em>ihn</em> (accusative) or <em>ihm</em> (dative).</li>
+                    <li><strong>No “It” Overuse</strong>: German <em>es</em> is only for neuter nouns (<em>das Buch</em>), not vague actions like English "It’s raining."</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- How to Use Pronouns in Sentences -->
+        <section id="how-to">
+            <h2>How to Use Pronouns in Sentences</h2>
+            <div class="subsection">
+                <h3>Word Order Rules</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><strong>Nominative</strong>: Always first (subject), verb second. <br> - <em>Ich</em> lese ein Buch. (I read a book.)</li>
+                        <li><strong>Accusative</strong>: After the verb, before extra info (TMP: time, manner, place). <br> - Ich sehe <em>dich</em> morgen. (I see you tomorrow.)</li>
+                        <li><strong>Dative</strong>: Usually before accusative if both are in the sentence. <br> - Ich gebe <em>dir</em> <em>es</em>. (I give it to you.) <br> - Exception: If accusative is a pronoun and dative is a noun, accusative comes first: <em>Ich gebe es dem Mann.</em> (I give it to the man.)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Combining Cases</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Er gibt mir einen Apfel.</em> (He gives me an apple.) <br> - <em>Mir</em> (dative, to me), <em>einen Apfel</em> (accusative, the apple).</li>
+                        <li><em>Sie zeigt ihm den Weg.</em> (She shows him the way.) <br> - <em>Ihm</em> (dative, to him), <em>den Weg</em> (accusative, the way).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top-Tier Practice Exercises -->
+        <section id="practice">
+            <h2>Top-Tier Practice Exercises</h2>
+            <div class="subsection" id="exercise1">
+                <h3>Exercise 1: Fill in the Pronoun</h3>
+                <p>Choose the correct personal pronoun (nominative, accusative, or dative).</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>___ gehe zur Schule.</em> (I)  
+                            <select class="answer-select" data-correct="Ich">
+                                <option value="">Select</option>
+                                <option value="mich">mich</option>
+                                <option value="mir">mir</option>
+                                <option value="Ich">Ich</option>
+                                <option value="du">du</option>
+                                <option value="ihm">ihm</option>
+                            </select>
+                        </li>
+                        <li><em>Er sieht ___.</em> (me)  
+                            <select class="answer-select" data-correct="mich">
+                                <option value="">Select</option>
+                                <option value="mir">mir</option>
+                                <option value="mich">mich</option>
+                                <option value="ich">ich</option>
+                                <option value="dir">dir</option>
+                                <option value="sie">sie</option>
+                            </select>
+                        </li>
+                        <li><em>Ich helfe ___.</em> (you, informal)  
+                            <select class="answer-select" data-correct="dir">
+                                <option value="">Select</option>
+                                <option value="dich">dich</option>
+                                <option value="du">du</option>
+                                <option value="ihm">ihm</option>
+                                <option value="dir">dir</option>
+                                <option value="uns">uns</option>
+                            </select>
+                        </li>
+                        <li><em>Sie gibt ___ ein Geschenk.</em> (him)  
+                            <select class="answer-select" data-correct="ihm">
+                                <option value="">Select</option>
+                                <option value="ihn">ihn</option>
+                                <option value="ihm">ihm</option>
+                                <option value="er">er</option>
+                                <option value="mich">mich</option>
+                                <option value="sie">sie</option>
+                            </select>
+                        </li>
+                        <li><em>Wir hören ___ nicht.</em> (them)  
+                            <select class="answer-select" data-correct="sie">
+                                <option value="">Select</option>
+                                <option value="ihnen">ihnen</option>
+                                <option value="uns">uns</option>
+                                <option value="sie">sie</option>
+                                <option value="dich">dich</option>
+                                <option value="mir">mir</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Ich</em></li>
+                            <li><em>mich</em></li>
+                            <li><em>dir</em></li>
+                            <li><em>ihm</em></li>
+                            <li><em>sie</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise2">
+                <h3>Exercise 2: Translate to German</h3>
+                <p>Choose the correct German translation with the appropriate pronoun.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>She likes you.</em>  
+                            <select class="answer-select" data-correct="Sie mag dich.">
+                                <option value="">Select</option>
+                                <option value="Sie mag dir.">Sie mag dir.</option>
+                                <option value="Sie mag mich.">Sie mag mich.</option>
+                                <option value="Sie mag dich.">Sie mag dich.</option>
+                                <option value="Sie mag ihm.">Sie mag ihm.</option>
+                                <option value="Sie mag sie.">Sie mag sie.</option>
+                            </select>
+                        </li>
+                        <li><em>We give them the book.</em>  
+                            <select class="answer-select" data-correct="Wir geben ihnen das Buch.">
+                                <option value="">Select</option>
+                                <option value="Wir geben uns das Buch.">Wir geben uns das Buch.</option>
+                                <option value="Wir geben sie das Buch.">Wir geben sie das Buch.</option>
+                                <option value="Wir geben ihnen das Buch.">Wir geben ihnen das Buch.</option>
+                                <option value="Wir geben dich das Buch.">Wir geben dich das Buch.</option>
+                                <option value="Wir geben mir das Buch.">Wir geben mir das Buch.</option>
+                            </select>
+                        </li>
+                        <li><em>He writes to me.</em>  
+                            <select class="answer-select" data-correct="Er schreibt mir.">
+                                <option value="">Select</option>
+                                <option value="Er schreibt mich.">Er schreibt mich.</option>
+                                <option value="Er schreibt dir.">Er schreibt dir.</option>
+                                <option value="Er schreibt mir.">Er schreibt mir.</option>
+                                <option value="Er schreibt ihm.">Er schreibt ihm.</option>
+                                <option value="Er schreibt sie.">Er schreibt sie.</option>
+                            </select>
+                        </li>
+                        <li><em>You all see us.</em>  
+                            <select class="answer-select" data-correct="Ihr seht uns.">
+                                <option value="">Select</option>
+                                <option value="Ihr seht euch.">Ihr seht euch.</option>
+                                <option value="Ihr seht mich.">Ihr seht mich.</option>
+                                <option value="Ihr seht uns.">Ihr seht uns.</option>
+                                <option value="Ihr seht sie.">Ihr seht sie.</option>
+                                <option value="Ihr seht dir.">Ihr seht dir.</option>
+                            </select>
+                        </li>
+                        <li><em>I show her the picture.</em>  
+                            <select class="answer-select" data-correct="Ich zeige ihr das Bild.">
+                                <option value="">Select</option>
+                                <option value="Ich zeige sie das Bild.">Ich zeige sie das Bild.</option>
+                                <option value="Ich zeige ihm das Bild.">Ich zeige ihm das Bild.</option>
+                                <option value="Ich zeige ihr das Bild.">Ich zeige ihr das Bild.</option>
+                                <option value="Ich zeige dich das Bild.">Ich zeige dich das Bild.</option>
+                                <option value="Ich zeige mir das Bild.">Ich zeige mir das Bild.</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Sie mag dich.</em></li>
+                            <li><em>Wir geben ihnen das Buch.</em></li>
+                            <li><em>Er schreibt mir.</em></li>
+                            <li><em>Ihr seht uns.</em></li>
+                            <li><em>Ich zeige ihr das Bild.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise3">
+                <h3>Exercise 3: Mix the Cases</h3>
+                <p>Choose the correct pronoun for each simple sentence (nominative, accusative, or dative).</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>___ spielen Fußball.</em> (We)  
+                            <select class="answer-select" data-correct="Wir">
+                                <option value="">Select</option>
+                                <option value="uns">uns</option>
+                                <option value="Wir">Wir</option>
+                                <option value="ihnen">ihnen</option>
+                                <option value="mich">mich</option>
+                                <option value="dir">dir</option>
+                            </select>
+                        </li>
+                        <li><em>Ich sehe ___.</em> (you)  
+                            <select class="answer-select" data-correct="dich">
+                                <option value="">Select</option>
+                                <option value="dir">dir</option>
+                                <option value="du">du</option>
+                                <option value="dich">dich</option>
+                                <option value="ihm">ihm</option>
+                                <option value="sie">sie</option>
+                            </select>
+                        </li>
+                        <li><em>Er gibt ___ das Geld.</em> (her)  
+                            <select class="answer-select" data-correct="ihr">
+                                <option value="">Select</option>
+                                <option value="sie">sie</option>
+                                <option value="ihr">ihr</option>
+                                <option value="ihn">ihn</option>
+                                <option value="mich">mich</option>
+                                <option value="uns">uns</option>
+                            </select>
+                        </li>
+                        <li><em>___ läuft schnell.</em> (She)  
+                            <select class="answer-select" data-correct="Sie">
+                                <option value="">Select</option>
+                                <option value="ihr">ihr</option>
+                                <option value="sie">sie</option>
+                                <option value="Sie">Sie</option>
+                                <option value="dich">dich</option>
+                                <option value="mir">mir</option>
+                            </select>
+                        </li>
+                        <li><em>Sie hilft ___.</em> (me)  
+                            <select class="answer-select" data-correct="mir">
+                                <option value="">Select</option>
+                                <option value="mich">mich</option>
+                                <option value="mir">mir</option>
+                                <option value="ich">ich</option>
+                                <option value="dir">dir</option>
+                                <option value="ihm">ihm</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Wir</em></li>
+                            <li><em>dich</em></li>
+                            <li><em>ihr</em></li>
+                            <li><em>Sie</em></li>
+                            <li><em>mir</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources for Extra Practice -->
+        <section id="resources">
+            <h2>Resources for Extra Practice</h2>
+            <div class="resource-links">
+                <div class="resource-card">
+                    <p><strong>Goethe A1/A2 Wortliste</strong><br>Basic pronoun usage in context.</p>
+                    <a href="https://www.goethe.de/pro/relaunch/prf/de/A1_Wortliste_2018.pdf" class="resource-btn" target="_blank">Visit Goethe Wortliste</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>YouTube – Easy German</strong><br>Hear pronouns in action.</p>
+                    <a href="https://www.youtube.com/@EasyGerman" class="resource-btn" target="_blank">Visit Easy German</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>Schubert Verlag</strong><br>Free pronoun exercises.</p>
+                    <a href="https://www.schubert-verlag.de/aufgaben/uebungen_a1/a1_uebungen_index.htm" class="resource-btn" target="_blank">Visit Schubert Verlag</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section id="conclusion">
+            <p>
+                This guide gives you top-tier clarity on German personal pronouns—free for all learners. Master these, and you’re set to tackle verbs, cases, and more. Keep practicing, and you’ll own <em>Personalpronomen</em> in no time!
+            </p>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="nouns.html" class="see-also-rect">German Nouns</a>
+                <a href="articles.html" class="see-also-rect">German Articles</a>
+                <a href="adjectives.html" class="see-also-rect">German Adjectives</a>
+                <a href="conjugation.html" class="see-also-rect">German Conjugation</a>
+                <a href="cases.html" class="see-also-rect">German Cases</a>
+                <a href="prepositions.html" class="see-also-rect">German Prepositions</a>
+                <a href="structure.html" class="see-also-rect">Sentence Structure</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="articles.html" class="next-btn">Next: German Articles →</a>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark Mode Toggle
+        const modeToggle = document.getElementById('mode-toggle');
+        modeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Load dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Toggle Answers
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const answersDiv = button.nextElementSibling;
+                if (button.classList.contains('show-answers')) {
+                    answersDiv.classList.toggle('hidden');
+                } else if (button.classList.contains('check-answers')) {
+                    const selects = button.parentElement.querySelectorAll('.answer-select');
+                    selects.forEach(select => {
+                        const selectedValue = select.value;
+                        const correctValue = select.getAttribute('data-correct');
+                        if (selectedValue === correctValue) {
+                            select.style.backgroundColor = '#d4edda'; // Green for correct
+                        } else {
+                            select.style.backgroundColor = '#f8d7da'; // Red for incorrect
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

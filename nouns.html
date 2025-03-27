@@ -1,0 +1,813 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      German Nouns | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/nouns.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+               <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="other-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>German Nouns Explained</h1>
+            <p>
+                A noun is a word that names something. It can be a person (like "child"), a place (like "school"), a thing (like "table"), or an idea (like "peace"). In German, nouns do the same job, but they have some special rules. Don’t worry—I’ll make them easy to understand!
+            </p>
+          
+        </section>
+
+        <!-- 5 Important Things -->
+        <section id="key-points">
+            <h2>5 Important Things About German Nouns</h2>
+
+            <div class="subsection">
+                <h3>1. Nouns Have Genders</h3>
+                <p>
+                    In English, nouns don’t have genders (except for words like "man" or "woman"). In German, every noun is either masculine, feminine, or neuter. This changes the little words (called articles) you use with them.
+                </p>
+                <div class="examples">
+                    <p><strong>Examples:</strong></p>
+                    <ul class="example-list">
+                        <li>Masculine: <em>der Tisch</em> (the table)</li>
+                        <li>Feminine: <em>die Lampe</em> (the lamp)</li>
+                        <li>Neuter: <em>das Fenster</em> (the window)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>2. Nouns Start with a Capital Letter</h3>
+                <p>
+                    In German, every noun begins with a big letter, even in the middle of a sentence. This is different from English, where only names get capitals.
+                </p>
+                <div class="examples">
+                    <p><strong>Examples:</strong></p>
+                    <ul class="example-list">
+                        <li><em>Ich sehe den Tisch.</em> (I see the table.) – "Tisch" is capitalized.</li>
+                        <li><em>Die Lampe leuchtet.</em> (The lamp is shining.) – "Lampe" gets a big "L"!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>3. Articles Match the Gender</h3>
+                <p>
+                    Articles are words like "the" or "a" that go before nouns. In German, they change depending on the noun’s gender.
+                </p>
+                <div class="examples">
+                    <p><strong>"The" Articles:</strong></p>
+                    <ul class="example-list">
+                        <li>Masculine: <em>der</em> – <em>der Tisch</em> (the table)</li>
+                        <li>Feminine: <em>die</em> – <em>die Lampe</em> (the lamp)</li>
+                        <li>Neuter: <em>das</em> – <em>das Fenster</em> (the window)</li>
+                        <li>Plural (all genders): <em>die</em> – <em>die Tische</em> (the tables)</li>
+                    </ul>
+                    <p><strong>"A" Articles:</strong></p>
+                    <ul class="example-list">
+                        <li>Masculine: <em>ein</em> – <em>ein Tisch</em> (a table)</li>
+                        <li>Feminine: <em>eine</em> – <em>eine Lampe</em> (a lamp)</li>
+                        <li>Neuter: <em>ein</em> – <em>ein Fenster</em> (a window)</li>
+                    </ul>
+                </div>
+                <button class="toggle-btn">See Sentence Examples</button>
+                <div class="hidden">
+                    <p><strong>Examples:</strong></p>
+                    <ul class="example-list">
+                        <li><em>Der Hund läuft.</em> (The dog runs.) → <em>Ein Hund läuft.</em> (A dog runs.)</li>
+                        <li><em>Die Katze sitzt.</em> (The cat sits.) → <em>Eine Katze sitzt.</em> (A cat sits.)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>4. Plurals Have Different Endings</h3>
+                <p>
+                    In English, we often add "-s" to make plurals (like "tables"). German has many ways to show more than one, and you’ll need to learn them with each noun.
+                </p>
+                <div class="examples">
+                    <p><strong>Examples:</strong></p>
+                    <ul class="example-list">
+                        <li>Add -e: <em>der Tisch</em> → <em>die Tische</em> (tables)</li>
+                        <li>Add -er: <em>das Kind</em> → <em>die Kinder</em> (children)</li>
+                        <li>Add -en: <em>die Frau</em> → <em>die Frauen</em> (women)</li>
+                        <li>Add -s: <em>das Auto</em> → <em>die Autos</em> (cars)</li>
+                        <li>No change: <em>der Lehrer</em> → <em>die Lehrer</em> (teachers)</li>
+                        <li>Vowel change: <em>der Mann</em> → <em>die Männer</em> (men)</li>
+                    </ul>
+                </div>
+               
+            </div>
+
+            <div class="subsection">
+                <h3>5. Cases Show What Nouns Do</h3>
+                <p>
+                    German has four cases. They tell you what job the noun has in a sentence. The articles change with each case, and sometimes the noun does too.
+                </p>
+                <div class="examples">
+                    <p><strong>The Four Cases:</strong></p>
+                    <ul class="example-list">
+                        <li>Nominative: The subject (who does something). <em>Der Hund läuft.</em> (The dog runs.)</li>
+                        <li>Accusative: The object (what is seen or taken). <em>Ich sehe den Hund.</em> (I see the dog.)</li>
+                        <li>Dative: The receiver (to whom something is given). <em>Ich gebe dem Hund einen Ball.</em> (I give the dog a ball.)</li>
+                        <li>Genitive: Shows ownership (like "of"). <em>Das Spielzeug des Hundes.</em> (The toy of the dog.)</li>
+                    </ul>
+                    <p>For now, practice nominative and accusative—they’re the easiest to start with!</p>
+                </div>
+              
+            </div>
+        </section>
+
+        <!-- How-To Questions -->
+        <section id="how-to">
+            <h2>How-To Questions</h2>
+
+            <div class="subsection">
+                <h3>How Do I Know a Noun’s Gender?</h3>
+                <p>
+                    You can’t always guess, so learn each noun with its article: <em>der Tisch</em>, <em>die Lampe</em>, <em>das Fenster</em>. Here are some hints:
+                </p>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li>Feminine: Words ending in -ung (<em>die Zeitung</em> = newspaper), -heit (<em>die Freiheit</em> = freedom).</li>
+                        <li>Neuter: Words ending in -chen (<em>das Mädchen</em> = girl), -lein (<em>das Häuschen</em> = little house).</li>
+                        <li>Masculine: Words ending in -er (<em>der Lehrer</em> = teacher).</li>
+                        <li>Example: <em>Die Schule</em> (the school) – Many places are feminine!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>How Do I Make Plurals?</h3>
+                <p>
+                    Learn the plural with the noun. Here are more examples:
+                </p>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Der Stuhl</em> → <em>die Stühle</em> (chairs)</li>
+                        <li><em>Das Buch</em> → <em>die Bücher</em> (books)</li>
+                        <li><em>Die Blume</em> → <em>die Blumen</em> (flowers)</li>
+                        <li><em>Das Haus</em> → <em>die Häuser</em> (houses)</li>
+                    </ul>
+                    <p>Tip: Use a notebook to write nouns and their plurals.</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>What Are Cases For?</h3>
+                <p>
+                    Cases show a noun’s role. Look how articles change:
+                </p>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li>Masculine: <em>der Tisch</em> (nom.) → <em>den Tisch</em> (acc.) → <em>dem Tisch</em> (dat.)</li>
+                        <li>Feminine: <em>die Lampe</em> (nom./acc.) → <em>der Lampe</em> (dat.)</li>
+                        <li>Neuter: <em>das Fenster</em> (nom./acc.) → <em>dem Fenster</em> (dat.)</li>
+                    </ul>
+                    <p><strong>Examples:</strong></p>
+                    <ul class="example-list">
+                        <li><em>Ich sehe den Tisch.</em> (I see the table.)</li>
+                        <li><em>Ich gebe dem Kind ein Buch.</em> (I give the child a book.)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>Do Nouns Change in Cases?</h3>
+                <p>
+                    Usually, only the article changes. But:
+                </p>
+                <div class="examples">
+                    <p><strong>Genitive:</strong> Add -s or -es to masculine/neuter nouns:</p>
+                    <ul class="example-list">
+                        <li><em>Der Hund</em> → <em>des Hundes</em> (the dog’s)</li>
+                        <li><em>Das Haus</em> → <em>des Hauses</em> (the house’s)</li>
+                    </ul>
+                    <p><strong>Dative Plural:</strong> Add -n if the plural doesn’t end in -n or -s:</p>
+                    <ul class="example-list">
+                        <li><em>Die Tische</em> → <em>den Tischen</em> (to the tables)</li>
+                        <li><em>Die Autos</em> → <em>den Autos</em> (to the cars, no extra -n)</li>
+                    </ul>
+                    <p><strong>Example:</strong> <em>Ich helfe den Kindern.</em> (I help the children.)</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>Are There Strange Nouns?</h3>
+                <p>
+                    Yes, a few! <em>Der Herr</em> (gentleman) becomes <em>den Herrn</em> in accusative. These are rare, so don’t worry yet.
+                </p>
+            </div>
+
+            <div class="subsection">
+                <h3>How Do I Use Articles?</h3>
+                <p>
+                    Match them to the noun’s gender and case:
+                </p>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Der Vogel fliegt.</em> (The bird flies.) → <em>Ein Vogel fliegt.</em> (A bird flies.)</li>
+                        <li><em>Die Blume wächst.</em> (The flower grows.) → <em>Eine Blume wächst.</em> (A flower grows.)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>Can I Skip Articles?</h3>
+                <p>
+                    Yes, sometimes:
+                </p>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li>Jobs: <em>Ich bin Lehrer.</em> (I am a teacher.)</li>
+                        <li>General ideas: <em>Hunde sind nett.</em> (Dogs are nice.)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>What Are Compound Nouns?</h3>
+                <p>
+                    German puts words together to make new ones:
+                </p>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Haus</em> (house) + <em>Tür</em> (door) = <em>Haustür</em> (front door)</li>
+                        <li><em>Sonne</em> (sun) + <em>Blume</em> (flower) = <em>Sonnenblume</em> (sunflower)</li>
+                    </ul>
+                    <p>The gender comes from the last word: <em>Die Sonnenblume</em> (feminine from Blume).</p>
+                </div>
+              
+            </div>
+
+            <div class="subsection">
+                <h3>How Do I Remember Genders?</h3>
+                <p>
+                    Say the noun with its article: <em>der Tisch, die Tische</em>. Use pictures: Draw a table with "der" next to it. Practice daily with a few nouns.
+                </p>
+            </div>
+
+            <div class="subsection">
+                <h3>What If I Use the Wrong Gender?</h3>
+                <p>
+                    It’s okay! If you say <em>das Tisch</em> instead of <em>der Tisch</em>, people will still understand. Keep practicing!
+                </p>
+            </div>
+        </section>
+
+        <!-- Practice Examples -->
+        <section id="practice">
+            <h2>Try These Examples</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><em>Der Hund spielt mit dem Ball.</em> (The dog plays with the ball.)</li>
+                    <li><em>Eine Katze sieht die Vögel.</em> (A cat sees the birds.)</li>
+                    <li><em>Das Kind malt ein Haus.</em> (The child draws a house.)</li>
+                    <li><em>Ich gebe den Blumen Wasser.</em> (I give the flowers water.)</li>
+                </ul>
+            </div>
+            <button class="toggle-btn">Translate Yourself</button>
+            <div class="hidden">
+                <p>Try translating these into German or English on your own first, then check your answers!</p>
+            </div>
+        </section>
+
+        <!-- Tips -->
+        <section id="tips">
+            <h2>How to Get Better</h2>
+            <p>
+                Learn 5 nouns a day with their articles and plurals (<em>der Tisch, die Tische</em>). Make simple sentences: <em>Ich sehe den Hund.</em> (I see the dog.) Try combining words: <em>Apfelbaum</em> (apple tree).
+            </p>
+           
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="articles.html" class="see-also-btn">German Articles</a>
+                <a href="adjectives.html" class="see-also-btn">German Adjectives</a>
+                <a href="conjugation.html" class="see-also-btn">German Conjugation</a>
+                <a href="cases.html" class="see-also-btn">German Cases</a>
+                <a href="prepositions.html" class="see-also-btn">German Prepositions</a>
+                <a href="structure.html" class="see-also-btn">Sentence Structure</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="articles.html" class="next-btn">Next: German Articles →</a>
+        </div>
+    </main>
+
+    <script>
+        // Inline JavaScript for toggle functionality and dark/light mode
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle content
+            const buttons = document.querySelectorAll('.toggle-btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const hiddenContent = this.nextElementSibling;
+                    if (hiddenContent.classList.contains('hidden')) {
+                        hiddenContent.classList.remove('hidden');
+                    } else {
+                        hiddenContent.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Dark/Light mode toggle
+            const modeToggle = document.getElementById('mode-toggle');
+            const body = document.body;
+            modeToggle.addEventListener('click', function() {
+                body.classList.toggle('dark-mode');
+                const isDark = body.classList.contains('dark-mode');
+                modeToggle.querySelector('svg').setAttribute('d', isDark ? 
+                    'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z' : 
+                    'M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z');
+            });
+        });
+    </script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,997 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      German Wenn: The Complete Guide to “When” and “If” | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/wenn.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+               <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="a2-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>German <em>Wenn</em>: The Complete Guide to “When” and “If”</h1>
+            <p>
+                The word <strong>wenn</strong> is a versatile subordinating conjunction in German, meaning either “when” (describing time) or “if” (describing conditions). Its meaning depends on context, and it always shifts the verb to the end of the clause it introduces. This guide explores both uses of <em>wenn</em>, provides detailed examples across tenses, explains its rules and exceptions, and includes exercises to solidify your understanding.Let’s get started!
+            </p>
+        </section>
+
+        <!-- What is Wenn? -->
+        <section id="what-is-wenn">
+            <h2>What is <em>Wenn</em>?</h2>
+            <p><em>Wenn</em> connects a main clause (Hauptsatz) with a subordinate clause (Nebensatz) to express either time (“when”) or a condition (“if”).</p>
+            <div class="subsection">
+                <h3>Key Features</h3>
+                <ul class="example-list">
+                    <li><strong>Subordinating Conjunction</strong>: The clause it introduces is dependent.</li>
+                    <li><strong>Word Order</strong>: The verb in the <em>wenn</em> clause goes to the <strong>end</strong>.</li>
+                    <li><strong>No Umlaut</strong>: Don’t confuse it with <em>wann</em> (when, as a question word).</li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>Basic Structure</h3>
+                <p><strong>Main Clause</strong>: Normal word order (subject + verb). <strong>Wenn Clause</strong>: <em>Wenn</em> + subject + other stuff + verb (at the end).</p>
+                <ul class="example-list">
+                    <li><em>Ich komme, wenn ich Zeit habe.</em>
+                        <ul>
+                            <li>Main: <em>Ich komme</em> (I come).</li>
+                            <li>Wenn: <em>wenn ich Zeit habe</em> (if/when I have time—verb <em>habe</em> at end).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Two Meanings of Wenn -->
+        <section id="meanings">
+            <h2>Two Meanings of <em>Wenn</em></h2>
+            <div class="subsection">
+                <h3><em>Wenn</em> as “When” (Time)</h3>
+                <p>Describes <strong>when</strong> something happens—either once or as a habit. Often paired with present or past tenses.</p>
+                <ul class="example-list">
+                    <li>Present: <em>Ich esse, wenn ich Hunger habe.</em> (I eat when I’m hungry—regular action.)</li>
+                    <li>Past: <em>Ich war froh, wenn ich ihn sah.</em> (I was happy when I saw him—repeated.)</li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3><em>Wenn</em> as “If” (Condition)</h3>
+                <p>Describes a <strong>condition</strong>—something happens <strong>if</strong> a situation is true. Works with present, future, or conditional tenses.</p>
+                <ul class="example-list">
+                    <li>Present: <em>Ich gehe, wenn es nicht regnet.</em> (I’ll go if it doesn’t rain.)</li>
+                    <li>Conditional: <em>Ich würde kommen, wenn ich könnte.</em> (I would come if I could.)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Word Order with Wenn -->
+        <section id="word-order">
+            <h2>Word Order with <em>Wenn</em></h2>
+            <p>In a <em>wenn</em> clause, the <strong>conjugated verb</strong> goes to the end. Tense and auxiliary verbs adjust accordingly.</p>
+            <div class="subsection">
+                <h3>Examples Across Tenses</h3>
+                <ul class="example-list">
+                    <li>Present: <em>Ich lache, wenn ich das sehe.</em> (I laugh when/if I see that—<em>sehe</em> at end.)</li>
+                    <li>Perfekt: <em>Ich war müde, wenn ich gearbeitet hatte.</em> (I was tired when I had worked—<em>hatte</em> at end.)</li>
+                    <li>Präteritum: <em>Er blieb, wenn es regnete.</em> (He stayed when it rained—<em>regnete</em> at end.)</li>
+                    <li>Konjunktiv II: <em>Ich käme, wenn ich Zeit hätte.</em> (I’d come if I had time—<em>hätte</em> at end.)</li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>Punctuation</h3>
+                <p>Use a <strong>comma</strong> before <em>wenn</em> when it follows the main clause. No comma if <em>wenn</em> starts the sentence.</p>
+                <ul class="example-list">
+                    <li><em>Ich bleibe, wenn es kalt ist.</em> (I stay if/when it’s cold.)</li>
+                    <li><em>Wenn es regnet, bleibe ich.</em> (If it rains, I stay.)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Example Sentences -->
+        <section id="examples">
+            <h2>Tons of Example Sentences</h2>
+            <div class="subsection">
+                <h3><em>Wenn</em> as “When” (Time)</h3>
+                <div class="examples">
+                    <h4>Present (Habits)</h4>
+                    <ol class="example-list">
+                        <li><em>Ich trinke Kaffee, wenn ich aufstehe.</em> (I drink coffee when I get up.)</li>
+                        <li><em>Sie liest, wenn sie im Bus ist.</em> (She reads when she’s on the bus.)</li>
+                        <li><em>Wir spielen, wenn das Wetter gut ist.</em> (We play when the weather is good.)</li>
+                        <li><em>Er schläft, wenn er müde ist.</em> (He sleeps when he’s tired.)</li>
+                        <li><em>Ihr lacht, wenn ich Witze erzähle.</em> (You laugh when I tell jokes.)</li>
+                    </ol>
+                    <h4>Past (Repeated or Specific)</h4>
+                    <ol class="example-list">
+                        <li><em>Ich war froh, wenn ich Ferien hatte.</em> (I was happy when I had holidays—repeated.)</li>
+                        <li><em>Sie rief an, wenn sie Zeit hatte.</em> (She called when she had time—habit.)</li>
+                        <li><em>Er kam gestern, wenn ich kochte.</em> (He came yesterday when I was cooking—once.)</li>
+                        <li><em>Wir gingen spazieren, wenn es sonnig war.</em> (We went for a walk when it was sunny—repeated.)</li>
+                        <li><em>Das Baby weinte, wenn es Hunger hatte.</em> (The baby cried when it was hungry—past habit.)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3><em>Wenn</em> as “If” (Condition)</h3>
+                <div class="examples">
+                    <h4>Present (Real Conditions)</h4>
+                    <ol class="example-list">
+                        <li><em>Ich gehe raus, wenn es nicht regnet.</em> (I go out if it doesn’t rain.)</li>
+                        <li><em>Er hilft dir, wenn du fragst.</em> (He helps you if you ask.)</li>
+                        <li><em>Sie bleibt, wenn sie Zeit hat.</em> (She stays if she has time.)</li>
+                        <li><em>Wir kaufen es, wenn es billig ist.</em> (We buy it if it’s cheap.)</li>
+                        <li><em>Ihr kommt mit, wenn ihr wollt.</em> (You come along if you want.)</li>
+                    </ol>
+                    <h4>Conditional (Hypothetical)</h4>
+                    <ol class="example-list">
+                        <li><em>Ich würde reisen, wenn ich Geld hätte.</em> (I would travel if I had money.)</li>
+                        <li><em>Er wäre hier, wenn er könnte.</em> (He’d be here if he could.)</li>
+                        <li><em>Sie würde lachen, wenn sie das sähe.</em> (She’d laugh if she saw that.)</li>
+                        <li><em>Wir würden spielen, wenn es nicht regnete.</em> (We’d play if it weren’t raining.)</li>
+                        <li><em>Ihr wärt froh, wenn ihr gewonnen hättet.</em> (You’d be happy if you had won.)</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deep Details and Nuances -->
+        <section id="nuances">
+            <h2>Deep Details and Nuances</h2>
+            <div class="subsection">
+                <h3><em>Wenn</em> vs. <em>Wann</em></h3>
+                <ul class="example-list">
+                    <li><em>Wenn</em> (when/if): Subordinating, verb at end.
+                        <ul><li><em>Ich komme, wenn ich Zeit habe.</em> (I come when/if I have time.)</li></ul>
+                    </li>
+                    <li><em>Wann</em> (when): Question word, verb second.
+                        <ul><li><em>Wann kommst du?</em> (When are you coming?)</li></ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3><em>Wenn</em> vs. <em>Als</em> (When in Past)</h3>
+                <ul class="example-list">
+                    <li><em>Wenn</em>: Repeated past events or conditions.
+                        <ul><li><em>Ich war froh, wenn ich ihn sah.</em> (I was happy when[ever] I saw him—repeated.)</li></ul>
+                    </li>
+                    <li><em>Als</em>: One-time past events.
+                        <ul><li><em>Ich war froh, als ich ihn sah.</em> (I was happy when I saw him—once.)</li></ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3><em>Wenn</em> with Konjunktiv</h3>
+                <p>Use Konjunktiv II or I for unreal/hypothetical “if” scenarios.</p>
+                <ul class="example-list">
+                    <li><em>Wenn ich reich wäre, würde ich reisen.</em> (If I were rich, I’d travel—Konjunktiv II.)</li>
+                    <li><em>Er sagte, dass er käme, wenn er Zeit habe.</em> (He said he’d come if he had time—Konjunktiv I.)</li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>Dropping <em>Wenn</em> (Informal)</h3>
+                <p>In casual speech, <em>wenn</em> can be implied with Konjunktiv alone.</p>
+                <ul class="example-list">
+                    <li><em>Hätte ich Zeit, käme ich.</em> (If I had time, I’d come—<em>wenn</em> omitted.)</li>
+                </ul>
+            </div>
+        </section>
+
+      <!-- Exercises -->
+<section id="practice">
+    <h2>Creative Exercises with Multiple-Choice Options</h2>
+
+    <div class="subsection" id="exercise1">
+        <h3>Exercise 1: <em>Wenn</em> as “When” or “If”</h3>
+        <div class="examples">
+            <ol class="example-list">
+                <li>I eat ___ I’m hungry.
+                    <select class="answer-select" data-correct="wenn ich Hunger habe">
+                        <option value="">Select</option>
+                        <option value="wenn Hunger ich habe">wenn Hunger ich habe</option>
+                        <option value="wenn ich Hunger habe">wenn ich Hunger habe</option>
+                        <option value="wenn ich habe Hunger">wenn ich habe Hunger</option>
+                    </select>
+                </li>
+                <li>She calls ___ she has time.
+                    <select class="answer-select" data-correct="wenn sie Zeit hat">
+                        <option value="">Select</option>
+                        <option value="wenn Zeit sie hat">wenn Zeit sie hat</option>
+                        <option value="wenn sie hat Zeit">wenn sie hat Zeit</option>
+                        <option value="wenn sie Zeit hat">wenn sie Zeit hat</option>
+                    </select>
+                </li>
+                <li>I’ll go ___ it doesn’t rain.
+                    <select class="answer-select" data-correct="wenn es nicht regnet">
+                        <option value="">Select</option>
+                        <option value="wenn es nicht regnet">wenn es nicht regnet</option>
+                        <option value="wenn nicht es regnet">wenn nicht es regnet</option>
+                        <option value="wenn es regnet nicht">wenn es regnet nicht</option>
+                    </select>
+                </li>
+                <li>He was happy ___ he saw her.
+                    <select class="answer-select" data-correct="wenn er sie sah">
+                        <option value="">Select</option>
+                        <option value="wenn sie er sah">wenn sie er sah</option>
+                        <option value="wenn er sah sie">wenn er sah sie</option>
+                        <option value="wenn er sie sah">wenn er sie sah</option>
+                    </select>
+                </li>
+                <li>We’d travel ___ we had money.
+                    <select class="answer-select" data-correct="wenn wir Geld hätten">
+                        <option value="">Select</option>
+                        <option value="wenn Geld wir hätten">wenn Geld wir hätten</option>
+                        <option value="wenn wir hätten Geld">wenn wir hätten Geld</option>
+                        <option value="wenn wir Geld hätten">wenn wir Geld hätten</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>wenn ich Hunger habe</em></li>
+                    <li><em>wenn sie Zeit hat</em></li>
+                    <li><em>wenn es nicht regnet</em></li>
+                    <li><em>wenn er sie sah</em></li>
+                    <li><em>wenn wir Geld hätten</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise2">
+        <h3>Exercise 2: <em>Wenn</em> or <em>Wann</em>?</h3>
+        <div class="examples">
+            <ol class="example-list">
+                <li>___ kommst du?
+                    <select class="answer-select" data-correct="Wann">
+                        <option value="">Select</option>
+                        <option value="Als">Als</option>
+                        <option value="Wenn">Wenn</option>
+                        <option value="Wann">Wann</option>
+                    </select>
+                </li>
+                <li>Ich weiß, ___ ich Zeit habe.
+                    <select class="answer-select" data-correct="wenn">
+                        <option value="">Select</option>
+                        <option value="wann">wann</option>
+                        <option value="wenn">wenn</option>
+                        <option value="als">als</option>
+                    </select>
+                </li>
+                <li>___ es regnet, bleibe ich.
+                    <select class="answer-select" data-correct="Wenn">
+                        <option value="">Select</option>
+                        <option value="Wann">Wann</option>
+                        <option value="Wenn">Wenn</option>
+                        <option value="Als">Als</option>
+                    </select>
+                </li>
+                <li>___ war das?
+                    <select class="answer-select" data-correct="Wann">
+                        <option value="">Select</option>
+                        <option value="Wenn">Wenn</option>
+                        <option value="Als">Als</option>
+                        <option value="Wann">Wann</option>
+                    </select>
+                </li>
+                <li>Er kommt, ___ er kann.
+                    <select class="answer-select" data-correct="wenn">
+                        <option value="">Select</option>
+                        <option value="als">als</option>
+                        <option value="wann">wann</option>
+                        <option value="wenn">wenn</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Wann</em></li>
+                    <li><em>wenn</em></li>
+                    <li><em>Wenn</em></li>
+                    <li><em>Wann</em></li>
+                    <li><em>wenn</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise3">
+        <h3>Exercise 3: Word Order with <em>Wenn</em></h3>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Ich lache ___ ich das höre.
+                    <select class="answer-select" data-correct="wenn">
+                        <option value="">Select</option>
+                        <option value="wenn das ich höre">wenn das ich höre</option>
+                        <option value="wenn ich höre das">wenn ich höre das</option>
+                        <option value="wenn">wenn</option>
+                    </select>
+                </li>
+                <li>Sie blieb ___ es regnete.
+                    <select class="answer-select" data-correct="wenn">
+                        <option value="">Select</option>
+                        <option value="wenn es regnete">wenn es regnete</option>
+                        <option value="wenn">wenn</option>
+                        <option value="wenn regnete es">wenn regnete es</option>
+                    </select>
+                </li>
+                <li>Ich würde gehen ___ ich Zeit hätte.
+                    <select class="answer-select" data-correct="wenn">
+                        <option value="">Select</option>
+                        <option value="wenn Zeit ich hätte">wenn Zeit ich hätte</option>
+                        <option value="wenn">wenn</option>
+                        <option value="wenn ich hätte Zeit">wenn ich hätte Zeit</option>
+                    </select>
+                </li>
+                <li>Wir spielen ___ das Wetter gut ist.
+                    <select class="answer-select" data-correct="wenn">
+                        <option value="">Select</option>
+                        <option value="wenn gut das Wetter ist">wenn gut das Wetter ist</option>
+                        <option value="wenn ist das Wetter gut">wenn ist das Wetter gut</option>
+                        <option value="wenn">wenn</option>
+                    </select>
+                </li>
+                <li>Er rief an ___ er Zeit hatte.
+                    <select class="answer-select" data-correct="wenn">
+                        <option value="">Select</option>
+                        <option value="wenn">wenn</option>
+                        <option value="wenn Zeit er hatte">wenn Zeit er hatte</option>
+                        <option value="wenn er hatte Zeit">wenn er hatte Zeit</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>wenn</em> (Ich lache, wenn ich das höre.)</li>
+                    <li><em>wenn</em> (Sie blieb, wenn es regnete.)</li>
+                    <li><em>wenn</em> (Ich würde gehen, wenn ich Zeit hätte.)</li>
+                    <li><em>wenn</em> (Wir spielen, wenn das Wetter gut ist.)</li>
+                    <li><em>wenn</em> (Er rief an, wenn er Zeit hatte.)</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise4">
+        <h3>Exercise 4: Mixed <em>Wenn</em> Story</h3>
+        <p>Fill in with the correct <em>wenn</em> clause.</p>
+        <div class="examples">
+            <p>Ich gehe aus ___ (1) es nicht regnet. Er war froh ___ (2) er mich sah. Sie würde kommen ___ (3) sie könnte. Wir essen ___ (4) wir Hunger haben. Ich bleibe ___ (5) es kalt ist.</p>
+            <ol class="example-list">
+                <li><select class="answer-select" data-correct="wenn">
+                    <option value="">Select</option>
+                    <option value="wenn nicht es regnet">wenn nicht es regnet</option>
+                    <option value="wenn">wenn</option>
+                    <option value="wenn es regnet nicht">wenn es regnet nicht</option>
+                </select></li>
+                <li><select class="answer-select" data-correct="wenn">
+                    <option value="">Select</option>
+                    <option value="wenn mich er sah">wenn mich er sah</option>
+                    <option value="wenn er sah mich">wenn er sah mich</option>
+                    <option value="wenn">wenn</option>
+                </select></li>
+                <li><select class="answer-select" data-correct="wenn">
+                    <option value="">Select</option>
+                    <option value="wenn">wenn</option>
+                    <option value="wenn nicht sie könnte">wenn nicht sie könnte</option>
+                    <option value="wenn sie könnte nicht">wenn sie könnte nicht</option>
+                </select></li>
+                <li><select class="answer-select" data-correct="wenn">
+                    <option value="">Select</option>
+                    <option value="wenn Hunger wir haben">wenn Hunger wir haben</option>
+                    <option value="wenn wir haben Hunger">wenn wir haben Hunger</option>
+                    <option value="wenn">wenn</option>
+                </select></li>
+                <li><select class="answer-select" data-correct="wenn">
+                    <option value="">Select</option>
+                    <option value="wenn kalt es ist">wenn kalt es ist</option>
+                    <option value="wenn">wenn</option>
+                    <option value="wenn es ist kalt">wenn es ist kalt</option>
+                </select></li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong><br>
+                Ich gehe aus, <em>wenn</em> es nicht regnet. Er war froh, <em>wenn</em> er mich sah. Sie würde kommen, <em>wenn</em> sie könnte. Wir essen, <em>wenn</em> wir Hunger haben. Ich bleibe, <em>wenn</em> es kalt ist.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Tips to Master Wenn -->
+        <section id="tips">
+            <h2>Deep Tips to Master <em>Wenn</em></h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Verb Last</strong>: Train it—<em>wenn</em> = verb to the end (<em>wenn ich komme</em>, not <em>wenn ich komme hier</em>).</li>
+                    <li><strong>When or If</strong>: Check context—time (<em>wenn ich komme</em> = when) vs. condition (<em>wenn ich komme</em> = if).</li>
+                    <li><strong>Tense Clue</strong>: Present = real; Konjunktiv = hypothetical.</li>
+                    <li><strong>Daily Use</strong>: Say <em>Ich komme, wenn ich Zeit habe</em>—practice both meanings.</li>
+                    <li><strong>Compare</strong>: <em>Wenn</em> (repeated/condition) vs. <em>als</em> (one-time past)—<em>Wenn ich ihn sah</em> (habit) vs. <em>Als ich ihn sah</em> (once).</li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>Compare with <em>Dass</em> and <em>Weil</em></h3>
+                <ul class="example-list">
+                    <li><em>Wenn</em> (when/if): Time or condition, verb at end.
+                        <ul><li><em>Ich komme, wenn ich Zeit habe.</em> (I come when/if I have time.)</li></ul>
+                    </li>
+                    <li><em>Dass</em> (that): Statement/fact, verb at end.
+                        <ul><li><em>Ich weiß, dass ich Zeit habe.</em> (I know that I have time.)</li></ul>
+                    </li>
+                    <li><em>Weil</em> (because): Reason, verb at end.
+                        <ul><li><em>Ich komme, weil ich Zeit habe.</em> (I come because I have time.)</li></ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Final Thoughts -->
+        <section id="final-thoughts">
+            <h2>You’re Ready!</h2>
+            <p>
+                This deep guide covers <em>wenn</em>—its dual roles, rules, examples, and exercises. You’re ready to use “when” and “if” like a native! Next, you could explore <em>falls</em> (in case) or mix <em>wenn</em> with Superlativ—your choice!
+            </p>
+        </section>
+
+        <!-- Resources for Extra Practice -->
+        <section id="resources">
+            <h2>Resources for Extra Practice</h2>
+            <div class="see-also-links">
+                <a href="https://www.goethe.de/de/spr/ueb.html" class="see-also-rect">
+                    Goethe A1/A2 Wortliste<br>Verbs in context.<br><br>
+                    <button class="resource-btn">Visit Goethe Wortliste</button>
+                </a>
+                <a href="https://www.youtube.com/c/easygerman" class="see-also-rect">
+                    YouTube – EASY German<br>Hear verbs in real talk.<br><br>
+                    <button class="resource-btn">Visit EASY German</button>
+                </a>
+                <a href="https://www.schubert-verlag.de/" class="see-also-rect">
+                    Schubert Verlag<br>Free verb exercises.<br><br>
+                    <button class="resource-btn">Visit Schubert Verlag</button>
+                </a>
+            </div>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="weil.html" class="see-also-rect">German Weil</a>
+                <a href="dass.html" class="see-also-rect">German Dass</a>
+                <a href="dative.html" class="see-also-rect">German Dative</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="falls.html" class="next-btn">Next: German Falls (In Case) →</a>
+        </div>
+    </main>
+
+   <!-- JavaScript -->
+  <script>
+    // Dark Mode Toggle
+    const modeToggle = document.getElementById('mode-toggle');
+    modeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
+
+    // Load dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+    }
+
+    // Toggle Answers
+    document.querySelectorAll('.toggle-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const answersDiv = button.nextElementSibling;
+            if (button.classList.contains('show-answers')) {
+                answersDiv.classList.toggle('hidden');
+            } else if (button.classList.contains('check-answers')) {
+                const selects = button.parentElement.querySelectorAll('.answer-select');
+                selects.forEach(select => {
+                    const selectedValue = select.value;
+                    const correctValue = select.getAttribute('data-correct');
+                    if (selectedValue === correctValue) {
+                        select.style.backgroundColor = '#d4edda'; // Green for correct
+                    } else {
+                        select.style.backgroundColor = '#f8d7da'; // Red for incorrect
+                    }
+                });
+            }
+        });
+    });
+</script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

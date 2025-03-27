@@ -1,0 +1,947 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      German Sentence Structure | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/structure.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+               <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="other-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>German Sentence Structure: A Simple Guide to Word Order Rules for Beginners</h1>
+            <p>
+                German sentence structure might seem tricky at first, but it follows clear rules that you can learn step by step. Unlike English, where word order is mostly fixed (like "I see the dog"), German is more flexible—but only if you know how to use its rules! This guide will explain everything about German word order in a way that’s easy for beginners to understand. You’ll learn how to build sentences, where to put verbs, nouns, and other words, and how to avoid mistakes—all with examples. By the end, you’ll have everything you need to make correct German sentences. Let’s dive in!
+            </p>
+        </section>
+
+        <!-- Why Word Order Matters -->
+        <section id="key-points">
+            <h2>Why Word Order Matters</h2>
+            <div class="subsection">
+                <p>
+                    In English, word order tells you who’s doing what:
+                </p>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li>"The dog bites the man" vs. "The man bites the dog."</li>
+                    </ul>
+                    <p>
+                        In German, <strong>cases</strong> (like nominative, accusative, and dative) do a lot of that work, so word order can change without losing meaning. But German still has strict rules—especially about where the <strong>verb</strong> goes. The verb is the heart of a German sentence, and its position is key.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Verb Second (V2) -->
+        <section id="verb-second">
+            <h2>The Basic Rule: Verb Second (V2)</h2>
+            <div class="subsection">
+                <p>
+                    In a simple German sentence (called a <strong>main clause</strong>), the <strong>verb</strong> is always the <strong>second part</strong>. This doesn’t mean the second word—it means the second "piece" of the sentence. The first piece can be the subject, a time word, or something else, but the verb comes right after.
+                </p>
+            </div>
+            <div class="subsection">
+                <h3>How It Works</h3>
+                <div class="examples">
+                    <p><strong>Subject-Verb-Object (SVO):</strong> This is the most common order, like English.</p>
+                    <ul class="example-list">
+                        <li><em>Ich sehe den Hund.</em> (I see the dog.)</li>
+                        <li>1st: <em>Ich</em> (subject), 2nd: <em>sehe</em> (verb), then: <em>den Hund</em> (object).</li>
+                        <li><em>Die Katze schläft.</em> (The cat sleeps.)</li>
+                        <li>1st: <em>Die Katze</em>, 2nd: <em>schläft</em>.</li>
+                    </ul>
+                    <p><strong>Something Else First:</strong> If you start with something besides the subject (like a time or place), the verb is still second, and the subject comes after.</p>
+                    <ul class="example-list">
+                        <li><em>Heute sehe ich den Hund.</em> (Today, I see the dog.)</li>
+                        <li>1st: <em>Heute</em> (time), 2nd: <em>sehe</em> (verb), then: <em>ich den Hund</em>.</li>
+                        <li><em>Im Park spielt das Kind.</em> (In the park, the child plays.)</li>
+                        <li>1st: <em>Im Park</em> (place), 2nd: <em>spielt</em>, then: <em>das Kind</em>.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Examples</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Der Mann liest das Buch.</em> (The man reads the book.)</li>
+                        <li><em>Morgen liest der Mann das Buch.</em> (Tomorrow, the man reads the book.)</li>
+                        <li><em>Im Haus wohnt die Frau.</em> (In the house, the woman lives.)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Key Point</h3>
+                <p>No matter what starts the sentence, the verb is <strong>always second</strong> in a main clause. This is called the <strong>V2 rule</strong>.</p>
+            </div>
+        </section>
+
+        <!-- Time, Manner, Place (TMP) -->
+        <section id="tmp">
+            <h2>Time, Manner, Place (TMP) Rule</h2>
+            <div class="subsection">
+                <p>
+                    When you add extra information—like <strong>when</strong> (time), <strong>how</strong> (manner), or <strong>where</strong> (place)—it follows a specific order after the verb: <strong>Time, Manner, Place (TMP)</strong>.
+                </p>
+            </div>
+            <div class="subsection">
+                <h3>How It Works</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><strong>Time:</strong> When something happens (e.g., <em>heute</em> – today).</li>
+                        <li><strong>Manner:</strong> How it happens (e.g., <em>schnell</em> – quickly).</li>
+                        <li><strong>Place:</strong> Where it happens (e.g., <em>im Park</em> – in the park).</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Examples</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Ich gehe heute schnell ins Kino.</em> (I go today quickly to the cinema.)</li>
+                        <li>Verb: <em>gehe</em>, then: <em>heute</em> (time), <em>schnell</em> (manner), <em>ins Kino</em> (place).</li>
+                        <li><em>Der Hund läuft morgen laut im Garten.</em> (The dog runs tomorrow loudly in the garden.)</li>
+                        <li><em>Sie liest jeden Tag leise im Zimmer.</em> (She reads every day quietly in the room.)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Key Point</h3>
+                <p>After the verb, stick to <strong>TMP</strong>: Time first, then Manner, then Place. It keeps your sentence clear.</p>
+            </div>
+        </section>
+
+        <!-- Separable Verbs -->
+        <section id="separable-verbs">
+            <h2>Verbs with Two Parts (Separable Verbs)</h2>
+            <div class="subsection">
+                <p>
+                    Some German verbs have two pieces: a <strong>prefix</strong> (like <em>an-</em> or <em>aus-</em>) and a <strong>main part</strong>. In a main clause, the prefix splits off and goes to the <strong>end</strong> of the sentence, while the main part stays second.
+                </p>
+            </div>
+            <div class="subsection">
+                <h3>Common Separable Verbs</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>anfangen</em> (to start)</li>
+                        <li><em>ausgehen</em> (to go out)</li>
+                        <li><em>einkaufen</em> (to shop)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>How It Works</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Ich fange die Arbeit an.</em> (I start the work.)</li>
+                        <li><em>Wir gehen heute aus.</em> (We go out today.)</li>
+                        <li><em>Sie kauft im Laden ein.</em> (She shops in the store.)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Examples</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Er ruft seine Freundin an.</em> (He calls his friend.)</li>
+                        <li><em>Ich mache das Licht aus.</em> (I turn off the light.)</li>
+                        <li><em>Wir stehen früh auf.</em> (We get up early.)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Key Point</h3>
+                <p>The main verb part follows the V2 rule, and the prefix waits at the end.</p>
+            </div>
+        </section>
+
+        <!-- Two Verbs -->
+        <section id="two-verbs">
+            <h2>Sentences with Two Verbs (Modal Verbs and Infinitives)</h2>
+            <div class="subsection">
+                <p>
+                    When you use a <strong>modal verb</strong> (like <em>können</em> – can, <em>wollen</em> – want) or a helping verb (like <em>haben</em> – have) with another verb, the second verb (in its <strong>infinitive</strong> form, like <em>sehen</em> or <em>gehen</em>) goes to the <strong>end</strong> of the sentence.
+                </p>
+            </div>
+            <div class="subsection">
+                <h3>How It Works</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Ich will den Hund sehen.</em> (I want to see the dog.)</li>
+                        <li><em>Er kann gut kochen.</em> (He can cook well.)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Examples</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Sie muss morgen arbeiten.</em> (She must work tomorrow.)</li>
+                        <li><em>Wir wollen im Park spielen.</em> (We want to play in the park.)</li>
+                        <li><em>Du kannst das Buch lesen.</em> (You can read the book.)</li>
+                        <li><em>Ich habe das Auto gekauft.</em> (I have bought the car.)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Key Point</h3>
+                <p>The helping or modal verb follows V2, and the second verb (infinitive or participle) goes to the end.</p>
+            </div>
+        </section>
+
+        <!-- Questions -->
+        <section id="questions">
+            <h2>Questions</h2>
+            <div class="subsection">
+                <h3>Yes/No Questions</h3>
+                <p>For questions with a yes or no answer, the <strong>verb comes first</strong>, followed by the subject.</p>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Siehst du den Hund?</em> (Do you see the dog?)</li>
+                        <li><em>Spielt das Kind?</em> (Does the child play?)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Examples</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Arbeitet der Mann?</em> (Does the man work?)</li>
+                        <li><em>Geht sie zur Schule?</em> (Does she go to school?)</li>
+                        <li><em>Hast du Zeit?</em> (Do you have time?)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Question Words (W-Questions)</h3>
+                <p>For questions with words like <em>wer</em> (who), <em>was</em> (what), <em>wo</em> (where), <em>wann</em> (when), or <em>wie</em> (how):</p>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Wo wohnt der Mann?</em> (Where does the man live?)</li>
+                        <li><em>Wann kommt sie?</em> (When does she come?)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Examples</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Was liest du?</em> (What are you reading?)</li>
+                        <li><em>Wer hilft dem Kind?</em> (Who helps the child?)</li>
+                        <li><em>Wie fährt er?</em> (How does he drive?)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Key Point</h3>
+                <p>Verb is first for yes/no questions, second for W-questions.</p>
+            </div>
+        </section>
+
+        <!-- Subordinate Clauses -->
+        <section id="subordinate">
+            <h2>Subordinate Clauses (Verb at the End)</h2>
+            <div class="subsection">
+                <p>
+                    A <strong>subordinate clause</strong> is an extra part of a sentence that starts with words like <em>weil</em> (because), <em>dass</em> (that), <em>wenn</em> (if), or <em>ob</em> (whether). In these clauses, the <strong>verb goes to the end</strong>.
+                </p>
+            </div>
+            <div class="subsection">
+                <h3>How It Works</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Ich bin müde, weil ich arbeite.</em> (I’m tired because I work.)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Examples</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Er weiß, dass du kommst.</em> (He knows that you’re coming.)</li>
+                        <li><em>Ich bleibe, wenn es regnet.</em> (I stay if it rains.)</li>
+                        <li><em>Sie fragt, ob wir spielen.</em> (She asks whether we’re playing.)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Key Point</h3>
+                <p>In subordinate clauses, flip the order—verb goes to the end.</p>
+            </div>
+        </section>
+
+        <!-- Negation -->
+        <section id="negation">
+            <h2>Negation with "Nicht"</h2>
+            <div class="subsection">
+                <p>
+                    The word <em>nicht</em> (not) usually goes <strong>after the verb</strong> and <strong>before</strong> what it’s negating (like an object or extra info).
+                </p>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Ich sehe den Hund nicht.</em> (I don’t see the dog.)</li>
+                        <li><em>Er spielt nicht im Park.</em> (He doesn’t play in the park.)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Examples</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Sie liest das Buch nicht.</em> (She doesn’t read the book.)</li>
+                        <li><em>Wir gehen heute nicht aus.</em> (We don’t go out today.)</li>
+                        <li><em>Das Kind schläft nicht.</em> (The child doesn’t sleep.)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Key Point</h3>
+                <p><em>Nicht</em> comes after the verb but before what’s being denied.</p>
+            </div>
+        </section>
+
+        <!-- Practice Time -->
+        <section id="practice">
+            <h2>Practice Time!</h2>
+            <p>Try these exercises to test your word order skills. Answers are below each one.</p>
+            <div class="subsection">
+                <h3>Exercise 1: Rearrange the Words</h3>
+                <p>Put these words in the right order.</p>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li>sehe / ich / den Hund</li>
+                    </ul>
+                    <button class="toggle-btn">See Answer</button>
+                    <div class="hidden"><p><strong>Answer:</strong> <em>Ich sehe den Hund.</em> (I see the dog.)</p></div>
+                    <ul class="example-list">
+                        <li>morgen / spielt / das Kind</li>
+                    </ul>
+                    <button class="toggle-btn">See Answer</button>
+                    <div class="hidden"><p><strong>Answer:</strong> <em>Morgen spielt das Kind.</em> (Tomorrow, the child plays.)</p></div>
+                    <ul class="example-list">
+                        <li>im Park / läuft / der Hund</li>
+                    </ul>
+                    <button class="toggle-btn">See Answer</button>
+                    <div class="hidden"><p><strong>Answer:</strong> <em>Im Park läuft der Hund.</em> (In the park, the dog runs.)</p></div>
+                    <ul class="example-list">
+                        <li>heute / ich / gehe / schnell / zur Schule</li>
+                    </ul>
+                    <button class="toggle-btn">See Answer</button>
+                    <div class="hidden"><p><strong>Answer:</strong> <em>Heute gehe ich schnell zur Schule.</em> (Today, I go quickly to school.)</p></div>
+                    <ul class="example-list">
+                        <li>ruft / er / an / seine Freundin</li>
+                    </ul>
+                    <button class="toggle-btn">See Answer</button>
+                    <div class="hidden"><p><strong>Answer:</strong> <em>Er ruft seine Freundin an.</em> (He calls his friend.)</p></div>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Exercise 2: Fix the Sentence</h3>
+                <p>Correct the word order.</p>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Ich den Hund sehe.</em></li>
+                    </ul>
+                    <button class="toggle-btn">See Answer</button>
+                    <div class="hidden"><p><strong>Answer:</strong> <em>Ich sehe den Hund.</em> (I see the dog.)</p></div>
+                    <ul class="example-list">
+                        <li><em>Der Mann das Buch liest.</em></li>
+                    </ul>
+                    <button class="toggle-btn">See Answer</button>
+                    <div class="hidden"><p><strong>Answer:</strong> <em>Der Mann liest das Buch.</em> (The man reads the book.)</p></div>
+                    <ul class="example-list">
+                        <li><em>Spielt im Garten das Kind.</em></li>
+                    </ul>
+                    <button class="toggle-btn">See Answer</button>
+                    <div class="hidden"><p><strong>Answer:</strong> <em>Im Garten spielt das Kind.</em> (In the park, the child plays.)</p></div>
+                    <ul class="example-list">
+                        <li><em>Sie weiß nicht das.</em></li>
+                    </ul>
+                    <button class="toggle-btn">See Answer</button>
+                    <div class="hidden"><p><strong>Answer:</strong> <em>Sie weiß das nicht.</em> (She doesn’t know that.)</p></div>
+                    <ul class="example-list">
+                        <li><em>Ich will sehen den Film.</em></li>
+                    </ul>
+                    <button class="toggle-btn">See Answer</button>
+                    <div class="hidden"><p><strong>Answer:</strong> <em>Ich will den Film sehen.</em> (I want to see the movie.)</p></div>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Exercise 3: Make Questions</h3>
+                <p>Turn these into questions.</p>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>Du liest das Buch.</em></li>
+                    </ul>
+                    <button class="toggle-btn">See Answer</button>
+                    <div class="hidden"><p><strong>Answer:</strong> <em>Liest du das Buch?</em> (Do you read the book?)</p></div>
+                    <ul class="example-list">
+                        <li><em>Der Mann wohnt hier.</em></li>
+                    </ul>
+                    <button class="toggle-btn">See Answer</button>
+                    <div class="hidden"><p><strong>Answer:</strong> <em>Wo wohnt der Mann?</em> (Where does the man live?)</p></div>
+                    <ul class="example-list">
+                        <li><em>Sie spielt im Park.</em></li>
+                    </ul>
+                    <button class="toggle-btn">See Answer</button>
+                    <div class="hidden"><p><strong>Answer:</strong> <em>Spielt sie im Park?</em> (Does she play in the park?)</p></div>
+                    <ul class="example-list">
+                        <li><em>Wir kommen morgen.</em></li>
+                    </ul>
+                    <button class="toggle-btn">See Answer</button>
+                    <div class="hidden"><p><strong>Answer:</strong> <em>Wann kommen wir?</em> (When do we come?)</p></div>
+                    <ul class="example-list">
+                        <li><em>Er hilft dem Kind.</em></li>
+                    </ul>
+                    <button class="toggle-btn">See Answer</button>
+                    <div class="hidden"><p><strong>Answer:</strong> <em>Hilft er dem Kind?</em> (Does he help the child?)</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips -->
+        <section id="tips">
+            <h2>Tips to Master Word Order</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Verb Second:</strong> Always put the verb second in main clauses.</li>
+                    <li><strong>TMP:</strong> After the verb, order is Time, Manner, Place.</li>
+                    <li><strong>End Spot:</strong> Infinitives, prefixes, and subordinate verbs go to the end.</li>
+                    <li><strong>Practice:</strong> Start with simple sentences like <em>Ich sehe den Hund</em>, then add more.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Final Thoughts -->
+        <section id="final-thoughts">
+            <h2>You’ve Got It!</h2>
+            <p>
+                Now you know German word order: verb second in main clauses, TMP for extras, end spot for second verbs, and verb last in subordinate clauses. With these rules and examples, you can build sentences like a pro. Keep practicing, and it’ll feel natural soon. <em>Viel Erfolg!</em> (Good luck!)
+            </p>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="nouns.html" class="see-also-btn">German Nouns</a>
+                <a href="cases.html" class="see-also-btn">German Cases</a>
+                <a href="prepositions.html" class="see-also-btn">German Prepositions</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="prepositions.html" class="next-btn">Next: German Prepositions →</a>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.toggle-btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const hiddenContent = this.nextElementSibling;
+                    if (hiddenContent.classList.contains('hidden')) {
+                        hiddenContent.classList.remove('hidden');
+                    } else {
+                        hiddenContent.classList.add('hidden');
+                    }
+                });
+            });
+
+            const modeToggle = document.getElementById('mode-toggle');
+            const body = document.body;
+            modeToggle.addEventListener('click', function() {
+                body.classList.toggle('dark-mode');
+                const isDark = body.classList.contains('dark-mode');
+                modeToggle.querySelector('svg').setAttribute('d', isDark ? 
+                    'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z' : 
+                    'M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z');
+            });
+        });
+    </script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

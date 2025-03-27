@@ -1,0 +1,1030 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Relative Clauses with Dative Pronouns in German | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/relativ-dativ.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+               <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="b1-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>Relative Clauses with Dative Pronouns in German</h1>
+            <p>
+                A guide to using relative pronouns in the dative case (dem, der, denen) within relative clauses to describe nouns, with examples, exercises, and resources.
+            </p>
+        </section>
+
+        <!-- Understanding -->
+        <section id="understanding">
+            <h2>What Are Relative Clauses with Dative Pronouns?</h2>
+            <p>These are subordinate clauses that provide extra information about a noun, using dative relative pronouns to indicate indirect objects or prepositional roles.</p>
+            <div class="subsection">
+                <h3>Key Points</h3>
+                <ul class="example-list">
+                    <li><strong>Pronouns</strong>: dem (m./n.), der (f.), denen (pl.) match the antecedent’s gender/number.</li>
+                    <li><strong>Dative Role</strong>: Used for "to whom/for whom" or with prepositions (e.g., mit dem).</li>
+                    <li><strong>Verb Position</strong>: Verb goes to the end of the clause.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Differences -->
+        <section id="differences">
+            <h2>Structure and Formation</h2>
+            <div class="subsection">
+                <h3>Formation</h3>
+                <p>Main clause + comma + relative pronoun (dative) + clause content + verb.</p>
+            </div>
+        </section>
+
+        <!-- Uses -->
+        <section id="uses">
+            <h2>Uses of Dative Relative Clauses</h2>
+            <div class="subsection">
+                <h3>Basic: Indirect Objects</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Die Frau, der ich das Buch gebe, lächelt.</em> (The woman to whom I give the book smiles.)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Intermediate: Prepositional Phrases</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Der Tisch, an dem wir sitzen, ist neu.</em> (The table at which we sit is new.)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Advanced: Descriptive Enhancement</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Die Stadt, aus der ich komme, ist groß.</em> (The city from which I come is big.)</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Common Examples -->
+        <section id="examples">
+            <h2>List of 25 Common Examples</h2>
+            <div class="table-container">
+                <table>
+                    <tr><th>Sentence</th><th>Translation</th></tr>
+                    <tr><td><em>Der Mann, dem ich das Geld gebe, ist mein Freund.</em></td><td>The man to whom I give the money is my friend.</td></tr>
+                    <tr><td><em>Die Frau, der ich die Blumen schenke, ist meine Schwester.</em></td><td>The woman to whom I give the flowers is my sister.</td></tr>
+                    <tr><td><em>Das Kind, dem wir ein Spielzeug kaufen, freut sich.</em></td><td>The child for whom we buy a toy is happy.</td></tr>
+                    <tr><td><em>Die Leute, denen ich vertraue, sind ehrlich.</em></td><td>The people to whom I trust are honest.</td></tr>
+                    <tr><td><em>Der Hund, dem ich Futter gebe, bellt nicht.</em></td><td>The dog to whom I give food doesn’t bark.</td></tr>
+                    <tr><td><em>Die Lehrerin, der ich die Aufgabe zeige, ist streng.</em></td><td>The teacher to whom I show the homework is strict.</td></tr>
+                    <tr><td><em>Das Haus, dem ich einen Brief sende, ist alt.</em></td><td>The house to which I send a letter is old.</td></tr>
+                    <tr><td><em>Die Kinder, denen wir Geschichten erzählen, lachen viel.</em></td><td>The children to whom we tell stories laugh a lot.</td></tr>
+                    <tr><td><em>Der Junge, dem ich helfe, lernt schnell.</em></td><td>The boy to whom I help learns fast.</td></tr>
+                    <tr><td><em>Die Katze, der ich Milch gebe, ist süß.</em></td><td>The cat to whom I give milk is cute.</td></tr>
+                    <tr><td><em>Das Auto, dem wir folgen, ist rot.</em></td><td>The car which we follow is red.</td></tr>
+                    <tr><td><em>Die Freunde, denen ich schreibe, wohnen weit weg.</em></td><td>The friends to whom I write live far away.</td></tr>
+                    <tr><td><em>Der Tisch, mit dem ich arbeite, ist stabil.</em></td><td>The table with which I work is stable.</td></tr>
+                    <tr><td><em>Die Stadt, aus der ich komme, ist schön.</em></td><td>The city from which I come is beautiful.</td></tr>
+                    <tr><td><em>Das Mädchen, bei dem ich wohne, ist nett.</em></td><td>The girl at whose place I stay is nice.</td></tr>
+                    <tr><td><em>Der Chef, von dem ich lerne, ist klug.</em></td><td>The boss from whom I learn is smart.</td></tr>
+                    <tr><td><em>Die Schule, nach der ich suche, ist groß.</em></td><td>The school after which I look is big.</td></tr>
+                    <tr><td><em>Die Nachbarn, denen ich winke, sind freundlich.</em></td><td>The neighbors to whom I wave are friendly.</td></tr>
+                    <tr><td><em>Der Stuhl, mit dem ich sitze, ist bequem.</em></td><td>The chair with which I sit is comfortable.</td></tr>
+                    <tr><td><em>Die Tante, der ich danke, hilft immer.</em></td><td>The aunt to whom I thank always helps.</td></tr>
+                    <tr><td><em>Das Zimmer, aus dem ich komme, ist klein.</em></td><td>The room from which I come is small.</td></tr>
+                    <tr><td><em>Die Kollegen, denen ich antworte, warten schon.</em></td><td>The colleagues to whom I reply are already waiting.</td></tr>
+                    <tr><td><em>Der Arzt, bei dem ich war, ist geduldig.</em></td><td>The doctor at whose place I was is patient.</td></tr>
+                    <tr><td><em>Die Oma, von der ich spreche, ist lustig.</em></td><td>The grandma of whom I speak is funny.</td></tr>
+                    <tr><td><em>Das Pferd, dem ich Äpfel gebe, ist stark.</em></td><td>The horse to whom I give apples is strong.</td></tr>
+                </table>
+            </div>
+        </section>
+
+       <!-- Exercises -->
+<section id="practice">
+    <h2>Exercises to Practice Dative Relative Clauses</h2>
+    <div class="subsection" id="exercise1">
+        <h3>Exercise 1: Choose the Correct Dative Relative Pronoun</h3>
+        <p>Select the correct pronoun.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Der Mann, ___ ich helfe, ist alt.  
+                    <select class="answer-select" data-correct="Der Mann, dem ich helfe, ist alt.">
+                        <option value="">Select</option>
+                        <option value="Der Mann, die ich helfe, ist alt.">die</option>
+                        <option value="Der Mann, dem ich helfe, ist alt.">dem</option>
+                        <option value="Der Mann, das ich helfe, ist alt.">das</option>
+                        <option value="Der Mann, der ich helfe, ist alt.">der</option>
+                        <option value="Der Mann, denen ich helfe, ist alt.">denen</option>
+                    </select>
+                </li>
+                <li>Die Frau, ___ ich danke, lächelt.  
+                    <select class="answer-select" data-correct="Die Frau, der ich danke, lächelt.">
+                        <option value="">Select</option>
+                        <option value="Die Frau, das ich danke, lächelt.">das</option>
+                        <option value="Die Frau, denen ich danke, lächelt.">denen</option>
+                        <option value="Die Frau, dem ich danke, lächelt.">dem</option>
+                        <option value="Die Frau, der ich danke, lächelt.">der</option>
+                        <option value="Die Frau, die ich danke, lächelt.">die</option>
+                    </select>
+                </li>
+                <li>Das Kind, ___ wir spielen, ist fröhlich.  
+                    <select class="answer-select" data-correct="Das Kind, dem wir spielen, ist fröhlich.">
+                        <option value="">Select</option>
+                        <option value="Das Kind, die wir spielen, ist fröhlich.">die</option>
+                        <option value="Das Kind, der wir spielen, ist fröhlich.">der</option>
+                        <option value="Das Kind, dem wir spielen, ist fröhlich.">dem</option>
+                        <option value="Das Kind, das wir spielen, ist fröhlich.">das</option>
+                        <option value="Das Kind, denen wir spielen, ist fröhlich.">denen</option>
+                    </select>
+                </li>
+                <li>Die Leute, ___ ich spreche, sind nett.  
+                    <select class="answer-select" data-correct="Die Leute, denen ich spreche, sind nett.">
+                        <option value="">Select</option>
+                        <option value="Die Leute, dem ich spreche, sind nett.">dem</option>
+                        <option value="Die Leute, das ich spreche, sind nett.">das</option>
+                        <option value="Die Leute, die ich spreche, sind nett.">die</option>
+                        <option value="Die Leute, denen ich spreche, sind nett.">denen</option>
+                        <option value="Die Leute, der ich spreche, sind nett.">der</option>
+                    </select>
+                </li>
+                <li>Der Hund, ___ ich laufe, ist schnell.  
+                    <select class="answer-select" data-correct="Der Hund, dem ich laufe, ist schnell.">
+                        <option value="">Select</option>
+                        <option value="Der Hund, dem ich laufe, ist schnell.">dem</option>
+                        <option value="Der Hund, die ich laufe, ist schnell.">die</option>
+                        <option value="Der Hund, das ich laufe, ist schnell.">das</option>
+                        <option value="Der Hund, denen ich laufe, ist schnell.">denen</option>
+                        <option value="Der Hund, der ich laufe, ist schnell.">der</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Der Mann, dem ich helfe, ist alt.</em></li>
+                    <li><em>Die Frau, der ich danke, lächelt.</em></li>
+                    <li><em>Das Kind, dem wir spielen, ist fröhlich.</em></li>
+                    <li><em>Die Leute, denen ich spreche, sind nett.</em></li>
+                    <li><em>Der Hund, dem ich laufe, ist schnell.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise2">
+        <h3>Exercise 2: Add Preposition + Dative Relative Pronoun</h3>
+        <p>Choose the correct combination.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Der Tisch, ___ ich esse, ist rund. (mit)  
+                    <select class="answer-select" data-correct="Der Tisch, mit dem ich esse, ist rund.">
+                        <option value="">Select</option>
+                        <option value="Der Tisch, bei dem ich esse, ist rund.">bei dem</option>
+                        <option value="Der Tisch, mit der ich esse, ist rund.">mit der</option>
+                        <option value="Der Tisch, mit dem ich esse, ist rund.">mit dem</option>
+                        <option value="Der Tisch, aus dem ich esse, ist rund.">aus dem</option>
+                        <option value="Der Tisch, mit denen ich esse, ist rund.">mit denen</option>
+                    </select>
+                </li>
+                <li>Die Stadt, ___ ich komme, ist klein. (aus)  
+                    <select class="answer-select" data-correct="Die Stadt, aus der ich komme, ist klein.">
+                        <option value="">Select</option>
+                        <option value="Die Stadt, aus der ich komme, ist klein.">aus der</option>
+                        <option value="Die Stadt, bei der ich komme, ist klein.">bei der</option>
+                        <option value="Die Stadt, mit der ich komme, ist klein.">mit der</option>
+                        <option value="Die Stadt, aus dem ich komme, ist klein.">aus dem</option>
+                        <option value="Die Stadt, von der ich komme, ist klein.">von der</option>
+                    </select>
+                </li>
+                <li>Das Mädchen, ___ ich wohne, ist freundlich. (bei)  
+                    <select class="answer-select" data-correct="Das Mädchen, bei dem ich wohne, ist freundlich.">
+                        <option value="">Select</option>
+                        <option value="Das Mädchen, aus dem ich wohne, ist freundlich.">aus dem</option>
+                        <option value="Das Mädchen, mit dem ich wohne, ist freundlich.">mit dem</option>
+                        <option value="Das Mädchen, bei der ich wohne, ist freundlich.">bei der</option>
+                        <option value="Das Mädchen, bei dem ich wohne, ist freundlich.">bei dem</option>
+                        <option value="Das Mädchen, von dem ich wohne, ist freundlich.">von dem</option>
+                    </select>
+                </li>
+                <li>Der Chef, ___ ich lerne, ist streng. (von)  
+                    <select class="answer-select" data-correct="Der Chef, von dem ich lerne, ist streng.">
+                        <option value="">Select</option>
+                        <option value="Der Chef, aus dem ich lerne, ist streng.">aus dem</option>
+                        <option value="Der Chef, von der ich lerne, ist streng.">von der</option>
+                        <option value="Der Chef, bei dem ich lerne, ist streng.">bei dem</option>
+                        <option value="Der Chef, von dem ich lerne, ist streng.">von dem</option>
+                        <option value="Der Chef, mit dem ich lerne, ist streng.">mit dem</option>
+                    </select>
+                </li>
+                <li>Die Kinder, ___ ich singe, sind froh. (mit)  
+                    <select class="answer-select" data-correct="Die Kinder, mit denen ich singe, sind froh.">
+                        <option value="">Select</option>
+                        <option value="Die Kinder, bei denen ich singe, sind froh.">bei denen</option>
+                        <option value="Die Kinder, mit denen ich singe, sind froh.">mit denen</option>
+                        <option value="Die Kinder, mit dem ich singe, sind froh.">mit dem</option>
+                        <option value="Die Kinder, mit der ich singe, sind froh.">mit der</option>
+                        <option value="Die Kinder, von denen ich singe, sind froh.">von denen</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Der Tisch, mit dem ich esse, ist rund.</em></li>
+                    <li><em>Die Stadt, aus der ich komme, ist klein.</em></li>
+                    <li><em>Das Mädchen, bei dem ich wohne, ist freundlich.</em></li>
+                    <li><em>Der Chef, von dem ich lerne, ist streng.</em></li>
+                    <li><em>Die Kinder, mit denen ich singe, sind froh.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise3">
+        <h3>Exercise 3: Translate</h3>
+        <p>Choose the correct translation.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>The man to whom I give the book is happy.  
+                    <select class="answer-select" data-correct="Der Mann, dem ich das Buch gebe, ist glücklich.">
+                        <option value="">Select</option>
+                        <option value="Der Mann, das ich das Buch gebe, ist glücklich.">Der Mann, das ich das Buch gebe, ist glücklich.</option>
+                        <option value="Der Mann, der ich das Buch gebe, ist glücklich.">Der Mann, der ich das Buch gebe, ist glücklich.</option>
+                        <option value="Der Mann, dem ich das Buch gebe, ist glücklich.">Der Mann, dem ich das Buch gebe, ist glücklich.</option>
+                        <option value="Der Mann, die ich das Buch gebe, ist glücklich.">Der Mann, die ich das Buch gebe, ist glücklich.</option>
+                        <option value="Der Mann, denen ich das Buch gebe, ist glücklich.">Der Mann, denen ich das Buch gebe, ist glücklich.</option>
+                    </select>
+                </li>
+                <li>The woman with whom I dance is tall.  
+                    <select class="answer-select" data-correct="Die Frau, mit der ich tanze, ist groß.">
+                        <option value="">Select</option>
+                        <option value="Die Frau, bei der ich tanze, ist groß.">Die Frau, bei der ich tanze, ist groß.</option>
+                        <option value="Die Frau, mit der ich tanze, ist groß.">Die Frau, mit der ich tanze, ist groß.</option>
+                        <option value="Die Frau, mit dem ich tanze, ist groß.">Die Frau, mit dem ich tanze, ist groß.</option>
+                        <option value="Die Frau, aus der ich tanze, ist groß.">Die Frau, aus der ich tanze, ist groß.</option>
+                        <option value="Die Frau, denen ich tanze, ist groß.">Die Frau, denen ich tanze, ist groß.</option>
+                    </select>
+                </li>
+                <li>The child to whom we read is quiet.  
+                    <select class="answer-select" data-correct="Das Kind, dem wir lesen, ist ruhig.">
+                        <option value="">Select</option>
+                        <option value="Das Kind, die wir lesen, ist ruhig.">Das Kind, die wir lesen, ist ruhig.</option>
+                        <option value="Das Kind, denen wir lesen, ist ruhig.">Das Kind, denen wir lesen, ist ruhig.</option>
+                        <option value="Das Kind, das wir lesen, ist ruhig.">Das Kind, das wir lesen, ist ruhig.</option>
+                        <option value="Das Kind, dem wir lesen, ist ruhig.">Das Kind, dem wir lesen, ist ruhig.</option>
+                        <option value="Das Kind, der wir lesen, ist ruhig.">Das Kind, der wir lesen, ist ruhig.</option>
+                    </select>
+                </li>
+                <li>The people from whom I borrow money are kind.  
+                    <select class="answer-select" data-correct="Die Leute, von denen ich Geld leihe, sind nett.">
+                        <option value="">Select</option>
+                        <option value="Die Leute, bei denen ich Geld leihe, sind nett.">Die Leute, bei denen ich Geld leihe, sind nett.</option>
+                        <option value="Die Leute, aus denen ich Geld leihe, sind nett.">Die Leute, aus denen ich Geld leihe, sind nett.</option>
+                        <option value="Die Leute, von denen ich Geld leihe, sind nett.">Die Leute, von denen ich Geld leihe, sind nett.</option>
+                        <option value="Die Leute, mit denen ich Geld leihe, sind nett.">Die Leute, mit denen ich Geld leihe, sind nett.</option>
+                        <option value="Die Leute, von dem ich Geld leihe, sind nett.">Die Leute, von dem ich Geld leihe, sind nett.</option>
+                    </select>
+                </li>
+                <li>The dog at whose place I sleep is big.  
+                    <select class="answer-select" data-correct="Der Hund, bei dem ich schlafe, ist groß.">
+                        <option value="">Select</option>
+                        <option value="Der Hund, aus dem ich schlafe, ist groß.">Der Hund, aus dem ich schlafe, ist groß.</option>
+                        <option value="Der Hund, von dem ich schlafe, ist groß.">Der Hund, von dem ich schlafe, ist groß.</option>
+                        <option value="Der Hund, mit dem ich schlafe, ist groß.">Der Hund, mit dem ich schlafe, ist groß.</option>
+                        <option value="Der Hund, bei der ich schlafe, ist groß.">Der Hund, bei der ich schlafe, ist groß.</option>
+                        <option value="Der Hund, bei dem ich schlafe, ist groß.">Der Hund, bei dem ich schlafe, ist groß.</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Der Mann, dem ich das Buch gebe, ist glücklich.</em></li>
+                    <li><em>Die Frau, mit der ich tanze, ist groß.</em></li>
+                    <li><em>Das Kind, dem wir lesen, ist ruhig.</em></li>
+                    <li><em>Die Leute, von denen ich Geld leihe, sind nett.</em></li>
+                    <li><em>Der Hund, bei dem ich schlafe, ist groß.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise4">
+        <h3>Exercise 4: Mixed Relative Pronouns</h3>
+        <p>Choose the correct option.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Die Katze, ___ ich füttere, ist weiß.  
+                    <select class="answer-select" data-correct="Die Katze, der ich füttere, ist weiß.">
+                        <option value="">Select</option>
+                        <option value="Die Katze, der ich füttere, ist weiß.">der</option>
+                        <option value="Die Katze, das ich füttere, ist weiß.">das</option>
+                        <option value="Die Katze, die ich füttere, ist weiß.">die</option>
+                        <option value="Die Katze, dem ich füttere, ist weiß.">dem</option>
+                        <option value="Die Katze, denen ich füttere, ist weiß.">denen</option>
+                    </select>
+                </li>
+                <li>Der Junge, ___ ich lerne, ist klug. (mit)  
+                    <select class="answer-select" data-correct="Der Junge, mit dem ich lerne, ist klug.">
+                        <option value="">Select</option>
+                        <option value="Der Junge, aus dem ich lerne, ist klug.">aus dem</option>
+                        <option value="Der Junge, mit denen ich lerne, ist klug.">mit denen</option>
+                        <option value="Der Junge, mit dem ich lerne, ist klug.">mit dem</option>
+                        <option value="Der Junge, bei dem ich lerne, ist klug.">bei dem</option>
+                        <option value="Der Junge, mit der ich lerne, ist klug.">mit der</option>
+                    </select>
+                </li>
+                <li>Das Auto, ___ wir fahren, ist neu.  
+                    <select class="answer-select" data-correct="Das Auto, dem wir fahren, ist neu.">
+                        <option value="">Select</option>
+                        <option value="Das Auto, die wir fahren, ist neu.">die</option>
+                        <option value="Das Auto, das wir fahren, ist neu.">das</option>
+                        <option value="Das Auto, denen wir fahren, ist neu.">denen</option>
+                        <option value="Das Auto, der wir fahren, ist neu.">der</option>
+                        <option value="Das Auto, dem wir fahren, ist neu.">dem</option>
+                    </select>
+                </li>
+                <li>Die Nachbarn, ___ ich grüße, sind laut.  
+                    <select class="answer-select" data-correct="Die Nachbarn, denen ich grüße, sind laut.">
+                        <option value="">Select</option>
+                        <option value="Die Nachbarn, die ich grüße, sind laut.">die</option>
+                        <option value="Die Nachbarn, der ich grüße, sind laut.">der</option>
+                        <option value="Die Nachbarn, dem ich grüße, sind laut.">dem</option>
+                        <option value="Die Nachbarn, denen ich grüße, sind laut.">denen</option>
+                        <option value="Die Nachbarn, das ich grüße, sind laut.">das</option>
+                    </select>
+                </li>
+                <li>Die Schule, ___ ich gehe, ist nah. (zu)  
+                    <select class="answer-select" data-correct="Die Schule, zu der ich gehe, ist nah.">
+                        <option value="">Select</option>
+                        <option value="Die Schule, bei der ich gehe, ist nah.">bei der</option>
+                        <option value="Die Schule, aus der ich gehe, ist nah.">aus der</option>
+                        <option value="Die Schule, mit der ich gehe, ist nah.">mit der</option>
+                        <option value="Die Schule, zu der ich gehe, ist nah.">zu der</option>
+                        <option value="Die Schule, zu dem ich gehe, ist nah.">zu dem</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Die Katze, der ich füttere, ist weiß.</em></li>
+                    <li><em>Der Junge, mit dem ich lerne, ist klug.</em></li>
+                    <li><em>Das Auto, dem wir fahren, ist neu.</em></li>
+                    <li><em>Die Nachbarn, denen ich grüße, sind laut.</em></li>
+                    <li><em>Die Schule, zu der ich gehe, ist nah.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise5">
+        <h3>Exercise 5: Correct the Mistake</h3>
+        <p>Choose the corrected sentence.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li><em>Der Mann, die ich helfe, ist nett.</em>  
+                    <select class="answer-select" data-correct="Der Mann, dem ich helfe, ist nett.">
+                        <option value="">Select</option>
+                        <option value="Der Mann, aus dem ich helfe, ist nett.">Der Mann, aus dem ich helfe, ist nett.</option>
+                        <option value="Der Mann, mit dem ich helfe, ist nett.">Der Mann, mit dem ich helfe, ist nett.</option>
+                        <option value="Der Mann, dem ich helfe, ist nett.">Der Mann, dem ich helfe, ist nett.</option>
+                        <option value="Der Mann, denen ich helfe, ist nett.">Der Mann, denen ich helfe, ist nett.</option>
+                        <option value="Der Mann, der ich helfe, ist nett.">Der Mann, der ich helfe, ist nett.</option>
+                    </select>
+                </li>
+                <li><em>Die Frau, dem ich danke, ist froh.</em>  
+                    <select class="answer-select" data-correct="Die Frau, der ich danke, ist froh.">
+                        <option value="">Select</option>
+                        <option value="Die Frau, bei der ich danke, ist froh.">Die Frau, bei der ich danke, ist froh.</option>
+                        <option value="Die Frau, aus der ich danke, ist froh.">Die Frau, aus der ich danke, ist froh.</option>
+                        <option value="Die Frau, mit der ich danke, ist froh.">Die Frau, mit der ich danke, ist froh.</option>
+                        <option value="Die Frau, der ich danke, ist froh.">Die Frau, der ich danke, ist froh.</option>
+                        <option value="Die Frau, denen ich danke, ist froh.">Die Frau, denen ich danke, ist froh.</option>
+                    </select>
+                </li>
+                <li><em>Das Kind, der wir spielen, ist klein.</em>  
+                    <select class="answer-select" data-correct="Das Kind, dem wir spielen, ist klein.">
+                        <option value="">Select</option>
+                        <option value="Das Kind, aus dem wir spielen, ist klein.">Das Kind, aus dem wir spielen, ist klein.</option>
+                        <option value="Das Kind, dem wir spielen, ist klein.">Das Kind, dem wir spielen, ist klein.</option>
+                        <option value="Das Kind, die wir spielen, ist klein.">Das Kind, die wir spielen, ist klein.</option>
+                        <option value="Das Kind, mit dem wir spielen, ist klein.">Das Kind, mit dem wir spielen, ist klein.</option>
+                        <option value="Das Kind, denen wir spielen, ist klein.">Das Kind, denen wir spielen, ist klein.</option>
+                    </select>
+                </li>
+                <li><em>Die Leute, dem ich vertraue, sind hier.</em>  
+                    <select class="answer-select" data-correct="Die Leute, denen ich vertraue, sind hier.">
+                        <option value="">Select</option>
+                        <option value="Die Leute, denen ich vertraue, sind hier.">Die Leute, denen ich vertraue, sind hier.</option>
+                        <option value="Die Leute, aus denen ich vertraue, sind hier.">Die Leute, aus denen ich vertraue, sind hier.</option>
+                        <option value="Die Leute, mit denen ich vertraue, sind hier.">Die Leute, mit denen ich vertraue, sind hier.</option>
+                        <option value="Die Leute, bei denen ich vertraue, sind hier.">Die Leute, bei denen ich vertraue, sind hier.</option>
+                        <option value="Die Leute, der ich vertraue, sind hier.">Die Leute, der ich vertraue, sind hier.</option>
+                    </select>
+                </li>
+                <li><em>Der Tisch, aus dem ich esse, ist alt.</em>  
+                    <select class="answer-select" data-correct="Der Tisch, mit dem ich esse, ist alt.">
+                        <option value="">Select</option>
+                        <option value="Der Tisch, der ich esse, ist alt.">Der Tisch, der ich esse, ist alt.</option>
+                        <option value="Der Tisch, bei dem ich esse, ist alt.">Der Tisch, bei dem ich esse, ist alt.</option>
+                        <option value="Der Tisch, mit dem ich esse, ist alt.">Der Tisch, mit dem ich esse, ist alt.</option>
+                        <option value="Der Tisch, von dem ich esse, ist alt.">Der Tisch, von dem ich esse, ist alt.</option>
+                        <option value="Der Tisch, denen ich esse, ist alt.">Der Tisch, denen ich esse, ist alt.</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Der Mann, dem ich helfe, ist nett.</em></li>
+                    <li><em>Die Frau, der ich danke, ist froh.</em></li>
+                    <li><em>Das Kind, dem wir spielen, ist klein.</em></li>
+                    <li><em>Die Leute, denen ich vertraue, sind hier.</em></li>
+                    <li><em>Der Tisch, mit dem ich esse, ist alt.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Tips -->
+        <section id="tips">
+            <h2>Tips to Master Dative Relative Clauses</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Match Gender/Number</strong>: Check the antecedent (e.g., Frau → der, Kinder → denen).</li>
+                    <li><strong>Dative Triggers</strong>: Look for verbs/prepositions needing dative (e.g., geben, mit).</li>
+                    <li><strong>Verb Last</strong>: Always place the verb at the end of the clause.</li>
+                    <li><strong>Practice Prepositions</strong>: Combine mit, aus, etc., with dem/der/denen.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Resources -->
+        <section id="resources">
+            <h2>Resources for Extra Practice</h2>
+            <div class="resource-links">
+                <div class="resource-card">
+                    <p><strong>YouTube - Learn German with Anja</strong><br>Videos on relative clauses.</p>
+                    <a href="https://www.youtube.com/@LearnGermanwithAnja" class="resource-btn">Visit Learn German with Anja</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>Deutsch Lernen (Lingolia)</strong><br>Lessons on relative pronouns.</p>
+                    <a href="https://deutsch.lingolia.com/en/grammar/pronouns/relative-pronouns" class="resource-btn">Visit Lingolia</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>YouTube - Easy German</strong><br>Real-life examples in context.</p>
+                    <a href="https://www.youtube.com/@EasyGerman" class="resource-btn">Visit Easy German</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="pronomen-praep.html" class="see-also-rect">Pronouns with Prepositions</a>
+                <a href="aus.html" class="see-also-rect">"Aus + Material"</a>
+                <a href="konj2.html" class="see-also-rect">Konjunktiv II</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="aus.html" class="next-btn">Next: "Aus + Material" →</a>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark Mode Toggle
+        const modeToggle = document.getElementById('mode-toggle');
+        modeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Load dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Toggle Answers
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const answersDiv = button.nextElementSibling;
+                if (button.classList.contains('show-answers')) {
+                    answersDiv.classList.toggle('hidden');
+                } else if (button.classList.contains('check-answers')) {
+                    const selects = button.parentElement.querySelectorAll('.answer-select');
+                    selects.forEach(select => {
+                        const selectedValue = select.value;
+                        const correctValue = select.getAttribute('data-correct');
+                        if (selectedValue === correctValue) {
+                            select.style.backgroundColor = '#d4edda'; // Green for correct
+                        } else {
+                            select.style.backgroundColor = '#f8d7da'; // Red for incorrect
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

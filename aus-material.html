@@ -1,0 +1,1030 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      "Aus + Material" in German | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/aus-material.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+               <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="b1-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>"Aus + Material" in German</h1>
+            <p>
+                A guide to using aus with materials in the dative case to describe what something is made of, with examples, exercises, and resources.
+            </p>
+        </section>
+
+        <!-- Understanding -->
+        <section id="understanding">
+            <h2>What Is "Aus + Material"?</h2>
+            <p>The preposition aus paired with a material in the dative case indicates the substance an object is composed of, answering "What is it made of?"</p>
+            <div class="subsection">
+                <h3>Key Points</h3>
+                <ul class="example-list">
+                    <li><strong>Dative Case</strong>: Materials follow aus in dative (e.g., Holz → aus Holz).</li>
+                    <li><strong>No Article</strong>: General materials omit articles (e.g., aus Metall).</li>
+                    <li><strong>Specificity</strong>: Definite articles specify a particular material (e.g., aus dem Glas).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Differences -->
+        <section id="differences">
+            <h2>Structure and Formation</h2>
+            <div class="subsection">
+                <h3>Formation</h3>
+                <p>Aus + material noun in dative, with or without an article depending on generality.</p>
+            </div>
+        </section>
+
+        <!-- Uses -->
+        <section id="uses">
+            <h2>Uses of "Aus + Material"</h2>
+            <div class="subsection">
+                <h3>Basic: Describing Objects</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Ein Stuhl aus Holz</em> (A chair made of wood)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Intermediate: Craftsmanship</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Eine Vase aus Glas</em> (A vase made of glass)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Advanced: Everyday Items</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Ein Kleid aus Stoff</em> (A dress made of fabric)</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Common Examples -->
+        <section id="examples">
+            <h2>List of 25 Common Examples</h2>
+            <div class="table-container">
+                <table>
+                    <tr><th>Sentence</th><th>Translation</th></tr>
+                    <tr><td><em>Ein Tisch aus Holz</em></td><td>A table made of wood</td></tr>
+                    <tr><td><em>Eine Tasse aus Glas</em></td><td>A cup made of glass</td></tr>
+                    <tr><td><em>Ein Ring aus Gold</em></td><td>A ring made of gold</td></tr>
+                    <tr><td><em>Ein Haus aus Stein</em></td><td>A house made of stone</td></tr>
+                    <tr><td><em>Eine Jacke aus Leder</em></td><td>A jacket made of leather</td></tr>
+                    <tr><td><em>Ein Löffel aus Metall</em></td><td>A spoon made of metal</td></tr>
+                    <tr><td><em>Ein Blatt aus Papier</em></td><td>A sheet made of paper</td></tr>
+                    <tr><td><em>Eine Decke aus Wolle</em></td><td>A blanket made of wool</td></tr>
+                    <tr><td><em>Ein Boot aus Plastik</em></td><td>A boat made of plastic</td></tr>
+                    <tr><td><em>Ein Schmuck aus Silber</em></td><td>Jewelry made of silver</td></tr>
+                    <tr><td><em>Eine Schachtel aus Karton</em></td><td>A box made of cardboard</td></tr>
+                    <tr><td><em>Ein Rahmen aus Eisen</em></td><td>A frame made of iron</td></tr>
+                    <tr><td><em>Ein Kleid aus Baumwolle</em></td><td>A dress made of cotton</td></tr>
+                    <tr><td><em>Eine Flasche aus Kunststoff</em></td><td>A bottle made of plastic</td></tr>
+                    <tr><td><em>Ein Dach aus Ziegel</em></td><td>A roof made of tiles</td></tr>
+                    <tr><td><em>Ein Becher aus Keramik</em></td><td>A mug made of ceramic</td></tr>
+                    <tr><td><em>Eine Kette aus Perlen</em></td><td>A necklace made of pearls</td></tr>
+                    <tr><td><em>Ein Regal aus Bambus</em></td><td>A shelf made of bamboo</td></tr>
+                    <tr><td><em>Ein Spielzeug aus Gummi</em></td><td>A toy made of rubber</td></tr>
+                    <tr><td><em>Eine Figur aus Ton</em></td><td>A figure made of clay</td></tr>
+                    <tr><td><em>Ein Armband aus Kupfer</em></td><td>A bracelet made of copper</td></tr>
+                    <tr><td><em>Eine Lampe aus Messing</em></td><td>A lamp made of brass</td></tr>
+                    <tr><td><em>Ein Teppich aus Seide</em></td><td>A carpet made of silk</td></tr>
+                    <tr><td><em>Ein Zaun aus Draht</em></td><td>A fence made of wire</td></tr>
+                    <tr><td><em>Eine Schale aus Porzellan</em></td><td>A bowl made of porcelain</td></tr>
+                </table>
+            </div>
+        </section>
+
+   <!-- Exercises -->
+<section id="practice">
+    <h2>Exercises to Practice "Aus + Material"</h2>
+    <div class="subsection" id="exercise1">
+        <h3>Exercise 1: Fill in the Material</h3>
+        <p>Select the correct preposition.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Ein Tisch ___ Holz.
+                    <select class="answer-select" data-correct="Ein Tisch aus Holz">
+                        <option value="">Select</option>
+                        <option value="Ein Tisch an Holz">an</option>
+                        <option value="Ein Tisch für Holz">für</option>
+                        <option value="Ein Tisch aus Holz">aus</option>
+                        <option value="Ein Tisch mit Holz">mit</option>
+                        <option value="Ein Tisch von Holz">von</option>
+                    </select>
+                </li>
+                <li>Eine Tasse ___ Glas.
+                    <select class="answer-select" data-correct="Eine Tasse aus Glas">
+                        <option value="">Select</option>
+                        <option value="Eine Tasse bei Glas">bei</option>
+                        <option value="Eine Tasse aus Glas">aus</option>
+                        <option value="Eine Tasse mit Glas">mit</option>
+                        <option value="Eine Tasse über Glas">über</option>
+                        <option value="Eine Tasse auf Glas">auf</option>
+                    </select>
+                </li>
+                <li>Ein Ring ___ Gold.
+                    <select class="answer-select" data-correct="Ein Ring aus Gold">
+                        <option value="">Select</option>
+                        <option value="Ein Ring ohne Gold">ohne</option>
+                        <option value="Ein Ring durch Gold">durch</option>
+                        <option value="Ein Ring zu Gold">zu</option>
+                        <option value="Ein Ring aus Gold">aus</option>
+                        <option value="Ein Ring in Gold">in</option>
+                    </select>
+                </li>
+                <li>Ein Haus ___ Stein.
+                    <select class="answer-select" data-correct="Ein Haus aus Stein">
+                        <option value="">Select</option>
+                        <option value="Ein Haus unter Stein">unter</option>
+                        <option value="Ein Haus nach Stein">nach</option>
+                        <option value="Ein Haus bei Stein">bei</option>
+                        <option value="Ein Haus aus Stein">aus</option>
+                        <option value="Ein Haus um Stein">um</option>
+                    </select>
+                </li>
+                <li>Eine Jacke ___ Leder.
+                    <select class="answer-select" data-correct="Eine Jacke aus Leder">
+                        <option value="">Select</option>
+                        <option value="Eine Jacke mit Leder">mit</option>
+                        <option value="Eine Jacke von Leder">von</option>
+                        <option value="Eine Jacke für Leder">für</option>
+                        <option value="Eine Jacke über Leder">über</option>
+                        <option value="Eine Jacke aus Leder">aus</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Ein Tisch aus Holz</em></li>
+                    <li><em>Eine Tasse aus Glas</em></li>
+                    <li><em>Ein Ring aus Gold</em></li>
+                    <li><em>Ein Haus aus Stein</em></li>
+                    <li><em>Eine Jacke aus Leder</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise2">
+        <h3>Exercise 2: Choose the Correct Material</h3>
+        <p>Select the appropriate material.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Ein Löffel ___ .
+                    <select class="answer-select" data-correct="Ein Löffel aus Metall">
+                        <option value="">Select</option>
+                        <option value="Ein Löffel aus Glas">aus Glas</option>
+                        <option value="Ein Löffel aus Holz">aus Holz</option>
+                        <option value="Ein Löffel aus Metall">aus Metall</option>
+                        <option value="Ein Löffel aus Stoff">aus Stoff</option>
+                        <option value="Ein Löffel aus Papier">aus Papier</option>
+                    </select>
+                </li>
+                <li>Eine Decke ___ .
+                    <select class="answer-select" data-correct="Eine Decke aus Wolle">
+                        <option value="">Select</option>
+                        <option value="Eine Decke aus Plastik">aus Plastik</option>
+                        <option value="Eine Decke aus Gold">aus Gold</option>
+                        <option value="Eine Decke aus Wolle">aus Wolle</option>
+                        <option value="Eine Decke aus Stein">aus Stein</option>
+                        <option value="Eine Decke aus Metall">aus Metall</option>
+                    </select>
+                </li>
+                <li>Ein Boot ___ .
+                    <select class="answer-select" data-correct="Ein Boot aus Plastik">
+                        <option value="">Select</option>
+                        <option value="Ein Boot aus Silber">aus Silber</option>
+                        <option value="Ein Boot aus Leder">aus Leder</option>
+                        <option value="Ein Boot aus Papier">aus Papier</option>
+                        <option value="Ein Boot aus Plastik">aus Plastik</option>
+                        <option value="Ein Boot aus Glas">aus Glas</option>
+                    </select>
+                </li>
+                <li>Eine Schachtel ___ .
+                    <select class="answer-select" data-correct="Eine Schachtel aus Karton">
+                        <option value="">Select</option>
+                        <option value="Eine Schachtel aus Gummi">aus Gummi</option>
+                        <option value="Eine Schachtel aus Wolle">aus Wolle</option>
+                        <option value="Eine Schachtel aus Stein">aus Stein</option>
+                        <option value="Eine Schachtel aus Karton">aus Karton</option>
+                        <option value="Eine Schachtel aus Metall">aus Metall</option>
+                    </select>
+                </li>
+                <li>Ein Kleid ___ .
+                    <select class="answer-select" data-correct="Ein Kleid aus Baumwolle">
+                        <option value="">Select</option>
+                        <option value="Ein Kleid aus Keramik">aus Keramik</option>
+                        <option value="Ein Kleid aus Holz">aus Holz</option>
+                        <option value="Ein Kleid aus Eisen">aus Eisen</option>
+                        <option value="Ein Kleid aus Baumwolle">aus Baumwolle</option>
+                        <option value="Ein Kleid aus Glas">aus Glas</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Ein Löffel aus Metall</em></li>
+                    <li><em>Eine Decke aus Wolle</em></li>
+                    <li><em>Ein Boot aus Plastik</em></li>
+                    <li><em>Eine Schachtel aus Karton</em></li>
+                    <li><em>Ein Kleid aus Baumwolle</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise3">
+        <h3>Exercise 3: Translate</h3>
+        <p>Choose the correct translation.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>A chair made of wood
+                    <select class="answer-select" data-correct="Ein Stuhl aus Holz">
+                        <option value="">Select</option>
+                        <option value="Ein Stuhl für Holz">Ein Stuhl für Holz</option>
+                        <option value="Ein Stuhl an Holz">Ein Stuhl an Holz</option>
+                        <option value="Ein Stuhl aus Holz">Ein Stuhl aus Holz</option>
+                        <option value="Ein Stuhl von Holz">Ein Stuhl von Holz</option>
+                        <option value="Ein Stuhl mit Holz">Ein Stuhl mit Holz</option>
+                    </select>
+                </li>
+                <li>A vase made of glass
+                    <select class="answer-select" data-correct="Eine Vase aus Glas">
+                        <option value="">Select</option>
+                        <option value="Eine Vase für Glas">Eine Vase für Glas</option>
+                        <option value="Eine Vase aus Holz">Eine Vase aus Holz</option>
+                        <option value="Eine Vase mit Glas">Eine Vase mit Glas</option>
+                        <option value="Eine Vase aus Glas">Eine Vase aus Glas</option>
+                        <option value="Eine Vase über Glas">Eine Vase über Glas</option>
+                    </select>
+                </li>
+                <li>A necklace made of pearls
+                    <select class="answer-select" data-correct="Eine Kette aus Perlen">
+                        <option value="">Select</option>
+                        <option value="Eine Kette an Perlen">Eine Kette an Perlen</option>
+                        <option value="Eine Kette aus Metall">Eine Kette aus Metall</option>
+                        <option value="Eine Kette für Perlen">Eine Kette für Perlen</option>
+                        <option value="Eine Kette mit Perlen">Eine Kette mit Perlen</option>
+                        <option value="Eine Kette aus Perlen">Eine Kette aus Perlen</option>
+                    </select>
+                </li>
+                <li>A roof made of tiles
+                    <select class="answer-select" data-correct="Ein Dach aus Ziegel">
+                        <option value="">Select</option>
+                        <option value="Ein Dach von Ziegel">Ein Dach von Ziegel</option>
+                        <option value="Ein Dach aus Glas">Ein Dach aus Glas</option>
+                        <option value="Ein Dach für Ziegel">Ein Dach für Ziegel</option>
+                        <option value="Ein Dach aus Ziegel">Ein Dach aus Ziegel</option>
+                        <option value="Ein Dach mit Ziegel">Ein Dach mit Ziegel</option>
+                    </select>
+                </li>
+                <li>A toy made of rubber
+                    <select class="answer-select" data-correct="Ein Spielzeug aus Gummi">
+                        <option value="">Select</option>
+                        <option value="Ein Spielzeug an Gummi">Ein Spielzeug an Gummi</option>
+                        <option value="Ein Spielzeug für Gummi">Ein Spielzeug für Gummi</option>
+                        <option value="Ein Spielzeug aus Stein">Ein Spielzeug aus Stein</option>
+                        <option value="Ein Spielzeug mit Gummi">Ein Spielzeug mit Gummi</option>
+                        <option value="Ein Spielzeug aus Gummi">Ein Spielzeug aus Gummi</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Ein Stuhl aus Holz</em></li>
+                    <li><em>Eine Vase aus Glas</em></li>
+                    <li><em>Eine Kette aus Perlen</em></li>
+                    <li><em>Ein Dach aus Ziegel</em></li>
+                    <li><em>Ein Spielzeug aus Gummi</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise4">
+        <h3>Exercise 4: Correct the Mistake</h3>
+        <p>Choose the corrected sentence.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li><em>Ein Tisch mit Holz</em>
+                    <select class="answer-select" data-correct="Ein Tisch aus Holz">
+                        <option value="">Select</option>
+                        <option value="Ein Tisch über Holz">Ein Tisch über Holz</option>
+                        <option value="Ein Tisch von Holz">Ein Tisch von Holz</option>
+                        <option value="Ein Tisch an Holz">Ein Tisch an Holz</option>
+                        <option value="Ein Tisch aus Holz">Ein Tisch aus Holz</option>
+                        <option value="Ein Tisch für Holz">Ein Tisch für Holz</option>
+                    </select>
+                </li>
+                <li><em>Eine Tasse für Glas</em>
+                    <select class="answer-select" data-correct="Eine Tasse aus Glas">
+                        <option value="">Select</option>
+                        <option value="Eine Tasse über Glas">Eine Tasse über Glas</option>
+                        <option value="Eine Tasse an Glas">Eine Tasse an Glas</option>
+                        <option value="Eine Tasse aus Glas">Eine Tasse aus Glas</option>
+                        <option value="Eine Tasse von Glas">Eine Tasse von Glas</option>
+                        <option value="Eine Tasse mit Glas">Eine Tasse mit Glas</option>
+                    </select>
+                </li>
+                <li><em>Ein Ring von Gold</em>
+                    <select class="answer-select" data-correct="Ein Ring aus Gold">
+                        <option value="">Select</option>
+                        <option value="Ein Ring über Gold">Ein Ring über Gold</option>
+                        <option value="Ein Ring aus Gold">Ein Ring aus Gold</option>
+                        <option value="Ein Ring an Gold">Ein Ring an Gold</option>
+                        <option value="Ein Ring mit Gold">Ein Ring mit Gold</option>
+                        <option value="Ein Ring für Gold">Ein Ring für Gold</option>
+                    </select>
+                </li>
+                <li><em>Ein Haus an Stein</em>
+                    <select class="answer-select" data-correct="Ein Haus aus Stein">
+                        <option value="">Select</option>
+                        <option value="Ein Haus über Stein">Ein Haus über Stein</option>
+                        <option value="Ein Haus von Stein">Ein Haus von Stein</option>
+                        <option value="Ein Haus für Stein">Ein Haus für Stein</option>
+                        <option value="Ein Haus mit Stein">Ein Haus mit Stein</option>
+                        <option value="Ein Haus aus Stein">Ein Haus aus Stein</option>
+                    </select>
+                </li>
+                <li><em>Eine Jacke über Leder</em>
+                    <select class="answer-select" data-correct="Eine Jacke aus Leder">
+                        <option value="">Select</option>
+                        <option value="Eine Jacke an Leder">Eine Jacke an Leder</option>
+                        <option value="Eine Jacke für Leder">Eine Jacke für Leder</option>
+                        <option value="Eine Jacke mit Leder">Eine Jacke mit Leder</option>
+                        <option value="Eine Jacke aus Leder">Eine Jacke aus Leder</option>
+                        <option value="Eine Jacke von Leder">Eine Jacke von Leder</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Ein Tisch aus Holz</em></li>
+                    <li><em>Eine Tasse aus Glas</em></li>
+                    <li><em>Ein Ring aus Gold</em></li>
+                    <li><em>Ein Haus aus Stein</em></li>
+                    <li><em>Eine Jacke aus Leder</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection" id="exercise5">
+        <h3>Exercise 5: Mixed Materials</h3>
+        <p>Select the correct material.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Eine Flasche ___ .
+                    <select class="answer-select" data-correct="Eine Flasche aus Kunststoff">
+                        <option value="">Select</option>
+                        <option value="Eine Flasche aus Wolle">aus Wolle</option>
+                        <option value="Eine Flasche aus Papier">aus Papier</option>
+                        <option value="Eine Flasche aus Kunststoff">aus Kunststoff</option>
+                        <option value="Eine Flasche aus Holz">aus Holz</option>
+                        <option value="Eine Flasche aus Metall">aus Metall</option>
+                    </select>
+                </li>
+                <li>Ein Becher ___ .
+                    <select class="answer-select" data-correct="Ein Becher aus Keramik">
+                        <option value="">Select</option>
+                        <option value="Ein Becher aus Leder">aus Leder</option>
+                        <option value="Ein Becher aus Stoff">aus Stoff</option>
+                        <option value="Ein Becher aus Gold">aus Gold</option>
+                        <option value="Ein Becher aus Keramik">aus Keramik</option>
+                        <option value="Ein Becher aus Stein">aus Stein</option>
+                    </select>
+                </li>
+                <li>Ein Regal ___ .
+                    <select class="answer-select" data-correct="Ein Regal aus Bambus">
+                        <option value="">Select</option>
+                        <option value="Ein Regal aus Silber">aus Silber</option>
+                        <option value="Ein Regal aus Gummi">aus Gummi</option>
+                        <option value="Ein Regal aus Papier">aus Papier</option>
+                        <option value="Ein Regal aus Glas">aus Glas</option>
+                        <option value="Ein Regal aus Bambus">aus Bambus</option>
+                    </select>
+                </li>
+                <li>Eine Lampe ___ .
+                    <select class="answer-select" data-correct="Eine Lampe aus Messing">
+                        <option value="">Select</option>
+                        <option value="Eine Lampe aus Perlen">aus Perlen</option>
+                        <option value="Eine Lampe aus Karton">aus Karton</option>
+                        <option value="Eine Lampe aus Plastik">aus Plastik</option>
+                        <option value="Eine Lampe aus Messing">aus Messing</option>
+                        <option value="Eine Lampe aus Wolle">aus Wolle</option>
+                    </select>
+                </li>
+                <li>Ein Teppich ___ .
+                    <select class="answer-select" data-correct="Ein Teppich aus Seide">
+                        <option value="">Select</option>
+                        <option value="Ein Teppich aus Draht">aus Draht</option>
+                        <option value="Ein Teppich aus Ton">aus Ton</option>
+                        <option value="Ein Teppich aus Holz">aus Holz</option>
+                        <option value="Ein Teppich aus Seide">aus Seide</option>
+                        <option value="Ein Teppich aus Eisen">aus Eisen</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Eine Flasche aus Kunststoff</em></li>
+                    <li><em>Ein Becher aus Keramik</em></li>
+                    <li><em>Ein Regal aus Bambus</em></li>
+                    <li><em>Eine Lampe aus Messing</em></li>
+                    <li><em>Ein Teppich aus Seide</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Tips -->
+        <section id="tips">
+            <h2>Tips to Master "Aus + Material"</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Use Dative</strong>: Always apply the dative case after aus (e.g., aus Holz).</li>
+                    <li><strong>Skip Articles</strong>: Omit articles for general materials (e.g., aus Glas, not aus dem Glas).</li>
+                    <li><strong>Context Matters</strong>: Use aus for composition, not decoration (e.g., aus Gold, not mit Gold).</li>
+                    <li><strong>Practice Materials</strong>: Memorize common ones like Holz, Metall, Glas.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Resources -->
+        <section id="resources">
+            <h2>Resources for Extra Practice</h2>
+            <div class="resource-links">
+                <div class="resource-card">
+                    <p><strong>YouTube - Learn German with Anja</strong><br>Videos on prepositions like aus.</p>
+                    <a href="https://www.youtube.com/@LearnGermanwithAnja" class="resource-btn">Visit Learn German with Anja</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>Deutsch Lernen (Lingolia)</strong><br>Lessons on prepositions with materials.</p>
+                    <a href="https://deutsch.lingolia.com/en/grammar/prepositions" class="resource-btn">Visit Lingolia</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>YouTube - Easy German</strong><br>Real-life examples in context.</p>
+                    <a href="https://www.youtube.com/@EasyGerman" class="resource-btn">Visit Easy German</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="verben-praep.html" class="see-also-rect">Verbs with Prepositions</a>
+                <a href="pronomen-praep.html" class="see-also-rect">Pronouns with Prepositions</a>
+                <a href="komp-super.html" class="see-also-rect">Comparative and Superlative</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="komp-super.html" class="next-btn">Next: Comparative and Superlative →</a>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark Mode Toggle
+        const modeToggle = document.getElementById('mode-toggle');
+        modeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Load dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Toggle Answers
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const answersDiv = button.nextElementSibling;
+                if (button.classList.contains('show-answers')) {
+                    answersDiv.classList.toggle('hidden');
+                } else if (button.classList.contains('check-answers')) {
+                    const selects = button.parentElement.querySelectorAll('.answer-select');
+                    selects.forEach(select => {
+                        const selectedValue = select.value;
+                        const correctValue = select.getAttribute('data-correct');
+                        if (selectedValue === correctValue) {
+                            select.style.backgroundColor = '#d4edda'; // Green for correct
+                        } else {
+                            select.style.backgroundColor = '#f8d7da'; // Red for incorrect
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1046 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      German Damit and Um...zu | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/damitumzu.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+               <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="a2-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>German Damit and Um...zu: The Ultimate Guide</h1>
+            <p>
+                Dive into the world of <strong>"damit"</strong> and <strong>"um zu"</strong>—two key constructions in German used to express purpose. This guide provides clear explanations, detailed examples, and exercises to help you master their usage effortlessly.
+            </p>
+        </section>
+
+        <!-- Understanding Damit and Um zu -->
+        <section id="understanding">
+            <h2>Understanding "Damit" and "Um zu" in German</h2>
+            <p>Both <strong>"damit"</strong> and <strong>"um zu"</strong> are used to express purpose in German, but they function differently and are applied in distinct situations. Let’s break them down.</p>
+            <div class="subsection">
+                <h3>What is "Damit"?</h3>
+                <ul class="example-list">
+                    <li><strong>Definition</strong>: "Damit" is a subordinating conjunction meaning "so that" or "in order that." It introduces a purpose clause, explaining why something is done.</li>
+                    <li><strong>Structure</strong>: It’s followed by a full clause with a subject and a conjugated verb, which goes to the end of the clause (typical German subordinate clause word order).</li>
+                    <li><strong>Usage</strong>: Use "damit" when the subject of the main clause and the purpose clause can differ.</li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>What is "Um zu"?</h3>
+                <ul class="example-list">
+                    <li><strong>Definition</strong>: "Um zu" is a construction meaning "in order to" or "to." It’s an infinitive construction used to express purpose.</li>
+                    <li><strong>Structure</strong>: It’s followed by an infinitive verb (e.g., <em>lernen</em>, <em>gehen</em>), and the subject of the main clause must be the same as the implied subject of the purpose clause. No additional conjugated verb is needed.</li>
+                    <li><strong>Usage</strong>: Use "um zu" when the subject stays consistent across both parts of the sentence.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Detailed Examples -->
+        <section id="examples">
+            <h2>Detailed Examples</h2>
+            <div class="subsection">
+                <h3>Examples of "Damit"</h3>
+                <div class="examples">
+                    <h4>With Different Subjects</h4>
+                    <ol class="example-list">
+                        <li><em>Ich lerne Deutsch, <strong>damit</strong> meine Lehrerin zufrieden ist.</em>  
+                            (I’m learning German so that my teacher is satisfied.)  
+                            <ul><li>Main clause: <em>Ich lerne Deutsch</em> (subject: <em>ich</em>).</li>
+                                <li>Purpose clause: <em>damit meine Lehrerin zufrieden ist</em> (subject: <em>meine Lehrerin</em>).</li></ul>
+                        </li>
+                        <li><em>Er ruft an, <strong>damit</strong> wir Bescheid wissen.</em>  
+                            (He’s calling so that we know.)  
+                            <ul><li>Main clause: <em>Er ruft an</em> (subject: <em>er</em>).</li>
+                                <li>Purpose clause: <em>damit wir Bescheid wissen</em> (subject: <em>wir</em>).</li></ul>
+                        </li>
+                        <li><em>Sie kauft Milch, <strong>damit</strong> der Kater genug zu trinken hat.</em>  
+                            (She buys milk so that the cat has enough to drink.)  
+                            <ul><li>Main clause: <em>Sie kauft Milch</em> (subject: <em>sie</em>).</li>
+                                <li>Purpose clause: <em>damit der Kater genug zu trinken hat</em> (subject: <em>der Kater</em>).</li></ul>
+                        </li>
+                        <li><em>Wir sparen Geld, <strong>damit</strong> die Kinder studieren können.</em>  
+                            (We save money so that the children can study.)  
+                            <ul><li>Main clause: <em>Wir sparen Geld</em> (subject: <em>wir</em>).</li>
+                                <li>Purpose clause: <em>damit die Kinder studieren können</em> (subject: <em>die Kinder</em>).</li></ul>
+                        </li>
+                        <li><em>Der Lehrer erklärt es langsam, <strong>damit</strong> die Schüler alles verstehen.</em>  
+                            (The teacher explains it slowly so that the students understand everything.)  
+                            <ul><li>Main clause: <em>Der Lehrer erklärt es langsam</em> (subject: <em>der Lehrer</em>).</li>
+                                <li>Purpose clause: <em>damit die Schüler alles verstehen</em> (subject: <em>die Schüler</em>).</li></ul>
+                        </li>
+                        <li><em>Ich schreibe es auf, <strong>damit</strong> du es nicht vergisst.</em>  
+                            (I write it down so that you don’t forget it.)  
+                            <ul><li>Main clause: <em>Ich schreibe es auf</em> (subject: <em>ich</em>).</li>
+                                <li>Purpose clause: <em>damit du es nicht vergisst</em> (subject: <em>du</em>).</li></ul>
+                        </li>
+                    </ol>
+                </div>
+                <p><strong>Key Notes for "Damit"</strong>
+                    <ul class="example-list">
+                        <li>The verb in the "damit" clause is always at the end.</li>
+                        <li>It’s flexible and works even when the subjects differ.</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="subsection">
+                <h3>Examples of "Um zu"</h3>
+                <div class="examples">
+                    <h4>With Same Subject</h4>
+                    <ol class="example-list">
+                        <li><em>Ich lerne Deutsch, <strong>um zu</strong> reisen.</em>  
+                            (I’m learning German in order to travel.)  
+                            <ul><li>Main clause: <em>Ich lerne Deutsch</em> (subject: <em>ich</em>).</li>
+                                <li>Purpose: <em>um zu reisen</em> (implied subject: <em>ich</em>).</li></ul>
+                        </li>
+                        <li><em>Er steht früh auf, <strong>um zu</strong> joggen.</em>  
+                            (He gets up early in order to jog.)  
+                            <ul><li>Main clause: <em>Er steht früh auf</em> (subject: <em>er</em>).</li>
+                                <li>Purpose: <em>um zu joggen</em> (implied subject: <em>er</em>).</li></ul>
+                        </li>
+                        <li><em>Sie kauft Milch, <strong>um zu</strong> kochen.</em>  
+                            (She buys milk in order to cook.)  
+                            <ul><li>Main clause: <em>Sie kauft Milch</em> (subject: <em>sie</em>).</li>
+                                <li>Purpose: <em>um zu kochen</em> (implied subject: <em>sie</em>).</li></ul>
+                        </li>
+                        <li><em>Wir sparen Geld, <strong>um zu</strong> reisen.</em>  
+                            (We save money in order to travel.)  
+                            <ul><li>Main clause: <em>Wir sparen Geld</em> (subject: <em>wir</em>).</li>
+                                <li>Purpose: <em>um zu reisen</em> (implied subject: <em>wir</em>).</li></ul>
+                        </li>
+                        <li><em>Der Lehrer spricht laut, <strong>um zu</strong> erklären.</em>  
+                            (The teacher speaks loudly in order to explain.)  
+                            <ul><li>Main clause: <em>Der Lehrer spricht laut</em> (subject: <em>der Lehrer</em>).</li>
+                                <li>Purpose: <em>um zu erklären</em> (implied subject: <em>der Lehrer</em>).</li></ul>
+                        </li>
+                        <li><em>Ich schreibe schnell, <strong>um zu</strong> fertig werden.</em>  
+                            (I write quickly in order to finish.)  
+                            <ul><li>Main clause: <em>Ich schreibe schnell</em> (subject: <em>ich</em>).</li>
+                                <li>Purpose: <em>um zu fertig werden</em> (implied subject: <em>ich</em>).</li></ul>
+                        </li>
+                    </ol>
+                </div>
+                <p><strong>Key Notes for "Um zu"</strong>
+                    <ul class="example-list">
+                        <li>The subject must remain the same in both parts of the sentence.</li>
+                        <li>It’s concise, using only the infinitive form of the verb.</li>
+                    </ul>
+                </p>
+            </div>
+        </section>
+
+        <!-- Comparing Damit and Um zu -->
+        <section id="comparison">
+            <h2>Comparing "Damit" and "Um zu"</h2>
+            <div class="table-container">
+                <table>
+                    <tr><th>Feature</th><th>"Damit"</th><th>"Um zu"</th></tr>
+                    <tr><td>Meaning</td><td>"So that" / "In order that"</td><td>"In order to" / "To"</td></tr>
+                    <tr><td>Clause Type</td><td>Full clause (subject + verb)</td><td>Infinitive clause</td></tr>
+                    <tr><td>Subject Requirement</td><td>Can differ from main clause</td><td>Must be the same as main clause</td></tr>
+                    <tr><td>Word Order</td><td>Verb at the end</td><td>Infinitive at the end</td></tr>
+                    <tr><td>Example</td><td><em>Ich lerne, damit sie stolz ist.</em></td><td><em>Ich lerne, um zu reisen.</em></td></tr>
+                </table>
+            </div>
+            <div class="subsection">
+                <h3>When to Choose Which?</h3>
+                <ul class="example-list">
+                    <li>Use <strong>"damit"</strong> if the purpose involves a different subject:  
+                        <em>Ich gehe zur Arbeit, damit meine Familie Essen hat.</em>  
+                        (I go to work so that my family has food.)
+                    </li>
+                    <li>Use <strong>"um zu"</strong> if the purpose involves the same subject:  
+                        <em>Ich gehe zur Arbeit, um Geld zu verdienen.</em>  
+                        (I go to work in order to earn money.)
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Exercises -->
+<section id="practice">
+    <h2>Exercises to Practice "Damit" and "Um zu"</h2>
+    <div class="subsection" id="exercise1">
+        <h3>Exercise 1: Choose "Damit" or "Um zu"</h3>
+        <p>Fill in the blank with the correct construction and verb form.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Ich lerne viel, ___ (succeed / erfolgreich sein).  
+                    <select class="answer-select" data-correct="um erfolgreich zu sein">
+                        <option value="">Select</option>
+                        <option value="damit ich erfolgreich bin">damit</option>
+                        <option value="um erfolgreich zu sein">um zu</option>
+                    </select>
+                </li>
+                <li>Sie spricht langsam, ___ wir sie verstehen können.  
+                    <select class="answer-select" data-correct="damit wir sie verstehen können">
+                        <option value="">Select</option>
+                        <option value="damit wir sie verstehen können">damit</option>
+                        <option value="um sie zu verstehen">um zu</option>
+                    </select>
+                </li>
+                <li>Er kauft ein Auto, ___ (drive / fahren).  
+                    <select class="answer-select" data-correct="um zu fahren">
+                        <option value="">Select</option>
+                        <option value="damit er fährt">damit</option>
+                        <option value="um zu fahren">um zu</option>
+                    </select>
+                </li>
+                <li>Wir helfen ihr, ___ sie glücklich ist.  
+                    <select class="answer-select" data-correct="damit sie glücklich ist">
+                        <option value="">Select</option>
+                        <option value="um glücklich zu sein">um zu</option>
+                        <option value="damit sie glücklich ist">damit</option>
+                    </select>
+                </li>
+                <li>Ich nehme ein Buch mit, ___ (read / lesen).  
+                    <select class="answer-select" data-correct="um zu lesen">
+                        <option value="">Select</option>
+                        <option value="um zu lesen">um zu</option>
+                        <option value="damit ich lese">damit</option>
+                    </select>
+                </li>
+                <li>Die Lehrerin erklärt es, ___ die Schüler lernen können.  
+                    <select class="answer-select" data-correct="damit die Schüler lernen können">
+                        <option value="">Select</option>
+                        <option value="um zu lernen">um zu</option>
+                        <option value="damit die Schüler lernen können">damit</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Ich lerne viel, um erfolgreich zu sein.</em></li>
+                    <li><em>Sie spricht langsam, damit wir sie verstehen können.</em></li>
+                    <li><em>Er kauft ein Auto, um zu fahren.</em></li>
+                    <li><em>Wir helfen ihr, damit sie glücklich ist.</em></li>
+                    <li><em>Ich nehme ein Buch mit, um zu lesen.</em></li>
+                    <li><em>Die Lehrerin erklärt es, damit die Schüler lernen können.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="subsection" id="exercise2">
+        <h3>Exercise 2: Translate into German</h3>
+        <p>Translate these sentences into German.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>I study German so that my parents are proud.  
+                    <select class="answer-select" data-correct="Ich lerne Deutsch, damit meine Eltern stolz sind.">
+                        <option value="">Select</option>
+                        <option value="Ich lerne Deutsch, um stolz zu sein.">Ich lerne Deutsch, um stolz zu sein.</option>
+                        <option value="Ich lerne Deutsch, damit meine Eltern stolz sind.">Ich lerne Deutsch, damit meine Eltern stolz sind.</option>
+                    </select>
+                </li>
+                <li>She works hard to earn money.  
+                    <select class="answer-select" data-correct="Sie arbeitet hart, um Geld zu verdienen.">
+                        <option value="">Select</option>
+                        <option value="Sie arbeitet hart, damit sie Geld hat.">Sie arbeitet hart, damit sie Geld hat.</option>
+                        <option value="Sie arbeitet hart, um Geld zu verdienen.">Sie arbeitet hart, um Geld zu verdienen.</option>
+                    </select>
+                </li>
+                <li>We travel so that the children see the world.  
+                    <select class="answer-select" data-correct="Wir reisen, damit die Kinder die Welt sehen.">
+                        <option value="">Select</option>
+                        <option value="Wir reisen, damit die Kinder die Welt sehen.">Wir reisen, damit die Kinder die Welt sehen.</option>
+                        <option value="Wir reisen, um die Welt zu sehen.">Wir reisen, um die Welt zu sehen.</option>
+                    </select>
+                </li>
+                <li>He reads books to learn more.  
+                    <select class="answer-select" data-correct="Er liest Bücher, um mehr zu lernen.">
+                        <option value="">Select</option>
+                        <option value="Er liest Bücher, damit er mehr lernt.">Er liest Bücher, damit er mehr lernt.</option>
+                        <option value="Er liest Bücher, um mehr zu lernen.">Er liest Bücher, um mehr zu lernen.</option>
+                    </select>
+                </li>
+                <li>I write notes so that I don’t forget anything.  
+                    <select class="answer-select" data-correct="Ich schreibe Notizen, damit ich nichts vergesse.">
+                        <option value="">Select</option>
+                        <option value="Ich schreibe Notizen, um zu vergessen.">Ich schreibe Notizen, um zu vergessen.</option>
+                        <option value="Ich schreibe Notizen, damit ich nichts vergesse.">Ich schreibe Notizen, damit ich nichts vergesse.</option>
+                    </select>
+                </li>
+                <li>They practice daily to improve.  
+                    <select class="answer-select" data-correct="Sie üben täglich, um sich zu verbessern.">
+                        <option value="">Select</option>
+                        <option value="Sie üben täglich, damit sie sich verbessern.">Sie üben täglich, damit sie sich verbessern.</option>
+                        <option value="Sie üben täglich, um sich zu verbessern.">Sie üben täglich, um sich zu verbessern.</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Ich lerne Deutsch, damit meine Eltern stolz sind.</em></li>
+                    <li><em>Sie arbeitet hart, um Geld zu verdienen.</em></li>
+                    <li><em>Wir reisen, damit die Kinder die Welt sehen.</em></li>
+                    <li><em>Er liest Bücher, um mehr zu lernen.</em></li>
+                    <li><em>Ich schreibe Notizen, damit ich nichts vergesse.</em></li>
+                    <li><em>Sie üben täglich, um sich zu verbessern.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="subsection" id="exercise3">
+        <h3>Exercise 3: Fill in the Blank</h3>
+        <p>Fill in the blank with either "damit" or "um zu" and the correct verb form.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Er übt jeden Tag, ___ (improve / sich verbessern).  
+                    <select class="answer-select" data-correct="um sich zu verbessern">
+                        <option value="">Select</option>
+                        <option value="damit er sich verbessert">damit</option>
+                        <option value="um sich zu verbessern">um zu</option>
+                    </select>
+                </li>
+                <li>Wir kaufen Essen, ___ die Gäste satt sind.  
+                    <select class="answer-select" data-correct="damit die Gäste satt sind">
+                        <option value="">Select</option>
+                        <option value="um satt zu sein">um zu</option>
+                        <option value="damit die Gäste satt sind">damit</option>
+                    </select>
+                </li>
+                <li>Sie geht ins Fitnessstudio, ___ (train / trainieren).  
+                    <select class="answer-select" data-correct="um zu trainieren">
+                        <option value="">Select</option>
+                        <option value="um zu trainieren">um zu</option>
+                        <option value="damit sie trainiert">damit</option>
+                    </select>
+                </li>
+                <li>Ich schalte das Licht ein, ___ wir besser sehen können.  
+                    <select class="answer-select" data-correct="damit wir besser sehen können">
+                        <option value="">Select</option>
+                        <option value="damit wir besser sehen können">damit</option>
+                        <option value="um besser zu sehen">um zu</option>
+                    </select>
+                </li>
+                <li>Er schreibt einen Plan, ___ (organize / organisieren).  
+                    <select class="answer-select" data-correct="um zu organisieren">
+                        <option value="">Select</option>
+                        <option value="damit er organisiert">damit</option>
+                        <option value="um zu organisieren">um zu</option>
+                    </select>
+                </li>
+                <li>Die Eltern sparen, ___ die Kinder ins Ausland reisen können.  
+                    <select class="answer-select" data-correct="damit die Kinder ins Ausland reisen können">
+                        <option value="">Select</option>
+                        <option value="um ins Ausland zu reisen">um zu</option>
+                        <option value="damit die Kinder ins Ausland reisen können">damit</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Er übt jeden Tag, um sich zu verbessern.</em></li>
+                    <li><em>Wir kaufen Essen, damit die Gäste satt sind.</em></li>
+                    <li><em>Sie geht ins Fitnessstudio, um zu trainieren.</em></li>
+                    <li><em>Ich schalte das Licht ein, damit wir besser sehen können.</em></li>
+                    <li><em>Er schreibt einen Plan, um zu organisieren.</em></li>
+                    <li><em>Die Eltern sparen, damit die Kinder ins Ausland reisen können.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="subsection" id="exercise4">
+        <h3>Exercise 4: Correct the Sentence</h3>
+        <p>Identify if the sentence is correct. If not, choose the correct version.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Ich lerne Deutsch, damit ich reise.  
+                    <select class="answer-select" data-correct="Ich lerne Deutsch, um zu reisen.">
+                        <option value="">Select</option>
+                        <option value="Ich lerne Deutsch, um zu reisen.">Ich lerne Deutsch, um zu reisen.</option>
+                        <option value="Correct">Correct</option>
+                    </select>
+                </li>
+                <li>Sie kauft ein Geschenk, um ihre Freundin freut sich.  
+                    <select class="answer-select" data-correct="Sie kauft ein Geschenk, damit ihre Freundin sich freut.">
+                        <option value="">Select</option>
+                        <option value="Correct">Correct</option>
+                        <option value="Sie kauft ein Geschenk, damit ihre Freundin sich freut.">Sie kauft ein Geschenk, damit ihre Freundin sich freut.</option>
+                    </select>
+                </li>
+                <li>Er liest Bücher, um mehr weiß.  
+                    <select class="answer-select" data-correct="Er liest Bücher, um mehr zu wissen.">
+                        <option value="">Select</option>
+                        <option value="Er liest Bücher, um mehr zu wissen.">Er liest Bücher, um mehr zu wissen.</option>
+                        <option value="Correct">Correct</option>
+                    </select>
+                </li>
+                <li>Wir rufen an, um sie kommen kann.  
+                    <select class="answer-select" data-correct="Wir rufen an, damit sie kommen kann.">
+                        <option value="">Select</option>
+                        <option value="Wir rufen an, damit sie kommen kann.">Wir rufen an, damit sie kommen kann.</option>
+                        <option value="Correct">Correct</option>
+                    </select>
+                </li>
+                <li>Sie übt Klavier, damit sie besser spielt.  
+                    <select class="answer-select" data-correct="Correct">
+                        <option value="">Select</option>
+                        <option value="Sie übt Klavier, um besser zu spielen.">Sie übt Klavier, um besser zu spielen.</option>
+                        <option value="Correct">Correct</option>
+                    </select>
+                </li>
+                <li>Ich nehme Wasser mit, um ich trinke.  
+                    <select class="answer-select" data-correct="Ich nehme Wasser mit, um zu trinken.">
+                        <option value="">Select</option>
+                        <option value="Correct">Correct</option>
+                        <option value="Ich nehme Wasser mit, um zu trinken.">Ich nehme Wasser mit, um zu trinken.</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Ich lerne Deutsch, um zu reisen.</em></li>
+                    <li><em>Sie kauft ein Geschenk, damit ihre Freundin sich freut.</em></li>
+                    <li><em>Er liest Bücher, um mehr zu wissen.</em></li>
+                    <li><em>Wir rufen an, damit sie kommen kann.</em></li>
+                    <li><em>Correct</em></li>
+                    <li><em>Ich nehme Wasser mit, um zu trinken.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="subsection" id="exercise5">
+        <h3>Exercise 5: Rewrite the Sentence</h3>
+        <p>Rewrite the sentence using the other construction ("damit" to "um zu" or vice versa).</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Ich lerne Deutsch, um zu reisen.  
+                    <select class="answer-select" data-correct="Ich lerne Deutsch, damit ich reisen kann.">
+                        <option value="">Select</option>
+                        <option value="Ich lerne Deutsch, damit ich reise.">Ich lerne Deutsch, damit ich reise.</option>
+                        <option value="Ich lerne Deutsch, damit ich reisen kann.">Ich lerne Deutsch, damit ich reisen kann.</option>
+                    </select>
+                </li>
+                <li>Sie spricht langsam, damit wir sie verstehen können.  
+                    <select class="answer-select" data-correct="Sie spricht langsam, um verstanden zu werden.">
+                        <option value="">Select</option>
+                        <option value="Sie spricht langsam, um verstanden zu werden.">Sie spricht langsam, um verstanden zu werden.</option>
+                        <option value="Sie spricht langsam, um zu verstehen.">Sie spricht langsam, um zu verstehen.</option>
+                    </select>
+                </li>
+                <li>Er kauft ein Auto, um zu fahren.  
+                    <select class="answer-select" data-correct="Er kauft ein Auto, damit er fahren kann.">
+                        <option value="">Select</option>
+                        <option value="Er kauft ein Auto, damit er fahren kann.">Er kauft ein Auto, damit er fahren kann.</option>
+                        <option value="Er kauft ein Auto, damit er fährt.">Er kauft ein Auto, damit er fährt.</option>
+                    </select>
+                </li>
+                <li>Wir helfen ihr, damit sie glücklich ist.  
+                    <select class="answer-select" data-correct="Cannot rewrite (different subjects).">
+                        <option value="">Select</option>
+                        <option value="Wir helfen ihr, um glücklich zu sein.">Wir helfen ihr, um glücklich zu sein.</option>
+                        <option value="Cannot rewrite (different subjects).">Cannot rewrite (different subjects).</option>
+                    </select>
+                </li>
+                <li>Ich nehme ein Buch mit, um zu lesen.  
+                    <select class="answer-select" data-correct="Ich nehme ein Buch mit, damit ich lesen kann.">
+                        <option value="">Select</option>
+                        <option value="Ich nehme ein Buch mit, damit ich lesen kann.">Ich nehme ein Buch mit, damit ich lesen kann.</option>
+                        <option value="Ich nehme ein Buch mit, damit ich lese.">Ich nehme ein Buch mit, damit ich lese.</option>
+                    </select>
+                </li>
+                <li>Die Lehrerin erklärt es, damit die Schüler lernen können.  
+                    <select class="answer-select" data-correct="Cannot rewrite (different subjects).">
+                        <option value="">Select</option>
+                        <option value="Die Lehrerin erklärt es, um zu lernen.">Die Lehrerin erklärt es, um zu lernen.</option>
+                        <option value="Cannot rewrite (different subjects).">Cannot rewrite (different subjects).</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Ich lerne Deutsch, damit ich reisen kann.</em></li>
+                    <li><em>Sie spricht langsam, um verstanden zu werden.</em></li>
+                    <li><em>Er kauft ein Auto, damit er fahren kann.</em></li>
+                    <li><em>Cannot rewrite (different subjects).</em></li>
+                    <li><em>Ich nehme ein Buch mit, damit ich lesen kann.</em></li>
+                    <li><em>Cannot rewrite (different subjects).</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Tips -->
+        <section id="tips">
+            <h2>Tips for Mastery</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Contrast the Subjects</strong>: If the subject changes, go for "damit"; if it stays the same, use "um zu."</li>
+                    <li><strong>Practice Verb Placement</strong>: Get comfortable with pushing the verb to the end for "damit" clauses.</li>
+                    <li><strong>Combine with Relative Clauses</strong>: Try mixing these with relative clauses for advanced practice, e.g., <em>Der Mann, der Deutsch lernt, tut es, um zu reisen.</em></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Resources for Extra Practice -->
+        <section id="resources">
+            <h2>Resources for Extra Practice</h2>
+            <div class="resource-links">
+                <div class="resource-card">
+                    <p><strong>Goethe A1/A2 Wortliste</strong><br>Genitive in context.</p>
+                    <a href="https://www.goethe.de" class="resource-btn">Visit Goethe Wortliste</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>YouTube - EASY German</strong><br>Hear genitive with names.</p>
+                    <a href="https://www.youtube.com/easygerman" class="resource-btn">Visit EASY German</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>Schubert Verlag</strong><br>Free genitive exercises.</p>
+                    <a href="https://www.schubert-verlag.de" class="resource-btn">Visit Schubert Verlag</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="relativsatz.html" class="see-also-rect">German Relative Clauses</a>
+                <a href="dative.html" class="see-also-rect">German Dative</a>
+                <a href="partizip2.html" class="see-also-rect">Perfekt & Partizip II</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="partizip2.html" class="next-btn">Next: Perfekt & Partizip II →</a>
+        </div>
+    </main>
+
+   <!-- JavaScript -->
+  <script>
+    // Dark Mode Toggle
+    const modeToggle = document.getElementById('mode-toggle');
+    modeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
+
+    // Load dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+    }
+
+    // Toggle Answers
+    document.querySelectorAll('.toggle-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const answersDiv = button.nextElementSibling;
+            if (button.classList.contains('show-answers')) {
+                answersDiv.classList.toggle('hidden');
+            } else if (button.classList.contains('check-answers')) {
+                const selects = button.parentElement.querySelectorAll('.answer-select');
+                selects.forEach(select => {
+                    const selectedValue = select.value;
+                    const correctValue = select.getAttribute('data-correct');
+                    if (selectedValue === correctValue) {
+                        select.style.backgroundColor = '#d4edda'; // Green for correct
+                    } else {
+                        select.style.backgroundColor = '#f8d7da'; // Red for incorrect
+                    }
+                });
+            }
+        });
+    });
+</script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

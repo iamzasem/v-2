@@ -1,0 +1,1050 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Präteritum in German | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/sodass.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+               <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="b1-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>Präteritum in German</h1>
+            <p>
+                A complete guide to the German Präteritum (simple past tense), from basic conjugation to advanced uses, with examples, exercises, and resources to master this key past tense.
+            </p>
+        </section>
+
+        <!-- Understanding -->
+        <section id="understanding">
+            <h2>What Is the Präteritum?</h2>
+            <p>The Präteritum is a simple past tense used for completed actions or states in the past, common in writing, storytelling, and some spoken contexts (e.g., modals in northern Germany).</p>
+            <div class="subsection">
+                <h3>Key Points</h3>
+                <ul class="example-list">
+                    <li><strong>Meaning</strong>: Describes past events (e.g., "Ich spielte" - I played).</li>
+                    <li><strong>Use</strong>: Narratives, formal reports, some speech.</li>
+                    <li><strong>Form</strong>: Single-word tense, no auxiliary needed.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Formation -->
+        <section id="formation">
+            <h2>How to Form the Präteritum</h2>
+            <div class="subsection">
+                <h3>Regular Verbs</h3>
+                <p>Stem + "-t-" + endings: "-e, -est, -e, -en, -et, -en" (e.g., "spielte").</p>
+            </div>
+            <div class="subsection">
+                <h3>Irregular Verbs</h3>
+                <p>Vowel change, endings: "-Ø, -st, -Ø, -en, -t, -en" (e.g., "ging").</p>
+            </div>
+            <div class="subsection">
+                <h3>Mixed Verbs</h3>
+                <p>Vowel change + "-t-" endings (e.g., "dachte").</p>
+            </div>
+        </section>
+
+        <!-- Uses -->
+        <section id="uses">
+            <h2>Uses of the Präteritum</h2>
+            <div class="subsection">
+                <h3>Basic: Past Actions</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Ich spielte mit Freunden.</em> (I played with friends.)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Intermediate: Narratives</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Der König lebte in einem Schloss.</em> (The king lived in a castle.)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Advanced: Modals in Speech</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Ich wollte es nicht.</em> (I didn’t want to.)</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Common Examples -->
+        <section id="examples">
+            <h2>List of 25 Common Präteritum Examples</h2>
+            <div class="table-container">
+                <table>
+                    <tr><th>Sentence</th><th>Translation</th></tr>
+                    <tr><td><em>Ich spielte Gitarre.</em></td><td>I played guitar.</td></tr>
+                    <tr><td><em>Du gingst nach Hause.</em></td><td>You went home.</td></tr>
+                    <tr><td><em>Er dachte an morgen.</em></td><td>He thought about tomorrow.</td></tr>
+                    <tr><td><em>Sie war im Park.</em></td><td>She was in the park.</td></tr>
+                    <tr><td><em>Wir konnten nicht kommen.</em></td><td>We couldn’t come.</td></tr>
+                    <tr><td><em>Ihr hattet Spaß.</em></td><td>You all had fun.</td></tr>
+                    <tr><td><em>Sie machten Pläne.</em></td><td>They made plans.</td></tr>
+                    <tr><td><em>Ich sah einen Film.</em></td><td>I saw a movie.</td></tr>
+                    <tr><td><em>Du wusstest die Antwort.</em></td><td>You knew the answer.</td></tr>
+                    <tr><td><em>Er wollte bleiben.</em></td><td>He wanted to stay.</td></tr>
+                    <tr><td><em>Sie wurde Lehrerin.</em></td><td>She became a teacher.</td></tr>
+                    <tr><td><em>Wir fragten den Lehrer.</em></td><td>We asked the teacher.</td></tr>
+                    <tr><td><em>Ihr standet früh auf.</em></td><td>You all got up early.</td></tr>
+                    <tr><td><em>Sie sangen ein Lied.</em></td><td>They sang a song.</td></tr>
+                    <tr><td><em>Ich hatte Hunger.</em></td><td>I was hungry.</td></tr>
+                    <tr><td><em>Du brachtest ein Geschenk.</em></td><td>You brought a gift.</td></tr>
+                    <tr><td><em>Er lief schnell.</em></td><td>He ran fast.</td></tr>
+                    <tr><td><em>Sie musste arbeiten.</em></td><td>She had to work.</td></tr>
+                    <tr><td><em>Wir blieben zu Hause.</em></td><td>We stayed home.</td></tr>
+                    <tr><td><em>Ihr durftet spielen.</em></td><td>You all were allowed to play chasse.</td></tr>
+                    <tr><td><em>Sie tranken Kaffee.</em></td><td>They drank coffee.</td></tr>
+                    <tr><td><em>Ich arbeitete gestern.</em></td><td>I worked yesterday.</td></tr>
+                    <tr><td><em>Du fuhrst ab.</em></td><td>You departed.</td></tr>
+                    <tr><td><em>Er redete laut.</em></td><td>He spoke loudly.</td></tr>
+                    <tr><td><em>Sie sollten kommen.</em></td><td>They were supposed to come.</td></tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Exercises -->
+        <section id="practice">
+            <h2>Exercises to Practice the Präteritum</h2>
+            <div class="subsection" id="exercise1">
+                <h3>Exercise 1: Choose the Correct Präteritum Form</h3>
+                <p>Select the right Präteritum form.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>Ich ___ (spielen) im Garten.
+                            <select class="answer-select" data-correct="Ich spielte im Garten.">
+                                <option value="">Select</option>
+                                <option value="Ich spielten im Garten.">spielten</option>
+                                <option value="Ich spielte im Garten.">spielte</option>
+                                <option value="Ich spiele im Garten.">spiele</option>
+                                <option value="Ich spieltest im Garten.">spieltest</option>
+                                <option value="Ich gespielt im Garten.">gespielt</option>
+                            </select>
+                        </li>
+                        <li>Du ___ (gehen) zur Schule.
+                            <select class="answer-select" data-correct="Du gingst zur Schule.">
+                                <option value="">Select</option>
+                                <option value="Du gingt zur Schule.">gingt</option>
+                                <option value="Du gegangen zur Schule.">gegangen</option>
+                                <option value="Du gingst zur Schule.">gingst</option>
+                                <option value="Du gehst zur Schule.">gehst</option>
+                                <option value="Du ging zur Schule.">ging</option>
+                            </select>
+                        </li>
+                        <li>Er ___ (denken) an dich.
+                            <select class="answer-select" data-correct="Er dachte an dich.">
+                                <option value="">Select</option>
+                                <option value="Er denkt an dich.">denkt</option>
+                                <option value="Er dachten an dich.">dachten</option>
+                                <option value="Er gedacht an dich.">gedacht</option>
+                                <option value="Er dachte an dich.">dachte</option>
+                                <option value="Er dachtest an dich.">dachtest</option>
+                            </select>
+                        </li>
+                        <li>Wir ___ (sein) müde.
+                            <select class="answer-select" data-correct="Wir waren müde.">
+                                <option value="">Select</option>
+                                <option value="Wir gewesen müde.">gewesen</option>
+                                <option value="Wir sind müde.">sind</option>
+                                <option value="Wir wart müde.">wart</option>
+                                <option value="Wir warst müde.">warst</option>
+                                <option value="Wir waren müde.">waren</option>
+                            </select>
+                        </li>
+                        <li>Sie ___ (können) nicht helfen.
+                            <select class="answer-select" data-correct="Sie konnten nicht helfen.">
+                                <option value="">Select</option>
+                                <option value="Sie konntest nicht helfen.">konntest</option>
+                                <option value="Sie konnten nicht helfen.">konnten</option>
+                                <option value="Sie kann nicht helfen.">kann</option>
+                                <option value="Sie gekonnt nicht helfen.">gekonnt</option>
+                                <option value="Sie konntet nicht helfen.">konntet</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Ich spielte im Garten.</em></li>
+                            <li><em>Du gingst zur Schule.</em></li>
+                            <li><em>Er dachte an dich.</em></li>
+                            <li><em>Wir waren müde.</em></li>
+                            <li><em>Sie konnten nicht helfen.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise2">
+                <h3>Exercise 2: Fill in the Präteritum</h3>
+                <p>Choose the correct Präteritum form of the verb.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>Ich ___ (sehen) einen Vogel.
+                            <select class="answer-select" data-correct="Ich sah einen Vogel.">
+                                <option value="">Select</option>
+                                <option value="Ich sah einen Vogel.">sah</option>
+                                <option value="Ich sehe einen Vogel.">sehe</option>
+                                <option value="Ich saht einen Vogel.">saht</option>
+                                <option value="Ich gesehen einen Vogel.">gesehen</option>
+                                <option value="Ich sähe einen Vogel.">sähe</option>
+                            </select>
+                        </li>
+                        <li>Du ___ (wissen) alles.
+                            <select class="answer-select" data-correct="Du wusstest alles.">
+                                <option value="">Select</option>
+                                <option value="Du weißt alles.">weißt</option>
+                                <option value="Du wussten alles.">wussten</option>
+                                <option value="Du wusstest alles.">wusstest</option>
+                                <option value="Du gewusst alles.">gewusst</option>
+                                <option value="Du weißest alles.">weißest</option>
+                            </select>
+                        </li>
+                        <li>Er ___ (machen) einen Kuchen.
+                            <select class="answer-select" data-correct="Er machte einen Kuchen.">
+                                <option value="">Select</option>
+                                <option value="Er macht einen Kuchen.">macht</option>
+                                <option value="Er machte einen Kuchen.">machte</option>
+                                <option value="Er gemacht einen Kuchen.">gemacht</option>
+                                <option value="Er machtest einen Kuchen.">machtest</option>
+                                <option value="Er machst einen Kuchen.">machst</option>
+                            </select>
+                        </li>
+                        <li>Wir ___ (haben) keine Zeit.
+                            <select class="answer-select" data-correct="Wir hatten keine Zeit.">
+                                <option value="">Select</option>
+                                <option value="Wir haben keine Zeit.">haben</option>
+                                <option value="Wir hattest keine Zeit.">hattest</option>
+                                <option value="Wir hatten keine Zeit.">hatten</option>
+                                <option value="Wir gehabt keine Zeit.">gehabt</option>
+                                <option value="Wir habest keine Zeit.">habest</option>
+                            </select>
+                        </li>
+                        <li>Sie ___ (singen) laut.
+                            <select class="answer-select" data-correct="Sie sangen laut.">
+                                <option value="">Select</option>
+                                <option value="Sie singen laut.">singen</option>
+                                <option value="Sie sangen laut.">sangen</option>
+                                <option value="Sie sang laut.">sang</option>
+                                <option value="Sie gesungen laut.">gesungen</option>
+                                <option value="Sie singtest laut.">singtest</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Ich sah einen Vogel.</em></li>
+                            <li><em>Du wusstest alles.</em></li>
+                            <li><em>Er machte einen Kuchen.</em></li>
+                            <li><em>Wir hatten keine Zeit.</em></li>
+                            <li><em>Sie sangen laut.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise3">
+                <h3>Exercise 3: Translate into German (Präteritum)</h3>
+                <p>Choose the correct Präteritum translation.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>I worked yesterday.
+                            <select class="answer-select" data-correct="Ich arbeitete gestern.">
+                                <option value="">Select</option>
+                                <option value="Ich arbeite gestern.">Ich arbeite gestern.</option>
+                                <option value="Ich arbeitete gestern.">Ich arbeitete gestern.</option>
+                                <option value="Ich gearbeitet gestern.">Ich gearbeitet gestern.</option>
+                                <option value="Ich arbeitet gestern.">Ich arbeitet gestern.</option>
+                                <option value="Ich arbeitest gestern.">Ich arbeitest gestern.</option>
+                            </select>
+                        </li>
+                        <li>You went home.
+                            <select class="answer-select" data-correct="Du gingst nach Hause.">
+                                <option value="">Select</option>
+                                <option value="Du gehst nach Hause.">Du gehst nach Hause.</option>
+                                <option value="Du ging nach Hause.">Du ging nach Hause.</option>
+                                <option value="Du gegangen nach Hause.">Du gegangen nach Hause.</option>
+                                <option value="Du gingst nach Hause.">Du gingst nach Hause.</option>
+                                <option value="Du ginge nach Hause.">Du ginge nach Hause.</option>
+                            </select>
+                        </li>
+                        <li>He wanted to stay.
+                            <select class="answer-select" data-correct="Er wollte bleiben.">
+                                <option value="">Select</option>
+                                <option value="Er will bleiben.">Er will bleiben.</option>
+                                <option value="Er wollte bleiben.">Er wollte bleiben.</option>
+                                <option value="Er gewollt bleiben.">Er gewollt bleiben.</option>
+                                <option value="Er wolltest bleiben.">Er wolltest bleiben.</option>
+                                <option value="Er wollten bleiben.">Er wollten bleiben.</option>
+                            </select>
+                        </li>
+                        <li>We asked a question.
+                            <select class="answer-select" data-correct="Wir fragten eine Frage.">
+                                <option value="">Select</option>
+                                <option value="Wir fragen eine Frage.">Wir fragen eine Frage.</option>
+                                <option value="Wir fragtest eine Frage.">Wir fragtest eine Frage.</option>
+                                <option value="Wir gefragt eine Frage.">Wir gefragt eine Frage.</option>
+                                <option value="Wir fragten eine Frage.">Wir fragten eine Frage.</option>
+                                <option value="Wir fragte eine Frage.">Wir fragte eine Frage.</option>
+                            </select>
+                        </li>
+                        <li>They sang a song.
+                            <select class="answer-select" data-correct="Sie sangen ein Lied.">
+                                <option value="">Select</option>
+                                <option value="Sie singen ein Lied.">Sie singen ein Lied.</option>
+                                <option value="Sie gesungen ein Lied.">Sie gesungen ein Lied.</option>
+                                <option value="Sie sang ein Lied.">Sie sang ein Lied.</option>
+                                <option value="Sie sangen ein Lied.">Sie sangen ein Lied.</option>
+                                <option value="Sie singtest ein Lied.">Sie singtest ein Lied.</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Ich arbeitete gestern.</em></li>
+                            <li><em>Du gingst nach Hause.</em></li>
+                            <li><em>Er wollte bleiben.</em></li>
+                            <li><em>Wir fragten eine Frage.</em></li>
+                            <li><em>Sie sangen ein Lied.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise4">
+                <h3>Exercise 4: Correct the Mistake</h3>
+                <p>Choose the corrected Präteritum sentence.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>Ich spiele gestern.
+                            <select class="answer-select" data-correct="Ich spielte gestern.">
+                                <option value="">Select</option>
+                                <option value="Ich spielte gestern.">Ich spielte gestern.</option>
+                                <option value="Ich spiele gestern.">Ich spiele gestern.</option>
+                                <option value="Ich spielten gestern.">Ich spielten gestern.</option>
+                                <option value="Ich gespielt gestern.">Ich gespielt gestern.</option>
+                                <option value="Ich spieltest gestern.">Ich spieltest gestern.</option>
+                            </select>
+                        </li>
+                        <li>Du gehst zur Arbeit.
+                            <select class="answer-select" data-correct="Du gingst zur Arbeit.">
+                                <option value="">Select</option>
+                                <option value="Du ging zur Arbeit.">Du ging zur Arbeit.</option>
+                                <option value="Du gegangen zur Arbeit.">Du gegangen zur Arbeit.</option>
+                                <option value="Du gingst zur Arbeit.">Du gingst zur Arbeit.</option>
+                                <option value="Du gehst zur Arbeit.">Du gehst zur Arbeit.</option>
+                                <option value="Du ginge zur Arbeit.">Du ginge zur Arbeit.</option>
+                            </select>
+                        </li>
+                        <li>Er denken an mich.
+                            <select class="answer-select" data-correct="Er dachte an mich.">
+                                <option value="">Select</option>
+                                <option value="Er dachte an mich.">Er dachte an mich.</option>
+                                <option value="Er denkt an mich.">Er denkt an mich.</option>
+                                <option value="Er dachten an mich.">Er dachten an mich.</option>
+                                <option value="Er gedacht an mich.">Er gedacht an mich.</option>
+                                <option value="Er dachtest an mich.">Er dachtest an mich.</option>
+                            </select>
+                        </li>
+                        <li>Wir sind glücklich.
+                            <select class="answer-select" data-correct="Wir waren glücklich.">
+                                <option value="">Select</option>
+                                <option value="Wir waren glücklich.">Wir waren glücklich.</option>
+                                <option value="Wir sind glücklich.">Wir sind glücklich.</option>
+                                <option value="Wir warst glücklich.">Wir warst glücklich.</option>
+                                <option value="Wir gewesen glücklich.">Wir gewesen glücklich.</option>
+                                <option value="Wir wart glücklich.">Wir wart glücklich.</option>
+                            </select>
+                        </li>
+                        <li>Sie können nicht kommen.
+                            <select class="answer-select" data-correct="Sie konnten nicht kommen.">
+                                <option value="">Select</option>
+                                <option value="Sie konnten nicht kommen.">Sie konnten nicht kommen.</option>
+                                <option value="Sie können nicht kommen.">Sie können nicht kommen.</option>
+                                <option value="Sie konntest nicht kommen.">Sie konntest nicht kommen.</option>
+                                <option value="Sie gekonnt nicht kommen.">Sie gekonnt nicht kommen.</option>
+                                <option value="Sie konntet nicht kommen.">Sie konntet nicht kommen.</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Ich spielte gestern.</em></li>
+                            <li><em>Du gingst zur Arbeit.</em></li>
+                            <li><em>Er dachte an mich.</em></li>
+                            <li><em>Wir waren glücklich.</em></li>
+                            <li><em>Sie konnten nicht kommen.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection" id="exercise5">
+                <h3>Exercise 5: Create Your Own</h3>
+                <p>Choose the correct Präteritum sentence based on the prompt.</p>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li>I saw a movie.
+                            <select class="answer-select" data-correct="Ich sah einen Film.">
+                                <option value="">Select</option>
+                                <option value="Ich sah einen Film.">Ich sah einen Film.</option>
+                                <option value="Ich sehe einen Film.">Ich sehe einen Film.</option>
+                                <option value="Ich saht einen Film.">Ich saht einen Film.</option>
+                                <option value="Ich gesehen einen Film.">Ich gesehen einen Film.</option>
+                                <option value="Ich sähe einen Film.">Ich sähe einen Film.</option>
+                            </select>
+                        </li>
+                        <li>You knew the truth.
+                            <select class="answer-select" data-correct="Du wusstest die Wahrheit.">
+                                <option value="">Select</option>
+                                <option value="Du wusstest die Wahrheit.">Du wusstest die Wahrheit.</option>
+                                <option value="Du weißt die Wahrheit.">Du weißt die Wahrheit.</option>
+                                <option value="Du wussten die Wahrheit.">Du wussten die Wahrheit.</option>
+                                <option value="Du gewusst die Wahrheit.">Du gewusst die Wahrheit.</option>
+                                <option value="Du weißest die Wahrheit.">Du weißest die Wahrheit.</option>
+                            </select>
+                        </li>
+                        <li>He made a mistake.
+                            <select class="answer-select" data-correct="Er machte einen Fehler.">
+                                <option value="">Select</option>
+                                <option value="Er machte einen Fehler.">Er machte einen Fehler.</option>
+                                <option value="Er macht einen Fehler.">Er macht einen Fehler.</option>
+                                <option value="Er gemacht einen Fehler.">Er gemacht einen Fehler.</option>
+                                <option value="Er machtest einen Fehler.">Er machtest einen Fehler.</option>
+                                <option value="Er machst einen Fehler.">Er machst einen Fehler.</option>
+                            </select>
+                        </li>
+                        <li>We had fun.
+                            <select class="answer-select" data-correct="Wir hatten Spaß.">
+                                <option value="">Select</option>
+                                <option value="Wir hatten Spaß.">Wir hatten Spaß.</option>
+                                <option value="Wir haben Spaß.">Wir haben Spaß.</option>
+                                <option value="Wir hattest Spaß.">Wir hattest Spaß.</option>
+                                <option value="Wir gehabt Spaß.">Wir gehabt Spaß.</option>
+                                <option value="Wir habest Spaß.">Wir habest Spaß.</option>
+                            </select>
+                        </li>
+                        <li>They drank water.
+                            <select class="answer-select" data-correct="Sie tranken Wasser.">
+                                <option value="">Select</option>
+                                <option value="Sie tranken Wasser.">Sie tranken Wasser.</option>
+                                <option value="Sie trinken Wasser.">Sie trinken Wasser.</option>
+                                <option value="Sie trank Wasser.">Sie trank Wasser.</option>
+                                <option value="Sie getrunken Wasser.">Sie getrunken Wasser.</option>
+                                <option value="Sie trinktest Wasser.">Sie trinktest Wasser.</option>
+                            </select>
+                        </li>
+                    </ol>
+                    <button class="toggle-btn check-answers">Check Answers</button>
+                    <button class="toggle-btn show-answers">Show Answers</button>
+                    <div class="hidden answers">
+                        <p><strong>Answers:</strong></p>
+                        <ol>
+                            <li><em>Ich sah einen Film.</em></li>
+                            <li><em>Du wusstest die Wahrheit.</em></li>
+                            <li><em>Er machte einen Fehler.</em></li>
+                            <li><em>Wir hatten Spaß.</em></li>
+                            <li><em>Sie tranken Wasser.</em></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced Nuances -->
+        <section id="advanced">
+            <h2>Advanced Nuances</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Regional Use</strong>: Northern Germany uses Präteritum for modals in speech.</li>
+                    <li><strong>Literary Tone</strong>: Adds formality or storytelling feel.</li>
+                    <li><strong>Konjunktiv II</strong>: Base for hypothetical past (e.g., "hätte").</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Tips -->
+        <section id="tips">
+            <h2>Tips to Master the Präteritum</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Memorize Irregulars</strong>: Learn "ging", "sah", etc.</li>
+                    <li><strong>Practice Regulars</strong>: Add "-te" to stems (e.g., "lernte").</li>
+                    <li><strong>Read Books</strong>: Fairy tales use Präteritum heavily.</li>
+                    <li><strong>Mix with Perfekt</strong>: Use Präteritum for writing, Perfekt for speaking.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Resources -->
+        <section id="resources">
+            <h2>Resources for Extra Practice</h2>
+            <div class="resource-links">
+                <div class="resource-card">
+                    <p><strong>YouTube - Learn German with Anja</strong><br>Videos on Präteritum for all levels.</p>
+                    <a href="https://www.youtube.com/@LearnGermanwithAnja" class="resource-btn">Visit Learn German with Anja</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>Deutsch Lernen (Lingolia)</strong><br>Lessons and exercises on Präteritum.</p>
+                    <a href="https://deutsch.lingolia.com/en/grammar/tenses/preterite" class="resource-btn">Visit Lingolia</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>YouTube - Easy German</strong><br>Präteritum in real conversations.</p>
+                    <a href="https://www.youtube.com/@EasyGerman" class="resource-btn">Visit Easy German</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="infinitivmitzu.html" class="see-also-rect">Infinitiv mit zu</a>
+                <a href="genitiv.html" class="see-also-rect">Genitive Case</a>
+                <a href="perfekt.html" class="see-also-rect">Perfekt Tense</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="perfekt.html" class="next-btn">Next: Perfekt Tense →</a>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark Mode Toggle
+        const modeToggle = document.getElementById('mode-toggle');
+        modeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Load dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Toggle Answers
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const answersDiv = button.nextElementSibling;
+                if (button.classList.contains('show-answers')) {
+                    answersDiv.classList.toggle('hidden');
+                } else if (button.classList.contains('check-answers')) {
+                    const selects = button.parentElement.querySelectorAll('.answer-select');
+                    selects.forEach(select => {
+                        const selectedValue = select.value;
+                        const correctValue = select.getAttribute('data-correct');
+                        if (selectedValue === correctValue) {
+                            select.style.backgroundColor = '#d4edda'; // Green for correct
+                        } else {
+                            select.style.backgroundColor = '#f8d7da'; // Red for incorrect
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

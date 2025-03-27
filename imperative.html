@@ -1,0 +1,898 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      German Imperative: All Forms and Examples | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/konj2.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+                <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="a1-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>German Imperative: A Simple Guide with All Forms and Examples</h1>
+            <p>
+                The <strong>imperative</strong> in German is how you give commands, instructions, or requests—like "Go!" or "Listen!" It changes based on who you’re talking to: <em>du</em> (informal singular), <em>ihr</em> (informal plural), <em>Sie</em> (formal), and <em>wir</em> (we, for suggestions).
+            </p>
+        </section>
+
+        <!-- What is the Imperative -->
+        <section id="what-is">
+            <h2>What is the Imperative?</h2>
+            <p>
+                The imperative is the verb form used to tell someone what to do. In German:
+            </p>
+            <div class="examples">
+                <ul class="example-list">
+                    <li>It’s based on the <strong>present tense</strong>.</li>
+                    <li>The verb comes <strong>first</strong> in the sentence.</li>
+                    <li>It skips the subject (<em>du</em>, <em>ihr</em>, <em>Sie</em>) except for <em>wir</em>.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Imperative for Du -->
+        <section id="du">
+            <h2>1. Imperative for <em>Du</em> (Informal Singular)</h2>
+            <div class="subsection">
+                <h3>How It Works</h3>
+                <p>
+                    Take the <em>du</em> present tense form (e.g., <em>du machst</em>), drop the <em>-st</em>, and sometimes add <em>-e</em> for hard sounds (like <em>t</em> or <em>d</em>).
+                </p>
+            </div>
+            <div class="subsection">
+                <h3>Examples</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Mach</em> die Tür zu! (Close the door!) <br> - From <em>machst</em>.</li>
+                        <li><em>Lies</em> das Buch! (Read the book!) <br> - From <em>liest</em>.</li>
+                        <li><em>Arbeite</em> schneller! (Work faster!) <br> - From <em>arbeitest</em>.</li>
+                        <li><em>Geh</em> nach Hause! (Go home!) <br> - From <em>gehst</em>.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Imperative for Ihr -->
+        <section id="ihr">
+            <h2>2. Imperative for <em>Ihr</em> (Informal Plural)</h2>
+            <div class="subsection">
+                <h3>How It Works</h3>
+                <p>
+                    Use the <em>ihr</em> present tense form (e.g., <em>ihr macht</em>) as is—no changes, no <em>ihr</em> in the sentence.
+                </p>
+            </div>
+            <div class="subsection">
+                <h3>Examples</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Macht</em> die Fenster auf! (Open the windows!) <br> - From <em>ihr macht</em>.</li>
+                        <li><em>Lest</em> die Zeitung! (Read the newspaper!) <br> - From <em>ihr lest</em>.</li>
+                        <li><em>Arbeitet</em> zusammen! (Work together!) <br> - From <em>ihr arbeitet</em>.</li>
+                        <li><em>Geht</em> in den Park! (Go to the park!) <br> - From <em>ihr geht</em>.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Imperative for Sie -->
+        <section id="sie">
+            <h2>3. Imperative for <em>Sie</em> (Formal)</h2>
+            <div class="subsection">
+                <h3>How It Works</h3>
+                <p>
+                    Use the <em>Sie</em> present tense form (e.g., <em>Sie machen</em>), keep it, and place <em>Sie</em> after the verb.
+                </p>
+            </div>
+            <div class="subsection">
+                <h3>Examples</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Machen Sie</em> die Tür zu! (Close the door!) <br> - From <em>Sie machen</em>.</li>
+                        <li><em>Lesen Sie</em> das Buch! (Read the book!) <br> - From <em>Sie lesen</em>.</li>
+                        <li><em>Arbeiten Sie</em> hier! (Work here!) <br> - From <em>Sie arbeiten</em>.</li>
+                        <li><em>Gehen Sie</em> nach links! (Go left!) <br> - From <em>Sie gehen</em>.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Imperative for Wir -->
+        <section id="wir">
+            <h2>4. Imperative for <em>Wir</em> (We, Suggestions)</h2>
+            <div class="subsection">
+                <h3>How It Works</h3>
+                <p>
+                    Use the <em>wir</em> present tense form (e.g., <em>wir machen</em>), keep <em>wir</em> after the verb, often with <em>mal</em> for casualness.
+                </p>
+            </div>
+            <div class="subsection">
+                <h3>Examples</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Machen wir</em> das zusammen! (Let’s do it together!) <br> - From <em>wir machen</em>.</li>
+                        <li><em>Lesen wir</em> ein Buch! (Let’s read a book!) <br> - From <em>wir lesen</em>.</li>
+                        <li><em>Arbeiten wir</em> heute! (Let’s work today!) <br> - From <em>wir arbeiten</em>.</li>
+                        <li><em>Gehen wir</em> ins Kino! (Let’s go to the cinema!) <br> - From <em>wir gehen</em>.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Cases -->
+        <section id="special-cases">
+            <h2>Special Cases</h2>
+            <div class="subsection">
+                <h3>Key Examples</h3>
+                <div class="examples">
+                    <ul class="example-list">
+                        <li><em>nehmen</em> (to take): <em>Nimm</em> das! (Take it!) <br> - From <em>nimmst</em>.</li>
+                        <li><em>sein</em> (to be): <em>Sei</em> leise! / <em>Seid</em> still! / <em>Seien Sie</em> höflich! / <em>Seien wir</em> nett!</li>
+                        <li><em>haben</em> (to have): <em>Hab</em> Geduld! / <em>Habt</em> Spaß! / <em>Haben Sie</em> Mut! / <em>Haben wir</em> Zeit!</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Adding Politeness -->
+        <section id="politeness">
+            <h2>Adding Politeness</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><em>Geh bitte nach Hause!</em> (Please go home!)</li>
+                    <li><em>Komm mal her!</em> (Come here for a sec!)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Practice Exercise -->
+      <!-- Practice Exercises -->
+<section id="practice">
+    <h2>Practice Exercises</h2>
+
+    <!-- Exercise 1: Form the Imperative from Du -->
+    <div class="subsection">
+        <h3>Exercise 1: Form the Imperative (<em>Du</em>)</h3>
+        <p>Select the correct <em>du</em> imperative form for each verb.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li><em>Du</em>: ___ das Buch! (<em>lesen</em> – to read)  
+                    <select class="answer-select" data-correct="Lies">
+                        <option value="">Select</option>
+                        <option value="Lest">Lest</option>
+                        <option value="Lies">Lies</option>
+                        <option value="Lesen">Lesen</option>
+                        <option value="Liest">Liest</option>
+                    </select>
+                </li>
+                <li><em>Du</em>: ___ schneller! (<em>laufen</em> – to run)  
+                    <select class="answer-select" data-correct="Lauf">
+                        <option value="">Select</option>
+                        <option value="Läuft">Läuft</option>
+                        <option value="Laufen">Laufen</option>
+                        <option value="Lauf">Lauf</option>
+                        <option value="Lauft">Lauft</option>
+                    </select>
+                </li>
+                <li><em>Du</em>: ___ die Tür! (<em>schließen</em> – to close)  
+                    <select class="answer-select" data-correct="Schließe">
+                        <option value="">Select</option>
+                        <option value="Schließt">Schließt</option>
+                        <option value="Schließen">Schließen</option>
+                        <option value="Schließest">Schließest</option>
+                        <option value="Schließe">Schließe</option>
+                    </select>
+                </li>
+                <li><em>Du</em>: ___ mir! (<em>helfen</em> – to help)  
+                    <select class="answer-select" data-correct="Hilf">
+                        <option value="">Select</option>
+                        <option value="Helft">Helft</option>
+                        <option value="Helfen">Helfen</option>
+                        <option value="Hilf">Hilf</option>
+                        <option value="Hilfst">Hilfst</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Lies</em></li>
+                    <li><em>Lauf</em></li>
+                    <li><em>Schließe</em></li>
+                    <li><em>Hilf</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exercise 2: Choose the Right Form -->
+    <div class="subsection">
+        <h3>Exercise 2: Choose the Right Imperative Form</h3>
+        <p>Select the correct imperative form based on who is being addressed.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li><em>Ihr</em>: ___ die Fenster! (<em>öffnen</em> – to open)  
+                    <select class="answer-select" data-correct="Öffnet">
+                        <option value="">Select</option>
+                        <option value="Öffnen Sie">Öffnen Sie</option>
+                        <option value="Öffne">Öffne</option>
+                        <option value="Öffnet">Öffnet</option>
+                        <option value="Öffnen wir">Öffnen wir</option>
+                    </select>
+                </li>
+                <li><em>Sie</em>: ___ bitte hier! (<em>sitzen</em> – to sit)  
+                    <select class="answer-select" data-correct="Sitzen Sie">
+                        <option value="">Select</option>
+                        <option value="Sitz">Sitz</option>
+                        <option value="Sitzt">Sitzt</option>
+                        <option value="Sitzen wir">Sitzen wir</option>
+                        <option value="Sitzen Sie">Sitzen Sie</option>
+                    </select>
+                </li>
+                <li><em>Wir</em>: ___ zusammen! (<em>spielen</em> – to play)  
+                    <select class="answer-select" data-correct="Spielen wir">
+                        <option value="">Select</option>
+                        <option value="Spiel">Spiel</option>
+                        <option value="Spielen wir">Spielen wir</option>
+                        <option value="Spielt">Spielt</option>
+                        <option value="Spielen Sie">Spielen Sie</option>
+                    </select>
+                </li>
+                <li><em>Du</em>: ___ jetzt! (<em>essen</em> – to eat)  
+                    <select class="answer-select" data-correct="Iss">
+                        <option value="">Select</option>
+                        <option value="Esst">Esst</option>
+                        <option value="Iss">Iss</option>
+                        <option value="Essen Sie">Essen Sie</option>
+                        <option value="Essen wir">Essen wir</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Öffnet</em></li>
+                    <li><em>Sitzen Sie</em></li>
+                    <li><em>Spielen wir</em></li>
+                    <li><em>Iss</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exercise 3: Add Politeness or Mix Forms -->
+    <div class="subsection">
+        <h3>Exercise 3: Mix Forms with Politeness</h3>
+        <p>Select the correct imperative form, including <em>bitte</em> or <em>mal</em> where specified.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li><em>Du</em>: ___ <em>bitte</em> die Tür! (<em>schließen</em> – to close)  
+                    <select class="answer-select" data-correct="Schließe bitte">
+                        <option value="">Select</option>
+                        <option value="Schließe bitte">Schließe bitte</option>
+                        <option value="Schließt mal">Schließt mal</option>
+                        <option value="Schließen Sie">Schließen Sie</option>
+                        <option value="Schließen wir bitte">Schließen wir bitte</option>
+                    </select>
+                </li>
+                <li><em>Ihr</em>: ___ <em>mal</em> her! (<em>kommen</em> – to come)  
+                    <select class="answer-select" data-correct="Kommt mal">
+                        <option value="">Select</option>
+                        <option value="Komm bitte">Komm bitte</option>
+                        <option value="Kommt mal">Kommt mal</option>
+                        <option value="Kommen Sie">Kommen Sie</option>
+                        <option value="Kommen wir mal">Kommen wir mal</option>
+                    </select>
+                </li>
+                <li><em>Sie</em>: ___ <em>bitte</em> das Buch! (<em>nehmen</em> – to take)  
+                    <select class="answer-select" data-correct="Nehmen Sie bitte">
+                        <option value="">Select</option>
+                        <option value="Nimm mal">Nimm mal</option>
+                        <option value="Nehmt">Nehmt</option>
+                        <option value="Nehmen wir bitte">Nehmen wir bitte</option>
+                        <option value="Nehmen Sie bitte">Nehmen Sie bitte</option>
+                    </select>
+                </li>
+                <li><em>Wir</em>: ___ <em>mal</em> leise! (<em>sein</em> – to be)  
+                    <select class="answer-select" data-correct="Seien wir mal">
+                        <option value="">Select</option>
+                        <option value="Sei bitte">Sei bitte</option>
+                        <option value="Seid mal">Seid mal</option>
+                        <option value="Seien wir mal">Seien wir mal</option>
+                        <option value="Seien Sie">Seien Sie</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Schließe bitte</em></li>
+                    <li><em>Kommt mal</em></li>
+                    <li><em>Nehmen Sie bitte</em></li>
+                    <li><em>Seien wir mal</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Tips to Master Imperatives -->
+        <section id="tips">
+            <h2>Tips to Master Imperatives</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Say Aloud</strong>: Practice <em>Mach! Macht! Machen Sie! Machen wir!</em></li>
+                    <li><strong>Use Daily</strong>: Command yourself—<em>Steh auf! Iss jetzt!</em></li>
+                    <li><strong>Switch Forms</strong>: Rewrite <em>Geh!</em> for <em>ihr, Sie, wir</em>.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Resources for Extra Practice -->
+        <section id="resources">
+            <h2>Resources for Extra Practice</h2>
+            <div class="resource-links">
+                <div class="resource-card">
+                    <p><strong>YouTube – Easy German</strong><br>Hear imperatives in action.</p>
+                    <a href="https://www.youtube.com/@EasyGerman" class="resource-btn" target="_blank">Visit Easy German</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>Schubert Verlag</strong><br>Free exercises.</p>
+                    <a href="https://www.schubert-verlag.de/aufgaben/uebungen_a1/a1_uebungen_index.htm" class="resource-btn" target="_blank">Visit Schubert Verlag</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>Goethe Institute</strong><br>Grammar help.</p>
+                    <a href="https://www.goethe.de/en/spr/ueb.html" class="resource-btn" target="_blank">Visit Goethe Grammar</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section id="conclusion">
+            <p>
+                Practice these forms and exercise, and you’ll master imperatives fast! Next, explore verbs or pronouns—your choice!
+            </p>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="nouns.html" class="see-also-rect">German Nouns</a>
+                <a href="personal-pronouns.html" class="see-also-rect">Personal Pronouns</a>
+                <a href="verbs-wfrage-ja-nein-normaler.html" class="see-also-rect">Verbs: W-Fragen & More</a>
+                <a href="articles.html" class="see-also-rect">German Articles</a>
+                <a href="adjectives.html" class="see-also-rect">German Adjectives</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="verbs-wfrage-ja-nein-normaler.html" class="next-btn">Next: Verbs: W-Fragen & More →</a>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark Mode Toggle
+        const modeToggle = document.getElementById('mode-toggle');
+        modeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Load dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Toggle Answers
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const answersDiv = button.nextElementSibling;
+                if (button.classList.contains('show-answers')) {
+                    answersDiv.classList.toggle('hidden');
+                } else if (button.classList.contains('check-answers')) {
+                    const selects = button.parentElement.querySelectorAll('.answer-select');
+                    selects.forEach(select => {
+                        const selectedValue = select.value;
+                        const correctValue = select.getAttribute('data-correct');
+                        if (selectedValue === correctValue) {
+                            select.style.backgroundColor = '#d4edda'; // Green for correct
+                        } else {
+                            select.style.backgroundColor = '#f8d7da'; // Red for incorrect
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

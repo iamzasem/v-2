@@ -1,0 +1,1042 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      German Konjunktiv II: Hätten, Wären, Würden | Zasem's Site
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background: #0f172a;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #4ade80;
+        z-index: 1100;
+      }
+      .navbar-brand {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #4ade80;
+      }
+      .brand-text {
+        font-weight: 600;
+        color: white;
+      }
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #4ade80;
+      }
+      .navbar-nav .nav-link.active {
+        color: #4ade80;
+        font-weight: 600;
+      }
+      .dropdown-menu {
+        background: #0f172a;
+        border: 1px solid #4ade80;
+        border-radius: 10px;
+        z-index: 1050;
+      }
+      .dropdown-item {
+        color: white;
+      }
+      .dropdown-item:hover {
+        background: #1e293b;
+        color: #4ade80;
+      }
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      .social-icon {
+        color: white;
+        font-size: 1.2rem;
+      }
+      .social-icon:hover {
+        color: #4ade80;
+      }
+
+      /* Minimalistic Learn German Button */
+      .learn-german-btn {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: 1px solid #4ade80;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .learn-german-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        transform: scale(1.05);
+      }
+      .learn-german-btn.active {
+        color: #4ade80;
+        font-weight: 600;
+        background: rgba(74, 222, 128, 0.2);
+      }
+      .learn-german-btn i {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        color: #f5f5f5;
+        padding: 60px 0 30px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+      }
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+      }
+      .footer-section h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .footer-section h3 span.underline {
+        display: block;
+        width: 40px;
+        height: 3px;
+        background-color: #00a86b;
+        margin-top: 8px;
+        transition: width 0.3s ease;
+      }
+      .footer-section p {
+        margin-bottom: 20px;
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+      }
+      .contact-item {
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .contact-item span {
+        color: #aaaaaa;
+        display: block;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+      .contact-item p {
+        margin: 0;
+        color: #f5f5f5;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-section li.service-item {
+        margin-bottom: 12px;
+        color: #aaaaaa;
+        transition: all 0.3s ease;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #777777;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #00a6ed; 
+        color: #0f172a; /* Dark color for contrast */
+        border: none;
+        border-radius: 50%; /* Circular button */
+        font-size: 1.2rem;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+        z-index: 1000;
+      }
+      .scroll-to-top:hover {
+        background-color: #22c55e; /* Slightly darker green on hover */
+        opacity: 1;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          padding: 1rem 0;
+        }
+        .social-icons {
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .scroll-to-top {
+          width: 36px;
+          height: 36px;
+          font-size: 1.1rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .scroll-to-top {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+          bottom: 10px;
+          right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <span>Zasem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/">
+                <i class="bi bi-house-door-fill me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery/">
+                <i class="bi bi-image-fill me-1"></i>Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact/">
+                <i class="bi bi-envelope-fill me-1"></i>Contact Me
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " 
+                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="servicesDropdown">
+                <i class="bi bi-gear-fill me-1"></i>Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/thumbnails/">
+                  <i class="bi bi-image me-2"></i>Thumbnail Design
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/seo/">
+                  <i class="bi bi-graph-up me-2"></i>SEO Optimization
+                </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item " href="/digitalmarketing/">
+                  <i class="bi bi-megaphone me-2"></i>Digital Marketing
+                </a></li>
+              </ul>
+            </li>
+            <!-- Learn German Minimalistic Button -->
+            <li class="nav-item">
+              <a class="nav-link learn-german-btn " href="/german.html">
+                <i class="bi bi-book me-1"></i>Learn German
+              </a>
+            </li>
+          </ul>
+          <div class="social-icons ms-lg-3 mt-3 mt-lg-0">
+            <a href="https://github.com/iamzasem" class="social-icon" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/iamzasem/" class="social-icon" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/iamzasem" class="social-icon" title="Twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+<link rel="stylesheet" href="/static/css/konjunktivII.css">
+<body>
+    <main>
+        <!-- Navigation and Mode Toggle -->
+        <div class="top-bar">
+            <div class="nav-buttons">
+               <a href="german.html" class="nav-btn home-btn" title="Home">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </a>
+                <a href="a2-topics.html" class="nav-btn back-btn" title="Back">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                </a>
+            </div>
+            <button id="mode-toggle" class="mode-toggle" title="Toggle Dark/Light Mode">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Introduction -->
+        <section id="intro">
+            <h1>German Konjunktiv II: Hätten, Wären, Würden</h1>
+            <p>
+               
+            </p>
+        </section>
+
+        <!-- Understanding Konjunktiv II -->
+        <section id="understanding">
+            <h2>Understanding Konjunktiv II: "Hätten," "Wären," and "Würden"</h2>
+            <p>Konjunktiv II expresses hypothetical, unreal, or imagined situations—things that aren’t true but could be wished for. It’s based on past tense forms but used for "what if" scenarios. The verbs "haben", "sein", and "werden" form "hätten", "wären", and "würden".</p>
+            <div class="subsection">
+                <h3>"Hätten" (Would Have)</h3>
+                <ul class="example-list">
+                    <li><strong>Definition</strong>: Konjunktiv II of *haben*, meaning "would have," for imagining possession or conditional perfect.</li>
+                    <li><strong>Formed</strong>: From *hatten* to *hätten*.</li>
+                    <li><strong>Conjugation</strong>:
+                        <table>
+                            <tr><th>Person</th><th>Form</th></tr>
+                            <tr><td>ich</td><td>hätte</td></tr>
+                            <tr><td>du</td><td>hättest</td></tr>
+                            <tr><td>er/sie/es</td><td>hätte</td></tr>
+                            <tr><td>wir</td><td>hätten</td></tr>
+                            <tr><td>ihr</td><td>hättet</td></tr>
+                            <tr><td>sie/Sie</td><td>hätten</td></tr>
+                        </table>
+                    </li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>"Wären" (Would Be)</h3>
+                <ul class="example-list">
+                    <li><strong>Definition</strong>: Konjunktiv II of *sein*, meaning "would be," for imagining states or locations.</li>
+                    <li><strong>Formed</strong>: From *waren* to *wären*.</li>
+                    <li><strong>Conjugation</strong>:
+                        <table>
+                            <tr><th>Person</th><th>Form</th></tr>
+                            <tr><td>ich</td><td>wäre</td></tr>
+                            <tr><td>du</td><td>wärst</td></tr>
+                            <tr><td>er/sie/es</td><td>wäre</td></tr>
+                            <tr><td>wir</td><td>wären</td></tr>
+                            <tr><td>ihr</td><td>wäret</td></tr>
+                            <tr><td>sie/Sie</td><td>wären</td></tr>
+                        </table>
+                    </li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>"Würden" (Would)</h3>
+                <ul class="example-list">
+                    <li><strong>Definition</strong>: Konjunktiv II of *werden*, meaning "would," used with infinitives for hypothetical actions.</li>
+                    <li><strong>Formed</strong>: From *wurden* to *würden*.</li>
+                    <li><strong>Conjugation</strong>:
+                        <table>
+                            <tr><th>Person</th><th>Form</th></tr>
+                            <tr><td>ich</td><td>würde</td></tr>
+                            <tr><td>du</td><td>würdest</td></tr>
+                            <tr><td>er/sie/es</td><td>würde</td></tr>
+                            <tr><td>wir</td><td>würden</td></tr>
+                            <tr><td>ihr</td><td>würdet</td></tr>
+                            <tr><td>sie/Sie</td><td>würden</td></tr>
+                        </table>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Uses -->
+        <section id="uses">
+            <h2>Uses of "Hätten," "Wären," and "Würden"</h2>
+            <div class="subsection">
+                <h3>Hypothetical Situations (Imagining "What If")</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Wenn ich reich wäre, würde ich ein großes Haus kaufen.</em>  
+                            (If I were rich, I would buy a big house.)</li>
+                        <li><em>Wenn wir mehr Zeit hätten, könnten wir länger bleiben.</em>  
+                            (If we had more time, we could stay longer.)</li>
+                        <li><em>Ich würde nach Deutschland reisen, wenn ich Urlaub hätte.</em>  
+                            (I would travel to Germany if I had vacation.)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Polite Requests or Suggestions</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Ich würde gern ein Glas Wasser haben.</em>  
+                            (I would like a glass of water, please.)</li>
+                        <li><em>Hättest du Zeit, mir zu helfen?</em>  
+                            (Would you have time to help me?)</li>
+                        <li><em>Es wäre nett, wenn du kommen könntest.</em>  
+                            (It would be nice if you could come.)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Conditional Perfect (What Would Have Happened)</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Wenn ich schneller gelaufen wäre, hätte ich den Bus erreicht.</em>  
+                            (If I had run faster, I would have caught the bus.)</li>
+                        <li><em>Wir hätten das Spiel gewonnen, wenn wir besser gespielt hätten.</em>  
+                            (We would have won the game if we had played better.)</li>
+                        <li><em>Er wäre gekommen, wenn er Zeit gehabt hätte.</em>  
+                            (He would have come if he had had time.)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>Unreal Wishes or Dreams</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Wenn ich doch nur Millionär wäre!</em>  
+                            (If only I were a millionaire!)</li>
+                        <li><em>Ich würde so gern fliegen können.</em>  
+                            (I would love to be able to fly.)</li>
+                        <li><em>Wir hätten gestern mehr Spaß gehabt, wenn es nicht geregnet hätte.</em>  
+                            (We would have had more fun yesterday if it hadn’t rained.)</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Examples -->
+        <section id="examples">
+            <h2>Detailed Examples</h2>
+            <div class="subsection">
+                <h3>With "Hätten"</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Wenn ich mehr Geld hätte, würde ich ein Auto kaufen.</em>  
+                            (If I had more money, I would buy a car.)</li>
+                        <li><em>Wir hätten das Projekt beendet, wenn wir mehr Zeit gehabt hätten.</em>  
+                            (We would have finished the project if we had had more time.)</li>
+                        <li><em>Hättest du mir geholfen, wäre es schneller gegangen.</em>  
+                            (If you had helped me, it would have gone faster.)</li>
+                        <li><em>Sie hätten gewonnen, wenn sie trainiert hätten.</em>  
+                            (They would have won if they had trained.)</li>
+                        <li><em>Ich hätte das Buch gelesen, wenn es interessant gewesen wäre.</em>  
+                            (I would have read the book if it had been interesting.)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>With "Wären"</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Wenn wir in Berlin wären, könnten wir den Dom besuchen.</em>  
+                            (If we were in Berlin, we could visit the cathedral.)</li>
+                        <li><em>Er wäre nicht so müde, wenn er geschlafen hätte.</em>  
+                            (He wouldn’t be so tired if he had slept.)</li>
+                        <li><em>Wenn ich du wäre, würde ich das Angebot annehmen.</em>  
+                            (If I were you, I would accept the offer.)</li>
+                        <li><em>Wir wären früher hier gewesen, wenn der Zug pünktlich gewesen wäre.</em>  
+                            (We would have been here earlier if the train had been on time.)</li>
+                        <li><em>Es wäre schön, wenn wir zusammen reisen könnten.</em>  
+                            (It would be nice if we could travel together.)</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="subsection">
+                <h3>With "Würden"</h3>
+                <div class="examples">
+                    <ol class="example-list">
+                        <li><em>Ich würde heute arbeiten, wenn ich nicht krank wäre.</em>  
+                            (I would work today if I weren’t sick.)</li>
+                        <li><em>Wir würden dich besuchen, wenn wir in der Stadt wären.</em>  
+                            (We would visit you if we were in the city.)</li>
+                        <li><em>Sie würde singen, wenn sie eine gute Stimme hätte.</em>  
+                            (She would sing if she had a good voice.)</li>
+                        <li><em>Was würdest du tun, wenn du im Lotto gewinnen würdest?</em>  
+                            (What would you do if you won the lottery?)</li>
+                        <li><em>Er würde schneller laufen, wenn er trainiert hätte.</em>  
+                            (He would run faster if he had trained.)</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+       <!-- Exercises -->
+<section id="practice">
+    <h2>Exercises to Master "Hätten," "Wären," and "Würden"</h2>
+    <div class="subsection" id="exercise1">
+        <h3>Exercise 1: Fill in the Blank</h3>
+        <p>Choose the correct form: *hätte*, *wäre*, or *würde*.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Wenn ich reich ___, würde ich reisen.  
+                    <select class="answer-select" data-correct="wäre">
+                        <option value="">Select</option>
+                        <option value="würde">würde</option>
+                        <option value="wäre">wäre</option>
+                        <option value="hätte">hätte</option>
+                    </select>
+                </li>
+                <li>Ich ___ das gemacht, wenn ich Zeit gehabt hätte.  
+                    <select class="answer-select" data-correct="hätte">
+                        <option value="">Select</option>
+                        <option value="wäre">wäre</option>
+                        <option value="würde">würde</option>
+                        <option value="hätte">hätte</option>
+                    </select>
+                </li>
+                <li>Was ___ du sagen, wenn du hier wärst?  
+                    <select class="answer-select" data-correct="würde">
+                        <option value="">Select</option>
+                        <option value="hätte">hätte</option>
+                        <option value="würde">würde</option>
+                        <option value="wäre">wäre</option>
+                    </select>
+                </li>
+                <li>Wir ___ glücklicher, wenn wir gewonnen hätten.  
+                    <select class="answer-select" data-correct="wären">
+                        <option value="">Select</option>
+                        <option value="würde">würde</option>
+                        <option value="hätte">hätte</option>
+                        <option value="wären">wären</option>
+                    </select>
+                </li>
+                <li>Er ___ es kaufen, wenn es billiger wäre.  
+                    <select class="answer-select" data-correct="würde">
+                        <option value="">Select</option>
+                        <option value="wäre">wäre</option>
+                        <option value="würde">würde</option>
+                        <option value="hätte">hätte</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>wäre</em></li>
+                    <li><em>hätte</em></li>
+                    <li><em>würde</em></li>
+                    <li><em>wären</em></li>
+                    <li><em>würde</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="subsection" id="exercise2">
+        <h3>Exercise 2: Translate into German</h3>
+        <p>Translate these sentences into German.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>If I were taller, I would play basketball.  
+                    <select class="answer-select" data-correct="Wenn ich größer wäre, würde ich Basketball spielen.">
+                        <option value="">Select</option>
+                        <option value="Wenn ich groß wäre, spielte ich Basketball.">Wenn ich groß wäre, spielte ich Basketball.</option>
+                        <option value="Wenn ich größer wäre, würde ich Basketball spielen.">Wenn ich größer wäre, würde ich Basketball spielen.</option>
+                    </select>
+                </li>
+                <li>We would have gone if it hadn’t rained.  
+                    <select class="answer-select" data-correct="Wir hätten gehen können, wenn es nicht geregnet hätte.">
+                        <option value="">Select</option>
+                        <option value="Wir hätten gehen können, wenn es nicht geregnet hätte.">Wir hätten gehen können, wenn es nicht geregnet hätte.</option>
+                        <option value="Wir wären gegangen, wenn es nicht regnete.">Wir wären gegangen, wenn es nicht regnete.</option>
+                    </select>
+                </li>
+                <li>She would help if she had time.  
+                    <select class="answer-select" data-correct="Sie würde helfen, wenn sie Zeit hätte.">
+                        <option value="">Select</option>
+                        <option value="Sie half, wenn sie Zeit hatte.">Sie half, wenn sie Zeit hatte.</option>
+                        <option value="Sie würde helfen, wenn sie Zeit hätte.">Sie würde helfen, wenn sie Zeit hätte.</option>
+                    </select>
+                </li>
+                <li>If you were here, it would be fun.  
+                    <select class="answer-select" data-correct="Wenn du hier wärst, wäre es lustig.">
+                        <option value="">Select</option>
+                        <option value="Wenn du hier wärst, wäre es lustig.">Wenn du hier wärst, wäre es lustig.</option>
+                        <option value="Wenn du hier bist, ist es lustig.">Wenn du hier bist, ist es lustig.</option>
+                    </select>
+                </li>
+                <li>I would have called if I had known.  
+                    <select class="answer-select" data-correct="Ich hätte angerufen, wenn ich es gewusst hätte.">
+                        <option value="">Select</option>
+                        <option value="Ich würde anrufen, wenn ich es wüsste.">Ich würde anrufen, wenn ich es wüsste.</option>
+                        <option value="Ich hätte angerufen, wenn ich es gewusst hätte.">Ich hätte angerufen, wenn ich es gewusst hätte.</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Wenn ich größer wäre, würde ich Basketball spielen.</em></li>
+                    <li><em>Wir hätten gehen können, wenn es nicht geregnet hätte.</em></li>
+                    <li><em>Sie würde helfen, wenn sie Zeit hätte.</em></li>
+                    <li><em>Wenn du hier wärst, wäre es lustig.</em></li>
+                    <li><em>Ich hätte angerufen, wenn ich es gewusst hätte.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="subsection" id="exercise3">
+        <h3>Exercise 3: Rewrite Sentences</h3>
+        <p>Rewrite using Konjunktiv II.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>Ich bin nicht reich, aber ich kaufe ein Haus.  
+                    <select class="answer-select" data-correct="Wenn ich reich wäre, würde ich ein Haus kaufen.">
+                        <option value="">Select</option>
+                        <option value="Wenn ich reich bin, kaufe ich ein Haus.">Wenn ich reich bin, kaufe ich ein Haus.</option>
+                        <option value="Wenn ich reich wäre, würde ich ein Haus kaufen.">Wenn ich reich wäre, würde ich ein Haus kaufen.</option>
+                    </select>
+                </li>
+                <li>Wir haben keine Zeit, also bleiben wir nicht.  
+                    <select class="answer-select" data-correct="Wenn wir Zeit hätten, würden wir bleiben.">
+                        <option value="">Select</option>
+                        <option value="Wenn wir Zeit hätten, würden wir bleiben.">Wenn wir Zeit hätten, würden wir bleiben.</option>
+                        <option value="Wenn wir Zeit haben, bleiben wir.">Wenn wir Zeit haben, bleiben wir.</option>
+                    </select>
+                </li>
+                <li>Er ist krank, deshalb kommt er nicht.  
+                    <select class="answer-select" data-correct="Wenn er nicht krank wäre, würde er kommen.">
+                        <option value="">Select</option>
+                        <option value="Wenn er nicht krank ist, kommt er.">Wenn er nicht krank ist, kommt er.</option>
+                        <option value="Wenn er nicht krank wäre, würde er kommen.">Wenn er nicht krank wäre, würde er kommen.</option>
+                    </select>
+                </li>
+                <li>Es regnet, also gehen wir nicht spazieren.  
+                    <select class="answer-select" data-correct="Wenn es nicht regnen würde, würden wir spazieren gehen.">
+                        <option value="">Select</option>
+                        <option value="Wenn es nicht regnen würde, würden wir spazieren gehen.">Wenn es nicht regnen würde, würden wir spazieren gehen.</option>
+                        <option value="Wenn es nicht regnet, gehen wir spazieren.">Wenn es nicht regnet, gehen wir spazieren.</option>
+                    </select>
+                </li>
+                <li>Ich weiß es nicht, deshalb sage ich nichts.  
+                    <select class="answer-select" data-correct="Wenn ich es wüsste, würde ich etwas sagen.">
+                        <option value="">Select</option>
+                        <option value="Wenn ich es weiß, sage ich etwas.">Wenn ich es weiß, sage ich etwas.</option>
+                        <option value="Wenn ich es wüsste, würde ich etwas sagen.">Wenn ich es wüsste, würde ich etwas sagen.</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Wenn ich reich wäre, würde ich ein Haus kaufen.</em></li>
+                    <li><em>Wenn wir Zeit hätten, würden wir bleiben.</em></li>
+                    <li><em>Wenn er nicht krank wäre, würde er kommen.</em></li>
+                    <li><em>Wenn es nicht regnen würde, würden wir spazieren gehen.</em></li>
+                    <li><em>Wenn ich es wüsste, würde ich etwas sagen.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="subsection" id="exercise4">
+        <h3>Exercise 4: Conditional Perfect</h3>
+        <p>Form sentences with the conditional perfect.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>(Ich / lernen / wenn ich Zeit gehabt hätte)  
+                    <select class="answer-select" data-correct="Ich hätte gelernt, wenn ich Zeit gehabt hätte.">
+                        <option value="">Select</option>
+                        <option value="Ich würde lernen, wenn ich Zeit hätte.">Ich würde lernen, wenn ich Zeit hätte.</option>
+                        <option value="Ich hätte gelernt, wenn ich Zeit gehabt hätte.">Ich hätte gelernt, wenn ich Zeit gehabt hätte.</option>
+                    </select>
+                </li>
+                <li>(Wir / gewinnen / wenn wir schneller gewesen wären)  
+                    <select class="answer-select" data-correct="Wir hätten gewonnen, wenn wir schneller gewesen wären.">
+                        <option value="">Select</option>
+                        <option value="Wir hätten gewonnen, wenn wir schneller gewesen wären.">Wir hätten gewonnen, wenn wir schneller gewesen wären.</option>
+                        <option value="Wir würden gewinnen, wenn wir schneller wären.">Wir würden gewinnen, wenn wir schneller wären.</option>
+                    </select>
+                </li>
+                <li>(Sie / kommen / wenn sie eingeladen worden wäre)  
+                    <select class="answer-select" data-correct="Sie wäre gekommen, wenn sie eingeladen worden wäre.">
+                        <option value="">Select</option>
+                        <option value="Sie würde kommen, wenn sie eingeladen würde.">Sie würde kommen, wenn sie eingeladen würde.</option>
+                        <option value="Sie wäre gekommen, wenn sie eingeladen worden wäre.">Sie wäre gekommen, wenn sie eingeladen worden wäre.</option>
+                    </select>
+                </li>
+                <li>(Er / kaufen / wenn es billiger gewesen wäre)  
+                    <select class="answer-select" data-correct="Er hätte gekauft, wenn es billiger gewesen wäre.">
+                        <option value="">Select</option>
+                        <option value="Er hätte gekauft, wenn es billiger gewesen wäre.">Er hätte gekauft, wenn es billiger gewesen wäre.</option>
+                        <option value="Er würde kaufen, wenn es billiger wäre.">Er würde kaufen, wenn es billiger wäre.</option>
+                    </select>
+                </li>
+                <li>(Du / helfen / wenn du gewusst hättest)  
+                    <select class="answer-select" data-correct="Du hättest geholfen, wenn du gewusst hättest.">
+                        <option value="">Select</option>
+                        <option value="Du würdest helfen, wenn du wüsstest.">Du würdest helfen, wenn du wüsstest.</option>
+                        <option value="Du hättest geholfen, wenn du gewusst hättest.">Du hättest geholfen, wenn du gewusst hättest.</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Ich hätte gelernt, wenn ich Zeit gehabt hätte.</em></li>
+                    <li><em>Wir hätten gewonnen, wenn wir schneller gewesen wären.</em></li>
+                    <li><em>Sie wäre gekommen, wenn sie eingeladen worden wäre.</em></li>
+                    <li><em>Er hätte gekauft, wenn es billiger gewesen wäre.</em></li>
+                    <li><em>Du hättest geholfen, wenn du gewusst hättest.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="subsection" id="exercise5">
+        <h3>Exercise 5: Create Your Own</h3>
+        <p>Write sentences using *hätten*, *wären*, or *würden* based on these prompts.</p>
+        <div class="examples">
+            <ol class="example-list">
+                <li>If I were a bird…  
+                    <select class="answer-select" data-correct="Wenn ich ein Vogel wäre, würde ich fliegen.">
+                        <option value="">Select</option>
+                        <option value="Wenn ich ein Vogel bin, fliege ich.">Wenn ich ein Vogel bin, fliege ich.</option>
+                        <option value="Wenn ich ein Vogel wäre, würde ich fliegen.">Wenn ich ein Vogel wäre, würde ich fliegen.</option>
+                    </select>
+                </li>
+                <li>If we had more money…  
+                    <select class="answer-select" data-correct="Wenn wir mehr Geld hätten, würden wir reisen.">
+                        <option value="">Select</option>
+                        <option value="Wenn wir mehr Geld hätten, würden wir reisen.">Wenn wir mehr Geld hätten, würden wir reisen.</option>
+                        <option value="Wenn wir mehr Geld haben, reisen wir.">Wenn wir mehr Geld haben, reisen wir.</option>
+                    </select>
+                </li>
+                <li>I would go to the park if…  
+                    <select class="answer-select" data-correct="Ich würde in den Park gehen, wenn es nicht regnen würde.">
+                        <option value="">Select</option>
+                        <option value="Ich gehe in den Park, wenn es nicht regnet.">Ich gehe in den Park, wenn es nicht regnet.</option>
+                        <option value="Ich würde in den Park gehen, wenn es nicht regnen würde.">Ich würde in den Park gehen, wenn es nicht regnen würde.</option>
+                    </select>
+                </li>
+                <li>If she had studied…  
+                    <select class="answer-select" data-correct="Wenn sie gelernt hätte, hätte sie die Prüfung bestanden.">
+                        <option value="">Select</option>
+                        <option value="Wenn sie gelernt hätte, hätte sie die Prüfung bestanden.">Wenn sie gelernt hätte, hätte sie die Prüfung bestanden.</option>
+                        <option value="Wenn sie lernt, besteht sie die Prüfung.">Wenn sie lernt, besteht sie die Prüfung.</option>
+                    </select>
+                </li>
+                <li>We would be happy if…  
+                    <select class="answer-select" data-correct="Wir wären glücklich, wenn wir zusammen wären.">
+                        <option value="">Select</option>
+                        <option value="Wir sind glücklich, wenn wir zusammen sind.">Wir sind glücklich, wenn wir zusammen sind.</option>
+                        <option value="Wir wären glücklich, wenn wir zusammen wären.">Wir wären glücklich, wenn wir zusammen wären.</option>
+                    </select>
+                </li>
+            </ol>
+            <button class="toggle-btn check-answers">Check Answers</button>
+            <button class="toggle-btn show-answers">Show Answers</button>
+            <div class="hidden answers">
+                <p><strong>Answers:</strong></p>
+                <ol>
+                    <li><em>Wenn ich ein Vogel wäre, würde ich fliegen.</em></li>
+                    <li><em>Wenn wir mehr Geld hätten, würden wir reisen.</em></li>
+                    <li><em>Ich würde in den Park gehen, wenn es nicht regnen würde.</em></li>
+                    <li><em>Wenn sie gelernt hätte, hätte sie die Prüfung bestanden.</em></li>
+                    <li><em>Wir wären glücklich, wenn wir zusammen wären.</em></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Tips -->
+        <section id="tips">
+            <h2>Tips for Mastery</h2>
+            <div class="examples">
+                <ul class="example-list">
+                    <li><strong>Start with "Wenn"</strong>: Pair Konjunktiv II with *wenn* (if) for practice.</li>
+                    <li><strong>Listen for It</strong>: Hear it in German movies or shows.</li>
+                    <li><strong>Practice Both Tenses</strong>: Use *würden* for present/future, *hätten/wären* for past.</li>
+                    <li><strong>Think Unreal</strong>: Imagine things that aren’t true.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Resources for Extra Practice -->
+        <section id="resources">
+            <h2>Resources for Extra Practice</h2>
+            <div class="resource-links">
+                <div class="resource-card">
+                    <p><strong>YouTube - Deutsch mit Marija</strong><br>Clear Konjunktiv II explanations.</p>
+                    <a href="https://www.youtube.com/@deutschmitmarija" class="resource-btn">Visit Deutsch mit Marija</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>Deutsch Lernen (Lingolia)</strong><br>Interactive Konjunktiv II lessons.</p>
+                    <a href="https://deutsch.lingolia.com/en/grammar/verbs/subjunctive/subjunctive-ii" class="resource-btn">Visit Lingolia</a>
+                </div>
+                <div class="resource-card">
+                    <p><strong>YouTube - Easy German</strong><br>Real-life Konjunktiv II examples.</p>
+                    <a href="https://www.youtube.com/@EasyGerman" class="resource-btn">Visit Easy German</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- See Also -->
+        <section id="see-also">
+            <h2>See Also</h2>
+            <div class="see-also-links">
+                <a href="damitumzu.html" class="see-also-rect">German Damit and Um...zu</a>
+                <a href="dative.html" class="see-also-rect">German Dative</a>
+                <a href="partizip2.html" class="see-also-rect">Perfekt & Partizip II</a>
+            </div>
+        </section>
+
+        <!-- Next Page Button -->
+        <div class="next-page">
+            <a href="partizip2.html" class="next-btn">Next: Perfekt & Partizip II →</a>
+        </div>
+    </main>
+
+   <!-- JavaScript -->
+  <script>
+    // Dark Mode Toggle
+    const modeToggle = document.getElementById('mode-toggle');
+    modeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
+
+    // Load dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+    }
+
+    // Toggle Answers
+    document.querySelectorAll('.toggle-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const answersDiv = button.nextElementSibling;
+            if (button.classList.contains('show-answers')) {
+                answersDiv.classList.toggle('hidden');
+            } else if (button.classList.contains('check-answers')) {
+                const selects = button.parentElement.querySelectorAll('.answer-select');
+                selects.forEach(select => {
+                    const selectedValue = select.value;
+                    const correctValue = select.getAttribute('data-correct');
+                    if (selectedValue === correctValue) {
+                        select.style.backgroundColor = '#d4edda'; // Green for correct
+                    } else {
+                        select.style.backgroundColor = '#f8d7da'; // Red for incorrect
+                    }
+                });
+            }
+        });
+    });
+</script>
+</body>
+
+
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Zasem
+              <span class="underline"></span>
+            </h3>
+            <p>Turning creative visions into stunning visual realities.</p>
+            <div class="social-links">
+              <a href="#" class="social-icon">📷</a>
+              <a href="#" class="social-icon">🐦</a>
+              <a href="#" class="social-icon">🔗</a>
+              <a href="#" class="social-icon">📘</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact
+              <span class="underline"></span>
+            </h3>
+            <div class="contact-item">
+              <span>Email</span>
+              <p>neupanezasem@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              <p>+977-9845996160</p>
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              <p>Based in Kathmandu, Nepal</p>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Services
+              <span class="underline"></span>
+            </h3>
+            <ul>
+              <li class="service-item">Thumbnail Design</li>
+              <li class="service-item">Web & UI/UX Design</li>
+              <li class="service-item">AWS Cloud Practitioner</li>
+              <li class="service-item">German Language Instructor</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          © 2025 Zasem. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none;">⬆️</button>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- Inline JavaScript -->
+    <script>
+      // Social icons hover effect
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.transform = 'translateY(-3px)';
+        });
+        icon.addEventListener('mouseout', function() {
+          this.style.color = '#f5f5f5';
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      // Contact items hover effect
+      const contactItems = document.querySelectorAll('.contact-item');
+      contactItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'translateX(5px)';
+          this.querySelector('span').style.color = '#00a86b';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'translateX(0)';
+          this.querySelector('span').style.color = '#aaaaaa';
+        });
+      });
+
+      // Service items hover effect
+      const serviceItems = document.querySelectorAll('.service-item');
+      serviceItems.forEach(item => {
+        item.addEventListener('mouseover', function() {
+          this.style.color = '#00a86b';
+          this.style.paddingLeft = '8px';
+        });
+        item.addEventListener('mouseout', function() {
+          this.style.color = '#aaaaaa';
+          this.style.paddingLeft = '0';
+        });
+      });
+
+      // Section headers hover effect
+      const sectionHeaders = document.querySelectorAll('footer h3');
+      sectionHeaders.forEach(header => {
+        const underline = header.querySelector('span');
+        header.addEventListener('mouseover', function() {
+          underline.style.width = '60px';
+        });
+        header.addEventListener('mouseout', function() {
+          underline.style.width = '40px';
+        });
+      });
+
+      // Responsive adjustments
+      function handleResponsiveness() {
+        const footerContainer = document.querySelector('.footer-container');
+        const width = window.innerWidth;
+        
+        if (width < 768) {
+          footerContainer.style.padding = '0 15px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '25px';
+          }
+        } else {
+          footerContainer.style.padding = '0 20px';
+          const socialContainer = document.querySelector('.social-links');
+          if (socialContainer) {
+            socialContainer.style.gap = '18px';
+          }
+        }
+      }
+
+      // Initialize responsiveness and add resize listener
+      handleResponsiveness();
+      window.addEventListener('resize', handleResponsiveness);
+
+      // Initialize AOS
+      AOS.init();
+
+      // Scroll to Top Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        // Check if the button exists
+        if (!scrollToTopBtn) {
+          console.error('Scroll to Top button not found! Check if the element with ID "scrollToTopBtn" exists in the HTML.');
+          return;
+        }
+
+        // Initially hide the button
+        scrollToTopBtn.style.display = 'none';
+
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+          console.log('Scroll position:', window.scrollY); // Debug log
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        });
+
+        // Scroll to top when the button is clicked
+        scrollToTopBtn.addEventListener('click', () => {
+          console.log('Scroll to Top button clicked'); // Debug log
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
